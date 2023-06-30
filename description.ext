@@ -37,7 +37,7 @@ class cfgNotifications {
 };
 
 class CfgDebriefing {
-	#include "configuration\endings.hpp"
+	#include "userConfig\endings.hpp"
 };
 
 class Params {
@@ -45,14 +45,22 @@ class Params {
 };
 
 class CfgFunctions {
-	#include "frameworkConfig\functions.hpp"
+	// Function structure
+	// CfgFunctions >> #include functionTags.hpp has tags >> #include functionCategories.hpp has functions
+	#include "frameworkConfig\functionTags.hpp"
 
-	// class Config {
-	// 	class PreInit {
-	// 		class startup {
-	// 			file = "startup\startup_preInit.sqf";
-	// 			preInit = 1;
-	// 		};
+	#include "userConfig\functionTags.hpp"
+
+	// https://community.bistudio.com/wiki/Arma_3:_Functions_Library#Config_Levels
+	// class TAG {
+	// file = "Path\to\category";
+	// class Category {
+	// 		// The file will be named Path\to\category\fn_function.sqf
+	// 		class function {};
+	// 		// file = "Other\path\function.sqf"; // This is an alternative way to add a function. Ignores the TAG filepath/
+	// 		preInit = 1; // Runs before any objects have been initialized. Uncheduled.
+	// 		postInit = 1; // Runs after objects have been initialized. Suspensions here suspend the entire mission loading. Scheduled.
+	// 		ext = ".fsm"; // Indicates file type if fsm. TODO: Needed?		
 	// 	};
 	// };
 };
