@@ -1,4 +1,6 @@
 
+#include "loadoutMacros.hpp"
+
 #define SIDE blufor
 INIT_REGISTRY();
 
@@ -17,5 +19,3 @@ ADD_DOCTOR(med);
 _loadout = [[],[],[]];
 CREATE_LOADOUT(eng, "ENGINEER", _loadout);
 ADD_ENGINEER(eng);
-
-

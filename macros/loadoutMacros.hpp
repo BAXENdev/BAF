@@ -67,9 +67,10 @@
 // TODO: Determine whether query has a negative effect on performane. This is a pre-optimization, DANGEROUS!
 // Query:
 // - Variables: CV - Class Variable, LR - Loadout Registry
-// _loadoutPairs = LR select { (_x select 0) in CV }; // Retrieve variable-name pairs from LR. Pairs will not be in the same order as CV variables
-// _loadoutVariables = _loadoutPairs apply { _x select 0; }; // Split variables from pairs
-// _loadoutNames = _loaodutPairs apply { _x select 1; }; // split nams from pairs
+// _loadoutVarNamePairs = LR select { (_x select 0) in CV }; // Retrieve variable-name pairs from LR. 
+// Pairs will not be in the same order as CV variables. Pairs need re-seperated for menus.
+// _loadoutVariables = _loadoutVarNamePairs apply { _x select 0; }; // Split variables from pairs
+// _loadoutNames = _loaodutVarNamePairs apply { _x select 1; }; // split nams from pairs
 #define ADD_TO_CLASS(VARIABLE_CLASS, VARIABLE_LOADOUT) \
     CLASS_VARIABLE(VARIABLE_CLASS) pushBack [STRING(LOADOUT_VARIABLE(VARIABLE_LOADOUT)) select 0]
 

@@ -1,0 +1,1 @@
+// startup functions are entirely declared in description.exe
