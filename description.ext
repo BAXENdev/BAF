@@ -63,6 +63,9 @@ class CfgFunctions {
             file = "frameworkConfig\startUp";
             class beginInit { preInit = 1; };
             class loadoutInit {};
+            class radioInit {};
+            class acreInit {};
+            class tfarInit {};
         };
     };
 

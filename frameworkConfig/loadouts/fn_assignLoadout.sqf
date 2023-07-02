@@ -3,7 +3,7 @@
  * Author: BAXENATOR
  * Assigns a loadout to the unit. 
  * Exits if _unit is not a unit.
-* Exits if _loadout is nil. (this is done to allow for a parent init method to init radios without a loadout.)
+ * Exits if _loadout is nil. (this is done to allow for a parent init method to init radios without a loadout.)
  * 
  * Arguments:
  * 0: _unit
@@ -20,11 +20,11 @@
 
 #include "macros.hpp"
 
-params["_unit","_loadout"];
+params ["_unit","_loadout"];
 
 if (!IS_MAN(_unit)) exitWith {};
 if (isNil _loadout) exitWith {};
-LOCAL_ONLY(_unit); // TODO: Test if AI are given loadouts
+RUN_LOCAL_TO(_unit, BAF_fnc_assignLoadout); // TODO: Test if AI are given loadouts
 WAIT_UNTIL_INIT_DONE();
 
 _sideName = _unit call BAF_fnc_factionToSideName;
@@ -50,10 +50,8 @@ _unit setUnitTrait ["Engineer", _engineerTrait > 0];
 // TODO: EOD
 // TODO: Uav Hacker?
 
-
-
 // TODO: Radio Setup?
-// - Is there a super class that handles calling a radio and loadout setup?
+// - Should there be a super class that handles calling a radio and loadout setup?
 // - Seperate initialization?
 // - Based on side and loadout name?
 // - Based on loadout name alone?

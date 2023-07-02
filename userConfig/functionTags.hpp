@@ -1,5 +1,5 @@
 
-class BAF_CONFIG {
+class BAF_CFG { // BAF Config
     #include "loadouts\functionCategory.hpp"
 };
 
