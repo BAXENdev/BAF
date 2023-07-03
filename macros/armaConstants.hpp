@@ -3,5 +3,5 @@
 // #define indfor "indfor"
 // #define civilian "civilian"
 
-
+// USEFULNESS IS TBD
 

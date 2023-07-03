@@ -21,7 +21,7 @@ if (!loopdone) then
 	if (_cam_attached) then {
 
 		_camera = "camera" camCreate (getpos _campos1);
-				showCinemaBorder true; 
+		showCinemaBorder true; 
 		_camera attachTo [_campos2, [_x_coord,_y_coord,_z_coord]];		
 		_camera cameraEffect ["internal", "BACK"];
 		_camera camCommand "inertia on";
@@ -29,7 +29,6 @@ if (!loopdone) then
 		_camera camPrepareFOV _zoom_level1;
 		_camera camCommitPrepared _camera_duration;
 		sleep _camera_duration;
-
 	} else 
 		{
 		// initial/start position where camera is created

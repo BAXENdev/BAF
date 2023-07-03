@@ -1,6 +1,6 @@
 
 class Intro {
-    file = "frameworkConfig\ALIntro";
+    file = "\frameworkConfig\ALIntro";
     class cameraWork {};
     class textDisplay {};
 };

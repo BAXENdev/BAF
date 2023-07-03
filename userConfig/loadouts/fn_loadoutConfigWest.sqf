@@ -1,10 +1,8 @@
 
 #include "loadoutMacros.hpp"
 
-#define SIDE blufor
-INIT_REGISTRY();
+INIT_LOADOUT_SYSTEM(blufor);
 
-// 1) Loadout variable name, 2) Loadout display name, 3) Ace loadout
 _loadout = [[],[],[]];
 CREATE_LOADOUT(rif, "RIFLEMAN", _loadout);
 

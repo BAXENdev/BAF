@@ -22,6 +22,7 @@
 
 params ["_unit","_loadout"];
 
+// Conditions
 if (!IS_MAN(_unit)) exitWith {};
 if (isNil _loadout) exitWith {};
 RUN_LOCAL_TO(_unit, BAF_fnc_assignLoadout); // TODO: Test if AI are given loadouts
