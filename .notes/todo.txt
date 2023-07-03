@@ -1,0 +1,27 @@
+
+TODO: Unit setup
+ [ ]: Add Supply Crates
+ [ ]: Add Radio setup
+ [ ]: Add super method initUnit; calls both loadout and radio init methods
+ [ ]: Add in-game loadout initialization
+ [ ]: Add ace arsenal support to class for custom loadout
+    - Have custom loadout be its own loadout? Would have to register the loadout in the loadout and class registry
+    - Ace Arsenal available at class lockers
+
+TODO: Safe Start
+ [ ] Add safe start functionality
+ [ ] Add safe start loadout or class options
+ [ ] Add safe start sight options
+ [ ] Add safe start ace arsenal option
+
+TODO: Premade medical settings
+    - Multiple difficulties of Ace Medical
+    - Multiple difficulties of Ace Medical + Ace Pharmacy
+    - Multiple difficulties of Ace Medical + KAT Medical
+
+TODO: Add functionality to disable artillery computer 
+TODO: Add zen functions for altering premade tasks
+TODO: Add Group Markers to map
+TODO: (optional) Add custom marker functionality for squads and units
+TODO: Add radiation and cbrn systems
+TODO: (optional) Add chemical warfare. Look other mods first

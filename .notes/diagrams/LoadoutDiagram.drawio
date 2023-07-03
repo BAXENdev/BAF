@@ -1,0 +1,13 @@
+<mxfile host="65bd71144e">
+    <diagram id="2_yqGNxP0lrUwjUOIC-L" name="Page-1">
+        <mxGraphModel dx="708" dy="405" grid="1" gridSize="20" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1600" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="&lt;b&gt;&lt;u&gt;LOADOUT SYSTEM STRUCTURE&lt;/u&gt;&lt;/b&gt;&lt;br&gt;&lt;br&gt;LOADOUT_REGISTRY&lt;br style=&quot;font-size: 16px;&quot;&gt;baf_loadout_registry_blufor = [&lt;br style=&quot;font-size: 16px;&quot;&gt;&amp;nbsp; [&quot;baf_loadout_blufor_rif&quot;, &quot;US Rifleman&quot;],&lt;br&gt;&amp;nbsp; [&quot;baf_loadout_blufor_sl&quot;, &quot;US Squad Leader&quot;]&lt;br style=&quot;font-size: 16px;&quot;&gt;]&lt;br&gt;&lt;br&gt;LOADOUT_VARIABLE&lt;br&gt;baf_loadout_blufor_rif = [&lt;br&gt;&amp;nbsp; &lt;i&gt;ACE LOADOUT HERE&lt;/i&gt;, // Loadout&lt;br&gt;&amp;nbsp; [0,0] // Traits&lt;br&gt;]&lt;br&gt;&lt;br&gt;CLASS_REGISTRY&lt;br&gt;baf_class_registry_blufor = [&lt;br&gt;&amp;nbsp; [&quot;baf_class_blufor_us&quot;, &quot;US Soldier&quot;]&lt;br&gt;]&lt;br&gt;&lt;br&gt;CLASS_VARIABLE&lt;br&gt;baf_class_blufor_us = [&lt;br&gt;&amp;nbsp; &quot;baf_loadout_blufor_rif&quot;,&lt;br&gt;&amp;nbsp; &quot;baf_loadout_blufor_sl&quot;&lt;br&gt;]&lt;br&gt;&lt;br&gt;CRATE_REGISTRY&lt;br&gt;&lt;br&gt;&lt;br&gt;CRATE_VARIABLE" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;fontSize=16;" parent="1" vertex="1">
+                    <mxGeometry x="20" y="20" width="340" height="680" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

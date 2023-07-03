@@ -1,0 +1,39 @@
+Arma Documentation
+https://community.bistudio.com/wiki/Initialisation_Order
+https://community.bistudio.com/wiki/getClientStateNumber
+https://community.bistudio.com/wiki/Arma_3:_Functions_Library#Config_Levels
+https://community.bistudio.com/wiki/Event_Scripts
+https://community.bistudio.com/wiki/PreProcessor_Commands
+https://community.bistudio.com/wiki/Description.ext
+https://community.bistudio.com/wiki/Arma_3:_Functions_Library
+
+Other Documentation
+https://forums.bohemia.net/forums/topic/136275-check-if-a-modaddon-is-enabled/
+_acre = isClass(configFile >> "cfgPatches" >> "acre_main"); Test for addon existance
+
+Military Symbols
+https://www.symbol.army/doc/en/functions/download-milsymbol/
+
+Tfar:
+https://www.fkgaming.eu/guides/fng-guides/fng-arma-guides/beginners-guide-tfar-r22/#blufor_radios
+https://github.com/michail-nikolaev/task-force-arma-3-radio/wiki/API%3A-Functions
+SR 30-512Mhz
+LR 30-87Mhz
+
+Acre:
+https://acre2.idi-systems.com/wiki/frameworks/creating-new-radio
+
+Artillery Computer:
+https://community.bistudio.com/wiki/enableEngineArtillery
+
+ZEN:
+https://zen-mod.github.io/ZEN/#/
+https://github.com/zen-mod/ZEN/tree/master/extras/blank
+
+How to find subclasses:
+https://community.bistudio.com/wiki/configClasses
+
+CBA:
+https://www.reddit.com/r/armadev/comments/hzcnb3/tutorial_creating_a_simple_mod_following_the_cba/
+https://github.com/CBATeam/CBA_A3
+
