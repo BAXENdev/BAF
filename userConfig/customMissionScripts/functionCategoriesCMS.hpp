@@ -1,4 +1,6 @@
+
 // Any functions declared here will use the tag CMS
+
 class MissionScripts {
     file = "\userConfig\customMissionScripts";
     // Example definition of function CMS_fnc_function;
@@ -12,4 +14,5 @@ class ZEN_MissionScripts {
     // Example definition of zen function: CMS_fnc_zen_function;
     // class zen_function {}; // refers to \userConfig\customMissionScript\zen\fn_zen_function.sqf.
     // All custom zen function definitions go below.
+
 };

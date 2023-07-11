@@ -13,57 +13,45 @@
  * -
  *
  * Example:
- * [_this, "rif"] call baf_fnc_assignLoadout;
+ * [_this,"rif"] call baf_fnc_assignLoadout;
  *
  * Public: Yes
  */
 
-#include "macros.hpp"
+#include "loadoutAccessMacros.hpp"
 
-params ["_unit","_loadout"];
+params ["_unit","_loadoutSuffix","_factionId"];
 
-// Conditions
-if (!IS_MAN(_unit)) exitWith {};
-if (isNil _loadout) exitWith {};
-RUN_LOCAL_TO(_unit, BAF_fnc_assignLoadout); // TODO: Test if AI are given loadouts
-WAIT_UNTIL_INIT_DONE();
+// Runtime Conditions
+// TODO: Should this run in scheduled space to prevent stutters?
 
-_sideName = _unit call BAF_fnc_factionToSideName;
-if (_sideName isEqualTo "") exitWith {};
+// TODO: Should this assume that all variables passed to you are valid?
+if (isNil _unit) exitWith { DEBUG_RPT("attempted to assign loadout to nil _unit"); };
+if (!_unit isKindOf "CAManBase") exitWith { DEBUG_RPT("attempted to assign loadout to non-man object"); };
 
-// Loadout: 0) loadout, 1) Ace traits
-// Traits: 0) ace medical, 1) Engineer
-_loadout = GET_LOADOUT_VARIABLE(_loadout, _sideName);
-
-if (isNil _loadout) then {
-    _loadout = GET_LOADOUT_VARIABLE(DEFAULT_LOADOUT_NAME, _sideName);
-    if (isNil _loadout) exitWith {};
+if (isNil _factionId or _factionId isEqualTo "") then {
+	_factionId = [_unit] call BAF_fnc_unitSideToFactionID;
 };
 
-_unit setUnitLoadout (_loadout select 0);
-_traits = _loadout select 1;
-_medicalTrait = _traits select 0;
-_unit setVariable ["ace_medical_medicclass", _medicalTrait, true];
-_unit setUnitTrait ["Medic", _medicalTrait > 0];
-_engineerTrait = _traits select 1;
-_unit setVariable ["ACE_isEngineer", _engineerTrait, true];
-_unit setUnitTrait ["Engineer", _engineerTrait > 0];
+_loadout = GET_LOADOUT(_factionId,_loadoutSuffix);
+if (isNil _loadout) exitWith { DEBUG_RPT(format ["%1 is not initialized",GET_LOADOUT_VARIABLE(_factionId,_loadoutSuffix)]); };
+
+// Loadout Stucture
+// 0) Display Name,1) Loadout Array,2) Traits Array
+_unit setUnitLoadout _loadout;
+
+_traits = GET_LOADOUT_TRAITS(_loadout);
+
+_medicalTrait = GET_TRAIT_MEDICAL(_traits);
+SETVARG(_unit,"ace_medical_medicclass",_medicalTrait);
+_unit setUnitTrait ["Medic",_medicalTrait > 0];
+
+_engineerTrait = GET_TRAIT_ENGINEERING(_traits);
+SETVARG(_unit,"ACE_isEngineer",_engineerTrait);
+_unit setUnitTrait ["Engineer",_engineerTrait > 0];
 // TODO: EOD
 // TODO: Uav Hacker?
 
-// TODO: Radio Setup?
-// - Should there be a super class that handles calling a radio and loadout setup?
-// - Seperate initialization?
-// - Based on side and loadout name?
-// - Based on loadout name alone?
-// - Radio key given to loadout, where there are key-value pairs in the radio setup?
-
-
-
-
-
-
-
-
-
-
+// TODO: Assign Loadout as Variable to unit?
+SETVARG(_unit, BAF_FACTION_ID_VAR, _factionId);
+SETVARG(_unit, BAF_LOADOUT_SUFFIX_VAR, _factionId);
