@@ -13,14 +13,15 @@
  * -
  *
  * Example:
- * [_this,"rif"] call baf_fnc_assignLoadout;
+ * [_this,"rifleman"] call baf_fnc_assignLoadout;
+ * [_this,"rifleman","mercenary_faction"] call baf_fnc_assignLoadout;
  *
  * Public: Yes
  */
 
 #include "loadoutAccessMacros.hpp"
 
-params ["_unit","_loadoutSuffix","_factionId"];
+params ["_unit","_loadoutSuffix","_factionID"];
 
 // Runtime Conditions
 // TODO: Should this run in scheduled space to prevent stutters?
@@ -29,11 +30,11 @@ params ["_unit","_loadoutSuffix","_factionId"];
 if (isNil _unit) exitWith { DEBUG_RPT("attempted to assign loadout to nil _unit"); };
 if (!_unit isKindOf "CAManBase") exitWith { DEBUG_RPT("attempted to assign loadout to non-man object"); };
 
-if (isNil _factionId or _factionId isEqualTo "") then {
-	_factionId = [_unit] call BAF_fnc_unitSideToFactionID;
+if (isNil _factionID or _factionID isEqualTo "") then {
+	_factionID = [_unit] call BAF_fnc_unitSideToFactionID;
 };
 
-_loadout = GET_LOADOUT(_factionId,_loadoutSuffix);
+_loadout = GET_LOADOUT(_factionID,_loadoutSuffix);
 if (isNil _loadout) exitWith { DEBUG_RPT(format ["%1 is not initialized",GET_LOADOUT_VARIABLE(_factionId,_loadoutSuffix)]); };
 
 // Loadout Stucture

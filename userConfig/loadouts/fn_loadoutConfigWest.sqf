@@ -1,5 +1,6 @@
 
-#include "loadoutMacros.hpp"
+#include "..\..\macros\bafConstants.hpp"
+#include "..\..\macros\loadoutConfigMacros.hpp"
 
 #define FACTION_ID WEST_ID
 

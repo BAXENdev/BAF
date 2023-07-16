@@ -16,29 +16,29 @@
 
 class BAF {
     class LoadoutSystem {
-        file = "\frameworkConfig\loadoutSystem";
+        file = "frameworkConfig\loadoutSystem";
         class assignLoadout {};
         // class assignClass {};
         // class createCrate {};
     };
 
     class LoadoutSystem_zen {
-        file = "\frameworkConfig\loadoutSystem\zen";
+        file = "frameworkConfig\loadoutSystem\zen";
     };
 
     class RadioSystem {
-        file = "\frameworkConfig\radioSystem";
+        file = "frameworkConfig\radioSystem";
     };
 
     class Misc {
-        file = "\frameworkConfig\misc";
+        file = "frameworkConfig\misc";
         class factionToSideName {};
     };
 };
 
 class BAF_INIT {
     class StartUp {
-        file = "\frameworkConfig\startUp\init";
+        file = "frameworkConfig\startUp\init";
         class loadoutInit {};
         class radioInit {};
         class acreInit {};
@@ -47,14 +47,14 @@ class BAF_INIT {
     };
 
     class Setup {
-        file = "\frameworkConfig\startUp\setup";
+        file = "frameworkConfig\startUp\setup";
         class setuploaodut {};
         class setupRadios {};
         class setupUnit {};
     };
 
     class SetupLoadoutSystem {
-        file = "\frameworkConfig\loadoutSystem\setup";
+        file = "frameworkConfig\loadoutSystem\setup";
         class addPrimaryToCrate {};
         class addSecondaryToCrate {};
         class addLauncherToCrate {};
@@ -67,14 +67,14 @@ class BAF_INIT {
 
 class BAF_FCFG {
     class Respawn {
-        file = "\frameworkConfig\respawn";
+        file = "frameworkConfig\respawn";
         class onPlayerRespawn {};
     }
 };
 
 class BAF_UCFG {
     class Loadouts {
-        file = "\userConfig\loadouts";
+        file = "userConfig\loadouts";
         class loadoutConfigWest {};
         // class loadoutConfigEast {};
         // class loadoutConfigInde {};
@@ -84,5 +84,5 @@ class BAF_UCFG {
 
 class CMS { // Custom Mission Scripts
     // CMS Categories are defined in the customMissionScripts folder for ease of access 
-    #include "\userConfig\customMissionScripts\functionCategoriesCMS.hpp"
+    #include "userConfig\customMissionScripts\functionCategoriesCMS.hpp"
 };

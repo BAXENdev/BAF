@@ -1,32 +1,32 @@
 
-#include "\frameworkConfig\description\header.hpp"
+#include "frameworkConfig\description\header.hpp"
 
-#include "\frameworkConfig\description\corpseAndWreckManager.hpp"
+#include "frameworkConfig\description\corpseAndWreckManager.hpp"
 
-#include "\frameworkConfig\description\respawn.hpp"
+#include "frameworkConfig\description\respawn.hpp"
 
 class Params {
-    #include "\frameworkConfig\description\missionParams.hpp"
+    #include "frameworkConfig\description\missionParams.hpp"
 };
 
 class CfgFunctions {
-    #include "\frameworkConfig\description\cfgFunctions.hpp"
+    #include "frameworkConfig\description\cfgFunctions.hpp"
 };
 
 class CfgSounds {
-    #include "\frameworkConfig\description\cfgSounds.hpp"
+    #include "frameworkConfig\description\cfgSounds.hpp"
 };
 
 class cfgNotifications {
-    #include "\frameworkConfig\description\cfgNotifications.hpp"
+    #include "frameworkConfig\description\cfgNotifications.hpp"
 };
 
 class CfgDebriefing {
-    #include "\frameworkConfig\description\cfgDebriefing.hpp"
+    #include "frameworkConfig\description\cfgDebriefing.hpp"
 };
 
 // respawnDelay must be defined with a negative value for templates to override
 respawnDelay = -1;
 class CfgRespawnTemplates {
-    #include "\frameworkConfig\description\respawnTemplates.hpp"
+    #include "frameworkConfig\description\respawnTemplates.hpp"
 };

@@ -1,5 +1,5 @@
 
-#include "\userConfig\description\corpseAndWreckManager.hpp"
+#include "userConfig\description\corpseAndWreckManager.hpp"
 
 #ifdef CORPSE_MANAGER_ENABLED
     corpseManagerMode = 3;

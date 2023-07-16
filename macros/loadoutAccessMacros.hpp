@@ -1,6 +1,4 @@
 
-#include "\macros\utilityMacros.hpp"
-
 #define GET_LOADOUT_VARIABLE(STRING_ID,STRING_SUFFIX) (format ["baf_loadout_%1_%2",STRING_ID,STRING_SUFFIX])
 #define GET_LOADOUT_REGISTRY_VARIABLE(STRING_ID) (format ["baf_registry_loadout_",STRING_ID])
 #define GET_LOADOUT(STRING_ID,STRING_SUFFIX) (GETVARM(GET_LOADOUT_VARIABLE(STRING_ID,STRING_SUFFIX),nil))
