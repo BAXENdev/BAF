@@ -1,12 +1,22 @@
 
-#ifndef UTILITY_MACROS // Wraps all definitions
-
-#include "\macros\bafConstants.hpp"
-
-#define UTILITY_MACROS
-
 // #define TAG(STRING) ("baf_" + STRING)
 // #define FUNC(STRING) ("BAF_fnc_" + STRING)
+
+#ifndef UTILITY
+#define UTILITY
+
+// CONSTANTS
+
+#define WEST_ID blufor
+#define EAST_ID opfor
+#define INDEPENDENT_ID indfor
+#define CIVILIAN_ID civi
+#define WEST_ID_STR #WEST_ID
+#define EAST_ID_STR #EAST_ID
+#define INDEPENDENT_ID_STR #INDEPENDENT_ID
+#define CIVILIAN_ID_STR #CIVILIAN_ID
+
+// FUNCTIONS
 
 #define CONCAT(VALUE1,VALUE2) VALUE1##VALUE2
 #define CONCAT3(VALUE1,VALUE2,VALUE3) VALUE1##VALUE2##VALUE3

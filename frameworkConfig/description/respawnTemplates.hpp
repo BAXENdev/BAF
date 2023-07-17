@@ -8,10 +8,4 @@ class BAFRespawnTemplate {
 
     // 5 Minute Respawn Delay
     respawnDelay = 300;
-
-    
-};
-
-class UCFGRespawnTemplate {
-
 };

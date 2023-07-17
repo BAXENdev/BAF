@@ -1,19 +1,16 @@
 
-#include "\macros\utilityMacros.hpp"
+#include "..\..\macros\utilityMacros.hpp"
 
 params ["_unit"];
 
-if (isNil _unit) exitWith { DEBUG_RPT("nil _unit passed to sideToFactionID."); };
-if (!_unit isKindOf "CAManBase") exitWith { DEBUG_RPT("Object passed to _unit is not type CAManBase"); };
+if !(_unit isKindOf "CAManBase") exitWith { DEBUG_RPT("Object passed to _unit is not type CAManBase"); };
 
-_side = side group _unit;
-_factionId = "";
+_sideStr = str side group _unit;
+_factionID = "";
 
-switch (_side) do {
-	case west: _factionId = VAR_TO_STR(WEST_ID);
-	case east: _factionId = VAR_TO_STR(EAST_ID);
-	case independent: _factionId = VAR_TO_STR(INDEPENDENT_ID);
-	case civilian: _factionId = VAR_TO_STR(CIVILIAN_ID);
-};
+if (_sideStr isEqualTo str west) then { _factionID = WEST_ID_STR; }; 
+if (_sideStr isEqualTo str east) then { _factionID = EAST_ID_STR; }; 
+if (_sideStr isEqualTo str independent) then { _factionID = INDEPENDENT_ID_STR; }; 
+if (_sideStr isEqualTo str civilian) then { _factionID = CIVILIAN_ID_STR; };
 
-_factionId;
+_factionID;

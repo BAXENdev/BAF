@@ -3,38 +3,42 @@
  * Author: BAXENATOR
  * Assigns a loadout to the unit. 
  * Exits if _unit is not a unit.
- * Exits if _loadout is nil. (this is done to allow for a parent init method to init radios without a loadout.)
+ * Exits if _loadoutSuffix is nil.
  * 
  * Arguments:
  * 0: _unit
- * 1: _loadout <ace loadout array>
- *
+ * 1: _loadoutSuffix
+ * 2: _factionID
+ * 
  * Return Value:
  * -
  *
  * Example:
- * [_this,"rif"] call baf_fnc_assignLoadout;
+ * [_this,"rifleman"] call baf_fnc_assignLoadout;
+ * [_this,"rifleman","mercenary_faction"] call baf_fnc_assignLoadout;
  *
  * Public: Yes
  */
 
-#include "loadoutAccessMacros.hpp"
+#include "..\..\macros\loadoutAccessMacros.hpp"
 
-params ["_unit","_loadoutSuffix","_factionId"];
+params ["_unit","_loadoutSuffix","_factionID"];
 
 // Runtime Conditions
 // TODO: Should this run in scheduled space to prevent stutters?
 
 // TODO: Should this assume that all variables passed to you are valid?
-if (isNil _unit) exitWith { DEBUG_RPT("attempted to assign loadout to nil _unit"); };
-if (!_unit isKindOf "CAManBase") exitWith { DEBUG_RPT("attempted to assign loadout to non-man object"); };
+if !(_unit isKindOf "CAManBase") exitWith { DEBUG_RPT("attempted to assign loadout to non-man object"); };
+if !(_factionID in (missionNamespace getVariable ["baf_registry_tags", []])) then { DEBUG_RPT("(loadout) Given FactionID is not available."); };
 
-if (isNil _factionId or _factionId isEqualTo "") then {
-	_factionId = [_unit] call BAF_fnc_unitSideToFactionID;
+if (!(_factionID isEqualType "") or (_factionID isEqualTo "")) then {
+	_factionID = [_unit] call BAF_fnc_unitSideToFactionID;
 };
 
-_loadout = GET_LOADOUT(_factionId,_loadoutSuffix);
-if (isNil _loadout) exitWith { DEBUG_RPT(format ["%1 is not initialized",GET_LOADOUT_VARIABLE(_factionId,_loadoutSuffix)]); };
+if (_factionID isEqualTo "") exitWith { DEBUG_RPT(format ["(loadout) Failed to assign unit with %1 loadout because there is not an available faction.", _loadoutSuffix]); };
+
+_loadout = GET_LOADOUT(_factionID,_loadoutSuffix);
+if !(_loadout isEqualType []) exitWith { DEBUG_RPT(format ["(loadout) %1 is not initialized",GET_LOADOUT_VARIABLE(_factionId,_loadoutSuffix)]); };
 
 // Loadout Stucture
 // 0) Display Name,1) Loadout Array,2) Traits Array
@@ -53,5 +57,5 @@ _unit setUnitTrait ["Engineer",_engineerTrait > 0];
 // TODO: Uav Hacker?
 
 // TODO: Assign Loadout as Variable to unit?
-SETVARG(_unit, BAF_FACTION_ID_VAR, _factionId);
-SETVARG(_unit, BAF_LOADOUT_SUFFIX_VAR, _factionId);
+SETVARG(_unit,"baf_faction_id",_factionID);
+SETVARG(_unit,"baf_loadout_suffix",_loadoutSuffix);

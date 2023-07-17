@@ -16,45 +16,45 @@
 
 class BAF {
     class LoadoutSystem {
-        file = "\frameworkConfig\loadoutSystem";
+        file = "frameworkConfig\loadoutSystem";
         class assignLoadout {};
         // class assignClass {};
         // class createCrate {};
     };
 
     class LoadoutSystem_zen {
-        file = "\frameworkConfig\loadoutSystem\zen";
+        file = "frameworkConfig\loadoutSystem\zen";
     };
 
     class RadioSystem {
-        file = "\frameworkConfig\radioSystem";
+        file = "frameworkConfig\radioSystem";
     };
 
     class Misc {
-        file = "\frameworkConfig\misc";
-        class factionToSideName {};
+        file = "frameworkConfig\misc";
+        class unitSideToFactionID {};
+    };
+
+    class Setup {
+        file = "frameworkConfig\startUp\setup";
+        // class setupUnit {};
+        class setupLoadout {};
     };
 };
 
 class BAF_INIT {
     class StartUp {
-        file = "\frameworkConfig\startUp\init";
-        class loadoutInit {};
-        class radioInit {};
-        class acreInit {};
-        class tfarInit {};
-        class beginInit { preInit = 1; };
-    };
-
-    class Setup {
-        file = "\frameworkConfig\startUp\setup";
-        class setuploaodut {};
-        class setupRadios {};
-        class setupUnit {};
+        file = "frameworkConfig\startUp\init";
+        class initLoadout {};
+        // class radioInit {};
+        // class acreInit {};
+        // class tfarInit {};
+        class initBegin { preInit = 1; };
     };
 
     class SetupLoadoutSystem {
-        file = "\frameworkConfig\loadoutSystem\setup";
+        file = "frameworkConfig\loadoutSystem\setup";
+        class addItemsToArsenal {};
         class addPrimaryToCrate {};
         class addSecondaryToCrate {};
         class addLauncherToCrate {};
@@ -67,22 +67,7 @@ class BAF_INIT {
 
 class BAF_FCFG {
     class Respawn {
-        file = "\frameworkConfig\respawn";
-        class onPlayerRespawn {};
+        file = "frameworkConfig\respawn";
+        // class onPlayerRespawn {};
     }
-};
-
-class BAF_UCFG {
-    class Loadouts {
-        file = "\userConfig\loadouts";
-        class loadoutConfigWest {};
-        // class loadoutConfigEast {};
-        // class loadoutConfigInde {};
-        // class loadoutConfigCivi {};
-    };
-};
-
-class CMS { // Custom Mission Scripts
-    // CMS Categories are defined in the customMissionScripts folder for ease of access 
-    #include "\userConfig\customMissionScripts\functionCategoriesCMS.hpp"
 };

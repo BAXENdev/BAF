@@ -1,7 +1,9 @@
 
-// #include "loadoutMacros.hpp" // TODO: is this needed here or in the loadout config scripts?
+diag_log "[BAF] Loadout Initialization";
 
-[] call BAF_CONFIG_fnc_westLoadoutConfig;
+[] call BAF_UCFG_fnc_loadoutConfigWest;
+
+diag_log "[BAF] Loadout Initialization Done";
 // [] call BAF_CONFIG_fnc_eastLoadoutConfig;
 // [] call BAF_CONFIG_fnc_indpendentLoadoutConfig;
 // [] call BAF_CONFIG_fnc_civilianLoadoutConfig;
