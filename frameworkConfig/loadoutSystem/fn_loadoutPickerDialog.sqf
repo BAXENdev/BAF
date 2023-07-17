@@ -1,15 +1,17 @@
 
 #include "..\..\macros\loadoutAccessMacros.hpp"
 
-params ["_unit"];
+params ["_unit",["_factionID","",[""]]];
 
-if (isNil _unit or !(_unit isKindOf "CAManBase")) exitWith { /* TODO: Debug RPT */ };
+if !(_unit isKindOf "CAManBase") exitWith { /* TODO: Debug RPT */ };
 
-_sideName = [_unit] call BAX_fnc_factionToSideName;
-_loadoutRegistry = GET_LOADOUT_REGISTRY(_sideName);
+if (_factionID isEqualTo "") then {
+	_factionID = [_unit] call BAF_fnc_unitSideToFactionID;
+}
+if (_factionID isEqualTo "") exitWith { /* TODO: Debug RPT */ };
 
-_loadoutVariables = _loadoutRegistry apply { _x#0 };
-_loadoutNames = _loadoutRegistry apply { _x#1 };
+_loadoutRegistry = GET_LOADOUT_REGISTRY(_factionID);
+_loadoutVariables = _loadoutRegistry apply { _x#0; }
 
 _listBox = [
 	"LIST",

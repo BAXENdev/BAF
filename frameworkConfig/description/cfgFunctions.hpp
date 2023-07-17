@@ -34,12 +34,6 @@ class BAF {
         file = "frameworkConfig\misc";
         class unitSideToFactionID {};
     };
-
-    class Setup {
-        file = "frameworkConfig\startUp\setup";
-        // class setupUnit {};
-        class setupLoadout {};
-    };
 };
 
 class BAF_INIT {
@@ -62,6 +56,9 @@ class BAF_INIT {
         class addSecondaryMagsToCrate {};
         class addLauncherMagsToCrate {};
         class createCrateFromFaction {};
+        class setupClass {};
+        class setupCrate {};
+        class setupLoadout {};
     };
 };
 

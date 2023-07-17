@@ -1,5 +1,5 @@
 
-params [["_unit", nil], ["_loadoutSuffix", ""], ["_factionID", ""]];
+params ["_unit", ["_loadoutSuffix", ""], ["_factionID", ""]];
 
 // Runtime Conditions
 // TODO: Is a false positive on mission load possible?
@@ -8,4 +8,5 @@ params [["_unit", nil], ["_loadoutSuffix", ""], ["_factionID", ""]];
 // waitUntil { sleep 2; BAF_init_done isEqualTo 1; };
 // TODO: Does the player exist yet prior to this call?
 // TODO: Does it execute JIP?
+
 
