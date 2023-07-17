@@ -40,5 +40,3 @@
 
 #define DEBUG_RPT(MSG) diag_log format ["[BAF]: %1",MSG]
 #define DEBUG_RPT_FULL(MSG) diag_log format ["[BAF]: %1:%2 - ",__FILE__,__LINE__,MSG]
-
-#endif
