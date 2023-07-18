@@ -5,7 +5,7 @@ _zenCode = {
 	if (isNull _object or !(_object isKindOf "CAManBase")) exitWith { ["BafWarning", ["Attach to unit"]] call BIS_fnc_showNotification; };
 
 	// TODO: Add factionID selection
-	[_object] call BAF_fnc_loadoutPickerDialog;
+	[_object] call BAF_fnc_openLoadoutPickerDialog;
 };
 
 [

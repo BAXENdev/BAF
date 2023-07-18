@@ -1,6 +1,8 @@
 
 #include "utilityMacros.hpp"
 
+#define GET_REGISTRY_TAGS() (GETVARM("baf_registry_tags", []))
+
 #define GET_LOADOUT_VARIABLE(FACTION_ID,STRING_SUFFIX) (format ["baf_loadout_%1_%2",FACTION_ID,STRING_SUFFIX])
 #define GET_LOADOUT_REGISTRY_VARIABLE(FACTION_ID) (format ["baf_registry_loadout_%1",FACTION_ID])
 #define GET_LOADOUT_BAF(FACTION_ID,STRING_SUFFIX) (GETVARM(GET_LOADOUT_VARIABLE(FACTION_ID,STRING_SUFFIX),0))

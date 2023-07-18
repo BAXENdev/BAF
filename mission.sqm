@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={8307.751,84.805412,6064.4629};
-		dir[]={0.36276901,-0.17626779,0.91505778};
-		up[]={0.064961709,0.98434162,0.16386095};
-		aside[]={0.92961317,3.5302946e-008,-0.36853918};
+		pos[]={8255.9521,40.852154,5950.4126};
+		dir[]={-0.32906821,-0.57759714,0.74705803};
+		up[]={-0.23283565,0.81632191,0.52858871};
+		aside[]={0.91515118,0,0.4031108};
 	};
 };
 binarizationWanted=0;
@@ -238,7 +238,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="this addAction " \n "[ ""title"", { " \n "  params [""_target"", ""_caller"", ""_actionId"", ""_arguments""];  [_caller] call BAF_fnc_loadoutPickerDialog; " \n " }, " \n " nil," \n " 1.5, " \n " true," \n " true, " \n " """",   " \n " ""true"",  " \n " 50,    " \n " false, " \n " """",    " \n " """"    " \n "];";
+				init="this addAction " \n "[ ""title"", { " \n "  params [""_target"", ""_caller"", ""_actionId"", ""_arguments""];  [_caller] call BAF_fnc_openLoadoutPickerDialog; " \n " }, " \n " nil," \n " 1.5, " \n " true," \n " true, " \n " """",   " \n " ""true"",  " \n " 50,    " \n " false, " \n " """",    " \n " """"    " \n "];";
 			};
 			id=11;
 			type="CUP_metalcase_01";
