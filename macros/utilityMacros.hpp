@@ -16,6 +16,13 @@
 #define INDEPENDENT_ID_STR #INDEPENDENT_ID
 #define CIVILIAN_ID_STR #CIVILIAN_ID
 
+#define TAG_REGISTRY baf_registry_tags
+#define TAG_REGISTRY_STR #TAG_REGISTRY
+#define UNIT_LOADOUT_STR "baf_unit_loadout"
+#define UNIT_FACTION_ID "baf_unit_faction_id"
+#define UNIT_LOADOUT_SUFFIX "baf_unit_loadout_suffix"
+#define UNIT_CLASS_SUFFIX "baf_unit_class_suffix"
+
 // FUNCTIONS
 
 #define CONCAT(VALUE1,VALUE2) VALUE1##VALUE2

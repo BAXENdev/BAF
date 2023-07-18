@@ -18,8 +18,8 @@ class BAF {
     class LoadoutSystem {
         file = "frameworkConfig\loadoutSystem";
         class assignLoadout {};
-        class openLoadoutPickerDialog {};
-        class openFactionIDPickerDialog {};
+        class openLoadoutDialog {};
+        class openFactionIDDialog {};
         // class assignClass {};
         // class createCrate {};
     };
@@ -34,7 +34,7 @@ class BAF {
 
     class Misc {
         file = "frameworkConfig\misc";
-        class unitSideToFactionID {};
+        class getUnitFactionID {};
     };
 };
 

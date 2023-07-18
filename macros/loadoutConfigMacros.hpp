@@ -3,7 +3,6 @@
 
 #define EMPTY_LOADOUT [[[],[],[],[],[],[],"","",[],["","","","","",""]],[]]
 #define DEFAULT_LOADOUT_NAME "default" // TODO: Setup default loadout
-#define TAG_REGISTRY baf_registry_tags
 // #define FACTION_ID blufor // defined in loadout config files
 
 // Loadout Registry: [[Loadout Variable Name,Dispaly Name],...]

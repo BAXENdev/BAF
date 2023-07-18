@@ -34,7 +34,7 @@ if !(_unit isKindOf "CAManBase") exitWith { DEBUG_RPT("attempted to assign loado
 if !(_factionID in (missionNamespace getVariable ["baf_registry_tags", []])) then { DEBUG_RPT("(loadout) Given FactionID is not available."); };
 
 if (_factionID isEqualTo "") then {
-	_factionID = [_unit] call BAF_fnc_unitSideToFactionID;
+	_factionID = [_unit] call BAF_fnc_getUnitFactionID;
 };
 
 if (_factionID isEqualTo "") exitWith {
@@ -67,5 +67,5 @@ _unit setUnitTrait ["Engineer",_engineerTrait > 0];
 // TODO: Uav Hacker?
 
 // TODO: Assign Loadout as Variable to unit?
-SETVARG(_unit,"baf_faction_id",_factionID);
-SETVARG(_unit,"baf_loadout_suffix",_loadoutSuffix);
+SETVARG(_unit,UNIT_FACTION_ID,_factionID);
+SETVARG(_unit,UNIT_LOADOUT_SUFFIX,_loadoutSuffix);

@@ -6,7 +6,7 @@ params ["_unit",["_factionID","",[""]]];
 if !(_unit isKindOf "CAManBase") exitWith { DEBUG_RPT_FULL("Attempted to assign loadout to a non-unit"); };
 
 if (_factionID isEqualTo "") then {
-	_factionID = [_unit] call BAF_fnc_unitSideToFactionID;
+	_factionID = [_unit] call BAF_fnc_getUnitFactionID;
 };
 if (_factionID isEqualTo "") exitWith { DEBUG_RPT_FULL("FactionID could not be found from unit side."); };
 
