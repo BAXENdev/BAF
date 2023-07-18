@@ -12,7 +12,7 @@ if (_factionID isEqualTo "") exitWith { DEBUG_RPT_FULL("FactionID could not be f
 
 _loadoutRegistry = GET_LOADOUT_REGISTRY(_factionID);
 if (_loadoutRegistry isEqualTo 0) exitWith {
-	_rptMsg = format ['FactionID:"%1" doesnt exist.', _factionID];
+	_rptMsg = format ['FactionID:"%1" doesnt exist.', param [1]];
 	DEBUG_RPT_FULL(_rptMsg);
 };
 
@@ -33,11 +33,11 @@ _listBox = [
 _onConfirm = {
 	params ["_dialogArgs", "_functionArgs"];
 	_dialogArgs params ["_loadoutVariable"];
-	_functionArgs params ["_unit", "_sideName"];
+	_functionArgs params ["_unit", "_factionID"];
 
 	DEBUG_RPT("(dialog) Assigning loadout");
 
-	[_unit,_loadoutVariable,_sideName] call BAF_fnc_assignLoadout;
+	[_unit,_loadoutVariable,_factionID] call BAF_fnc_assignLoadout;
 };
 
 [
@@ -45,5 +45,5 @@ _onConfirm = {
 	[_listBox], // Content Forms
 	_onConfirm,
 	{},
-	[_unit, _sideName]
+	[_unit, _factionID]
 ] call zen_dialog_fnc_create;
