@@ -1,5 +1,7 @@
 
-params ["_unit", ["_loadoutSuffix", ""], ["_factionID", ""]];
+#include "..\..\..\macros\utilityMacros.hpp"
+
+params ["_unit",["_loadoutSuffix","",[""]],["_factionID", "",[""]]];
 
 // Runtime Conditions
 // TODO: Is a false positive on mission load possible?
@@ -10,3 +12,10 @@ params ["_unit", ["_loadoutSuffix", ""], ["_factionID", ""]];
 // TODO: Does it execute JIP?
 
 
+if !(isServer) exitWith {};
+if !(canSuspend) exitWith { _this spawn BAF_INIT_fnc_setupLoadout; };
+waitUntil { baf_init_done >= 1; };
+
+DEBUG_RPT("(loadout) Setting up loadout on " + (name _unit));
+
+[_unit,_loadoutSuffix,_factionID] call BAF_fnc_assignLoadout;

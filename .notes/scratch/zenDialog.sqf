@@ -23,7 +23,7 @@ _color = [
 	// 1) Display Name and Tooltip
 	"Title", // or  ["Title", "Tooltip"],
 
-	// 2) Control Specific Arguments - Color Array
+	// 2) Control Specific Arguments - Default  Color Array
 	[1, 1, 1], // Or [1, 1, 1, 1],
 
 	// 3) Force Default, default: false

@@ -24,6 +24,8 @@
 
 params ["_unit",["_loadoutSuffix","",[""]],["_factionID","",[""]]];
 
+DEBUG_RPT("(loadout) Assign loadout to " + (name _unit));
+
 // Runtime Conditions
 // TODO: Should this run in scheduled space to prevent stutters?
 
@@ -35,10 +37,16 @@ if (_factionID isEqualTo "") then {
 	_factionID = [_unit] call BAF_fnc_unitSideToFactionID;
 };
 
-if (_factionID isEqualTo "") exitWith { DEBUG_RPT(format ["(loadout) Failed to assign unit with %1 loadout because there is not an available faction.", _loadoutSuffix]); };
+if (_factionID isEqualTo "") exitWith {
+	_rptMsg = format ["(loadout) Failed to assign unit with %1 loadout because there is not an available faction.", _loadoutSuffix]; 
+	DEBUG_RPT(_rptMsg);
+};
 
 _loadoutBaf = GET_LOADOUT_BAF(_factionID,_loadoutSuffix);
-if !(_loadoutBaf isEqualType []) exitWith { DEBUG_RPT(format ["(loadout) %1 is not initialized",GET_LOADOUT_VARIABLE(_factionId,_loadoutSuffix)]); };
+if !(_loadoutBaf isEqualType []) exitWith { 
+	_rptMsg = format ["(loadout) %1 is not initialized",GET_LOADOUT_VARIABLE(_factionId,_loadoutSuffix)];
+	DEBUG_RPT(_rptMsg);
+};
 
 _loadoutArray = GET_LOADOUT_ARRAY(_loadoutBaf);
 

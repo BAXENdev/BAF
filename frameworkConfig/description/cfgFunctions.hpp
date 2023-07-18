@@ -18,6 +18,7 @@ class BAF {
     class LoadoutSystem {
         file = "frameworkConfig\loadoutSystem";
         class assignLoadout {};
+        class loadoutPickerDialog {};
         // class assignClass {};
         // class createCrate {};
     };

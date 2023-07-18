@@ -17,4 +17,4 @@ if (_classSuffix isEqualType "") exitWith {
 	// [] call BAF_fnc_assignRadios; // TODO: Add radio setup
 };
 
-DEBUG_RPT(format ["(setup) Failed to perform setup because no suffixes was passed."]);
+DEBUG_RPT("(setup) Failed to perform setup because no suffixes was passed.");

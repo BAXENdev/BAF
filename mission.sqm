@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={8197.4912,80.443382,5943.4243};
-		dir[]={0.39776471,-0.54440147,0.73851901};
-		up[]={0.25815126,0.83882481,0.4793025};
-		aside[]={0.88042104,0,-0.47419286};
+		pos[]={8221.7783,65.546013,6073.8276};
+		dir[]={-0.37538722,-0.46924064,-0.79931074};
+		up[]={-0.19947101,0.88307029,-0.42473292};
+		aside[]={-0.90514952,-1.4901161e-008,0.4250932};
 	};
 };
 binarizationWanted=0;
@@ -110,7 +110,7 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-						init="[_this,""rif""] call BAF_fnc_setupUnit;";
+						init="[this,""rif""] call BAF_INIT_fnc_setupLoadout;";
 						name="zeus";
 						isPlayer=1;
 					};
