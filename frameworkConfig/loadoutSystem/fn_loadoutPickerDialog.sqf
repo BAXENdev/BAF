@@ -26,7 +26,7 @@ _listBox = [
 		_loadoutVariables,
 		_loadoutNames,
 		0,
-		5
+		10
 	]
 ];
 
@@ -41,7 +41,7 @@ _onConfirm = {
 };
 
 [
-	"Pick Loadout",
+	format ["Pick Loadout [%1]", _factionID],
 	[_listBox], // Content Forms
 	_onConfirm,
 	{},

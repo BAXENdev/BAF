@@ -12,14 +12,14 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=11;
+		nextID=12;
 	};
 	class Camera
 	{
-		pos[]={8125.1665,86.421967,6036.4219};
-		dir[]={0.89251083,-0.40105617,-0.20637377};
-		up[]={0.39074749,0.91605389,-0.09035179};
-		aside[]={-0.22528595,1.1251541e-007,-0.97430003};
+		pos[]={8307.751,84.805412,6064.4629};
+		dir[]={0.36276901,-0.17626779,0.91505778};
+		up[]={0.064961709,0.98434162,0.16386095};
+		aside[]={0.92961317,3.5302946e-008,-0.36853918};
 	};
 };
 binarizationWanted=0;
@@ -28,13 +28,14 @@ addons[]=
 {
 	"A3_Characters_F",
 	"A3_Characters_F_Mark",
-	"A3_Modules_F_Curator_Curator"
+	"A3_Modules_F_Curator_Curator",
+	"CUP_Editor_Structures_Config"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=3;
+		items=4;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -55,6 +56,11 @@ class AddonsMetaData
 			name="Arma 3 Zeus Update - Scripted Modules";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
+		};
+		class Item3
+		{
+			className="CUP_Editor_Structures_Config";
+			name="CUP_Editor_Structures_Config";
 		};
 	};
 };
@@ -91,7 +97,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=2;
+		items=3;
 		class Item0
 		{
 			dataType="Group";
@@ -104,7 +110,7 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8203.9033,10.070646,5975.124};
+						position[]={8256.6377,11.26117,5974.9878};
 					};
 					side="West";
 					flags=7;
@@ -219,6 +225,23 @@ class Mission
 				};
 				nAttributes=4;
 			};
+		};
+		class Item2
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8254.7412,11.167328,5976.542};
+				angles[]={0.064716808,0,6.2783856};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="this addAction " \n "[ ""title"", { " \n "  params [""_target"", ""_caller"", ""_actionId"", ""_arguments""];  [_caller] call BAF_fnc_loadoutPickerDialog; " \n " }, " \n " nil," \n " 1.5, " \n " true," \n " true, " \n " """",   " \n " ""true"",  " \n " 50,    " \n " false, " \n " """",    " \n " """"    " \n "];";
+			};
+			id=11;
+			type="CUP_metalcase_01";
 		};
 	};
 };

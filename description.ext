@@ -19,15 +19,15 @@ class CfgFunctions {
 //     #include "frameworkConfig\description\cfgSounds.hpp"
 // };
 
-// class cfgNotifications {
-//     #include "frameworkConfig\description\cfgNotifications.hpp"
-// };
+class cfgNotifications {
+    #include "frameworkConfig\description\cfgNotifications.hpp"
+};
 
 // class CfgDebriefing {
 //     #include "frameworkConfig\description\cfgDebriefing.hpp"
 // };
 
-// // respawnDelay must be defined with a negative value for templates to override
+// // respawnDelay must be defined with a negative value for templates to override it
 // respawnDelay = -1;
 // class CfgRespawnTemplates {
 //     #include "frameworkConfig\description\respawnTemplates.hpp"

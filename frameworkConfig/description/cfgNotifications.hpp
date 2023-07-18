@@ -7,8 +7,18 @@
 //     iconText = ""; // Short text displayed over the icon. Colored by "color", filled by arguments.
 //     description = ""; // Brief description displayed as structured text. Colored by "color", filled by arguments.
 //     color[] = {1,1,1,1}; // Icon and text color
-
 //     duration = 5; // How many seconds will the notification be displayed
 //     priority = 0; // Priority; higher number = more important; tasks in queue are selected by priority
 //     difficulty[] = {}; // Required difficulty settings. All listed difficulties has to be enabled
 // };                                                                                                                                                                   
+
+class BafWarning
+{
+    title = "Warning";
+    iconPicture = "\a3\Ui_f\data\Map\Markers\Military\warning_ca.paa";
+    description = "%1";
+    color[] = {"(profilenamespace getvariable ['IGUI_WARNING_RGB_R',0.8])","(profilenamespace getvariable ['IGUI_WARNING_RGB_G',0.5])","(profilenamespace getvariable ['IGUI_WARNING_RGB_B',0.0])",1};
+    duration = 5;
+    sound = "defaultNotification";
+    soundClose = "defaultNotificationClose";
+};

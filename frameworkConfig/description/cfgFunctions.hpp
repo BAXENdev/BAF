@@ -41,13 +41,14 @@ class BAF_INIT {
     class StartUp {
         file = "frameworkConfig\startUp\init";
         class initLoadout {};
+        class initZen {};
         // class radioInit {};
         // class acreInit {};
         // class tfarInit {};
         class initBegin { preInit = 1; };
     };
 
-    class SetupLoadoutSystem {
+    class LoadoutSystemSetup {
         file = "frameworkConfig\loadoutSystem\setup";
         class addItemsToArsenal {};
         class addPrimaryToCrate {};
@@ -60,6 +61,11 @@ class BAF_INIT {
         class setupClass {};
         class setupCrate {};
         class setupLoadout {};
+    };
+
+    class LoadoutSystemZen {
+        file = "frameworkConfig\loadoutSystem\zen";
+        class zenAssignLoadout {};
     };
 };
 
