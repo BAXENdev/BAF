@@ -12,7 +12,9 @@ Other Documentation
 https://forums.bohemia.net/forums/topic/136275-check-if-a-modaddon-is-enabled/
 _acre = isClass(configFile >> "cfgPatches" >> "acre_main"); Test for addon existance
 https://community.bistudio.com/wiki/BIS_fnc_itemType
+https://community.bistudio.com/wiki/Category:Command_Group:_Containers
 https://community.bistudio.com/wiki/Arma_3:_CfgMarkers
+https://community.bistudio.com/wiki/BIS_fnc_showCuratorFeedbackMessage
 
 Military Symbols
 https://www.symbol.army/doc/en/functions/download-milsymbol/

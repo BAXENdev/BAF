@@ -5,21 +5,21 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=1;
+	toggles=9;
 	mods[]=
 	{
 		"3denEnhanced"
 	};
 	class ItemIDProvider
 	{
-		nextID=12;
+		nextID=14;
 	};
 	class Camera
 	{
-		pos[]={8255.9521,40.852154,5950.4126};
-		dir[]={-0.32906821,-0.57759714,0.74705803};
-		up[]={-0.23283565,0.81632191,0.52858871};
-		aside[]={0.91515118,0,0.4031108};
+		pos[]={8270.2363,23.56712,5986.5537};
+		dir[]={-0.77057606,-0.60933864,0.18687844};
+		up[]={-0.59217423,0.79290837,0.14361286};
+		aside[]={0.23568678,4.8428774e-008,0.97183061};
 	};
 };
 binarizationWanted=0;
@@ -28,14 +28,33 @@ addons[]=
 {
 	"A3_Characters_F",
 	"A3_Characters_F_Mark",
+	"A3_Weapons_F_Mark_Machineguns_MMG_02",
+	"A3_Weapons_F_Acc",
+	"ace_realisticnames",
+	"ace_scopes",
+	"ace_laserpointer",
+	"A3_Weapons_F_Mark_Acc",
+	"A3_Weapons_F_Mark",
+	"ace_reload",
+	"ace_ballistics",
+	"A3_Weapons_F_Pistols_P07",
+	"A3_Weapons_F",
+	"ace_smallarms",
+	"ace_nightvision",
+	"ace_attach",
+	"ace_chemlights",
+	"A3_Weapons_F_Items",
+	"ace_medical_engine",
+	"ace_medical_treatment",
 	"A3_Modules_F_Curator_Curator",
-	"CUP_Editor_Structures_Config"
+	"CUP_Editor_Structures_Config",
+	"A3_Weapons_F_Ammoboxes"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=4;
+		items=16;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -52,12 +71,96 @@ class AddonsMetaData
 		};
 		class Item2
 		{
+			className="A3_Weapons_F_Mark";
+			name="Arma 3 Marksmen - Weapons and Accessories";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item3
+		{
+			className="A3_Weapons_F";
+			name="Arma 3 Alpha - Weapons and Accessories";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item4
+		{
+			className="ace_scopes";
+			name="ACE3 - Scopes";
+			author="ACE-Team";
+			url="https://ace3.acemod.org/";
+		};
+		class Item5
+		{
+			className="ace_laserpointer";
+			name="ACE3 - Laser Pointer";
+			author="ACE-Team";
+			url="https://ace3.acemod.org/";
+		};
+		class Item6
+		{
+			className="ace_reload";
+			name="ACE3 - Reload";
+			author="ACE-Team";
+			url="https://ace3.acemod.org/";
+		};
+		class Item7
+		{
+			className="ace_ballistics";
+			name="ACE3 - Ballistics";
+			author="ACE-Team";
+			url="https://ace3.acemod.org/";
+		};
+		class Item8
+		{
+			className="ace_smallarms";
+			name="ACE3 - Small Arms";
+			author="ACE-Team";
+			url="https://ace3.acemod.org/";
+		};
+		class Item9
+		{
+			className="ace_nightvision";
+			name="ACE3 - Night Vision";
+			author="ACE-Team";
+			url="https://ace3.acemod.org/";
+		};
+		class Item10
+		{
+			className="ace_attach";
+			name="ACE3 - Attach";
+			author="ACE-Team";
+			url="https://ace3.acemod.org/";
+		};
+		class Item11
+		{
+			className="ace_chemlights";
+			name="ace_chemlights";
+			author="ACE-Team";
+			url="https://ace3.acemod.org/";
+		};
+		class Item12
+		{
+			className="ace_medical_engine";
+			name="ACE3 - Medical Engine";
+			author="ACE-Team";
+			url="https://ace3.acemod.org/";
+		};
+		class Item13
+		{
+			className="ace_medical_treatment";
+			name="ACE3 - Medical Treatment";
+			author="ACE-Team";
+			url="https://ace3.acemod.org/";
+		};
+		class Item14
+		{
 			className="A3_Modules_F_Curator";
 			name="Arma 3 Zeus Update - Scripted Modules";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item3
+		class Item15
 		{
 			className="CUP_Editor_Structures_Config";
 			name="CUP_Editor_Structures_Config";
@@ -97,7 +200,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=3;
+		items=4;
 		class Item0
 		{
 			dataType="Group";
@@ -119,6 +222,99 @@ class Mission
 						init="[this,""rif""] call BAF_INIT_fnc_setupLoadout;";
 						name="zeus";
 						isPlayer=1;
+						class Inventory
+						{
+							class primaryWeapon
+							{
+								name="MMG_02_sand_RCO_LP_F";
+								optics="optic_Hamr";
+								flashlight="acc_pointer_IR";
+								underBarrel="bipod_01_F_snd";
+								firemode="MMG_02_sand_RCO_LP_F:manual";
+								class primaryMuzzleMag
+								{
+									name="130Rnd_338_Mag";
+									ammoLeft=130;
+								};
+							};
+							class handgun
+							{
+								name="hgun_P07_F";
+								class primaryMuzzleMag
+								{
+									name="16Rnd_9x21_Mag";
+									ammoLeft=17;
+								};
+							};
+							class uniform
+							{
+								typeName="U_B_CombatUniform_mcam";
+								isBackpack=0;
+								class MagazineCargo
+								{
+									items=4;
+									class Item0
+									{
+										name="16Rnd_9x21_Mag";
+										count=2;
+										ammoLeft=17;
+									};
+									class Item1
+									{
+										name="SmokeShell";
+										count=1;
+										ammoLeft=1;
+									};
+									class Item2
+									{
+										name="SmokeShellGreen";
+										count=1;
+										ammoLeft=1;
+									};
+									class Item3
+									{
+										name="Chemlight_green";
+										count=2;
+										ammoLeft=1;
+									};
+								};
+								class ItemCargo
+								{
+									items=1;
+									class Item0
+									{
+										name="FirstAidKit";
+										count=1;
+									};
+								};
+							};
+							class vest
+							{
+								typeName="V_PlateCarrier1_rgr";
+								isBackpack=0;
+								class MagazineCargo
+								{
+									items=1;
+									class Item0
+									{
+										name="130Rnd_338_Mag";
+										count=2;
+										ammoLeft=130;
+									};
+								};
+							};
+							class backpack
+							{
+								typeName="B_AssaultPack_blk";
+								isBackpack=1;
+							};
+							map="ItemMap";
+							compass="ItemCompass";
+							watch="ItemWatch";
+							radio="ItemRadio";
+							hmd="NVGoggles";
+							headgear="H_HelmetB";
+						};
 					};
 					id=1;
 					type="B_HeavyGunner_F";
@@ -232,16 +428,67 @@ class Mission
 			class PositionInfo
 			{
 				position[]={8254.7412,11.167328,5976.542};
+				angles[]={0.064716808,4.8393092,6.2783856};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="this addAction " \n "[ ""Pick Loadout"", { " \n "  params [""_target"", ""_caller"", ""_actionId"", ""_arguments""];  [_caller] call BAF_fnc_openLoadoutDialog; " \n " }, " \n " nil," \n " 1.5, " \n " true," \n " true, " \n " """",   " \n " ""true"",  " \n " 50,    " \n " false, " \n " """",    " \n " """"    " \n "];";
+			};
+			id=11;
+			type="CUP_metalcase_01";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="allowDamage";
+					expression="_this allowdamage _value;";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=0;
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item3
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8255.0918,11.972804,5977.8867};
 				angles[]={0.064716808,0,6.2783856};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
-				init="this addAction " \n "[ ""title"", { " \n "  params [""_target"", ""_caller"", ""_actionId"", ""_arguments""];  [_caller] call BAF_fnc_openLoadoutDialog; " \n " }, " \n " nil," \n " 1.5, " \n " true," \n " true, " \n " """",   " \n " ""true"",  " \n " 50,    " \n " false, " \n " """",    " \n " """"    " \n "];";
+				init="[this,""supply"",""blufor""] call BAF_INIT_fnc_setupCrate;";
 			};
-			id=11;
-			type="CUP_metalcase_01";
+			id=13;
+			type="I_supplyCrate_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="[[[[""launch_NLAW_F"",""arifle_Mk20_F"",""LMG_Mk200_F"",""FirstAidKit""],[1,2,1,10]],[[""9Rnd_45ACP_Mag"",""30Rnd_9x21_Mag"",""20Rnd_762x51_Mag"",""30Rnd_556x45_Stanag"",""200Rnd_65x39_cased_Box"",""1Rnd_HE_Grenade_shell"",""1Rnd_Smoke_Grenade_shell"",""1Rnd_SmokeGreen_Grenade_shell"",""Chemlight_green"",""NLAW_F"",""Laserbatteries"",""HandGrenade"",""MiniGrenade"",""SmokeShell"",""SmokeShellGreen"",""UGL_FlareYellow_F"",""UGL_FlareGreen_F"",""ACE_SpareBarrel"",""ACE_30Rnd_556x45_Stanag_M995_AP_mag"",""ACE_30Rnd_556x45_Stanag_Mk262_mag"",""ACE_30Rnd_556x45_Stanag_Mk318_mag""],[6,6,6,24,3,6,2,2,6,3,2,6,6,2,2,2,2,2,4,4,4]],[[""Laserdesignator_03"",""acc_flashlight"",""bipod_03_F_blk"",""ACE_Chemlight_Shield"",""ACE_EarPlugs""],[1,2,1,12,12]],[[""B_FieldPack_oli""],[2]]],false]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
 		};
 	};
 };

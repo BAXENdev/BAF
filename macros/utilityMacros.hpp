@@ -45,7 +45,8 @@
 
 // #define TRYCATCH(ARGS,TRY_CODE,EXCEPT_CODE) ARGS try TRY_CODE catch EXCEPT_CODE
 
-#define DEBUG_RPT(MSG) diag_log format ["[BAF]: %1",MSG]
-#define DEBUG_RPT_FULL(MSG) diag_log format ["[BAF]: (%1:%2) %3",__FILE__,__LINE__,MSG]
+#define DEBUG_RPT_FULL(MSG) diag_log format ["[BAF]: (%1:%2:%4) %3",__FILE__,__LINE__,MSG,isServer]; false
+#define DEBUG_RPT(MSG) diag_log format ["[BAF]: %1",MSG]; false
+// #define DEBUG_RPT(MSG) DEBUG_RPT_FULL(MSG)
 
 #endif

@@ -30,6 +30,10 @@ CREATE_LOADOUT(co,"Commander",_loadout);
 
 COPY_LOADOUT(xo,"2IC",co);
 
+CREATE_CRATE(supply,"STANDARD SUPPLY");
+CR_ADD_PRIMARY(supply,xo,2);
+// CR_ADD_PRIMARY_MAGS(supply,xo,20);
+
 CREATE_CLASS(co,"Command",co);
 CL_ADD_LOADOUT(co,xo);
 CL_ADD_LOADOUT(co,jtac);

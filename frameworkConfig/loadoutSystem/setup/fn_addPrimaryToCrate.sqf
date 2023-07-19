@@ -1,15 +1,29 @@
 
 #include "..\..\..\macros\loadoutAccessMacros.hpp"
 
-params ["_crateArray", "_loadoutArray", "_count"];
+params ["_crateSuffix","_loadoutSuffix","_count","_factionID"];
 
-if !(_crateArray isEqualType []) exitWith { /* TODO: Debug RPT */ };
-if !(_loadoutArray isEqualType []) exitWith { /* TODO: Debug RPT */ };
+_crateArray = GET_CRATE(_factionID,_crateSuffix);
+if !(_crateArray isEqualType []) exitWith {
+	_rptMsg = format ["(loadout setup) %1 is not initialized in addPrimaryToCrate.",GET_CRATE_VARIABLE(_factionID,_crateSuffix)];
+	DEBUG_RPT(_rptMsg);
+};
 
+_loadoutBaf = GET_LOADOUT_BAF(_factionID,_loadoutSuffix);
+if !(_loadoutBaf isEqualtype []) exitWith {
+	_rptMsg = format ["(loadout setup) %1 is not initialized in addPrimaryToCrate",GET_LOADOUT_VARIABLE(_factionID,_crateSuffix)];
+	DEBUG_RPT(_rptMsg);
+};
+
+_loadoutArray = GET_LOADOUT_ARRAY(_loadoutBaf);
 _primaryWeaponArray = GET_PRIMARY(_loadoutArray);
-if !(_primaryWeaponArray isEqualType []) exitWith { /* TODO: Debug RPT */ };
+if (_primaryWeaponArray isEqualTo []) exitWith {
+	DEBUG_RPT("TEST1");
+};
 _primaryName = GET_WEAPON_NAME(_primaryWeaponArray);
-if !(_primaryName isEqualType "") exitWith { /* TODO: Debug RPT */ };
+if (_primaryName isEqualTo "") exitWith {
+	DEBUG_RPT("TEST2");
+};
 
 // TODO: Check Item Type
 // TODO: Check Item Existance

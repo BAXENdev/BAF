@@ -11,7 +11,7 @@ if (_factionID isEqualTo "") then {
 if (_factionID isEqualTo "") exitWith { DEBUG_RPT_FULL("FactionID could not be found from unit side."); };
 
 _loadoutRegistry = GET_LOADOUT_REGISTRY(_factionID);
-if (_loadoutRegistry isEqualTo 0) exitWith {
+if !(_loadoutRegistry isEqualType []) exitWith {
 	_rptMsg = format ['FactionID:"%1" doesnt exist.', param [1]];
 	DEBUG_RPT_FULL(_rptMsg);
 };

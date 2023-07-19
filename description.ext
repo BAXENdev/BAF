@@ -19,7 +19,7 @@ class CfgFunctions {
 //     #include "frameworkConfig\description\cfgSounds.hpp"
 // };
 
-class cfgNotifications {
+class CfgNotifications {
     #include "frameworkConfig\description\cfgNotifications.hpp"
 };
 

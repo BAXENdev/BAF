@@ -31,7 +31,7 @@ DEBUG_RPT("(loadout) Assign loadout to " + (name _unit));
 
 // TODO: Should this assume that all variables passed to you are valid?
 if !(_unit isKindOf "CAManBase") exitWith { DEBUG_RPT("attempted to assign loadout to non-man object"); };
-if !(_factionID in (missionNamespace getVariable ["baf_registry_tags", []])) then { DEBUG_RPT("(loadout) Given FactionID is not available."); };
+if !(_factionID in GET_REGISTRY_TAGS()) then { DEBUG_RPT("(loadout) Given FactionID is not available."); };
 
 if (_factionID isEqualTo "") then {
 	_factionID = [_unit] call BAF_fnc_getUnitFactionID;

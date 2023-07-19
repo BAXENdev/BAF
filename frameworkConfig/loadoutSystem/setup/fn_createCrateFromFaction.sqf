@@ -1,9 +1,9 @@
 
 #include "..\..\..\macros\loadoutAccessMacros.hpp"
 
-params ["_crateArray", "_loadoutRegistry", "_multiplier"];
+params ["_crateArray", "_loadoutRegistry", ["_multiplier",1,[0]]];
 
-if (isNil _multiplier or _multiplier isEqualTo 0) exitWith { /* TODO: Debug RPT */ };
+if (_multiplier <= 0) exitWith { /* TODO: Debug RPT */ };
 
 _weaponMultiplier = ceil (0.5 * _multiplier);
 _magMultiplier = ceil (10 * _multiplier);
