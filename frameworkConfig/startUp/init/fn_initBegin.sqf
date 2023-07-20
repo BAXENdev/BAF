@@ -1,6 +1,4 @@
 
-diag_log "[BAF] Begin Initialization";
-
 [] call BAF_INIT_fnc_initLoadout;
 [] call BAF_INIT_fnc_initZen;
 

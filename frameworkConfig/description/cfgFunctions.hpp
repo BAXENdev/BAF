@@ -19,35 +19,12 @@ class BAF {
         file = "frameworkConfig\loadoutSystem";
         class assignCrate {};
         class assignLoadout {};
-        class openLoadoutDialog {};
-        class openFactionIDDialog {};
+        class openSelectLoadoutDialog {};
+        class createCrateFactionIdDialog {};
+        class createCrateSelectionDialog {};
+        // class openFactionIdDialog {};
         // class assignClass {};
         // class createCrate {};
-    };
-
-    class LoadoutSystem_zen {
-        file = "frameworkConfig\loadoutSystem\zen";
-    };
-
-    class RadioSystem {
-        file = "frameworkConfig\radioSystem";
-    };
-
-    class Misc {
-        file = "frameworkConfig\misc";
-        class getUnitFactionID {};
-    };
-};
-
-class BAF_INIT {
-    class StartUp {
-        file = "frameworkConfig\startUp\init";
-        class initLoadout {};
-        class initZen {};
-        // class radioInit {};
-        // class acreInit {};
-        // class tfarInit {};
-        class initBegin { preInit = 1; };
     };
 
     class LoadoutSystemSetup {
@@ -65,9 +42,32 @@ class BAF_INIT {
         class setupLoadout {};
     };
 
+    class RadioSystem {
+        file = "frameworkConfig\radioSystem";
+    };
+
+    class Misc {
+        file = "frameworkConfig\misc";
+        class getUnitFactionId {};
+        class objectHasInventory {};
+    };
+};
+
+class BAF_INIT {
+    class StartUp {
+        file = "frameworkConfig\startUp\init";
+        class initLoadout {};
+        class initZen {};
+        // class radioInit {};
+        // class acreInit {};
+        // class tfarInit {};
+        class initBegin { preInit = 1; };
+    };
+
     class LoadoutSystemZen {
         file = "frameworkConfig\loadoutSystem\zen";
         class zenAssignLoadout {};
+        class zenAssignCrate {};
     };
 };
 

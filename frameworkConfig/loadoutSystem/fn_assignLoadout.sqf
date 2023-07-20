@@ -8,7 +8,7 @@
  * Arguments:
  * 0: _unit
  * 1: _loadoutSuffix
- * 2: _factionID
+ * 2: _factionId
  * 
  * Return Value:
  * -
@@ -22,7 +22,7 @@
 
 #include "..\..\macros\loadoutAccessMacros.hpp"
 
-params ["_unit",["_loadoutSuffix","",[""]],["_factionID","",[""]]];
+params ["_unit",["_loadoutSuffix","",[""]],["_factionId","",[""]]];
 
 DEBUG_RPT("(loadout) Assign loadout to " + (name _unit));
 
@@ -31,20 +31,20 @@ DEBUG_RPT("(loadout) Assign loadout to " + (name _unit));
 
 // TODO: Should this assume that all variables passed to you are valid?
 if !(_unit isKindOf "CAManBase") exitWith { DEBUG_RPT("attempted to assign loadout to non-man object"); };
-if !(_factionID in GET_REGISTRY_TAGS()) then { DEBUG_RPT("(loadout) Given FactionID is not available."); };
+if !(_factionId in GET_REGISTRY_TAGS()) then { DEBUG_RPT("(loadout) FactionId passed to assignLoadout is not available in the registry."); };
 
-if (_factionID isEqualTo "") then {
-	_factionID = [_unit] call BAF_fnc_getUnitFactionID;
+if (_factionId isEqualTo "") then {
+	_factionId = [_unit] call BAF_fnc_getUnitFactionId;
 };
 
-if (_factionID isEqualTo "") exitWith {
+if (_factionId isEqualTo "") exitWith {
 	_rptMsg = format ["(loadout) Failed to assign unit with %1 loadout because there is not an available faction.", _loadoutSuffix]; 
 	DEBUG_RPT(_rptMsg);
 };
 
-_loadoutBaf = GET_LOADOUT_BAF(_factionID,_loadoutSuffix);
+_loadoutBaf = GET_LOADOUT_BAF(_loadoutSuffix,_factionId);
 if !(_loadoutBaf isEqualType []) exitWith { 
-	_rptMsg = format ["(loadout) %1 is not initialized",GET_LOADOUT_VARIABLE(_factionId,_loadoutSuffix)];
+	_rptMsg = format ["(loadout) %1 is not initialized",GET_LOADOUT_VARIABLE(_loadoutSuffix,_factionId)];
 	DEBUG_RPT(_rptMsg);
 };
 
@@ -67,5 +67,5 @@ _unit setUnitTrait ["Engineer",_engineerTrait > 0];
 // TODO: Uav Hacker?
 
 // TODO: Assign Loadout as Variable to unit?
-SETVARG(_unit,UNIT_FACTION_ID,_factionID);
+SETVARG(_unit,UNIT_FACTION_ID,_factionId);
 SETVARG(_unit,UNIT_LOADOUT_SUFFIX,_loadoutSuffix);

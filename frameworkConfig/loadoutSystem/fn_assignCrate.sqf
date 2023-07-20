@@ -1,22 +1,18 @@
 
 #include "..\..\macros\loadoutAccessMacros.hpp"
 
-params ["_crateObject",["_crateSuffix","",[""]],["_factionID","",[""]]];
+params ["_crateObject",["_crateSuffix","",[""]],["_factionId","",[""]]];
 
-_crateClassName = typeOf _crateObject;
-_tb = getNumber (configFile >> "CfgVehicles" >> _crateClassName >> "transportmaxbackpacks");
-_tm = getNumber (configFile >> "CfgVehicles" >> _crateClassName >> "transportmaxmagazines");
-_tw = getNumber (configFile >> "CfgVehicles" >> _crateClassName >> "transportmaxweapons");
-_isCrate = _tb > 0 || _tm > 0 || _tw > 0;
+_isCrate = [_crateObject] call BAF_fnc_objectHasInventory;
 
-if !isCrate exitWith { DEBUG_RPT("(loadout) Passed an object without an inventory to assignCrate."); };
+if !(_isCrate) exitWith { DEBUG_RPT("(loadout) Passed an object without an inventory to assignCrate."); };
 
-if (_factionID isEqualTo "") exitWith { DEBUG_RPT("(loadout) Empty faction id passed to assignCrate."); };
+if (_factionId isEqualTo "") exitWith { DEBUG_RPT("(loadout) Empty faction id passed to assignCrate."); };
 
 if (_crateSuffix isEqualTo "") exitWith { DEBUG_RPT("(loadout) Empty crate suffix passed to assignCrate."); };
-_crateArray = GET_CRATE(_factionID,_crateSuffix);
+_crateArray = GET_CRATE(_crateSuffix,_factionId);
 if !(_crateArray isEqualType []) exitWith {
-	_rptMsg = format ["(loadout) Crate variable [%1] is not initialized.",GET_CRATE_VARIABLE(_factionID,_crateSuffix)];
+	_rptMsg = format ["(loadout) Crate variable [%1] is not initialized.",GET_CRATE_VARIABLE(_crateSuffix,_factionId)];
 	DEBUG_RPT(_rptMsg);
 };
 

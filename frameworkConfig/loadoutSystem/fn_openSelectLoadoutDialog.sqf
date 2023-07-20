@@ -1,18 +1,18 @@
 
 #include "..\..\macros\loadoutAccessMacros.hpp"
 
-params ["_unit",["_factionID","",[""]]];
+params ["_unit",["_factionId","",[""]]];
 
 if !(_unit isKindOf "CAManBase") exitWith { DEBUG_RPT_FULL("Attempted to assign loadout to a non-unit"); };
 
-if (_factionID isEqualTo "") then {
-	_factionID = [_unit] call BAF_fnc_getUnitFactionID;
+if (_factionId isEqualTo "") then {
+	_factionId = [_unit] call BAF_fnc_getUnitFactionId;
 };
-if (_factionID isEqualTo "") exitWith { DEBUG_RPT_FULL("FactionID could not be found from unit side."); };
+if (_factionId isEqualTo "") exitWith { DEBUG_RPT_FULL("FactionId could not be found from unit side."); };
 
-_loadoutRegistry = GET_LOADOUT_REGISTRY(_factionID);
+_loadoutRegistry = GET_LOADOUT_REGISTRY(_factionId);
 if !(_loadoutRegistry isEqualType []) exitWith {
-	_rptMsg = format ['FactionID:"%1" doesnt exist.', param [1]];
+	_rptMsg = format ['FactionId:"%1" doesnt exist.', param [1]];
 	DEBUG_RPT_FULL(_rptMsg);
 };
 
@@ -33,17 +33,17 @@ _listBox = [
 _onConfirm = {
 	params ["_dialogArgs", "_functionArgs"];
 	_dialogArgs params ["_loadoutVariable"];
-	_functionArgs params ["_unit", "_factionID"];
+	_functionArgs params ["_unit", "_factionId"];
 
 	DEBUG_RPT("(dialog) Assigning loadout");
 
-	[_unit,_loadoutVariable,_factionID] call BAF_fnc_assignLoadout;
+	[_unit,_loadoutVariable,_factionId] call BAF_fnc_assignLoadout;
 };
 
 [
-	format ["Pick Loadout [%1]", _factionID],
+	format ["Pick Loadout [%1]", _factionId],
 	[_listBox], // Content Forms
 	_onConfirm,
 	{},
-	[_unit, _factionID]
+	[_unit, _factionId]
 ] call zen_dialog_fnc_create;

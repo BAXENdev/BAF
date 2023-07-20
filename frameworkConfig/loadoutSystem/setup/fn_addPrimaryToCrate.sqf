@@ -1,17 +1,17 @@
 
 #include "..\..\..\macros\loadoutAccessMacros.hpp"
 
-params ["_crateSuffix","_loadoutSuffix","_count","_factionID"];
+params ["_crateSuffix","_loadoutSuffix","_count","_factionId"];
 
-_crateArray = GET_CRATE(_factionID,_crateSuffix);
+_crateArray = GET_CRATE(_crateSuffix,_factionId);
 if !(_crateArray isEqualType []) exitWith {
-	_rptMsg = format ["(loadout setup) %1 is not initialized in addPrimaryToCrate.",GET_CRATE_VARIABLE(_factionID,_crateSuffix)];
+	_rptMsg = format ["(loadout setup) %1 is not initialized in addPrimaryToCrate.",GET_CRATE_VARIABLE(_crateSuffix,_factionId)];
 	DEBUG_RPT(_rptMsg);
 };
 
-_loadoutBaf = GET_LOADOUT_BAF(_factionID,_loadoutSuffix);
+_loadoutBaf = GET_LOADOUT_BAF(_loadoutSuffix,_factionId);
 if !(_loadoutBaf isEqualtype []) exitWith {
-	_rptMsg = format ["(loadout setup) %1 is not initialized in addPrimaryToCrate",GET_LOADOUT_VARIABLE(_factionID,_crateSuffix)];
+	_rptMsg = format ["(loadout setup) %1 is not initialized in addPrimaryToCrate",GET_LOADOUT_VARIABLE(_crateSuffix,_factionId)];
 	DEBUG_RPT(_rptMsg);
 };
 

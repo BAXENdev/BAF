@@ -16,10 +16,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={8270.2363,23.56712,5986.5537};
-		dir[]={-0.77057606,-0.60933864,0.18687844};
-		up[]={-0.59217423,0.79290837,0.14361286};
-		aside[]={0.23568678,4.8428774e-008,0.97183061};
+		pos[]={8254.6689,13.358111,5969.9092};
+		dir[]={0.35149524,-0.48294514,0.80200696};
+		up[]={0.19385919,0.87565064,0.44232869};
+		aside[]={0.91589838,0,-0.4014104};
 	};
 };
 binarizationWanted=0;
@@ -219,7 +219,7 @@ class Mission
 					flags=7;
 					class Attributes
 					{
-						init="[this,""rif""] call BAF_INIT_fnc_setupLoadout;";
+						init="[this,""rif""] call BAF_fnc_setupLoadout;";
 						name="zeus";
 						isPlayer=1;
 						class Inventory
@@ -434,7 +434,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="this addAction " \n "[ ""Pick Loadout"", { " \n "  params [""_target"", ""_caller"", ""_actionId"", ""_arguments""];  [_caller] call BAF_fnc_openLoadoutDialog; " \n " }, " \n " nil," \n " 1.5, " \n " true," \n " true, " \n " """",   " \n " ""true"",  " \n " 50,    " \n " false, " \n " """",    " \n " """"    " \n "];";
+				init="this addAction " \n "[ ""Pick Loadout"", { " \n "  params [""_target"", ""_caller"", ""_actionId"", ""_arguments""];  [_caller] call BAF_fnc_openSelectLoadoutDialog; " \n " }, " \n " nil," \n " 1.5, " \n " true," \n " true, " \n " """",   " \n " ""true"",  " \n " 50,    " \n " false, " \n " """",    " \n " """"    " \n "];";
 			};
 			id=11;
 			type="CUP_metalcase_01";
@@ -461,14 +461,14 @@ class Mission
 			dataType="Object";
 			class PositionInfo
 			{
-				position[]={8255.0918,11.972804,5977.8867};
+				position[]={8255.623,11.804833,5980.4395};
 				angles[]={0.064716808,0,6.2783856};
 			};
 			side="Empty";
 			flags=4;
 			class Attributes
 			{
-				init="[this,""supply"",""blufor""] call BAF_INIT_fnc_setupCrate;";
+				init="[this,""supply"",""blufor""] call BAF_fnc_setupCrate;";
 			};
 			id=13;
 			type="I_supplyCrate_F";

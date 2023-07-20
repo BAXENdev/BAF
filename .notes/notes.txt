@@ -15,6 +15,7 @@ https://community.bistudio.com/wiki/BIS_fnc_itemType
 https://community.bistudio.com/wiki/Category:Command_Group:_Containers
 https://community.bistudio.com/wiki/Arma_3:_CfgMarkers
 https://community.bistudio.com/wiki/BIS_fnc_showCuratorFeedbackMessage
+https://community.bistudio.com/wiki/BIS_fnc_curatorHint
 
 Military Symbols
 https://www.symbol.army/doc/en/functions/download-milsymbol/
