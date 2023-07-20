@@ -2,20 +2,15 @@
 #include "..\..\macros\loadoutAccessMacros.hpp"
 
 params ["_positionASL","_object"];
-DEBUG_RPT_FULL(str _positionASL);
-DEBUG_RPT_FULL(str _object);
 
 private ["_crateArg"];
 
 _isCrate = [_object] call BAF_fnc_objectHasInventory;
-DEBUG_RPT_FULL(_isCrate);
 if (_isCrate) then {
 	_crateArg = _object;
 } else {
 	_crateArg = _positionASL;
 };
-
-DEBUG_RPT_FULL(_crateArg);
 
 _factionIds = GET_REGISTRY_TAGS();
 if (_factionIds isEqualTo []) exitWith { /* TODO: Handle Error */ }; 
@@ -33,7 +28,6 @@ _listBox = [
 ];
 
 _function = {
-	DEBUG_RPT_FULL(str _this);
 	params ["_dialogArgs","_arguments"];
 	_dialogArgs params ["_factionId"];
 	_arguments params ["_crateArg"];

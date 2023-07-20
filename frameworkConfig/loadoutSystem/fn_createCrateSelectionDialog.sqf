@@ -2,7 +2,6 @@
 #include "..\..\macros\loadoutAccessMacros.hpp"
 
 params ["_crateArg","_factionId"];
-DEBUG_RPT_FULL(str _this);
 
 _crateRegistry = GET_CRATE_REGISTRY(_factionId);
 if !(_crateRegistry isEqualType []) exitWith { /* TODO: Handle Error */ };
@@ -24,7 +23,6 @@ _listBox = [
 ];
 
 _function = {
-	DEBUG_RPT_FULL(str _this);
 	params ["_dialogArgs","_arguments"];
 	_dialogArgs params ["_crateSuffix"];
 	_arguments params ["_crateArg","_factionId"];

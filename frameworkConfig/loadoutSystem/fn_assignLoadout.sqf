@@ -24,8 +24,6 @@
 
 params ["_unit",["_loadoutSuffix","",[""]],["_factionId","",[""]]];
 
-DEBUG_RPT("(loadout) Assign loadout to " + (name _unit));
-
 // Runtime Conditions
 // TODO: Should this run in scheduled space to prevent stutters?
 
