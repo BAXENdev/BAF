@@ -1,7 +1,7 @@
 
 #include "utilityMacros.hpp"
 
-#define EMPTY_LOADOUT [[[],[],[],[],[],[],"","",[],["","","","","",""]],[]]
+#define EMPTY_LOADOUT [[],[],[],[],[],[],"","",[],["","","","","",""]]
 #define DEFAULT_LOADOUT_NAME "default" // TODO: Setup default loadout
 // #define FACTION_ID blufor // defined in loadout config files
 

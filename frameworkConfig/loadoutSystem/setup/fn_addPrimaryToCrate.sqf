@@ -5,27 +5,33 @@ params ["_crateSuffix","_loadoutSuffix","_count","_factionId"];
 
 _crateArray = GET_CRATE(_crateSuffix,_factionId);
 if !(_crateArray isEqualType []) exitWith {
-	_rptMsg = format ["(loadout setup) %1 is not initialized in addPrimaryToCrate.",GET_CRATE_VARIABLE(_crateSuffix,_factionId)];
-	DEBUG_RPT(_rptMsg);
+	_rptMsg = format ["%1 is not initialized.",GET_CRATE_VARIABLE(_crateSuffix,_factionId)];
+	DEBUG_RPT_FULL(_rptMsg);
 };
 
 _loadoutBaf = GET_LOADOUT_BAF(_loadoutSuffix,_factionId);
 if !(_loadoutBaf isEqualtype []) exitWith {
-	_rptMsg = format ["(loadout setup) %1 is not initialized in addPrimaryToCrate",GET_LOADOUT_VARIABLE(_crateSuffix,_factionId)];
-	DEBUG_RPT(_rptMsg);
+	_rptMsg = format ["%1 is not initialized.",GET_LOADOUT_VARIABLE(_loadoutSuffix,_factionId)];
+	DEBUG_RPT_FULL(_rptMsg);
 };
 
 _loadoutArray = GET_LOADOUT_ARRAY(_loadoutBaf);
 _primaryWeaponArray = GET_PRIMARY(_loadoutArray);
 if (_primaryWeaponArray isEqualTo []) exitWith {
-	DEBUG_RPT("TEST1");
+	_rptMsg = format ["%1 does not have a primary.",GET_LOADOUT_VARIABLE(_loadoutSuffix,_factionId)];
+	DEBUG_RPT_FULL(_rptMsg);
 };
 _primaryName = GET_WEAPON_NAME(_primaryWeaponArray);
 if (_primaryName isEqualTo "") exitWith {
-	DEBUG_RPT("TEST2");
+	_rptMsg = format ["%1 has an empty rifle name.",GET_LOADOUT_VARIABLE(_loadoutSuffix,_factionId)];
+	DEBUG_RPT_FULL(_rptMsg);
 };
 
-// TODO: Check Item Type
-// TODO: Check Item Existance
+// TODO: Check for item existance
+_itemTypes = [_primaryName] call BIS_fnc_itemType;
+if (_itemType isEqualTo []) exitWith {
+	_rptMsg = format ["%1 in %2 is not a item.",_primaryName,GET_LOADOUT_VARIABLE(_loadoutSuffix,_factionId)];
+	DEBUG_RPT_FULL(_rptMsg);
+};
 
 _crateArray pushBack [_primaryName, _count];
