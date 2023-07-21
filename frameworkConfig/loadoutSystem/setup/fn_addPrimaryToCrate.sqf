@@ -21,16 +21,13 @@ if (_primaryWeaponArray isEqualTo []) exitWith {
 	_rptMsg = format ["%1 does not have a primary.",GET_LOADOUT_VARIABLE(_loadoutSuffix,_factionId)];
 	DEBUG_RPT_FULL(_rptMsg);
 };
+
 _primaryName = GET_WEAPON_NAME(_primaryWeaponArray);
-if (_primaryName isEqualTo "") exitWith {
-	_rptMsg = format ["%1 has an empty rifle name.",GET_LOADOUT_VARIABLE(_loadoutSuffix,_factionId)];
-	DEBUG_RPT_FULL(_rptMsg);
-};
 
 // TODO: Check for item existance
 _itemTypes = [_primaryName] call BIS_fnc_itemType;
-if (_itemType isEqualTo []) exitWith {
-	_rptMsg = format ["%1 in %2 is not a item.",_primaryName,GET_LOADOUT_VARIABLE(_loadoutSuffix,_factionId)];
+if (_itemTypes isEqualTo ["",""]) exitWith {
+	_rptMsg = format ["%1 in loadout %2 is not a item.",_primaryName,GET_LOADOUT_VARIABLE(_loadoutSuffix,_factionId)];
 	DEBUG_RPT_FULL(_rptMsg);
 };
 

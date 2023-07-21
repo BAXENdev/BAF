@@ -7,6 +7,7 @@ if (_multiplier <= 0) exitWith { /* TODO: Debug RPT */ };
 
 _weaponMultiplier = ceil (0.5 * _multiplier);
 _magMultiplier = ceil (10 * _multiplier);
+_rocketMultiplier = ceil (0.5 * _multiplier);
 _bandageMultiplier = ceil (8 * _multiplier);
 _injectorMultiplier = ceil (1 * _multiplier);
 _bloodMultiplier = ceil (3 * _multiplier);

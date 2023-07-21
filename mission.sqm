@@ -12,14 +12,14 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=14;
+		nextID=48;
 	};
 	class Camera
 	{
-		pos[]={8254.6689,13.358111,5969.9092};
-		dir[]={0.35149524,-0.48294508,0.80200696};
-		up[]={0.19385916,0.87565064,0.4423286};
-		aside[]={0.91589832,0,-0.40141034};
+		pos[]={8280.3359,363.07336,7143.7314};
+		dir[]={-0.024746094,-0.52977544,0.84786963};
+		up[]={-0.015457127,0.84811449,0.52957839};
+		aside[]={0.99964887,-6.8355439e-007,0.029179629};
 	};
 };
 binarizationWanted=0;
@@ -469,6 +469,7 @@ class Mission
 			class Attributes
 			{
 				init="[this,""supply"",""blufor""] call BAF_fnc_setupCrate;";
+				name="crate1";
 			};
 			id=13;
 			type="I_supplyCrate_F";

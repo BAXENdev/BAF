@@ -1,4 +1,24 @@
 
+/*
+ * Author: BAXENATOR
+ * Assigns a crate inventory to the crateObject. 
+ * This method will resize the crate capacity if it is run on the server.
+ * The method will not enforce running on the server
+ * 
+ * Arguments:
+ * 0: _crateObject
+ * 1: _cratesuffix
+ * 2: _factionId
+ * 
+ * Return Value:
+ * -
+ *
+ * Example:
+ * [crate1,"supply","blufor"] call baf_fnc_assignLoadout;
+ *
+ * Public: Yes
+ */
+
 #include "..\..\macros\loadoutAccessMacros.hpp"
 
 params ["_crateObject",["_crateSuffix","",[""]],["_factionId","",[""]]];
@@ -23,10 +43,16 @@ clearWeaponCargoGlobal _crateObject;
 
 {
 	_itemName = _x#0;
-	if ("Backpack" in (_itemName call BIS_fnc_itemType)) then {
+	if ("Backpack" in ([_itemName] call BIS_fnc_itemType)) then {
 		_crateObject addBackpackCargoGlobal _x;
 	} else {
 		_crateObject addItemCargoGlobal _x;
 	};
 
 } forEach _crateArray;
+
+_load = loadAbs _crateObject;
+_maxLoad = maxLoad _crateObject;
+if (isServer and (_load >= (floor (_maxLoad * 0.9)))) then { 
+	_crateObject setMaxLoad (floor (_load * 1.2));
+};

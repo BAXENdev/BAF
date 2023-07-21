@@ -1,20 +1,40 @@
 
 #include "..\..\..\macros\loadoutAccessMacros.hpp"
 
-params ["_crateArray", "_loadoutArray", "_count"];
+params ["_crateSuffix","_loadoutSuffix","_count","_factionId"];
 
-if !(_crateArray isEqualType []) exitWith { /* TODO: Debug RPT */ };
-if !(_loadoutArray isEqualType []) exitWith { /* TODO: Debug RPT */ };
+_crateArray = GET_CRATE(_crateSuffix,_factionId);
+if !(_crateArray isEqualType []) exitWith {
+	_rptMsg = format ["%1 is not initialized.",GET_CRATE_VARIABLE(_crateSuffix,_factionId)];
+	DEBUG_RPT_FULL(_rptMsg);
+};
 
-_launcherWeaonArray = GET_LAUNCHER(_loadoutArray);
-if !(_launcherWeaponArray isEqualType []) exitWith { /* TODO: Debug RPT */ };
-_launcherMagArray = GET_WEAPON_MAG(_launcherWeaponArray);
-if !(_launcherMagArray isEqualType []) exitWith { /* TODO: Debug RPT */ };
-_magName = GET_MAG_NAME(_launcherMagArray);
-if !(_launcherMagArray isEqualType "") exitWith { /* TODO: Debug RPT */ };
+_loadoutBaf = GET_LOADOUT_BAF(_loadoutSuffix,_factionId);
+if !(_loadoutBaf isEqualtype []) exitWith {
+	_rptMsg = format ["%1 is not initialized.",GET_LOADOUT_VARIABLE(_loadoutSuffix,_factionId)];
+	DEBUG_RPT_FULL(_rptMsg);
+};
 
-// TODO: Check Item Existance
-// TODO: Check Item Type
+_loadoutArray = GET_LOADOUT_ARRAY(_loadoutBaf);
+_launcherWeaponArray = GET_LAUNCHER(_loadoutArray);
+if (_launcherWeaponArray isEqualTo []) exitWith {
+	_rptMsg = format ["%1 does not have a launcher.",GET_LOADOUT_VARIABLE(_loadoutSuffix,_factionId)];
+	DEBUG_RPT_FULL(_rptMsg);
+};
 
-_magCapacity = configFile >> "CfgMagazines" >> _magName >> "count";
-_crateArray pushBack [_magName, _magCapacity, _count];
+_launcherMag = GET_WEAPON_MAG(_launcherWeaponArray);
+if (_launcherMag isEqualTo []) exitWith {
+	_rptMsg = format ["%1 does not have a launcher.",GET_LOADOUT_VARIABLE(_loadoutSuffix,_factionId)];
+	DEBUG_RPT_FULL(_rptMsg);
+};
+
+_launcherMagName = GET_MAG_NAME(_launcherMag);
+
+// // TODO: Check for item existance
+_itemTypes = [_launcherMagName] call BIS_fnc_itemType;
+if (_itemTypes isEqualTo ["",""]) exitWith {
+	_rptMsg = format ["%1 in %2 is not a item.",_primaryName,GET_LOADOUT_VARIABLE(_loadoutSuffix,_factionId)];
+	DEBUG_RPT_FULL(_rptMsg);
+};
+
+_crateArray pushBack [_launcherMagName, _count];

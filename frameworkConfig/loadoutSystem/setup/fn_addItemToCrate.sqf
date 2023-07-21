@@ -17,11 +17,23 @@
  * Public: Yes
  */
 
-params ["_crateArray", "_itemName", "_count"];
+#include "..\..\..\macros\loadoutAccessMacros.hpp"
 
-// TODO: Check for existance
-// TODO: Check for type mag
-// TODO: Check for transport item name
+params ["_crateSuffix","_itemName","_count","_factionId"];
+
+DEBUG_RPT_FULL(str _this);
+
+_crateArray = GET_CRATE(_crateSuffix,_factionId);
+if !(_crateArray isEqualType []) exitWith {
+	_rptMsg = format ["%1 is not initialized.",GET_CRATE_VARIABLE(_crateSuffix,_factionId)];
+	DEBUG_RPT_FULL(_rptMsg);
+};
+
+_itemTypes = [_itemName] call BIS_fnc_itemType;
+if (_itemTypes isEqualTo ["",""]) exitWith {
+	_rptMsg = format ["Attempted to add item %1 to crate.", _itemName];
+	DEBUG_RPT_FULL(_rptMsg);
+};
 
 _addedItem = [_itemName, _count];
 _crateArray pushBack _addedItem;

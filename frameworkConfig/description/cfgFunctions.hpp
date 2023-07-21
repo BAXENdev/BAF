@@ -17,6 +17,7 @@
 class BAF {
     class LoadoutSystem {
         file = "frameworkConfig\loadoutSystem";
+        class assignClass {};
         class assignCrate {};
         class assignLoadout {};
         class openSelectLoadoutDialog {};
@@ -29,7 +30,7 @@ class BAF {
 
     class LoadoutSystemSetup {
         file = "frameworkConfig\loadoutSystem\setup";
-        class addItemsToArsenal {};
+        class addItemToCrate {};
         class addPrimaryToCrate {};
         class addSecondaryToCrate {};
         class addLauncherToCrate {};

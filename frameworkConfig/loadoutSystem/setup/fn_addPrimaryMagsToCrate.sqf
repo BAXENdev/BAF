@@ -1,20 +1,38 @@
 
 #include "..\..\..\macros\loadoutAccessMacros.hpp"
 
-params ["_crateArray", "_loadoutArray", "_count"];
+params ["_crateSuffix","_loadoutSuffix","_count","_factionId"];
 
-if !(_crateArray isEqualType []) exitWith { /* TODO: Debug RPT */ };
-if !(_loadoutArray isEqualType []) exitWith { /* TODO: Debug RPT */ };
+_crateArray = GET_CRATE(_crateSuffix,_factionId);
+if !(_crateArray isEqualType []) exitWith {
+	_rptMsg = format ["%1 is not initialized.",GET_CRATE_VARIABLE(_crateSuffix,_factionId)];
+	DEBUG_RPT_FULL(_rptMsg);
+};
 
+_loadoutBaf = GET_LOADOUT_BAF(_loadoutSuffix,_factionId);
+if !(_loadoutBaf isEqualtype []) exitWith {
+	_rptMsg = format ["%1 is not initialized.",GET_LOADOUT_VARIABLE(_loadoutSuffix,_factionId)];
+	DEBUG_RPT_FULL(_rptMsg);
+};
+
+_loadoutArray = GET_LOADOUT_ARRAY(_loadoutBaf);
 _primaryWeaponArray = GET_PRIMARY(_loadoutArray);
-if !(_primaryWeaponArray isEqualType []) exitWith { /* TODO: Debug RPT */ };
-_primaryMagArray = GET_WEAPON_MAG(_primaryWeaponArray);
-if !(_primaryMagArray isEqualType []) exitWith { /* TODO: Debug RPT */ };
-_magName = GET_MAG_NAME(_primaryMagArray);
-if !(_primaryMagArray isEqualType "") exitWith { /* TODO: Debug RPT */ };
+if (_primaryWeaponArray isEqualTo []) exitWith {
+	_rptMsg = format ["%1 does not have a primary.",GET_LOADOUT_VARIABLE(_loadoutSuffix,_factionId)];
+	DEBUG_RPT_FULL(_rptMsg);
+};
+_primaryMag = GET_WEAPON_MAG(_primaryWeaponArray);
+if (_primaryMag isEqualTo []) exitWith {
+	_rptMsg = format ["%1 has an empty primary mag",GET_LOADOUT_VARIABLE(_loadoutSuffix,_factionId)];
+	DEBUG_RPT_FULL(_rptMsg);
+};
 
-// TODO: Check Item Existance
-// TODO: Check Item Type
+_primaryMagName = GET_MAG_NAME(_primaryMag);
+// TODO: Check for item existance
+_itemTypes = [_primaryMagName] call BIS_fnc_itemType;
+if (_itemTypes isEqualTo ["",""]) exitWith {
+	_rptMsg = format ["%1 in loadout %2 is not a item.",_primaryMagName,GET_LOADOUT_VARIABLE(_loadoutSuffix,_factionId)];
+	DEBUG_RPT_FULL(_rptMsg);
+};
 
-_magCapacity = configFile >> "CfgMagazines" >> _magName >> "count";
-_crateArray pushBack [_magName, _magCapacity, _count];
+_crateArray pushBack [_primaryMagName, _count];
