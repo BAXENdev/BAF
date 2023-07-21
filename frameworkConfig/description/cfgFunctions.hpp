@@ -20,7 +20,7 @@ class BAF {
         class assignClass {};
         class assignCrate {};
         class assignLoadout {};
-        class openSelectLoadoutDialog {};
+        class selectLoadoutDialog {};
         class createCrateFactionIdDialog {};
         class createCrateSelectionDialog {};
         // class openFactionIdDialog {};

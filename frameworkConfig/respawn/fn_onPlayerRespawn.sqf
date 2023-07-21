@@ -3,11 +3,28 @@
 
 params ["_newUnit", "_oldUnit", "_respawn", "_respawnDelay"];
 
-_factionId = GETVAR(_oldUnit,BAF_FACTION_ID_VAR_STR,"");
-_loadoutSuffix = GETVAR(_oldUnit,BAF_LOADOUT_SUFFIX_VAR_STR,"");
 
-// TODO: Should I set up the loadout that is spawned with being stored in case this fails?
-if (_factionId isEqualTo "" or _loadoutSuffix isEqualTo "") exitWith { DEBUG_RPT("No Loadout Assigned"); };
+_factionId = GETVAR(_oldUnit,UNIT_FACTION_ID,nil);
+// _classSuffix = GETVAR(_oldUnit,UNIT_CLASS_SUFFIX,nil);
+_loadoutSuffix = GETVAR(_oldUnit,UNIT_LOADOUT_SUFFIX,nil);
+_loadoutArray = GETVAR(_oldUnit,UNIT_LOADOUT_ARRAY,nil);
 
-[_newUnit,"_loadoutSuffix",_factionId] call baf_fnc_assignLoadout;
-// TODO: Assign Radios?
+if !(isNil "_factionId") then {
+	if !(isNil "_classSuffix") then {
+		if (isNil "_loadoutSuffix") then { _loadoutSuffix = 0; };
+		[_newUnit,_classSuffix,_loadoutSuffix,_factionId] call BAF_fnc_assignClass;
+	} else {
+		if !(isNil "_loadoutSuffix") then {
+			[_newUnit,_loadoutSuffix,_factionId] call BAF_fnc_assignLoadout;
+		};
+	};
+};
+if !(isNil "_loadoutArray") then { 
+	_newUnit setUnitLoadout _loadoutArray;
+	SETVARG(_newUnit,_UNIT_LOADOUT_ARRAY,_loadoutArray);
+};
+
+// TODO: RADIOS
+// _radioGroupKey = GETVAR(_oldUnit,UNIT_RADIO_GROUP,nil);
+// _radioUnitKey = GETVAR(_oldUnit,UNIT_RADIO_GROUP,nil);
+

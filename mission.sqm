@@ -434,7 +434,7 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="this addAction " \n "[ ""Pick Loadout"", { " \n "  params [""_target"", ""_caller"", ""_actionId"", ""_arguments""];  [_caller] call BAF_fnc_openSelectLoadoutDialog; " \n " }, " \n " nil," \n " 1.5, " \n " true," \n " true, " \n " """",   " \n " ""true"",  " \n " 50,    " \n " false, " \n " """",    " \n " """"    " \n "];";
+				init="this addAction " \n "[ ""Pick Loadout"", { " \n "  params [""_target"", ""_caller"", ""_actionId"", ""_arguments""];  [_caller] call BAF_fnc_selectLoadoutDialog; " \n " }, " \n " nil," \n " 1.5, " \n " true," \n " true, " \n " """",   " \n " ""true"",  " \n " 50,    " \n " false, " \n " """",    " \n " """"    " \n "];";
 			};
 			id=11;
 			type="CUP_metalcase_01";

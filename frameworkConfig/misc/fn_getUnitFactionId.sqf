@@ -17,4 +17,6 @@ if (_sideStr isEqualTo str east) then { _factionId = EAST_ID_STR; };
 if (_sideStr isEqualTo str independent) then { _factionId = INDEPENDENT_ID_STR; }; 
 if (_sideStr isEqualTo str civilian) then { _factionId = CIVILIAN_ID_STR; };
 
+if !(_factionId in GET_REGISTRY_TAGS()) then { _factionId = ""; };
+
 _factionId;

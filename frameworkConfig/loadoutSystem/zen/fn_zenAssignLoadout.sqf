@@ -5,7 +5,7 @@ _function = {
 	if (isNull _object or !(_object isKindOf "CAManBase")) exitWith { ["BafWarning", ["Attach to unit"]] call BIS_fnc_showNotification; };
 
 	// TODO: Add factionId selection
-	[_object] call BAF_fnc_openSelectLoadoutDialog;
+	[_object] call BAF_fnc_selectLoadoutDialog;
 };
 
 [

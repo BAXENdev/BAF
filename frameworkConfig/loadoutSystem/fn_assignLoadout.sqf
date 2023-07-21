@@ -67,3 +67,5 @@ _unit setUnitTrait ["Engineer",_engineerTrait > 0];
 // TODO: Assign Loadout as Variable to unit?
 SETVARG(_unit,UNIT_FACTION_ID,_factionId);
 SETVARG(_unit,UNIT_LOADOUT_SUFFIX,_loadoutSuffix);
+SETVARG(_unit,UNIT_LOADOUT_ARRAY,_loadoutArray);
+// TODO: Set unit radio key
