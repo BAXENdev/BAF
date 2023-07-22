@@ -24,7 +24,6 @@ class BAF {
         class createCrateFactionIdDialog {};
         class createCrateSelectionDialog {};
         // class openFactionIdDialog {};
-        // class assignClass {};
         // class createCrate {};
     };
 

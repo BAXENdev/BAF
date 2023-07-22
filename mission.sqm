@@ -12,14 +12,14 @@ class EditorData
 	};
 	class ItemIDProvider
 	{
-		nextID=48;
+		nextID=50;
 	};
 	class Camera
 	{
-		pos[]={8280.3359,363.07336,7143.7314};
-		dir[]={-0.024746094,-0.52977544,0.84786963};
-		up[]={-0.015457127,0.84811449,0.52957839};
-		aside[]={0.99964887,-6.8355439e-007,0.029179629};
+		pos[]={8847.6055,266.01379,4081.0183};
+		dir[]={0.90434229,-0.36129132,0.22723022};
+		up[]={0.35039946,0.93245298,0.088043377};
+		aside[]={0.24369079,7.4505806e-009,-0.96985292};
 	};
 };
 binarizationWanted=0;
@@ -435,6 +435,7 @@ class Mission
 			class Attributes
 			{
 				init="this addAction " \n "[ ""Pick Loadout"", { " \n "  params [""_target"", ""_caller"", ""_actionId"", ""_arguments""];  [_caller] call BAF_fnc_selectLoadoutDialog; " \n " }, " \n " nil," \n " 1.5, " \n " true," \n " true, " \n " """",   " \n " ""true"",  " \n " 50,    " \n " false, " \n " """",    " \n " """"    " \n "];";
+				disableSimulation=1;
 			};
 			id=11;
 			type="CUP_metalcase_01";

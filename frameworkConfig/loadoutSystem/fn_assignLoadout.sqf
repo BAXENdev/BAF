@@ -37,13 +37,13 @@ if (_factionId isEqualTo "") then {
 
 if (_factionId isEqualTo "") exitWith {
 	_rptMsg = format ["(loadout) Failed to assign unit with %1 loadout because there is not an available faction.", _loadoutSuffix]; 
-	DEBUG_RPT(_rptMsg);
+	DEBUG_RPT_FULL(_rptMsg);
 };
 
 _loadoutBaf = GET_LOADOUT_BAF(_loadoutSuffix,_factionId);
 if !(_loadoutBaf isEqualType []) exitWith { 
 	_rptMsg = format ["(loadout) %1 is not initialized",GET_LOADOUT_VARIABLE(_loadoutSuffix,_factionId)];
-	DEBUG_RPT(_rptMsg);
+	DEBUG_RPT_FULL(_rptMsg);
 };
 
 _loadoutArray = GET_LOADOUT_ARRAY(_loadoutBaf);

@@ -22,7 +22,7 @@
 
 #include "..\..\macros\loadoutAccessMacros.hpp"
 
-params ["_unit",["_classSuffix","",[""]],["_factionId","",[""]]];
+params ["_unit",["_classSuffix","",[""]],["_index",0,["",0]],["_factionId","",[""]]];
 
 // Runtime Conditions
 // TODO: Should this run in scheduled space to prevent stutters?
@@ -31,16 +31,21 @@ params ["_unit",["_classSuffix","",[""]],["_factionId","",[""]]];
 if !(_unit isKindOf "CAManBase") exitWith { DEBUG_RPT_FULL("attempted to assign loadout to non-man object"); };
 if !(_factionId in GET_REGISTRY_TAGS()) then { DEBUG_RPT_FULL("FactionId passed to assignLoadout is not available in the registry."); };
 
-if (_factionId isEqualTo "") then {
-	_factionId = [_unit] call BAF_fnc_getUnitFactionId;
-};
-
-if (_factionId isEqualTo "") exitWith {
-	_rptMsg = format ["Failed to assign unit with class '%1' because there is not an available faction.", _classSuffix]; 
-	DEBUG_RPT_FULL(_rptMsg);
-};
-
 _classBaf = GET_CLASS(_classSuffix,_factionId);
 if !(_classBaf isEqualType []) exitWith {
-	_rptMessage = format ["Failed to "]
+	_rptMessage = format ["Given class suffix '%1' does not exist",_classSuffix];
 };
+
+_loadouts = GET_CLASS_LOADOUTS(_classBaf);
+private ["_loadoutSuffix"];
+if (_index isEqualType "") then {
+	_index = _loadouts findIf { _x#0 isEqualTo _index; };
+	if (_index != -1) then { _loadoutSuffix = _loadouts#_index#0; }
+	else { _loadoutSuffix = _loadouts#0#0; };
+} else {
+	if (_index >= count _loadouts) then { _index = 0; };
+	_loadoutSuffix = _loadouts#_index#0;
+};
+
+SETVARG(_unit,UNIT_CLASS_SUFFIX,_classSuffix);
+[_unit,_loadoutSuffix,_factionId] call BAF_fnc_assignLoadout;
