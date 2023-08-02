@@ -18,6 +18,7 @@ https://community.bistudio.com/wiki/BIS_fnc_showCuratorFeedbackMessage
 https://community.bistudio.com/wiki/BIS_fnc_curatorHint
 https://steamcommunity.com/profiles/76561197980193330/myworkshopfiles/ Ace arsenal categories and movement speed
 https://community.bistudio.com/wiki/Arma_3:_Functions_Library#Meta_Variables function name
+https://community.bistudio.com/wiki/Unit_Loadout_Array
 
 Military Symbols
 https://www.symbol.army/doc/en/functions/download-milsymbol/
