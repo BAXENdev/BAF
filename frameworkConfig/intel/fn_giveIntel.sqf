@@ -1,4 +1,6 @@
 
+#include "..\..\macros\utilityMacros.hpp"
+
 params ["_text","_title"];
 
 if (!(_text isEqualType "")) exitWith { DEBUG_RPT_FULL("Invalid value passed to _text."); };

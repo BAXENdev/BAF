@@ -2,6 +2,8 @@
 #include "utilityMacros.hpp"
 
 #define GET_REGISTRY_TAGS() (GETVARM(TAG_REGISTRY_STR, []))
+#define GET_FACTION_ARSENAL(FACTION_ID) (GETVARM((format ["baf_arsenal_%1",FACTION_ID]), []))
+#define GET_SUB_ARSENAL(FACTION_ID,SUFFIX) (GETVARM((format ["baf_arsenal_%1_%2",FACTION_ID,SUFFIX]), []))
 
 #define GET_LOADOUT_VARIABLE(STRING_SUFFIX,FACTION_ID) (format ["baf_loadout_%1_%2",FACTION_ID,STRING_SUFFIX])
 #define GET_LOADOUT_REGISTRY_VARIABLE(FACTION_ID) (format ["baf_registry_loadout_%1",FACTION_ID])

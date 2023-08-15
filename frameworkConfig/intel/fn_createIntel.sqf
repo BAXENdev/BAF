@@ -1,4 +1,6 @@
 
+#include "..\..\macros\utilityMacros.hpp"
+
 /*
  * Author: BAXENATOR
  * Assigns a crate inventory to the crateObject. 
