@@ -16,6 +16,8 @@
 #define INDEPENDENT_ID_STR #INDEPENDENT_ID
 #define CIVILIAN_ID_STR #CIVILIAN_ID
 
+// Loadout system variable names
+
 #define TAG_REGISTRY baf_registry_tags
 #define TAG_REGISTRY_STR #TAG_REGISTRY
 #define UNIT_LOADOUT_ARRAY "baf_unit_loadout"

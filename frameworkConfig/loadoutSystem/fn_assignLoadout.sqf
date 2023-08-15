@@ -32,7 +32,7 @@ if !(_unit isKindOf "Man") exitWith { DEBUG_RPT("attempted to assign loadout to 
 if !(_factionId in GET_REGISTRY_TAGS()) then { DEBUG_RPT("(loadout) FactionId passed to assignLoadout is not available in the registry."); };
 
 if (_factionId isEqualTo "") then {
-	_factionId = [_unit] call BAF_fnc_getUnitFactionId;
+	_factionId = [_unit] call BAF_fnc_getUnitFactionID;
 };
 
 if (_factionId isEqualTo "") exitWith {

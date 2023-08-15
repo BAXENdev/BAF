@@ -1,6 +1,7 @@
 
 class LoadoutSystem {
     file = "frameworkConfig\loadoutSystem";
+	class getUnitFactionID {};
     class assignClass {};
     class assignCrate {};
     class assignLoadout {};

@@ -5,7 +5,7 @@ params ["_unit"];
 
 if !(_unit isKindOf "Man") exitWith { DEBUG_RPT_FULL("Attempted to assign loadout to a non-unit"); };
 
-_factionId = [_unit] call BAF_fnc_getUnitFactionId;
+_factionId = [_unit] call BAF_fnc_getUnitFactionID;
 if !(_factionId in GET_REGISTRY_TAGS()) exitWith {
 	_rptMsg = "FactionID has not been assigned to unit.";
 	["BafWarning",[_rptMsg]] call BIS_fnc_showNotification;
