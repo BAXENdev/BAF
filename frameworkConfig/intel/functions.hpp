@@ -6,5 +6,6 @@ class Intel {
 };
 
 class IntelZen {
+    file = "frameworkConfig\intel\zen";
     class zenCreateIntel { preInit = 1; };
 };

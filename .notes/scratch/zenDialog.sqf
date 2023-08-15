@@ -253,7 +253,7 @@ _toolBox = [
 
 		// Height, optional. Automatically calculated by row size
 		2
-	]
+	],
 
 	// 3) Force Default, default: false
 	true
