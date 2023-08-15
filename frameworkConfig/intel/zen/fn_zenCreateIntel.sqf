@@ -5,20 +5,22 @@ _code1 = {
 	if (isNull _object or {isPlayer _object}) exitWith { [objNull, "Placed module on object"] call BIS_fnc_showCuratorFeedbackMessage; };
 
 	// TODO: Add section to select an object in case no object was selected
+	// List of items
+	// ComboBox
+	// Pass object as optional to code2
 
 	_code2 = {
 		params ["_dialogValues","_arguments"];
-	};
+		_dialogValues params ["_title","_text","_actionName","_giveToEveryone","_deleteOnGive","_actionType",["_objectName",""]];
+		_arguments params ["_posASL","_moduleObject"];
 
-	_actionNameEditBox = [
-		"EDIT",
-		["Action Name","The name of the interaction in menu."],
-		[
-			"",
-			{ param["_inputText"]; _inputText; }
-		],
-		false
-	];
+		if (_moduleObject isEqualTo objNull) then {
+			_moduleObject = _objectName createVehicle (ASLToATL _posASL);
+			// TODO: Make object not take damage and disable simulation
+		};
+
+		[_moduleObject,_text,_title,_actionName,_giveToEveryone,_deleteOnGive,_actionType] remoteExec ["BAF_fnc_createIntel"]; 
+	};
 
 	_titleEditBox = [
 		"EDIT",
@@ -41,12 +43,17 @@ _code1 = {
 		false
 	];
 
+	_actionNameEditBox = [
+		"EDIT",
+		["Action Name","The name of the interaction in menu."],
+		[
+			"",
+			{ param["_inputText"]; _inputText; }
+		],
+		false
+	];
+
 	_giveToolBox = [
-		// 0) Content Type
-		// TOOLBOX:WIDE is a wider variant
-		// TOOLBOX:YESNO has two options and return bool
-		// TOOLBOX:ENABLED has two options and return bool
-		// For TOOLBOX:YESNO and TOOLBOX:ENABLED, you only specify the default option for arguments
 		"TOOLBOX:YESNO",
 		"Give Intel To Everyone", // or  ["Title", "Tooltip"],
 		[
@@ -62,7 +69,7 @@ _code1 = {
 			"OBJECT",
 			1,
 			3,
-			["NONE","ACTION", "OBJECT"],
+			["NONE","ACTION","OBJECT"],
 		],
 		true
 	];
@@ -81,15 +88,15 @@ _code1 = {
 
 	[
 		"Create Intel",
-		[_actionNameEditBox,_titleEditBox,_textBox,_giveToolBox,_deleteToolBox,_typeToolBox],
+		[_titleEditBox,_textBox,_actionNameEditBox,_giveToolBox,_deleteToolBox,_typeToolBox],
 		_code2,
 		{},
-		[]
+		[_posASL,_object]
 	] call zen_dialog_fnc_create;
 };
 
 [
-	"[BAF] UTILITIES",
-	"Create Intel",
+	"BAF Utilities",
+	"[INTEL] Create Intel",
 	_code1
 ] call zen_custom_modules_fnc_register;

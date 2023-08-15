@@ -6,7 +6,7 @@ params ["_unit",["_loadoutSuffix","",[""]],["_factionId", "",[""]]];
 // TODO: Does it execute JIP?
 
 if !(isServer) exitWith {};
-if !(canSuspend) exitWith { _this spawn BAF_fnc_setupLoadout; };
-waitUntil { baf_init_done >= 1; };
+// if !(canSuspend) exitWith { _this spawn BAF_fnc_setupLoadout; };
+// waitUntil { baf_init_done >= 1; }; // TODO: Is this needed?
 
 [_unit,_loadoutSuffix,_factionId] call BAF_fnc_assignLoadout;

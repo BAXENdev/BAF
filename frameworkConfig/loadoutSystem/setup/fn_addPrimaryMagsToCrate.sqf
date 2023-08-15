@@ -28,7 +28,7 @@ if (_primaryMag isEqualTo []) exitWith {
 };
 
 _primaryMagName = GET_MAG_NAME(_primaryMag);
-// TODO: Check for item existance
+
 _itemTypes = [_primaryMagName] call BIS_fnc_itemType;
 if (_itemTypes isEqualTo ["",""]) exitWith {
 	_rptMsg = format ["%1 in loadout %2 is not a item.",_primaryMagName,GET_LOADOUT_VARIABLE(_loadoutSuffix,_factionId)];

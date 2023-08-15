@@ -32,7 +32,7 @@ _function = {
 	_dialogArgs params ["_factionId"];
 	_arguments params ["_crateArg"];
 
-	[_crateArg,_factionId] call BAF_fnc_createCrateSelectionDialog;
+	[_crateArg,_factionId] call BAF_fnc_dialogCreateCrateSelection;
 };
 
 [

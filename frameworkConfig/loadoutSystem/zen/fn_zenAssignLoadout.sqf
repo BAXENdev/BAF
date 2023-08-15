@@ -9,7 +9,7 @@ _function = {
 };
 
 [
-	"BAF Loadout System",
-	"Assign Loadout",
+	"BAF Utilities",
+	"[LOADOUT] Assign Loadout",
 	_function
 ] call zen_custom_modules_fnc_register;

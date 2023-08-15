@@ -6,15 +6,4 @@ params ["_unit","_loadoutSuffix","_classSuffix","_factionId"];
 if !(isServer) exitWith {};
 if !(_unit isKindOf "Man") exitWith { DEBUG_RPT_FULL("Failed to set up unit because an non-unit was passed.") };
 
-if (_loadoutSuffix isEqualType "") exitWith {
-	[_unit,_loadoutSuffix,_factionId] call BAF_fnc_assignLoadout;
-	// [] call BAF_fnc_assignRadios; // TODO: Add radion setup
-};
-
-// TODO: Class Case
-if (_classSuffix isEqualType "") exitWith {
-	// [_unit,_classSuffix,_factionId] call BAF_fnc_assignClass;
-	// [] call BAF_fnc_assignRadios; // TODO: Add radio setup
-};
-
-DEBUG_RPT("(setup) Failed to perform setup because no suffixes was passed.");
+// TODO: Begin initializing loadouts and radios

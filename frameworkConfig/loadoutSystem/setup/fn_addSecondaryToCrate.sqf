@@ -24,7 +24,6 @@ if (_secondaryWeaponArray isEqualTo []) exitWith {
 
 _secondaryName = GET_WEAPON_NAME(_secondaryWeaponArray);
 
-// TODO: Check for item existance
 _itemTypes = [_secondaryName] call BIS_fnc_itemType;
 if (_itemTypes isEqualTo ["",""]) exitWith {
 	_rptMsg = format ["%1 in loadout %2 is not a item.",_secondaryName,GET_LOADOUT_VARIABLE(_loadoutSuffix,_factionId)];

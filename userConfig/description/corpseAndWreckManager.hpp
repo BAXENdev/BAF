@@ -19,5 +19,5 @@ wreckRemovalMinTime = 300;
 wreckRemovalMaxTime = 600;
 
 
-// Distance of corpse/wreck from player before it can be destroyed
+// Distance of corpse/wreck from player before corpse or wreck can be destroyed
 minPlayerDistance = 50;

@@ -30,7 +30,6 @@ if (_launcherMag isEqualTo []) exitWith {
 
 _launcherMagName = GET_MAG_NAME(_launcherMag);
 
-// // TODO: Check for item existance
 _itemTypes = [_launcherMagName] call BIS_fnc_itemType;
 if (_itemTypes isEqualTo ["",""]) exitWith {
 	_rptMsg = format ["%1 in %2 is not a item.",_primaryName,GET_LOADOUT_VARIABLE(_loadoutSuffix,_factionId)];

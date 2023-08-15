@@ -6,11 +6,13 @@
  * The method will not enforce running on the server
  * 
  * Arguments:
- * 0: _text
- * 1: _title (optional, default: "")
- * 2: _actionName (optional, default: "Pickup Intel")
- * 3: _deleteOnGive (optional, default: true)
- * 4: _actionType (optional, default: 0, 0 is Ace Action, not 0 is vanilla action) 
+ * 0: _object
+ * 1: _text
+ * 2: _title
+ * 3: _actionName
+ * 4: _giveToEveryone
+ * 5: _deleteOnGive
+ * 6: _actionType
  * 
  * Return Value:
  * -
@@ -41,10 +43,10 @@ if (_actionType < 0 or _actionType > 1) then {
 
 if (_actionType == 0) then {
 	// Ace Action
-	_varName = ((_title splitString " ") joinString "_") + (str time);
+	_varName = ([_actionName] call BIS_fnc_filterString) + (str time);
 	_action = [
-		_varName, // Variable name
-		_actionName, // Display name
+		_varName,
+		_actionName,
 		"", //  Icon path
 		{
 			params ["_target","_player","_params"];
@@ -66,7 +68,7 @@ if (_actionType == 0) then {
 	] call ace_interact_menu_fnc_createAction;
 
 	[
-		_obj, // Object to add action to
+		_object, // Object to add action to
 		0, // Type of action. 0 = action, 1 = self-actions
 		["ACE_MainActions"],
 		_action
@@ -74,7 +76,7 @@ if (_actionType == 0) then {
 
 } else {
 	// Vanilla Action (scroll menu)
-	_obj addAction
+	_object addAction
 	[
 		_actionName,	// title
 		{
