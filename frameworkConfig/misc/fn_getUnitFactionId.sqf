@@ -3,7 +3,7 @@
 
 params ["_unit"];
 
-if !(_unit isKindOf "CAManBase") exitWith { DEBUG_RPT_FULL("Object passed to _unit is not type CAManBase"); };
+if !(_unit isKindOf "Man") exitWith { DEBUG_RPT_FULL("Object passed to _unit is not type Man"); };
 
 _factionId = GETVAR(_unit,UNIT_FACTION_ID,"");
 if !(_factionId isEqualTo "") exitWith { _factionId; };

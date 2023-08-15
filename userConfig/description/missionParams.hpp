@@ -12,6 +12,6 @@
 // };
 
 // Access a mission parameter with
-// _param = ["name1", -1] call BIS_fnc_getParamValue;
+// _param = ["name1",nil] call BIS_fnc_getParamValue;
 
 

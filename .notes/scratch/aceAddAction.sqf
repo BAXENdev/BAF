@@ -16,3 +16,9 @@ _action = [
 	["ACE_MainActions"],
 	_action
 ] call ace_interact_menu_fnc_addActionToObject;
+
+[
+	_obj,
+	0,
+	["ACE_MainActions","action_var_name"]
+] call ace_interact_menu_fnc_removeActionFromObject;

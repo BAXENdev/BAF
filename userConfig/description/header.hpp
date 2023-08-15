@@ -20,4 +20,3 @@ onLoadName = "Sample Mission Name";
 onLoadMission = "BAF by BAXENATOR";
 author = "Author Name";
 loadScreen = "onLoadImage.jpg";
-onLoadIntro = "Mission Intro Message";

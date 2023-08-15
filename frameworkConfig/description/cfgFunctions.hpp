@@ -15,65 +15,16 @@
 // };
 
 class BAF {
-    class LoadoutSystem {
-        file = "frameworkConfig\loadoutSystem";
-        class assignClass {};
-        class assignCrate {};
-        class assignLoadout {};
-        class selectLoadoutDialog {};
-        class createCrateFactionIdDialog {};
-        class createCrateSelectionDialog {};
-        // class openFactionIdDialog {};
-        // class createCrate {};
-    };
-
-    class LoadoutSystemSetup {
-        file = "frameworkConfig\loadoutSystem\setup";
-        class addItemToCrate {};
-        class addPrimaryToCrate {};
-        class addSecondaryToCrate {};
-        class addLauncherToCrate {};
-        class addPrimaryMagsToCrate {};
-        class addSecondaryMagsToCrate {};
-        class addLauncherMagsToCrate {};
-        class createCrateFromFaction {};
-        class setupClass {};
-        class setupCrate {};
-        class setupLoadout {};
-    };
-
-    class RadioSystem {
-        file = "frameworkConfig\radioSystem";
-    };
-
-    class Misc {
-        file = "frameworkConfig\misc";
-        class getUnitFactionId {};
-        class objectHasInventory {};
-    };
+    #include "..\intel\functions.hpp"
+    #include "..\loadoutSystem\functions.hpp"
+    #include "..\misc\functions.hpp"
 };
 
 class BAF_INIT {
-    class StartUp {
-        file = "frameworkConfig\startUp\init";
-        class initLoadout {};
-        class initZen {};
-        // class radioInit {};
-        // class acreInit {};
-        // class tfarInit {};
-        class initBegin { preInit = 1; };
-    };
-
-    class LoadoutSystemZen {
-        file = "frameworkConfig\loadoutSystem\zen";
-        class zenAssignLoadout {};
-        class zenAssignCrate {};
-    };
+    #include "..\startup\functions.hpp"
+    #include "..\..\userConfig\loadouts\functions.hpp"
 };
 
-class BAF_FCFG {
-    class Respawn {
-        file = "frameworkConfig\respawn";
-        // class onPlayerRespawn {};
-    }
+class CMS {
+    #include "..\..\userConfig\customMissionScripts\functions.hpp"
 };

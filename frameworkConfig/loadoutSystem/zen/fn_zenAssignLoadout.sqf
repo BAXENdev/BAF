@@ -2,7 +2,7 @@
 _function = {
 	params ["_positionASL","_object"];
 
-	if (isNull _object or !(_object isKindOf "CAManBase")) exitWith { ["BafWarning", ["Attach to unit"]] call BIS_fnc_showNotification; };
+	if (isNull _object or !(_object isKindOf "Man")) exitWith { ["BafWarning", ["Attach to unit"]] call BIS_fnc_showNotification; };
 
 	// TODO: Add factionId selection
 	[_object] call BAF_fnc_selectLoadoutDialog;

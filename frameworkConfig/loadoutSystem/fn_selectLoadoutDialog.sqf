@@ -3,7 +3,7 @@
 
 params ["_unit"];
 
-if !(_unit isKindOf "CAManBase") exitWith { DEBUG_RPT_FULL("Attempted to assign loadout to a non-unit"); };
+if !(_unit isKindOf "Man") exitWith { DEBUG_RPT_FULL("Attempted to assign loadout to a non-unit"); };
 
 _factionId = [_unit] call BAF_fnc_getUnitFactionId;
 if !(_factionId in GET_REGISTRY_TAGS()) exitWith {

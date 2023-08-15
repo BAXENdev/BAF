@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="b04O1aOl_lMck9I26ZMJ" name="Page-1">
-        <mxGraphModel dx="833" dy="476" grid="1" gridSize="20" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="900" pageHeight="1600" math="0" shadow="0">
+        <mxGraphModel dx="1131" dy="433" grid="1" gridSize="20" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="900" pageHeight="1600" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -13,7 +13,7 @@
                 <mxCell id="5" value="preInit functions called&lt;br&gt;[AJU]" style="rounded=0;whiteSpace=wrap;html=1;fillStyle=auto;fontSize=16;" parent="1" vertex="1">
                     <mxGeometry x="120" y="280" width="160" height="80" as="geometry"/>
                 </mxCell>
-                <mxCell id="6" value="beginInit initializes Loadouts, Radios, Icons, and ZEN.&lt;br&gt;BAF_init_done is set to 1." style="rounded=0;whiteSpace=wrap;html=1;fillStyle=auto;fontSize=16;" parent="1" vertex="1">
+                <mxCell id="6" value="Zen functions, Loadout scripts" style="rounded=0;whiteSpace=wrap;html=1;fillStyle=auto;fontSize=16;" parent="1" vertex="1">
                     <mxGeometry x="280" y="280" width="520" height="80" as="geometry"/>
                 </mxCell>
                 <mxCell id="7" value="" style="shape=flexArrow;endArrow=classic;html=1;fontSize=16;exitX=0.056;exitY=0.028;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" edge="1">
@@ -46,7 +46,7 @@
                 <mxCell id="16" value="Object Initialization Field&lt;br&gt;[AJU]" style="rounded=0;whiteSpace=wrap;html=1;fillStyle=auto;fontSize=16;" parent="1" vertex="1">
                     <mxGeometry x="120" y="520" width="160" height="80" as="geometry"/>
                 </mxCell>
-                <mxCell id="17" value="BAF_assignLoadout, BAF_assignClass, BAF_assignRadios are called in preplaced units. BAF_assignXXXX waits for BAF_init_done to equal 1." style="rounded=0;whiteSpace=wrap;html=1;fillStyle=auto;fontSize=16;" parent="1" vertex="1">
+                <mxCell id="17" value="BAF_INIT functions are called" style="rounded=0;whiteSpace=wrap;html=1;fillStyle=auto;fontSize=16;" parent="1" vertex="1">
                     <mxGeometry x="280" y="520" width="520" height="80" as="geometry"/>
                 </mxCell>
                 <mxCell id="18" value="Eden Editor Scenario Attributes&lt;br&gt;[AJU]" style="rounded=0;whiteSpace=wrap;html=1;fillStyle=auto;fontSize=16;" parent="1" vertex="1">
@@ -70,7 +70,7 @@
                 <mxCell id="23" value="initPlayerLocal.sqf called&lt;br&gt;[CJS]" style="rounded=0;whiteSpace=wrap;html=1;fillStyle=auto;fontSize=16;fillColor=#18141D;fontColor=#FFFFFF;" parent="1" vertex="1">
                     <mxGeometry x="120" y="760" width="160" height="80" as="geometry"/>
                 </mxCell>
-                <mxCell id="24" value="" style="rounded=0;whiteSpace=wrap;html=1;fillStyle=auto;fontSize=16;fillColor=#18141D;fontColor=#FFFFFF;" parent="1" vertex="1">
+                <mxCell id="24" value="Set unit loadout. Set BAF_var_RespawnLoadout. Initialize arsenals." style="rounded=0;whiteSpace=wrap;html=1;fillStyle=auto;fontSize=16;fillColor=#18141D;fontColor=#FFFFFF;" parent="1" vertex="1">
                     <mxGeometry x="280" y="760" width="520" height="80" as="geometry"/>
                 </mxCell>
                 <mxCell id="25" value="" style="shape=flexArrow;endArrow=classic;html=1;fontSize=16;exitX=0.056;exitY=0.028;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" edge="1">
@@ -109,12 +109,6 @@
                 <mxCell id="46" value="" style="rounded=0;whiteSpace=wrap;html=1;fillStyle=auto;fontSize=16;" parent="1" vertex="1">
                     <mxGeometry x="280" y="999.6800000000001" width="520" height="80" as="geometry"/>
                 </mxCell>
-                <mxCell id="47" value="init.sqs called&lt;br&gt;[AJS]" style="rounded=0;whiteSpace=wrap;html=1;fillStyle=auto;fontSize=16;" parent="1" vertex="1">
-                    <mxGeometry x="120" y="1079.68" width="160" height="80" as="geometry"/>
-                </mxCell>
-                <mxCell id="48" value="" style="rounded=0;whiteSpace=wrap;html=1;fillStyle=auto;fontSize=16;" parent="1" vertex="1">
-                    <mxGeometry x="280" y="1079.68" width="520" height="80" as="geometry"/>
-                </mxCell>
                 <mxCell id="49" value="" style="shape=flexArrow;endArrow=classic;html=1;fontSize=16;exitX=0.056;exitY=0.028;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" edge="1">
                     <mxGeometry width="50" height="50" relative="1" as="geometry">
                         <mxPoint x="80.32000000000016" y="1040.0000000000002" as="sourcePoint"/>
@@ -122,10 +116,10 @@
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="50" value="init.sqf called&lt;br&gt;[AJS]" style="rounded=0;whiteSpace=wrap;html=1;fillStyle=auto;fontSize=16;" parent="1" vertex="1">
-                    <mxGeometry x="120" y="1159.68" width="160" height="80" as="geometry"/>
+                    <mxGeometry x="120" y="1079.68" width="160" height="80" as="geometry"/>
                 </mxCell>
                 <mxCell id="51" value="" style="rounded=0;whiteSpace=wrap;html=1;fillStyle=auto;fontSize=16;" parent="1" vertex="1">
-                    <mxGeometry x="280" y="1159.68" width="520" height="80" as="geometry"/>
+                    <mxGeometry x="280" y="1079.68" width="520" height="80" as="geometry"/>
                 </mxCell>
                 <mxCell id="52" value="&lt;font color=&quot;#000000&quot;&gt;Execution is not gauranteed&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillStyle=auto;fontSize=16;fillColor=#DEF0AD;" parent="1" vertex="1">
                     <mxGeometry x="80" y="160" width="240" height="40" as="geometry"/>

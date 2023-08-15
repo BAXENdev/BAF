@@ -28,7 +28,7 @@ params ["_unit",["_classSuffix","",[""]],["_index",0,["",0]],["_factionId","",["
 // TODO: Should this run in scheduled space to prevent stutters?
 
 // TODO: Should this assume that all variables passed to you are valid?
-if !(_unit isKindOf "CAManBase") exitWith { DEBUG_RPT_FULL("attempted to assign loadout to non-man object"); };
+if !(_unit isKindOf "Man") exitWith { DEBUG_RPT_FULL("attempted to assign loadout to non-man object"); };
 if !(_factionId in GET_REGISTRY_TAGS()) then { DEBUG_RPT_FULL("FactionId passed to assignLoadout is not available in the registry."); };
 
 _classBaf = GET_CLASS(_classSuffix,_factionId);

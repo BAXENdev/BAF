@@ -1,10 +1,7 @@
 
 #include "userConfig\description\header.hpp"
 
-#include "userConfig\description\corpseAndWreckManager.hpp"
 #include "frameworkConfig\description\corpseAndWreckManager.hpp"
-
-// #include "frameworkConfig\description\respawnTemplates.hpp"
 
 class Params {
     #include "userConfig\description\missionParams.hpp"
@@ -26,6 +23,8 @@ class CfgNotifications {
 // class CfgDebriefing {
 //     #include "frameworkConfig\description\cfgDebriefing.hpp"
 // };
+
+// #include "frameworkConfig\description\respawnTemplates.hpp"
 
 // // respawnDelay must be defined with a negative value for templates to override it
 // respawnDelay = -1;

@@ -4,7 +4,7 @@
 params ["_unit","_loadoutSuffix","_classSuffix","_factionId"];
 
 if !(isServer) exitWith {};
-if !(_unit isKindOf "CAManBase") exitWith { DEBUG_RPT_FULL("Failed to set up unit because an non-unit was passed.") };
+if !(_unit isKindOf "Man") exitWith { DEBUG_RPT_FULL("Failed to set up unit because an non-unit was passed.") };
 
 if (_loadoutSuffix isEqualType "") exitWith {
 	[_unit,_loadoutSuffix,_factionId] call BAF_fnc_assignLoadout;
