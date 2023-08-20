@@ -3,6 +3,7 @@
  * Author: BAXENATOR
  * Appends an item or items to the array.
  * If an array is passed to _elements, each element is appended.
+ * If you want to append an array, put the array in an array.
  *
  * Arguments:
  * 0: _array

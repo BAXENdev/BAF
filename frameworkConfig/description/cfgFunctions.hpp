@@ -15,16 +15,17 @@
 // };
 
 class BAF {
-    #include "..\intel\functions.hpp"
-    #include "..\loadoutSystem\functions.hpp"
-    #include "..\misc\functions.hpp"
+    #include "..\intel\categories.hpp"
+    #include "..\loadoutSystem\categories.hpp"
+    #include "..\misc\categories.hpp"
+    // #include "..\tasks\categories.hpp"
 };
 
 class BAF_INIT {
-    #include "..\startup\functions.hpp"
-    #include "..\..\userConfig\loadouts\functions.hpp"
+    #include "..\startup\categories.hpp"
+    #include "..\..\userConfig\loadouts\categories.hpp"
 };
 
 class CMS {
-    #include "..\..\userConfig\customMissionScripts\functions.hpp"
+    #include "..\..\userConfig\customMissionScripts\categories.hpp"
 };
