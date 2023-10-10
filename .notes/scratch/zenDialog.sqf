@@ -88,7 +88,7 @@ _editBox = [
 		"Enter Text Here",
 
 		// 1) Sanitizing Function, Code Function that accepts a string and returns a string
-		{ param["_inputText"]; _inputText; },
+		{ params ["_inputText"]; _inputText; },
 
 		// 2) Box Height in line count, only available for EDIT:MULTI & EDIT:CODE
 		5

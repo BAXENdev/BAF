@@ -1,7 +1,7 @@
 
 #include "..\..\macros\loadoutConfigMacros.hpp"
 
-#define FACTION_ID WEST_ID
+#define FACTION_ID blufor
 
 INIT_LOADOUT_SYSTEM();
 
@@ -28,6 +28,7 @@ CREATE_LOADOUT(co,"Commander",_loadout);
 
 _loadout = [[["arifle_MX_F","","acc_pointer_IR","optic_Aco",["30Rnd_65x39_caseless_mag",30],[],""],["launch_MRAWS_sand_F","","","",["MRAWS_HEAT_F",1],[],""],["hgun_P07_F","","","",["16Rnd_9x21_Mag",17],[],""],["U_B_CombatUniform_mcam",[["FirstAidKit",1],["30Rnd_65x39_caseless_mag",2,30]]],["V_PlateCarrier2_rgr",[["30Rnd_65x39_caseless_mag",3,30],["16Rnd_9x21_Mag",2,17],["SmokeShell",1,1],["SmokeShellGreen",1,1],["Chemlight_green",2,1]]],["B_AssaultPack_rgr_LAT2",[["MRAWS_HEAT_F",2,1],["MRAWS_HE_F",1,1]]],"H_HelmetB_sand","G_Aviator",[],["ItemMap","","ItemRadio","ItemCompass","ItemWatch","NVGoggles"]],[]];
 CREATE_LOADOUT(at,"Antitank",_loadout);
+LO_ADD_WHITELIST_ITEMS(at,["MRAWS_HEAT55_F"]);
 
 COPY_LOADOUT(xo,"2IC",co);
 
@@ -39,8 +40,6 @@ CR_ADD_LAUNCHER_MAGS(supply,at,10);
 CR_ADD_SECONDARY(supply,rif,2);
 CR_ADD_SECONDARY_MAGS(supply,rif,10);
 CR_ADD_ITEM(supply,"ACE_Vector",2);
-
-// CR_ADD_PRIMARY_MAGS(supply,xo,20);
 
 CREATE_CLASS(co,"Command",co);
 CL_ADD_LOADOUT(co,xo);

@@ -1,33 +1,37 @@
 
-#include "userConfig\description\header.hpp"
+#include "components\description\header.hpp"
 
-#include "frameworkConfig\description\corpseAndWreckManager.hpp"
+#include "components\description\frameworkSettings.hpp"
+
+#include "components\description\corpseAndWreckManager.hpp"
 
 class Params {
     #include "userConfig\description\missionParams.hpp"
 };
 
 class CfgFunctions {
-    #include "frameworkConfig\description\cfgFunctions.hpp"
-    #include "userConfig\description\cfgFunctions.hpp"
+    #include "components\description\cfgFunctions.hpp"
 };
 
-// class CfgSounds {
-//     #include "frameworkConfig\description\cfgSounds.hpp"
-// };
+class CfgSounds {
+    #include "components\description\cfgSounds.hpp"
+};
 
 class CfgNotifications {
-    #include "frameworkConfig\description\cfgNotifications.hpp"
+    #include "components\description\cfgNotifications.hpp"
 };
 
 // class CfgDebriefing {
-//     #include "frameworkConfig\description\cfgDebriefing.hpp"
+//     #include "components\description\cfgDebriefing.hpp"
 // };
-
-// #include "frameworkConfig\description\respawnTemplates.hpp"
 
 // // respawnDelay must be defined with a negative value for templates to override it
 // respawnDelay = -1;
 // class CfgRespawnTemplates {
-//     #include "frameworkConfig\description\respawnTemplates.hpp"
+//     #include "components\description\respawnTemplates.hpp"
 // };
+
+class Extended_DisplayLoad_EventHandlers {
+    #include "components\description\XEH_displayLoad.hpp"
+};
+

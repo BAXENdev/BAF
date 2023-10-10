@@ -10,7 +10,7 @@ corpseRemovalMinTime = 300;
 corpseRemovalMaxTime = 600;
 
 
-// Comment line below to disable corpse manager
+// Comment line below to disable wreck manager
 #define WRECK_MANAGER_ENABLED
 
 wreckLimit = 10;

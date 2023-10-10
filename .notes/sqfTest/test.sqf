@@ -1,2 +1,7 @@
 
-diag_log flatten [[],[2],[["3223"],[],[[4]]]];
+#include "macro.hpp"
+
+GUN
+GUN
+GUN
+GUN

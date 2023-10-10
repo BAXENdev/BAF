@@ -1,6 +1,7 @@
 {
-    "workbench.colorTheme": "Default Dark Modern",
+    "workbench.colorTheme": "Default Dark+",
     "editor.insertSpaces": true,
     "editor.tabSize": 4,
     // "editor.wordWrap": "on"
+    "vscode-json-editor.theme": "light"
 }

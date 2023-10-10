@@ -5,21 +5,17 @@ class EditorData
 	angleGridStep=0.2617994;
 	scaleGridStep=1;
 	autoGroupingDist=10;
-	toggles=9;
-	mods[]=
-	{
-		"3denEnhanced"
-	};
+	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=68;
+		nextID=112;
 	};
 	class Camera
 	{
-		pos[]={8345.0918,48.042755,6084.2251};
-		dir[]={-0.88708717,-0.30492258,0.34688896};
-		up[]={-0.28402773,0.95234543,0.11106917};
-		aside[]={0.36422688,9.4578718e-007,0.93142587};
+		pos[]={8250.5059,17.728439,5985.5146};
+		dir[]={0.34673718,-0.52955407,-0.77417433};
+		up[]={0.21645792,0.8482762,-0.48329446};
+		aside[]={-0.91264421,1.4901161e-008,-0.40875506};
 	};
 };
 binarizationWanted=0;
@@ -40,6 +36,7 @@ addons[]=
 	"A3_Weapons_F_Pistols_P07",
 	"A3_Weapons_F",
 	"ace_smallarms",
+	"acre_main",
 	"ace_nightvision",
 	"ace_attach",
 	"ace_chemlights",
@@ -48,13 +45,14 @@ addons[]=
 	"ace_medical_treatment",
 	"A3_Modules_F_Curator_Curator",
 	"CUP_Editor_Structures_Config",
-	"A3_Weapons_F_Ammoboxes"
+	"A3_Weapons_F_Ammoboxes",
+	"A3_Modules_F_Multiplayer"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=16;
+		items=18;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -120,50 +118,64 @@ class AddonsMetaData
 		};
 		class Item9
 		{
+			className="acre_main";
+			name="ACRE2 - Main";
+			author="ACRE2Team";
+			url="https://github.com/IDI-Systems/acre2";
+		};
+		class Item10
+		{
 			className="ace_nightvision";
 			name="ACE3 - Night Vision";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item10
+		class Item11
 		{
 			className="ace_attach";
 			name="ACE3 - Attach";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item11
+		class Item12
 		{
 			className="ace_chemlights";
 			name="ace_chemlights";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item12
+		class Item13
 		{
 			className="ace_medical_engine";
 			name="ACE3 - Medical Engine";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item13
+		class Item14
 		{
 			className="ace_medical_treatment";
 			name="ACE3 - Medical Treatment";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item14
+		class Item15
 		{
 			className="A3_Modules_F_Curator";
 			name="Arma 3 Zeus Update - Scripted Modules";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item15
+		class Item16
 		{
 			className="CUP_Editor_Structures_Config";
 			name="CUP_Editor_Structures_Config";
+		};
+		class Item17
+		{
+			className="A3_Modules_F";
+			name="Arma 3 Alpha - Scripted Modules";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
 		};
 	};
 };
@@ -200,7 +212,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=4;
+		items=6;
 		class Item0
 		{
 			dataType="Group";
@@ -213,13 +225,13 @@ class Mission
 					dataType="Object";
 					class PositionInfo
 					{
-						position[]={8256.6377,11.26117,5974.9878};
+						position[]={8257.5098,11.144503,5976.7612};
 					};
 					side="West";
 					flags=7;
 					class Attributes
 					{
-						init="[this,""rif""] call BAF_fnc_setupLoadout;";
+						init="[this,""co"",""blufor""] call BAF_fnc_setupLoadout;";
 						name="zeus";
 						isPlayer=1;
 						class Inventory
@@ -360,8 +372,8 @@ class Mission
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={8232.54,7.9664464,6001.1831};
-				angles[]={0.17577212,0,0.063111104};
+				position[]={8254.1035,11.542812,5966.9473};
+				angles[]={0.042375464,0,6.2615871};
 			};
 			id=2;
 			type="ModuleCurator_F";
@@ -434,7 +446,8 @@ class Mission
 			flags=4;
 			class Attributes
 			{
-				init="this addAction " \n "[ ""Pick Loadout"", { " \n "  params [""_target"", ""_caller"", ""_actionId"", ""_arguments""];  [_caller] call BAF_fnc_selectLoadoutDialog; " \n " }, " \n " nil," \n " 1.5, " \n " true," \n " true, " \n " """",   " \n " ""true"",  " \n " 50,    " \n " false, " \n " """",    " \n " """"    " \n "];";
+				init="[this] call BAF_fnc_assignLocker;";
+				name="locker1";
 				disableSimulation=1;
 			};
 			id=11;
@@ -490,6 +503,120 @@ class Mission
 					};
 				};
 				nAttributes=1;
+			};
+		};
+		class Item4
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8260.2441,12.090654,5975.6865};
+				angles[]={0.064716808,0,6.2783856};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="[this] call BAF_fnc_setupArsenal;";
+				name="arsenal1";
+			};
+			id=70;
+			type="I_supplyCrate_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="[[[[],[]],[[],[]],[[],[]],[[],[]]],false]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
+		class Item5
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={8256.6738,11.369149,5970.6572};
+			};
+			id=102;
+			type="ModuleRespawnPosition_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ModuleRespawnPosition_F_Marker";
+					expression="_this setVariable ['Marker',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="0";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ModuleRespawnPosition_F_Name";
+					expression="_this setVariable ['Name',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="Spawn";
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="ModuleRespawnPosition_F_Side";
+					expression="_this setVariable ['Side',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="1";
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="ModuleRespawnPosition_F_ShowNotification";
+					expression="_this setVariable ['ShowNotification',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="0";
+						};
+					};
+				};
+				class Attribute4
+				{
+					property="ModuleRespawnPosition_F_Type";
+					expression="_this setVariable ['Type',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="0";
+						};
+					};
+				};
+				nAttributes=5;
 			};
 		};
 	};
