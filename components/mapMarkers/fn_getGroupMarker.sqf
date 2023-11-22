@@ -1,36 +1,24 @@
 
+#include "..\..\macros\iconMacros.hpp"
+
 params ["_group"];
 
-_unit = leader group;
+private ["_icon", "_color", "_position", "_name"];
 
-_vehicle = objectParent _unit;
+_unit = leader _group;
 
-if (isNull _vehicle) exitWith { 
-	ICON_B_INFANTRY;
+_icon = [_group] call BAX_MAPMARKERS_fnc_getGroupIcon;
+
+switch (str side _group) do {
+	case WEST_S: { _color = COLOR_BLUFOR; };
+	case EAST_S: { _color = COLOR_OPFOR; };
+	case GUER_S: { _color = COLOR_INDFOR; };
+	case CIV_S: { _color = COLOR_BLUFOR; };
+	default { _color = COLOR_UNKNOWN; };
 };
 
-_type = ([_vehicle] call BIS_fnc_objectType)#1;
+_position = getPos _unit;
 
-if (_type in ["Tank","TrackedAPC","WheeledAPC"]) exitWith {
-	ICON_B_ARMOR;
-};
+_name = groupId _group;
 
-if (_type isEqualTo "Car") exitWith {
-	ICON_B_MECHANIZED;
-};
-
-if (_type isEqualTo "Helicopter") exitWith {
-	ICON_B_AIR;
-};
-
-if (_type isEqualTo "Plane") exitWith {
-	ICON_B_PLANE;
-};
-
-if (_type in ["Ship","Submarine"]) exitWith {
-	ICON_B_NAVAL;
-};
-
-ICON_B_INFANTRY;
-
-
+[_icon, _color, _position, _name];

@@ -12,7 +12,7 @@
 //     difficulty[] = {}; // Required difficulty settings. All listed difficulties has to be enabled
 // };                                                                                                                                                                   
 
-class BafWarning
+class BaxWarning
 {
     title = "Warning";
     iconPicture = "\a3\Ui_f\data\Map\Markers\Military\warning_ca.paa";

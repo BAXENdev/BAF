@@ -286,7 +286,7 @@ _vector = [
 	// Passed Arguments:
 	// 0) Dialog Values in order of Content
 	// 1) Arguments, the same ones passed in arg4 for zen_dialog_fnc_create
-	BAF_fnc_onConfirm,
+	BAX_fnc_onConfirm,
 
 	// 3) On Cancel, default: {}, unscheduled
 	{}, 

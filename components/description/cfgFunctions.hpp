@@ -14,19 +14,31 @@
 //     };
 // };
 
-class BAF {
-    // #include "..\intel\categories.hpp"
-    #include "..\loadouts\categories.hpp"
-    #include "..\misc\categories.hpp"
-    #include "..\mapMarkers\categories.hpp"
-    // #include "..\tasks\categories.hpp"
-};
-
-class BAF_INIT {
+class BAX_INIT {
     #include "..\startup\categories.hpp"
     #include "..\..\userConfig\categories.hpp"
 };
 
-class CMS {
+// class BAX_LOADOUTS {
+//     #include "..\loadouts\categories.hpp"
+// };
+
+// class BAX_MISC {
+//     #include "..\misc\categories.hpp"
+// };
+
+// class BAX_MAPMARKERS {
+//     #include "..\mapMarkers\categories.hpp"
+// };
+
+// class BAX_RADIOS {
+//     #include "..\radios\categories.hpp"
+// };
+
+// class BAX_RESPAWN {
+//     #include "..\respawn\categories.hpp"
+// };
+
+class BAX_USER {
     #include "..\..\userConfig\customMissionScripts\categories.hpp"
 };

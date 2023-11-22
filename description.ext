@@ -1,6 +1,4 @@
 
-#include "components\description\header.hpp"
-
 #include "components\description\frameworkSettings.hpp"
 
 #include "components\description\corpseAndWreckManager.hpp"
@@ -25,13 +23,11 @@ class CfgNotifications {
 //     #include "components\description\cfgDebriefing.hpp"
 // };
 
-// // respawnDelay must be defined with a negative value for templates to override it
-// respawnDelay = -1;
-// class CfgRespawnTemplates {
-//     #include "components\description\respawnTemplates.hpp"
-// };
+#include "components\description\CfgRespawnTemplates.hpp"
+
+#include "components\description\ui.hpp"
 
 class Extended_DisplayLoad_EventHandlers {
-    #include "components\description\XEH_displayLoad.hpp"
+    #include "components\description\displayLoad.hpp"
 };
 

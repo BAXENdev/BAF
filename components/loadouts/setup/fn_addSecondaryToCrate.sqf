@@ -9,13 +9,13 @@ if !(_crateArray isEqualType []) exitWith {
 	DEBUG_RPT_FULL(_rptMsg);
 };
 
-_loadoutBaf = GET_LOADOUT_BAF(_loadoutSuffix,_factionId);
-if !(_loadoutBaf isEqualtype []) exitWith {
+_loadoutBax = GET_LOADOUT_BAX(_loadoutSuffix,_factionId);
+if !(_loadoutBax isEqualtype []) exitWith {
 	_rptMsg = format ["%1 is not initialized.",GET_LOADOUT_VARIABLE(_loadoutSuffix,_factionId)];
 	DEBUG_RPT_FULL(_rptMsg);
 };
 
-_loadoutArray = GET_LOADOUT_ARRAY(_loadoutBaf);
+_loadoutArray = GET_LOADOUT_ARRAY(_loadoutBax);
 _secondaryWeaponArray = GET_SECONDARY(_loadoutArray);
 if (_secondaryWeaponArray isEqualTo []) exitWith {
 	_rptMsg = format ["%1 does not have a primary.",GET_LOADOUT_VARIABLE(_loadoutSuffix,_factionId)];

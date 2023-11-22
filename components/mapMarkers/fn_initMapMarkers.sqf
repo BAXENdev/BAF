@@ -1,8 +1,6 @@
 
 #include "..\..\macros\utilityMacros.hpp"
 
-// TODO: Update variable icons
-
-BAF_var_groupIcons = createHashMap;
-BAF_var_groupColors = createHashMap;
-BAF_var_groupHidden = createHashMap;
+VAR_GROUP_ICONS = createHashMap;
+VAR_GROUP_COLORS = createHashMap;
+VAR_GROUP_HIDDENS = createHashMap;

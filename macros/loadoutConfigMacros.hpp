@@ -2,7 +2,6 @@
 #include "utilityMacros.hpp"
 
 #define DEFAULT_LOADOUT_NAME "default" // TODO: Setup default loadout
-// #define FACTION_ID blufor // defined in loadout config files
 
 // Loadout Registry: [[Loadout Variable Name,Dispaly Name],...]
 // Class Registry: [[Class Variable Name,Display Name],...]
@@ -14,28 +13,28 @@
     CRATE_REGISTRY() = []; \
     FACTION_ARSENAL() = [[],[]]
 
-#define FACTION_ARSENAL()                               baf_arsenal_faction_##FACTION_ID
-#define LOADOUT_ARSENAL(SUFFIX_LOADOUT)                 baf_arsenal_loadout_##FACTION_ID##_##SUFFIX_LOADOUT
-#define CLASS_ARSENAL(SUFFIX_CLASS)                     baf_arsenal_class_##FACTION_ID##_##SUFFIX_CLASS
+#define FACTION_ARSENAL()                               bax_arsenal_faction_##FACTION_ID
+#define LOADOUT_ARSENAL(SUFFIX_LOADOUT)                 bax_arsenal_loadout_##FACTION_ID##_##SUFFIX_LOADOUT
+#define CLASS_ARSENAL(SUFFIX_CLASS)                     bax_arsenal_class_##FACTION_ID##_##SUFFIX_CLASS
 
-#define LOADOUT_VARIABLE(SUFFIX_LOADOUT)                baf_loadout_##FACTION_ID##_##SUFFIX_LOADOUT
-#define LOADOUT_REGISTRY()                              baf_registry_loadout_##FACTION_ID
+#define LOADOUT_VARIABLE(SUFFIX_LOADOUT)                bax_loadout_##FACTION_ID##_##SUFFIX_LOADOUT
+#define LOADOUT_REGISTRY()                              bax_registry_loadout_##FACTION_ID
 #define LOADOUT_NAME(SUFFIX_LOADOUT)                    (LOADOUT_VARIABLE(SUFFIX_LOADOUT) select 0)
 #define LOADOUT_TRAITS(SUFFIX_LOADOUT)                  (LOADOUT_VARIABLE(SUFFIX_LOADOUT) select 2)
 
-#define CLASS_VARIABLE(SUFFIX_CLASS)                    baf_class_##FACTION_ID##_##SUFFIX_CLASS
-#define CLASS_REGISTRY()                                baf_registry_class_##FACTION_ID
+#define CLASS_VARIABLE(SUFFIX_CLASS)                    bax_class_##FACTION_ID##_##SUFFIX_CLASS
+#define CLASS_REGISTRY()                                bax_registry_class_##FACTION_ID
 #define CLASS_LOADOUT_VALUE(SUFFIX_LOADOUT)             [#SUFFIX_LOADOUT,LOADOUT_NAME(SUFFIX_LOADOUT)]
 
-#define CRATE_VARIABLE(SUFFIX_CRATE)                    baf_crate_##FACTION_ID##_##SUFFIX_CRATE
-#define CRATE_REGISTRY()                                baf_registry_crate_##FACTION_ID
+#define CRATE_VARIABLE(SUFFIX_CRATE)                    bax_crate_##FACTION_ID##_##SUFFIX_CRATE
+#define CRATE_REGISTRY()                                bax_registry_crate_##FACTION_ID
 
-#define FA_ADD_WHITELIST_ITEMS(ELEMENTS)                [(FACTION_ARSENAL() select 0),ELEMENTS,true] call BAF_fnc_appendElements
-#define FA_ADD_BLACKLIST_ITEMS(ELEMENTS)                [(FACTION_ARSENAL() select 1),ELEMENTS,true] call BAF_fnc_appendElements
-#define LO_ADD_WHITELIST_ITEMS(SUFFIX_LOADOUT,ELEMENTS) [(LOADOUT_ARSENAL(SUFFIX_LOADOUT) select 0),ELEMENTS,true] call BAF_fnc_appendElements
-#define LO_ADD_BLACKLIST_ITEMS(SUFFIX_LOADOUT,ELEMENTS) [(LOADOUT_ARSENAL(SUFFIX_LOADOUT) select 1),ELEMENTS,true] call BAF_fnc_appendElements
-#define CL_ADD_WHITELIST_ITEMS(SUFFIX_CLASS,ELEMENTS)   [(CLASS_ARSENAL(SUFFIX_CLASS) select 0),ELEMENTS,true] call BAF_fnc_appendElements
-#define CL_ADD_BLACKLIST_ITEMS(SUFFIX_CLASS,ELEMENTS)   [(CLASS_ARSENAL(SUFFIX_CLASS) select 1),ELEMENTS,true] call BAF_fnc_appendElements
+#define FA_ADD_WHITELIST_ITEMS(ELEMENTS)                [(FACTION_ARSENAL() select 0),ELEMENTS,true] call BAX_MISC_fnc_appendElements
+#define FA_ADD_BLACKLIST_ITEMS(ELEMENTS)                [(FACTION_ARSENAL() select 1),ELEMENTS,true] call BAX_MISC_fnc_appendElements
+#define LO_ADD_WHITELIST_ITEMS(SUFFIX_LOADOUT,ELEMENTS) [(LOADOUT_ARSENAL(SUFFIX_LOADOUT) select 0),ELEMENTS,true] call BAX_MISC_fnc_appendElements
+#define LO_ADD_BLACKLIST_ITEMS(SUFFIX_LOADOUT,ELEMENTS) [(LOADOUT_ARSENAL(SUFFIX_LOADOUT) select 1),ELEMENTS,true] call BAX_MISC_fnc_appendElements
+#define CL_ADD_WHITELIST_ITEMS(SUFFIX_CLASS,ELEMENTS)   [(CLASS_ARSENAL(SUFFIX_CLASS) select 0),ELEMENTS,true] call BAX_MISC_fnc_appendElements
+#define CL_ADD_BLACKLIST_ITEMS(SUFFIX_CLASS,ELEMENTS)   [(CLASS_ARSENAL(SUFFIX_CLASS) select 1),ELEMENTS,true] call BAX_MISC_fnc_appendElements
 
 // Loadout Variable: [0) Display Name,1) Loadout Array,2) Traits Array,3) Radio Key]
 #define CREATE_LOADOUT(SUFFIX_LOADOUT,DISPLAY_NAME,LOADOUT_ARRAY) \
@@ -51,13 +50,16 @@
 #define RESET_TRAITS(SUFFIX_LOADOUT) \
     LOADOUT_TRAITS(SUFFIX_LOADOUT) set [0,0]; \
     LOADOUT_TRAITS(SUFFIX_LOADOUT) set [1,0]
-
 // TODO: Reset additional traits
+
 #define LO_SET_MEDIC(SUFFIX_LOADOUT)                    LOADOUT_TRAITS(SUFFIX_LOADOUT) set [0,1]
 #define LO_SET_DOCTOR(SUFFIX_LOADOUT)                   LOADOUT_TRAITS(SUFFIX_LOADOUT) set [0,2]
 #define LO_SET_ENGINEER(SUFFIX_LOADOUT)                 LOADOUT_TRAITS(SUFFIX_LOADOUT) set [1,1]
-// #define ADD_RADIO_KEY(SUFFIX,STRING_KEY) LOADOUT_VARIABLE(SUFFIX) set [3,STRING_KEY]; // TODO: Enable Radio Key Functionality 
-// TODO: Add additional customization
+
+// TODO: Add loadout randomization
+//   Loadout variants
+//   Per Gear randomization
+
 // TODO: Create Default Loadout Syntax
 
 #define CREATE_CLASS(SUFFIX_CLASS,DISPLAY_NAME,SUFFIX_LOADOUT) \
@@ -76,27 +78,25 @@
     CRATE_VARIABLE(SUFFIX_CRATE) = []
 
 #define CR_ADD_ITEM(SUFFIX_CRATE,ITEM_NAME,COUNT) \
-    [#SUFFIX_CRATE,ITEM_NAME,COUNT,#FACTION_ID] call BAF_fnc_addItemToCrate
+    [#SUFFIX_CRATE,ITEM_NAME,COUNT,#FACTION_ID] call BAX_LOADOUTS_fnc_addItemToCrate
 
 #define CR_ADD_PRIMARY(SUFFIX_CRATE,SUFFIX_LOADOUT,COUNT) \
-    [#SUFFIX_CRATE,#SUFFIX_LOADOUT,COUNT,#FACTION_ID] call BAF_fnc_addPrimaryToCrate
+    [#SUFFIX_CRATE,#SUFFIX_LOADOUT,COUNT,#FACTION_ID] call BAX_LOADOUTS_fnc_addPrimaryToCrate
 
 #define CR_ADD_SECONDARY(SUFFIX_CRATE,SUFFIX_LOADOUT,COUNT) \
-    [#SUFFIX_CRATE,#SUFFIX_LOADOUT,COUNT,#FACTION_ID] call BAF_fnc_addSecondaryToCrate
+    [#SUFFIX_CRATE,#SUFFIX_LOADOUT,COUNT,#FACTION_ID] call BAX_LOADOUTS_fnc_addSecondaryToCrate
 
 #define CR_ADD_LAUNCHER(SUFFIX_CRATE,SUFFIX_LOADOUT,COUNT) \
-    [#SUFFIX_CRATE,#SUFFIX_LOADOUT,COUNT,#FACTION_ID] call BAF_fnc_addLauncherToCrate
+    [#SUFFIX_CRATE,#SUFFIX_LOADOUT,COUNT,#FACTION_ID] call BAX_LOADOUTS_fnc_addLauncherToCrate
 
 #define CR_ADD_PRIMARY_MAGS(SUFFIX_CRATE,SUFFIX_LOADOUT,COUNT) \
-    [#SUFFIX_CRATE,#SUFFIX_LOADOUT,COUNT,#FACTION_ID] call BAF_fnc_addPrimaryMagsToCrate
+    [#SUFFIX_CRATE,#SUFFIX_LOADOUT,COUNT,#FACTION_ID] call BAX_LOADOUTS_fnc_addPrimaryMagsToCrate
 
 #define CR_ADD_SECONDARY_MAGS(SUFFIX_CRATE,SUFFIX_LOADOUT,COUNT) \
-    [#SUFFIX_CRATE,#SUFFIX_LOADOUT,COUNT,#FACTION_ID] call BAF_fnc_addSecondaryMagsToCrate
+    [#SUFFIX_CRATE,#SUFFIX_LOADOUT,COUNT,#FACTION_ID] call BAX_LOADOUTS_fnc_addSecondaryMagsToCrate
 
 #define CR_ADD_LAUNCHER_MAGS(SUFFIX_CRATE,SUFFIX_LOADOUT,COUNT) \
-    [#SUFFIX_CRATE,#SUFFIX_LOADOUT,COUNT,#FACTION_ID] call BAF_fnc_addLauncherMagsToCrate
+    [#SUFFIX_CRATE,#SUFFIX_LOADOUT,COUNT,#FACTION_ID] call BAX_LOADOUTS_fnc_addLauncherMagsToCrate
 
 #define CR_ADD_MEDICAL(SUFFIX_CRATE,MULTIPLIER) \
-    [#SUFFIX_CRATE,#FACTION_ID,MULTIPLIER] call BAF_fnc_addMedicalToCrate;
-// TODO: Define createCrateFromFaction
-// TODO: Defome createCrateFromClass
+    [#SUFFIX_CRATE,#FACTION_ID,MULTIPLIER] call BAX_LOADOUTS_fnc_addMedicalToCrate;

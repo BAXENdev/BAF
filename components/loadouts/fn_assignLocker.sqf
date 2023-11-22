@@ -15,8 +15,8 @@
  * - 
  *
  * Example:
- * [_this,"blufor"] call baf_fnc_assignLocker; // Locker
- * [_this,"blufor",1,true] call baf_fnc_assignLocker; // Locker with generated arsenal
+ * [_this,"blufor"] call BAX_LOADOUTS_fnc_assignLocker; // Locker
+ * [_this,"blufor",1,true] call BAX_LOADOUTS_fnc_assignLocker; // Locker with generated arsenal
  *
  * Public: Yes
  */
@@ -28,7 +28,7 @@ _object addAction
 	"Change Loadout",	// title
 	{
 		params ["_target", "_caller", "_actionId", "_arguments"]; // script
-		[_caller] call BAF_fnc_dialogSelectLoadout;
+		[_caller] call BAX_LOADOUTS_fnc_dialogSelectLoadout;
 	},
 	nil,		// arguments
 	1.5,		// priority
@@ -36,7 +36,7 @@ _object addAction
 	true,		// hideOnUse
 	"",			// shortcut
 	"true",		// condition
-	50,			// radius
+	5,			// radius
 	false,		// unconscious
 	"",			// selection
 	""			// memoryPoint

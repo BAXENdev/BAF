@@ -1,7 +1,6 @@
 
 #include "macro.hpp"
+westy = 1;
 
-GUN
-GUN
-GUN
-GUN
+diag_log STR(WEST);
+

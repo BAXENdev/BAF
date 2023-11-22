@@ -1,2 +1,3 @@
 
-#define GUN gun
+#define STR(ARG) #ARG
+#define WEST westy

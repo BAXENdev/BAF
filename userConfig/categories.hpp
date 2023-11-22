@@ -7,7 +7,13 @@ class Loadouts {
     // class loadoutConfigCivilian { preInit = 1; };
 };
 
-class GroupMarkers {
+class Radios {
+    file = "userConfig\radios";
+    class acreSetup { preInit = 1; };
+    // class tfarSetup {};
+};
+
+class MapMarkers {
     file = "userConfig";
     class mapMarkers { postInit = 1; };
 };

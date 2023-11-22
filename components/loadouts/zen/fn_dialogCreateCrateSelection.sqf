@@ -34,54 +34,6 @@ _paradrop = [
 	true
 ];
 
-// _addMarker = [
-// 	// 0) Content Type
-// 	"CHECKBOX",
-
-// 	// 1) Display Name and Tooltip
-// 	"Add Marker", // or  ["Title", "Tooltip"],
-
-// 	// 2) Control Specific Arguments - Default Control State
-// 	true
-// ];
-
-// _markers = [
-// 	// 0) Content Type
-// 	"LIST",
-
-// 	// 1) Display Name and Tooltip
-// 	["Select Marker","Adds a grenade to the top as a marker."], // or  ["Title", "Tooltip"],
-
-// 	// 2) Control Specific Arguments
-// 	[
-// 		// 0) Values to be returned
-// 		[0,1,2,3,4,5,6,7,8,9,10,11],
-
-// 		// 1) Pretty Names for Corresponding Return Value
-// 		// Pretty Names can be a list of strings or a list complex data 
-// 		[
-// 			"None",
-// 			"Smoke (White)",
-// 			"Smoke (Yellow)",
-// 			"Smoke (Green)",
-// 			"Smoke (Red)",
-// 			"Smoke (Blue)",
-// 			"Smoke (Purple)",
-// 			"Smoke (Orange)",
-// 			"Flare (White_",
-// 			"Flare (Yellow)",
-// 			"FlarE (Green)",
-// 			"Flare (Red)"
-// 		],
-
-// 		// 2) Default Index
-// 		0, // TODO: Determine if its 0 index
-
-// 		// 3) List Height
-// 		5
-// 	]
-// ];
-
 _function = {
 	params ["_dialogArgs","_arguments"];
 	_dialogArgs params ["_crateSuffix","_paradrop"];
@@ -94,9 +46,9 @@ _function = {
 		};
 	};
 
-	[_crateArg,_crateSuffix,_factionID] call BAF_fnc_assignCrate;
+	[_crateArg,_crateSuffix,_factionID] call BAX_loadouts_fnc_assignCrate;
 	if (_paradrop) then {
-		[]
+		[] // TODO: Add paradrop code
 	};
 };
 

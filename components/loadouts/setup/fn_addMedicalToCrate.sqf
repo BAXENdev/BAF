@@ -12,7 +12,7 @@
  * -
  *
  * Example:
- * [baf_crate_blufor_supply,"ACE_Vector",3] call BAF_fnc_addItemToCrate;
+ * [bax_crate_blufor_supply,"ACE_Vector",3] call BAX_loadouts_fnc_addItemToCrate;
  *
  * Public: Yes
  */

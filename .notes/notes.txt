@@ -1,7 +1,6 @@
 Arma Documentation
 https://community.bistudio.com/wiki/Initialisation_Order
 https://community.bistudio.com/wiki/getClientStateNumber
-https://community.bistudio.com/wiki/Arma_3:_Functions_Library#Config_Levels
 https://community.bistudio.com/wiki/Event_Scripts
 https://community.bistudio.com/wiki/PreProcessor_Commands
 https://community.bistudio.com/wiki/Description.ext

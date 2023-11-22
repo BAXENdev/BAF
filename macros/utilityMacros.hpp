@@ -1,48 +1,101 @@
 
-// #define TAG(STRING) ("baf_" + STRING)
-// #define FUNC(STRING) ("BAF_fnc_" + STRING)
-// #define VAR(STRING) ("baf_var_" + STRING)
+// #define TAG(STRING) ("bax_" + STRING)
+// #define FUNC(STRING) ("BAX_fnc_" + STRING)
+// #define VAR(STRING) ("bax_var_" + STRING)
 
 #ifndef UTILITY
 #define UTILITY
 
-// CONSTANTS
+// COSNTANTS
 
-#define WEST_ID                                         blufor
-#define EAST_ID                                         opfor
-#define INDEPENDENT_ID                                  indfor
-#define CIVILIAN_ID                                     civilian
-#define WEST_ID_STR                                     #WEST_ID
-#define EAST_ID_STR                                     #EAST_ID
-#define INDEPENDENT_ID_STR                              #INDEPENDENT_ID
-#define CIVILIAN_ID_STR                                 #CIVILIAN_ID
-#define MISC_ITEMS                                      ["ACE_RangeTable_82mm","ACE_adenosine","ACE_artilleryTable","ACE_ATragMX","ACE_fieldDressing","ACE_elasticBandage","ACE_packingBandage","ACE_Banana","ACE_quikclot","ACE_bloodIV","ACE_bloodIV_250","ACE_bloodIV_500","ACE_bodyBag","ACE_CableTie","ACE_Can_Franta","ACE_Can_RedGull","ACE_Can_Spirit","ACE_Canteen","ACE_Canteen_Empty","ACE_Canteen_Half","ACE_Cellphone","ACE_Chemlight_Shield","ACE_DAGR","ACE_DeadManSwitch","ACE_DefusalKit","ACE_EarPlugs","ACE_EntrenchingTool","ACE_epinephrine","FirstAidKit","ACE_Fortify","ACE_Flashlight_MX991","ACE_Humanitarian_Ration","ACE_HuntIR_monitor","ACE_IR_Strobe_Item","ACE_Kestrel4500","ACE_Flashlight_KSF1","ACE_M26_Clacker","ACE_Clacker","ACE_Flashlight_XL50","ACE_MapTools","ace_marker_flags_black","ace_marker_flags_blue","ace_marker_flags_green","ace_marker_flags_orange","ace_marker_flags_purple","ace_marker_flags_red","ace_marker_flags_white","ace_marker_flags_yellow","Medikit","ACE_microDAGR","ACE_morphine","MineDetector","ACE_MRE_BeefStew","ACE_MRE_ChickenTikkaMasala","ACE_MRE_ChickenHerbDumplings","ACE_MRE_CreamChickenSoup","ACE_MRE_CreamTomatoSoup","ACE_MRE_LambCurry","ACE_MRE_MeatballsPasta","ACE_MRE_SteakVegetables","ACE_personalAidKit","ACE_plasmaIV","ACE_plasmaIV_500","ACE_plasmaIV_250","ACE_RangeCard","ACE_salineIV","ACE_salineIV_250","ACE_salineIV_500","ACE_Sandbag_empty","ACE_SpareBarrel_Item","ACE_splint","ACE_SpottingScope","ACE_SpraypaintBlack","ACE_SpraypaintBlue","ACE_SpraypaintGreen","ACE_SpraypaintRed","ACE_RangeTable_82mm","ACE_adenosine","ACE_artilleryTable","ACE_ATragMX","ACE_fieldDressing","ACE_elasticBandage","ACE_packingBandage","ACE_Banana","ACE_quikclot","ACE_bloodIV","ACE_bloodIV_250","ACE_bloodIV_500","ACE_bodyBag","ACE_CableTie","ACE_Can_Franta","ACE_Can_RedGull","ACE_Can_Spirit","ACE_Canteen","ACE_Canteen_Empty","ACE_Canteen_Half","ACE_Cellphone","ACE_Chemlight_Shield","ACE_DAGR","ACE_DeadManSwitch","ACE_DefusalKit","ACE_EarPlugs","ACE_EntrenchingTool","ACE_epinephrine","FirstAidKit","ACE_Fortify","ACE_Flashlight_MX991","ACE_Humanitarian_Ration","ACE_HuntIR_monitor","ACE_IR_Strobe_Item","ACE_Kestrel4500","ACE_Flashlight_KSF1","ACE_M26_Clacker","ACE_Clacker","ACE_Flashlight_XL50","ACE_MapTools","ace_marker_flags_black","ace_marker_flags_blue","ace_marker_flags_green","ace_marker_flags_orange","ace_marker_flags_purple","ace_marker_flags_red","ace_marker_flags_white","ace_marker_flags_yellow","Medikit","ACE_microDAGR","ACE_morphine","MineDetector","ACE_MRE_BeefStew","ACE_MRE_ChickenTikkaMasala","ACE_MRE_ChickenHerbDumplings","ACE_MRE_CreamChickenSoup","ACE_MRE_CreamTomatoSoup","ACE_MRE_LambCurry","ACE_MRE_MeatballsPasta","ACE_MRE_SteakVegetables","ACE_personalAidKit","ACE_plasmaIV","ACE_plasmaIV_500","ACE_plasmaIV_250","ACE_RangeCard","ACE_salineIV","ACE_salineIV_250","ACE_salineIV_500","ACE_Sandbag_empty","ACE_SpareBarrel_Item","ACE_splint","ACE_SpottingScope","ACE_SpraypaintBlack","ACE_SpraypaintBlue","ACE_SpraypaintGreen","ACE_SpraypaintRed","ToolKit","ACE_wirecutter"]
-#define EMPTY_LOADOUT                                   [[],[],[],[],[],[],"","",[],["","","","","",""]]
+#define WEST_S                                          "WEST"
+#define EAST_S                                          "EAST"
+#define GUER_S                                          "GUER"
+#define CIV_S                                           "CIV"
 
-#define VARS_RESPAWN_LOADOUT                            "BAF_var_respawn_loadout"
-#define VARS_FACTION_ID                                 "BAF_var_unit_faction_id"
-#define VARS_LOADOUT_SUFFIX                             "BAF_var_unit_loadout_suffix"
-#define VARS_CLASS_SUFFIX                               "BAF_var_unit_class_suffix"
+// Framework Variables
+    // Radios
+    #define VAR_RADIO_PRESETS                           BAX_var_radio_presets
+    #define VAR_RADIO_CHANNEL_NAMES                     BAX_var_radio_channel_names
 
-#define VAR_FACTION_REGISTRY                            BAF_var_faction_ids
-#define VAR_RADIO_PRESETS                               BAF_var_radio_presets
-#define VAR_ARSENAL_OBJECTS                             BAF_var_arsenal_objects
+    // Map Markers
+    #define VAR_GROUP_ICONS                             BAX_var_group_icons
+    #define VAR_GROUP_HIDDENS                           BAX_var_group_hiddens
+    #define VAR_GROUP_COLORS                            BAX_var_group_colors
+    #define VAR_GROUPS_PLAYERS                          BAX_var_group_names
+    
+    // Respawn
+    #define VAR_RESPAWN_POSITIONS                       BAX_var_respawn_positions
+    #define VAR_RESPAWN_SELECTED_POSITION               BAX_var_respawn_selected_position
+    #define VAR_RESPAWN_SETTINGS                        BAX_var_respawn_settings
+
+    // Respawn
+    #define VARS_RESPAWN_RADIOS                         "BAX_var_respawn_radios"
+    #define VARS_RESPAWN_SELECTED_POSITION              #VAR_RESPAWN_SELECTED_POSITION
+
+// Framework Settings
+
+#define CFG_GROUP_MARKERS                               useGroupMarkers
+#define CFG_SQUAD_MARKERS                               useSquadMarkers
+#define CFG_ACRE_LANGUAGES                              acreUniqueLanguages
+#define CFG_ACRE_FREQUENCIES                            acreUniqueFrequencies
+#define CFG_LOADOUT_RESPAWN                             loadoutOnRespawn
+
+#define CFG_RESPAWN_WEST_TICKETS                        respawnWestTickets
+#define CFG_RESPAWN_WEST_TICKETS_PERSONAL               respawnWestTicketsPersonal
+#define CFG_RESPAWN_WEST_DELAY                          respawnWestDelay
+#define CFG_RESPAWN_WEST_SQUAD                          respawnWestDoSquad
+#define CFG_RESPAWN_WEST_WAVE                           respawnWestDoWave
+#define CFG_RESPAWN_WEST_WAVE_DURATION                  respawnWestWaveDuration
+#define CFG_RESPAWN_WEST_WAVE_CALL                      respawnWestDoWaveCall
+
+#define CFG_RESPAWN_EAST_TICKETS                        respawnEastTickets
+#define CFG_RESPAWN_EAST_TICKETS_PERSONAL               respawnEastTicketsPersonal
+#define CFG_RESPAWN_EAST_DELAY                          respawnEastDelay
+#define CFG_RESPAWN_EAST_SQUAD                          respawnEastDoSquad
+#define CFG_RESPAWN_EAST_WAVE                           respawnEastDoWave
+#define CFG_RESPAWN_EAST_WAVE_DURATION                  respawnEastWaveDuration
+#define CFG_RESPAWN_EAST_WAVE_CALL                      respawnEastDoWaveCall
+
+#define CFG_RESPAWN_GUER_TICKETS                        respawnGuerTickets
+#define CFG_RESPAWN_GUER_TICKETS_PERSONAL               respawnGuerTicketsPersonal
+#define CFG_RESPAWN_GUER_DELAY                          respawnGuerDelay
+#define CFG_RESPAWN_GUER_SQUAD                          respawnGuerDoSquad
+#define CFG_RESPAWN_GUER_WAVE                           respawnGuerDoWave
+#define CFG_RESPAWN_GUER_WAVE_DURATION                  respawnGuerWaveDuration
+#define CFG_RESPAWN_GUER_WAVE_CALL                      respawnGuerDoWaveCall
+
+#define CFG_RESPAWN_CIV_TICKETS                         respawnCivTickets
+#define CFG_RESPAWN_CIV_TICKETS_PERSONAL                respawnCivTicketsPersonal
+#define CFG_RESPAWN_CIV_DELAY                           respawnCivDelay
+#define CFG_RESPAWN_CIV_SQUAD                           respawnCivDoSquad
+#define CFG_RESPAWN_CIV_WAVE                            respawnCivDoWave
+#define CFG_RESPAWN_CIV_WAVE_DURATION                   respawnCivWaveDuration
+#define CFG_RESPAWN_CIV_WAVE_CALL                       respawnCivDoWaveCall
+
+// Framework Macros
+
+// #define GETMCFG(COFNIG)                                 (missionConfigFile >> CONFIG)
+// #define GETCFG_N(CONFIG,ATTRIBUTE)                      (getNumber (CONFIG >> ATTRIBUTE))
+#define GETCFG_N(ATTRIBUTE)                             (getNumber(missionConfigFile >> "BAX_CFG" >> ATTRIBUTE))
+#define BAX_VAR(VAR_NAME)                               (format ["BAX_var_%1",VAR_NAME])
+// #define BAX_VAR(VAR_NAME)                               ("BAX_var_" + VAR_NAME)
 
 // FUNCTIONS
 #define CONCAT(VALUE1,VALUE2)                           VALUE1##VALUE2
 #define CONCAT3(VALUE1,VALUE2,VALUE3)                   VALUE1##VALUE2##VALUE3
 #define CONCAT4(VALUE1,VALUE2,VALUE3,VALUE4)            VALUE1##VALUE2##VALUE3##VALUE4
 
-#define VAR_TO_STR(VALUE)                               #VALUE
+#define VARS(VALUE)                                     #VALUE
 
-#define GETVAR(OBJECT,VARIABLE_NAME,DEFAULT_VALUE)      OBJECT getVariable [VARIABLE_NAME,DEFAULT_VALUE]
-#define SETVAR(OBJECT,VARIABLE_NAME,VALUE)              OBJECT setVariable [VARIABLE_NAME,VALUE]
-#define SETVARG(OBJECT,VARIABLE_NAME,VALUE)             OBJECT setVariable [VARIABLE_NAME,VALUE,true]
-#define GETVARM(VARIABLE_NAME,DEFAULT_VALUE)            missionNamespace getVariable [VARIABLE_NAME,DEFAULT_VALUE]
-#define SETVARM(VARIABLE_NAME,VALUE)                    missionNamespace setVariable [VARIABLE_NAME,VALUE]
-#define SETVARMG(VARIABLE_NAME,VALUE)                   missionNamespace setVariable [VARIABLE_NAME,VALUE,true]
+#define GETVAR(OBJECT,VARIABLE_NAME,DEFAULT_VALUE)      (OBJECT getVariable [VARIABLE_NAME,DEFAULT_VALUE])
+#define GETVARM(VARIABLE_NAME,DEFAULT_VALUE)            (missionNamespace getVariable [VARIABLE_NAME,DEFAULT_VALUE])
+#define SETVAR(OBJECT,VARIABLE_NAME,VALUE)              (OBJECT setVariable [VARIABLE_NAME,VALUE])
+#define SETVARM(VARIABLE_NAME,VALUE)                    (missionNamespace setVariable [VARIABLE_NAME,VALUE])
+#define SETVARG(OBJECT,VARIABLE_NAME,VALUE)             (OBJECT setVariable [VARIABLE_NAME,VALUE,true])
+#define SETVARMG(VARIABLE_NAME,VALUE)                   (missionNamespace setVariable [VARIABLE_NAME,VALUE,true])
 
-#define DEBUG_RPT_FULL(MSG)                             diag_log format ["[BAF] (%1,%2) %3",_fnc_scriptName,__LINE__,MSG]
-#define DEBUG_RPT(MSG)                                  diag_log format ["[BAF]: %1",MSG]
+#define DEBUG_RPT_FULL(MSG)                             diag_log format ["[BAX] (%1,%2) %3",_fnc_scriptName,__LINE__,MSG]
+#define DEBUG_RPT(MSG)                                  diag_log format ["[BAX]: %1",MSG]
 
 #endif

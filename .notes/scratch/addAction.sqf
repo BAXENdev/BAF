@@ -13,7 +13,7 @@ this addAction
 	true,		// hideOnUse
 	"",			// shortcut
 	"true",		// condition
-	50,			// radius
+	5,			// radius
 	false,		// unconscious
 	"",			// selection
 	""			// memoryPoint

@@ -6,7 +6,7 @@ params ["_posASL","_object"];
 private ["_crateArg"];
 
 if !(isNull _object) then {
-	_isCrate = [_object] call BAF_fnc_objectHasInventory;
+	_isCrate = [_object] call BAX_MISC_fnc_objectHasInventory;
 	if !(_isCrate) exitWith {
 		[objNull,"Place on an object with an inventory."] call BIS_fnc_showCuratorFeedbackMessage;
 	};
@@ -37,7 +37,7 @@ _function = {
 	_dialogArgs params ["_factionID"];
 	_arguments params ["_crateArg"];
 
-	[_crateArg,_factionID] call BAF_fnc_dialogCreateCrateSelection;
+	[_crateArg,_factionID] call BAX_loadouts_fnc_dialogCreateCrateSelection;
 };
 
 [

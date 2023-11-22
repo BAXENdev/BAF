@@ -17,6 +17,6 @@ class Header
 };
 
 onLoadName = "Sample Mission Name";
-onLoadMission = "BAF by BAXENATOR";
+onLoadMission = "BAX by BAXENATOR";
 author = "Author Name";
-loadScreen = "assets\images\onLoadImage.jpg";
+loadScreen = "userConfig\assets\onLoadImage.jpg";

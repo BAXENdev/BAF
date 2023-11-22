@@ -1,6 +1,6 @@
 
 disabledAI = true;
 
-class BAF_CFG {
+class BAX_CFG {
     #include "..\..\userConfig\description\frameworkSettings.hpp"
 };

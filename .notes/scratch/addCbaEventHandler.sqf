@@ -1,0 +1,1 @@
+_eventId = ["test", {systemChat str _this}] call CBA_fnc_addEventHandler;

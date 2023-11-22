@@ -1,15 +1,24 @@
 
-_code = {
-	params ["_positionASL","_object"];
+#include "..\..\..\macros\loadoutMacros.hpp"
 
-	if (isNull _object or !(_object isKindOf "Man")) exitWith { [objNull,"Attach To Unit"] call BIS_fnc_showCuratorFeedbackMessage; };
+_function = {
+    params ["_posASL","_object"];
 
-	// TODO: Add factionId selection
-	[_object] call BAF_fnc_dialogSelectLoadout;
+    if (isNull _object) exitWith {
+        [objNull, "Place on unit!"] call BIS_fnc_showCuratorFeedbackMessage;
+    };
+    if !(_object isKindOf "Man") exitWith {
+        [objNull, "Place on unit!"] call BIS_fnc_showCuratorFeedbackMessage;
+    };
+
+    [_object] call BAX_LOADOUT_fnc_dialogSelectLoadoutFull;
 };
 
 [
-	"BAF Utilities",
-	"[LOADOUT] Assign Loadout",
-	_code
+    "[BAX]",
+    "[LOADOUT] Assign Loadout",
+
+    // 2) Function - code or function name
+    // Passed Params: 0) Module Position ASL, 1) Attached object, objNull if not attached
+    _function
 ] call zen_custom_modules_fnc_register;

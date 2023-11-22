@@ -4,7 +4,7 @@
 
 params ["_control"];
 
-if (getNumber(missionConfigFile >> "BAF_CFG" >> "useSquadMarkers") isEqualTo 0) exitWith {};
+if (getNumber (missionConfigFile >> "BAX_CFG" >> CFGS_SQUADMARKERS) isEqualTo 0) exitWith {};
 
 _control ctrlAddEventHandler [
 	"Draw",
@@ -13,25 +13,26 @@ _control ctrlAddEventHandler [
 		// _size = 64 / _scale;
 		_size = 24;
 		_units = (units group player);
-		if (getNumber(missionConfigFile >> "BAF_CFG" >> "useGroupMarkers") isEqualTo 1) then {
-			_units = _units - [(leader group player)];
-		};
-		_iconsPositionsDirections = _units apply {
-			_icon = [_x] call BAF_fnc_getUnitMarker;
-			_position = getPos _x;
-			_direction = getDirVisual _x;
-			[_icon,_position,_direction];
+		
+		// 
+		// if (getNumber(missionConfigFile >> "BAX_CFG" >> "useGroupMarkers") isEqualTo 1) then {
+		// 	_units = _units - [(leader group player)];
+		// };
+
+		_iconsColorsPositionsDirectionsNames = _units apply {
+			[_x] call BAX_MAPMARKERS_fnc_getUnitMarker;
 		};
 
-		_iconsPositionsDirections apply {
-			_x params ["_icon", "_position", "_direction"];
+		_iconsColorsPositionsDirectionsNames apply {
+			_x params ["_icon", "_color", "_position", "_direction","_name"];
 			_this select 0 drawIcon [
 				_icon,
-				COLOR_BLUFOR,
+				_color,
 				_position,
 				_size,
 				_size,
-				_direction
+				_direction,
+				_name
 			]
 		}
 	}

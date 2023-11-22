@@ -1,48 +1,43 @@
 
-#include "..\..\..\macros\loadoutAccessMacros.hpp"
+#include "..\..\..\macros\loadoutMacros.hpp"
 
-params ["_unit"];
+// _onConfirm: _onConfirmCode, _onConfirmArgs
+params ["_factionID","_onConfirm",["_loadoutSuffix",""],["_classSuffix",""]];
+_onConfirm params ["_onConfirmCode","_onConfirmArgs"];
 
-if !(_unit isKindOf "Man") exitWith { DEBUG_RPT_FULL("Attempted to assign loadout to a non-unit"); };
-
-_factionId = [_unit] call BAF_fnc_getUnitFactionID;
-if !(_factionId in VAR_FACTION_REGISTRY) exitWith {
-	_rptMsg = "FactionID has not been assigned to unit.";
-	["BafWarning",[_rptMsg]] call BIS_fnc_showNotification;
-	DEBUG_RPT_FULL(_rptMsg);
+private ["_loadoutRegistry"];
+if (_classSuffix isEqualTo "") then {
+    _loadoutRegistry = GETVARM(VARS_LOADOUT_REGISTRY(_factionID));
+} else {
+    _classArray = GETVARM(VARS_CLASS(_factionID,_classSuffix),nil);
+    _loadoutRegistry = _classArray select 1;
 };
 
-private ["_loadoutSuffixes","_loadoutNames","_title"];
+if (_loadoutRegistry isEqualTo []) exitWith {
+    [[],[_factionID,_classSuffix]] call _onConfirm;
+};
 
-_loadoutRegistry = GET_LOADOUT_REGISTRY(_factionId);
-_loadoutSuffixes = _loadoutRegistry apply { _x#0; };
-_loadoutNames = _loadoutRegistry apply { _x#1; };
+_loadoutSuffixes = _loadoutRegistry apply { _x select 0; };
+_loadoutDisplayNames = _loadoutRegistry apply { _x select 1; };
+_defaultIndex = _loadoutSuffixes find _loadoutSuffix;
+if (_defaultIndex < 0) then { _defaultIndex = 0; };
 
-_title = format ["Pick Loadout [%1]",_factionId];
-
-_listBox = [
-	"LIST",
-	"Loadouts:",
-	[
-		_loadoutSuffixes,
-		_loadoutNames,
-		0,
-		10
-	]
+_listSelectLoadout = [
+    "LIST",
+    "Loadouts",
+    [
+        _loadoutSuffixes,
+        _loadoutDisplayNames,
+        _defaultIndex,
+        10
+    ],
+    true
 ];
 
-_onConfirm = {
-	params ["_dialogArgs", "_functionArgs"];
-	_dialogArgs params ["_loadoutSuffix"];
-	_functionArgs params ["_unit", "_factionId"];
-
-	[_unit,_loadoutSuffix,_factionId] call BAF_fnc_assignLoadout;
-};
-
 [
-	_title,
-	[_listBox], // Content Forms
-	_onConfirm,
-	{},
-	[_unit, _factionId]
+    "Select Loadout",
+    [_listSelectLoadout],
+    _onConfirmCode, // params: [dialogValues:["_loadoutSuffix"], arguments:["_factionID","_classSuffix","_onConfirmArgs"]]
+    {},
+    [_factionID,_classSuffix,_onConfirmArgs]
 ] call zen_dialog_fnc_create;

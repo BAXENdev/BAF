@@ -1,87 +1,36 @@
 
-#include "..\..\..\macros\loadoutAccessMacros.hpp"
+#include "..\..\..\macros\loadoutMacros.hpp"
 
-params ["_unit"];
+// _onConfirm: _onConfirmCode, _onConfirmArgs
+params ["_factionID","_onConfirm",["_classSuffix",""]];
+_onConfirm params ["_onConfirmCode","_onConfirmArgs"];
 
-if !(_unit isKindOf "Man") exitWith { DEBUG_RPT_FULL("Attempted to assign loadout to a non-unit"); };
-
-_factionID = [_unit] call BAF_fnc_getUnitFactionID;
-if !(_factionID in VAR_FACTION_REGISTRY) exitWith {
-	_rptMsg = "FactionID has not been assigned to unit.";
-	["BafWarning",[_rptMsg]] call BIS_fnc_showNotification;
-	DEBUG_RPT_FULL(_rptMsg);
-};
-
-_classRegistry = GET_CLASS_REGISTRY(_factionID);
-// TODO: Do I need to test if this isNil?
-// If the factionID exists, this should be gauranteed to return not-nil
+_classRegistry = GETVARM(VARSVARS_CLASS_REGISTRY(_factionID),nil);
 if (_classRegistry isEqualTo []) exitWith {
-	_rptMsg = "Unit's assigned faction has no classes.";
-	["BafWarning",[_rptMsg]] call BIS_fnc_showNotification;
-	DEBUG_RPT_FULL(_rptMsg);
+    [[],[_factionID]] call _onConfirm;
 };
 
-// TODO: The selected value could be the loadoutSuffixes from the class instead of the classSuffix
-_title = format ["Pick Class [%1]",_factionID];
-_classSuffixes = _classRegistry apply { _x#0; };
-_classNames = _classRegistry apply { _x#1 };
+_classSuffixes = _classRegistry apply { _x select 0; };
+_classDisplayNames = _classRegistry apply { _x select 1; };
+_defaultIndex = _classSuffixes find _classSuffix;
+if (_defaultIndex < 0) then { _defaultIndex = 0; };
 
-_listBox = [
-	"LIST",
-	"Classes:",
-	[
-		_classSuffixes,
-		_classNames,
-		0,
-		10
-	]
+_listSelectClass = [
+    "LIST",
+    "Loadouts",
+    [
+        _classSuffixes,
+        _classDisplayNames,
+        _defaultIndex,
+        10
+    ],
+    true
 ];
 
-_onConfirm = {
-	params ["_dialogArgs", "_functionArgs"];
-	_dialogArgs params ["_classSuffix"];
-	_functionArgs params ["_unit", "_factionID"];
-
-	// [_unit,_loadoutSuffix,_factionID] call BAF_fnc_assignLoadout;
-
-	_classArray = GET_CLASS(_classSuffix,_factionID);
-	_loadoutRegistry = GET_CLASS_LOADOUTS(_classArray);
-	_loadoutSuffixes = _loadoutRegistry apply { _x#0; };
-	_loadoutNames = _loadoutRegistry apply { _x#1; };
-	_title = format ["Pick Loadout [%1 : %2]",_factionID,GET_CLASS_NAME(GET_CLASS(_classSuffix,_factionID))];
-
-	_listBox = [
-		"LIST",
-		"Loadouts:",
-		[
-			_loadoutSuffixes,
-			_loadoutNames,
-			0,
-			10
-		]
-	];
-
-	_onConfirm = {
-		params ["_dialogArgs", "_functionArgs"];
-		_dialogArgs params ["_loadoutSuffix"];
-		_functionArgs params ["_unit", "_factionID", "_classSuffix"];
-
-		[_unit,_loadoutSuffix,_factionID,_classSuffix] call BAF_fnc_assignLoadout;
-	};
-
-	[
-		_title,
-		[_listBox],
-		_onConfirm,
-		{},
-		[_unit, _factionID, _classSuffix]
-	] call zen_dialog_fnc_create;
-};
-
 [
-	_title,
-	[_listBox],
-	_onConfirm,
-	{},
-	[_unit, _factionID]
+    "Select Class",
+    [_listSelectClass],
+    _onConfirmCode, // params: [dialogValues:["_classSuffix"], arguments:["_factionID","_onConfirmArgs]]
+    {},
+    [_factionID,_onConfirmArgs]
 ] call zen_dialog_fnc_create;

@@ -17,9 +17,9 @@
  * -
  *
  * Example:
- * [_this,"The enemy is at logging camp"] call BAF_fnc_createIntel;
- * [_this,"The enemy is at logging camp","Enemy Intel"] call BAF_fnc_createIntel;
- * [_this,"The enemy is at logging camp","Enemy Intel","Search Cabinet",false,1] call BAF_fnc_createIntel;
+ * [_this,"The enemy is at logging camp"] call BAX_fnc_createIntel;
+ * [_this,"The enemy is at logging camp","Enemy Intel"] call BAX_fnc_createIntel;
+ * [_this,"The enemy is at logging camp","Enemy Intel","Search Cabinet",false,1] call BAX_fnc_createIntel;
  *
  * Public: Yes
  */
@@ -51,9 +51,9 @@ if (_actionType == 0) then {
 			params ["_target","_player","_params"];
 			_params params ["_text","_title","_giveToEveryone","_deleteOnGive","_varName"];
 			if (_giveToEveryone) then {
-				[_text,_title] remoteExec ["BAF_fnc_giveIntel",-2];
+				[_text,_title] remoteExec ["BAX_fnc_giveIntel",-2];
 			} else {
-				[_text,_title] call BAF_fnc_giveIntel;
+				[_text,_title] call BAX_fnc_giveIntel;
 			};
 			switch (_deleteOnGive) do {
 				case 1: { [_target,0,["ACE_MainActions",_varName]] call ace_interact_menu_fnc_removeActionFromObject; };
@@ -82,9 +82,9 @@ if (_actionType == 0) then {
 			params ["_target", "_caller", "_actionId", "_arguments"];
 			_arguments params ["_text","_title","_giveToEveryone","_deleteOnGive"];
 			if (_giveToEveryone) then {
-				[_text,_title] remoteExec ["BAF_fnc_giveIntel",-2];
+				[_text,_title] remoteExec ["BAX_fnc_giveIntel",-2];
 			} else {
-				[_text,_title] call BAF_fnc_giveIntel;
+				[_text,_title] call BAX_fnc_giveIntel;
 			};
 			switch (_deleteOnGive) do {
 				case 1: { _target removeAction _actionId; };

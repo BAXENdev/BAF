@@ -15,9 +15,9 @@
  * -
  *
  * Example:
- * [[],"Hi"] call BAF_fnc_appendElements; Results in ["Hi"]
- * [[],["Hi"]] call BAF_fnc_appendElements; Results in ["Hi"]
- * [[],["Hi"]] call BAF_fnc_appendElements; Results in ["Hi"]
+ * [[],"Hi"] call BAX_MISC_fnc_appendElements; Results in ["Hi"]
+ * [[],["Hi"]] call BAX_MISC_fnc_appendElements; Results in ["Hi"]
+ * [[],["Hi"]] call BAX_MISC_fnc_appendElements; Results in ["Hi"]
  *
  * Public: Yes
  */

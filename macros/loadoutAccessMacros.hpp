@@ -2,23 +2,23 @@
 #include "utilityMacros.hpp"
 
 #define EMPTY_LIST                                      [[],[]]
-#define GET_FACTION_ARSENAL(FACTION_ID)                 (GETVARM(("baf_arsenal_faction_" + FACTION_ID),EMPTY_LIST))
-#define GET_CLASS_ARSENAL(FACTION_ID,SUFFIX)            (GETVARM(("baf_arsenal_class_" + FACTION_ID + "_" + SUFFIX),EMPTY_LIST))
-#define GET_LOADOUT_ARSENAL(FACTION_ID,SUFFIX)          (GETVARM(("baf_arsenal_loadout_" + FACTION_ID + "_" + SUFFIX),EMPTY_LIST))
+#define GET_FACTION_ARSENAL(FACTION_ID)                 (GETVARM(("bax_arsenal_faction_" + FACTION_ID),EMPTY_LIST))
+#define GET_CLASS_ARSENAL(FACTION_ID,SUFFIX)            (GETVARM(("bax_arsenal_class_" + FACTION_ID + "_" + SUFFIX),EMPTY_LIST))
+#define GET_LOADOUT_ARSENAL(FACTION_ID,SUFFIX)          (GETVARM(("bax_arsenal_loadout_" + FACTION_ID + "_" + SUFFIX),EMPTY_LIST))
 
-#define GET_LOADOUT_VARIABLE(STRING_SUFFIX,FACTION_ID)  (format ["baf_loadout_%1_%2",FACTION_ID,STRING_SUFFIX])
-#define GET_LOADOUT_REGISTRY_VARIABLE(FACTION_ID)       (format ["baf_registry_loadout_%1",FACTION_ID])
-#define GET_LOADOUT_BAF(STRING_SUFFIX,FACTION_ID)       (GETVARM(GET_LOADOUT_VARIABLE(STRING_SUFFIX,FACTION_ID),nil))
+#define GET_LOADOUT_VARIABLE(STRING_SUFFIX,FACTION_ID)  (format ["bax_loadout_%1_%2",FACTION_ID,STRING_SUFFIX])
+#define GET_LOADOUT_REGISTRY_VARIABLE(FACTION_ID)       (format ["bax_registry_loadout_%1",FACTION_ID])
+#define GET_LOADOUT_BAX(STRING_SUFFIX,FACTION_ID)       (GETVARM(GET_LOADOUT_VARIABLE(STRING_SUFFIX,FACTION_ID),nil))
 #define GET_LOADOUT_REGISTRY(FACTION_ID)                (GETVARM(GET_LOADOUT_REGISTRY_VARIABLE(FACTION_ID),nil))
-#define GET_LOADOUT_NAME(LOADOUT_BAF)                   (LOADOUT_BAF select 0)
-#define GET_LOADOUT_ARRAY(LOADOUT_BAF)                  (LOADOUT_BAF select 1)
-#define GET_LOADOUT_TRAITS(LOADOUT_BAF)                 (LOADOUT_BAF select 2)
+#define GET_LOADOUT_NAME(LOADOUT_BAX)                   (LOADOUT_BAX select 0)
+#define GET_LOADOUT_ARRAY(LOADOUT_BAX)                  (LOADOUT_BAX select 1)
+#define GET_LOADOUT_TRAITS(LOADOUT_BAX)                 (LOADOUT_BAX select 2)
 #define GET_TRAIT_MEDICAL(TRAITS)                       (TRAITS select 0)
 #define GET_TRAIT_ENGINEERING(TRAITS)                   (TRAITS select 1)
-// TODO: Get other traits
+// TODO: Get other traits: EOD, UAV Hacker
 
-#define GET_CLASS_VARIABLE(STRING_SUFFIX,FACTION_ID)    (format ["baf_class_%1_%2",FACTION_ID,STRING_SUFFIX])
-#define GET_CLASS_REGISTRY_VARIABLE(FACTION_ID)         (format ["baf_registry_class_%1",FACTION_ID])
+#define GET_CLASS_VARIABLE(STRING_SUFFIX,FACTION_ID)    (format ["bax_class_%1_%2",FACTION_ID,STRING_SUFFIX])
+#define GET_CLASS_REGISTRY_VARIABLE(FACTION_ID)         (format ["bax_registry_class_%1",FACTION_ID])
 #define GET_CLASS(STRING_SUFFIX,FACTION_ID)             (GETVARM(GET_CLASS_VARIABLE(STRING_SUFFIX,FACTION_ID),nil))
 #define GET_CLASS_REGISTRY(FACTION_ID)                  (GETVARM(GET_CLASS_REGISTRY_VARIABLE(FACTION_ID),nil))
 #define GET_CLASS_NAME(CLASS_ARRAY)                     CLASS_ARRAY select 0
@@ -26,8 +26,8 @@
 #define GET_CLASS_ARSENAL(CLASS_ARRAY)                  CLASS_ARRAY select 2
 #define SET_CLASS_ARSENAL(CLASS_ARRAY,ARSENAL_ARRAY)    CLASS_ARRAY set [1, ARSENAL_ARRAY]
 
-#define GET_CRATE_VARIABLE(STRING_SUFFIX,FACTION_ID)    (format ["baf_crate_%1_%2",FACTION_ID,STRING_SUFFIX])
-#define GET_CRATE_REGISTRY_VARIABLE(FACTION_ID)         (format ["baf_registry_crate_%1",FACTION_ID])
+#define GET_CRATE_VARIABLE(STRING_SUFFIX,FACTION_ID)    (format ["bax_crate_%1_%2",FACTION_ID,STRING_SUFFIX])
+#define GET_CRATE_REGISTRY_VARIABLE(FACTION_ID)         (format ["bax_registry_crate_%1",FACTION_ID])
 #define GET_CRATE(STRING_SUFFIX,FACTION_ID)             (GETVARM(GET_CRATE_VARIABLE(STRING_SUFFIX,FACTION_ID),nil))
 #define GET_CRATE_REGISTRY(FACTION_ID)                  (GETVARM(GET_CRATE_REGISTRY_VARIABLE(FACTION_ID),nil))
 #define SET_CRATE(STRING_SUFFIX,FACTION_ID,CRATE_ARRAY) SETVARM(GET_CRATE_VARIABLE(STRING_SUFFIX,FACTION_ID),CRATE_ARRAY)

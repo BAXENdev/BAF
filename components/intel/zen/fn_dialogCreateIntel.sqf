@@ -16,7 +16,7 @@ _code = {
 		// TODO: Make object not take damage and disable simulation
 	};
 
-	[_moduleObject,_text,_title,_actionName,_giveToEveryone,_deleteOnGive,_actionType] remoteExec ["BAF_fnc_createIntel"]; 
+	[_moduleObject,_text,_title,_actionName,_giveToEveryone,_deleteOnGive,_actionType] remoteExec ["BAX_fnc_createIntel"]; 
 };
 
 _titleEditBox = [

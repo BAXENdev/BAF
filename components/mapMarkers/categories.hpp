@@ -4,5 +4,8 @@ class MapMarkers {
     class initMapMarkers { preInit = 1; };
     class addGroupMarkers {};
     class addSquadMarkers {};
+    class getGroupIcon {};
+    class getGroupMarker {};
+    class getUnitIcon {};
     class getUnitMarker {};
 };

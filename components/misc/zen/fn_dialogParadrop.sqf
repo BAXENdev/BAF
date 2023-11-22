@@ -2,6 +2,8 @@
 params ["_position","_object"];
 
 // TODO: Add position selection
+// TODO: If isNull _object, select from a list of default objects (Minimum should a fuel canister)
+// TODO: Add ability to add objects to paradrop list per mission
 
 _heightSlider = [
 	// 0) Content Type
@@ -10,7 +12,7 @@ _heightSlider = [
 	"SLIDER",
 
 	// 1) Display Name and Tooltip
-	"Title", // or  ["Title", "Tooltip"],
+	"Paradrop Height", // or  ["Title", "Tooltip"],
 
 	// 2) Control Specific Arguments
 	[
@@ -18,15 +20,15 @@ _heightSlider = [
 		0,
 
 		// 1) Maximum Value
-		1,
+		1000,
 
 		// 2) Default Value
-		0.5,
+		300,
 
 		// 3) Formatting, NUMBER or CODE. 
 		// Number represents number of decimals (0, 1, 2)
 		// Code formats a number passed as argument, and returns it as string
-		2, // or { param["_number"]; str _number; }
+		0, // or { param["_number"]; str _number; }
 
 		// 4) Radius Center, OBJECT or ARRAY (AGL Position)
 		// https://community.bistudio.com/wiki/ASLToAGL
@@ -34,10 +36,7 @@ _heightSlider = [
 
 		// 5) Radius Color RGBA
 		[1, 1, 1, 1]
-	],
-
-	// 3) Force Default, default: false
-	true
+	]
 ];
 
 _markers = [
@@ -63,14 +62,14 @@ _markers = [
 			"Smoke (Blue)",
 			"Smoke (Purple)",
 			"Smoke (Orange)",
-			"Flare (White_",
+			"Flare (White)",
 			"Flare (Yellow)",
-			"FlarE (Green)",
+			"Flare (Green)",
 			"Flare (Red)"
 		],
 
 		// 2) Default Index
-		0, // TODO: Determine if its 0 index
+		0,
 
 		// 3) List Height
 		5
@@ -84,7 +83,7 @@ _code = {
 
 	if (isNull _object) exitWith { [objNull,"Place on object."] call BIS_fnc_showCuratorFeedbackMessage; };
 
-	[_object,_position,_height,_addSmoke,_smokeTime] call BAF_fnc_paradrop;
+	[_object,_position,_height,_addSmoke] call BAX_MISC_fnc_paradrop;
 };
 
 [
@@ -95,7 +94,7 @@ _code = {
 	// Passed Arguments:
 	// 0) Dialog Values in order of Content
 	// 1) Arguments, the same ones passed in arg4 for zen_dialog_fnc_create
-	_code, // TODO: Finish code
+	_code,
 
 	// 3) On Cancel, default: {}, unscheduled
 	{}, 

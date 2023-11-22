@@ -3,31 +3,33 @@
 
 params ["_unit"];
 
-if ((leader group _unit) isEqualTo _unit) exitWith {
-	ICON_LEADER;
-};
+// TODO: Get diwaki's DUI radar icon if exist
 
-if (GETVAR(_unit,"ace_medical_medicclass",0) > 0) exitWith {
-	ICON_MEDIC;
-};
+private ["_icon","_color","_position","_direction","_name"];
 
-if (GETVAR(_unit,"ACE_isEngineer",0) > 0) exitWith {
-	ICON_ENGINEER;
-};
+_icon = [_unit] call BAX_MAPMARKERS_fnc_getUnitIcon;
 
-// EOD
-// if (GETVAR(_unit,"ACE_isEngineer",0) > 0) exitWith {
-// 	ICON_ENGINEER;
+switch (assignedTeam _unit) do {
+	case "RED": { _color = COLOR_RED; };
+	case "GREEN": { _color = COLOR_GREEN; };
+	case "BLUE": { _color = COLOR_BLUE; };
+	case "YELLOW": { _color = COLOR_YELLOW; };
+	default { _color = COLOR_WHITE; };
+};
+// if (_unit getVariable ["ACE_isUnconscious", false]) then {
+// 	_color = COLOR_ORANGE;
+// 	// _name = name _unit;
+// } else {
+// 	// _name = "";
 // };
+_name = "";
 
-_launcher = (getUnitLoadout _unit)#1;
-if (!(_launcher isEqualTo []) && { "Launcher" in (([_launcher#0] call BIS_fnc_itemType)#1) }) exitWith { // If launcher is not an empty array and if "Launcher" is in item type name
-	ICON_AT;
+_position = getPos _unit;
+
+if ((alive _unit) and !(_unit getVariable ["ACE_isUnconscious", false])) then {
+	_direction = getDirVisual _unit;
+} else {
+	_direction = 0;
 };
 
-_primary = (getUnitLoadout _unit)#0;
-if (!(_primary isEqualTo []) && { "MachineGun" isEqualTo (([_primary#0] call BIS_fnc_itemType)#1) }) exitWith {
-	ICON_MG;
-};
-
-ICON_MAN;
+[_icon,_color,_position,_direction,_name];

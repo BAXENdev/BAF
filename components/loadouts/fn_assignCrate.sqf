@@ -14,7 +14,7 @@
  * -
  *
  * Example:
- * [crate1,"supply","blufor"] call baf_fnc_assignLoadout;
+ * [crate1,"supply","blufor"] call BAX_LOADOUTS_fnc_assignLoadout;
  *
  * Public: Yes
  */
@@ -23,7 +23,7 @@
 
 params ["_crateObject",["_crateSuffix","",[""]],["_factionId","",[""]]];
 
-_isCrate = [_crateObject] call BAF_fnc_objectHasInventory;
+_isCrate = [_crateObject] call BAX_MISC_fnc_objectHasInventory;
 
 if !(_isCrate) exitWith { DEBUG_RPT_FULL("Passed an object without an inventory to assignCrate."); };
 

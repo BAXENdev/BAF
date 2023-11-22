@@ -4,19 +4,23 @@
 #define COLOR_BLUFOR                                    [0.0, 0.3, 0.6, 1.0]
 #define COLOR_OPFOR                                     [0.5, 0.0, 0.0, 1.0]
 #define COLOR_INDFOR                                    [0.0, 0.5, 0.0, 1.0]
+#define COLOR_CIVILIAN                                  [0.4, 0.0, 0.5, 1.0]
+#define COLOR_UNKNOWN                                   [0.7, 0.6, 0.0, 1.0]
 #define COLOR_RED                                       [1.0, 0.0, 0.0, 1.0]
-#define COLOR_ORANGE                                    [1.0, 0.5, 0.0, 1.0]
+#define COLOR_ORANGE                                    [1.0, 0.27, 0.0, 1.0]
 #define COLOR_YELLOW                                    [1.0, 1.0, 0.0, 1.0]
 #define COLOR_LIME                                      [0.5, 1.0, 0.0, 1.0]
 #define COLOR_GREEN                                     [0.0, 1.0, 0.0, 1.0]
 #define COLOR_TURQUISE                                  [0.0, 1.0, 0.5, 1.0]
 #define COLOR_CYAN                                      [0.0, 1.0, 1.0, 1.0]
-#define COLOR_L_BLUE                                    [0.0, 0.5, 1.0, 1.0]
+#define COLOR_AQUA                                      [0.0, 0.5, 1.0, 1.0]
 #define COLOR_BLUE                                      [0.0, 0.0, 1.0, 1.0]
 #define COLOR_PURPLE                                    [0.5, 0.0, 1.0, 1.0]
 #define COLOR_MAGENTA                                   [1.0, 0.0, 1.0, 1.0]
 #define COLOR_PINK                                      [1.0, 0.0, 0.5, 1.0]
+#define COLOR_BLACK                                     [0.0, 0.0, 0.0, 1.0]
 #define COLOR_GRAY                                      [0.5, 0.5, 0.5, 1.0]
+#define COLOR_WHITE                                     [1.0, 1.0, 1.0, 1.0]
 
 #define ICON_MAN                                        "\A3\ui_f\data\map\vehicleicons\iconMan_ca.paa"
 #define ICON_MEDIC                                      "\A3\ui_f\data\map\vehicleicons\iconManMedic_ca.paa"
@@ -26,7 +30,9 @@
 #define ICON_LEADER                                     "\A3\ui_f\data\map\vehicleicons\iconManLeader_ca.paa"
 #define ICON_ENGINEER                                   "\A3\ui_f\data\map\vehicleicons\iconManEngineer_ca.paa"
 #define ICON_EXPLOSIVE                                  "\A3\ui_f\data\map\vehicleicons\iconManExplosive_ca.paa"
-
+#define ICON_REVIVE                                     "a3\ui_f\data\igui\cfg\revive\overlayicons\u100_ca.paa"
+#define ICON_DEAD                                       "a3\ui_f\data\igui\cfg\revive\overlayicons\f100_ca.paa"
+ 
 #define ICON_B_AIR                                      "\A3\ui_f\data\map\markers\nato\b_air.paa"
 #define ICON_B_ANTIAIR                                  "\A3\ui_f\data\map\markers\nato\b_antiair.paa"
 #define ICON_B_ARMOR                                    "\A3\ui_f\data\map\markers\nato\b_armor.paa"
@@ -91,3 +97,24 @@
 #define ICON_N_UNKNOWN                                  "\A3\ui_f\data\map\markers\nato\n_unknown.paa"
 
 #define ICON_C_UNKNOWN                                  "\A3\ui_f\data\map\markers\nato\c_unknown.paa"
+
+#define ICON_AIR(FACTION)                               "\A3\ui_f\data\map\markers\nato\" + FACTION + "_air.paa"
+#define ICON_ANTIAIR(FACTION)                           "\A3\ui_f\data\map\markers\nato\" + FACTION + "_antiair.paa"
+#define ICON_ARMOR(FACTION)                             "\A3\ui_f\data\map\markers\nato\" + FACTION + "_armor.paa"
+#define ICON_ARTILLERY(FACTION)                         "\A3\ui_f\data\map\markers\nato\" + FACTION + "_art.paa"
+#define ICON_HQ(FACTION)                                "\A3\ui_f\data\map\markers\nato\" + FACTION + "_hq.paa"
+#define ICON_INFANTRY(FACTION)                          "\A3\ui_f\data\map\markers\nato\" + FACTION + "_inf.paa"
+#define ICON_INSTALLATION(FACTION)                      "\A3\ui_f\data\map\markers\nato\" + FACTION + "_installation.paa"
+#define ICON_MAINTENANCE(FACTION)                       "\A3\ui_f\data\map\markers\nato\" + FACTION + "_maint.paa"
+#define ICON_MECHANIZED(FACTION)                        "\A3\ui_f\data\map\markers\nato\" + FACTION + "_mech_inf.paa"
+#define ICON_MEDICAL(FACTION)                           "\A3\ui_f\data\map\markers\nato\" + FACTION + "_med.paa"
+#define ICON_MORTAR(FACTION)                            "\A3\ui_f\data\map\markers\nato\" + FACTION + "_mortar.paa"
+#define ICON_MOTORIZED(FACTION)                         "\A3\ui_f\data\map\markers\nato\" + FACTION + "_motor_inf.paa"
+#define ICON_NAVAL(FACTION)                             "\A3\ui_f\data\map\markers\nato\" + FACTION + "_naval.paa"
+#define ICON_ORDNANCE(FACTION)                          "\A3\ui_f\data\map\markers\nato\" + FACTION + "_Ordnance_ca.paa"
+#define ICON_PLANE(FACTION)                             "\A3\ui_f\data\map\markers\nato\" + FACTION + "_plane.paa"
+#define ICON_RECON(FACTION)                             "\A3\ui_f\data\map\markers\nato\" + FACTION + "_recon.paa"
+#define ICON_SERVICE(FACTION)                           "\A3\ui_f\data\map\markers\nato\" + FACTION + "_service.paa"
+#define ICON_SUPPORT(FACTION)                           "\A3\ui_f\data\map\markers\nato\" + FACTION + "_support.paa"
+#define ICON_UAV(FACTION)                               "\A3\ui_f\data\map\markers\nato\" + FACTION + "_uav.paa"
+#define ICON_UNKNOWN(FACTION)                           "\A3\ui_f\data\map\markers\nato\" + FACTION + "_unknown.paa"

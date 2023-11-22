@@ -15,9 +15,9 @@
  * -
  *
  * Example:
- * [_this,"rifleman"] call baf_fnc_assignLoadout;
- * [_this,"rifleman","mercenary_faction"] call baf_fnc_assignLoadout;
- * [_this,"rifleman","mercenary_faction","infantry_class"] call baf_fnc_assignLoadout;
+ * [_this,"rifleman"] call BAX_LOADOUTS_fnc_assignLoadout;
+ * [_this,"rifleman","mercenary_faction"] call BAX_LOADOUTS_fnc_assignLoadout;
+ * [_this,"rifleman","mercenary_faction","infantry_class"] call BAX_LOADOUTS_fnc_assignLoadout;
  *
  * Public: Yes
  */
@@ -26,15 +26,11 @@
 
 params ["_unit",["_loadoutSuffix",""],["_factionId",""],["_classSuffix",""]];
 
-// Runtime Conditions
-// TODO: Should this run in scheduled space to prevent stutters?
-
-// TODO: Should this assume that all variables passed to you are valid?
 if !(_unit isKindOf "Man") exitWith { DEBUG_RPT_FULL("attempted to assign loadout to non-man object"); };
 if !(_factionId in VAR_FACTION_REGISTRY) then { DEBUG_RPT_FULL("FactionId passed to assignLoadout is not available in the registry."); };
 
 if (_factionId isEqualTo "") then {
-	_factionId = [_unit] call BAF_fnc_getUnitFactionID;
+	_factionId = [_unit] call BAX_LOADOUTS_fnc_getUnitFactionID;
 };
 
 if (_factionId isEqualTo "") exitWith {
@@ -42,19 +38,21 @@ if (_factionId isEqualTo "") exitWith {
 	DEBUG_RPT_FULL(_rptMsg);
 };
 
-_loadoutBaf = GET_LOADOUT_BAF(_loadoutSuffix,_factionId);
-if !(_loadoutBaf isEqualType []) exitWith { 
+_loadoutBax = GET_LOADOUT_BAX(_loadoutSuffix,_factionId);
+if !(_loadoutBax isEqualType []) exitWith { 
 	_rptMsg = format ["(loadout) %1 is not initialized",GET_LOADOUT_VARIABLE(_loadoutSuffix,_factionId)];
 	DEBUG_RPT_FULL(_rptMsg);
 };
 
-_loadoutArray = GET_LOADOUT_ARRAY(_loadoutBaf);
+_loadoutArray = GET_LOADOUT_ARRAY(_loadoutBax);
 
 // Loadout Stucture
 // 0) Display Name,1) Loadout Array,2) Traits Array
-_unit setUnitLoadout _loadoutArray;
+if (alive _unit) then { // If not alive and loadout reassigned, do not update the units actual loadout
+	_unit setUnitLoadout _loadoutArray;
+};
 
-_traits = GET_LOADOUT_TRAITS(_loadoutBaf);
+_traits = GET_LOADOUT_TRAITS(_loadoutBax);
 
 _medicalTrait = GET_TRAIT_MEDICAL(_traits);
 SETVARG(_unit,"ace_medical_medicclass",_medicalTrait);
@@ -70,5 +68,3 @@ SETVARG(_unit,VARS_FACTION_ID,_factionId);
 SETVARG(_unit,VARS_CLASS_SUFFIX,_classSuffix);
 SETVARG(_unit,VARS_LOADOUT_SUFFIX,_loadoutSuffix);
 SETVARG(_unit,VARS_RESPAWN_LOADOUT,_loadoutArray);
-call BAF_fnc_assignArsenal;
-// TODO: Set unit radio key

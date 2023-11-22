@@ -4,6 +4,6 @@ class Startup {
 };
 
 class StartupInit {
-    file = "components\startup\init";
-    class beginInit { preInit = 1; };
+    file = "components\startup";
+    class preinitBeginInit { preInit = 1; };
 };

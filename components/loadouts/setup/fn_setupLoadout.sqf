@@ -2,11 +2,9 @@
 params ["_unit",["_loadoutSuffix","",[""]],["_factionId", "",[""]]];
 
 // Runtime Conditions
-// TODO: Does the player exist yet prior to this call?
-// TODO: Does it execute JIP?
 
-if !(isServer) exitWith {};
-// if !(canSuspend) exitWith { _this spawn BAF_fnc_setupLoadout; };
-// waitUntil { baf_init_done >= 1; }; // TODO: Is this needed?
+// if !(isServer) exitWith {};
+if !(local _unit) exitWith {};
+// if !(canSuspend) exitWith { _this spawn BAX_LOADOUTS_fnc_setupLoadout; };
 
-[_unit,_loadoutSuffix,_factionId] call BAF_fnc_assignLoadout;
+[_unit,_loadoutSuffix,_factionId] call BAX_LOADOUTS_fnc_assignLoadout;
