@@ -6,18 +6,57 @@ class EditorData
 	scaleGridStep=1;
 	autoGroupingDist=10;
 	toggles=1;
+	class ItemIDProvider
+	{
+		nextID=16;
+	};
 	class Camera
 	{
-		pos[]={5277.8604,184.94969,3320.2424};
-		dir[]={0.63571167,-0.36673719,-0.679259};
-		up[]={0.25059909,0.93032587,-0.26776576};
-		aside[]={-0.73012996,4.9265509e-008,-0.68332297};
+		pos[]={8256.4219,18.334591,5969.6113};
+		dir[]={0.23149571,-0.5442521,0.80646187};
+		up[]={0.15016685,0.83891225,0.52313656};
+		aside[]={0.96126842,1.4981561e-006,-0.27593639};
 	};
 };
 binarizationWanted=0;
-sourceName="BAF_Test2";
+sourceName="BAX";
+addons[]=
+{
+	"A3_Characters_F",
+	"A3_Modules_F_Curator_Curator",
+	"A3_Supplies_F_Orange_Ammoboxes"
+};
 class AddonsMetaData
 {
+	class List
+	{
+		items=3;
+		class Item0
+		{
+			className="A3_Characters_F";
+			name="Arma 3 Alpha - Characters and Clothing";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item1
+		{
+			className="A3_Modules_F_Curator";
+			name="Arma 3 Zeus Update - Scripted Modules";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+		class Item2
+		{
+			className="A3_Supplies_F_Orange";
+			name="Arma 3 Orange - Ammoboxes and Supplies";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
+	};
+};
+dlcs[]=
+{
+	"ORANGE"
 };
 randomSeed=9743921;
 class ScenarioData
@@ -45,5 +84,171 @@ class Mission
 		minute=0;
 		startFogDecay=0.014;
 		forecastFogDecay=0.014;
+	};
+	class Entities
+	{
+		items=3;
+		class Item0
+		{
+			dataType="Group";
+			side="West";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Object";
+					class PositionInfo
+					{
+						position[]={8256.8311,11.260038,5974.9956};
+						angles[]={0,0.26586601,0};
+					};
+					side="West";
+					flags=7;
+					class Attributes
+					{
+						init="[this,""blufor"",""commander""] call BAX_LOADOUTS_fnc_assignLoadout;";
+						name="zeus";
+						isPlayer=1;
+					};
+					id=6;
+					type="B_Survivor_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="speaker";
+							expression="_this setspeaker _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="STRING";
+									value="Male01ENG";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="pitch";
+							expression="_this setpitch _value;";
+							class Value
+							{
+								class data
+								{
+									singleType="SCALAR";
+									value=0.99000001;
+								};
+							};
+						};
+						nAttributes=2;
+					};
+				};
+			};
+			class Attributes
+			{
+			};
+			id=5;
+		};
+		class Item1
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={8259.8877,11.308134,5972.438};
+			};
+			id=7;
+			type="ModuleCurator_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ModuleCurator_F_Owner";
+					expression="_this setVariable ['Owner',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="zeus";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ModuleCurator_F_Forced";
+					expression="_this setVariable ['Forced',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=0;
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="ModuleCurator_F_Name";
+					expression="_this setVariable ['Name',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="";
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="ModuleCurator_F_Addons";
+					expression="_this setVariable ['Addons',_value,true];";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=3;
+						};
+					};
+				};
+				nAttributes=4;
+			};
+		};
+		class Item2
+		{
+			dataType="Object";
+			class PositionInfo
+			{
+				position[]={8260.6416,11.695969,5985.8291};
+				angles[]={0.035185836,0,0.024801129};
+			};
+			side="Empty";
+			flags=4;
+			class Attributes
+			{
+				init="[this,""blufor"",""light_resupply""] call BAX_LOADOUTS_fnc_assignCrate;";
+			};
+			id=8;
+			type="C_IDAP_supplyCrate_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ammoBox";
+					expression="[_this,_value] call bis_fnc_initAmmoBox;";
+					class Value
+					{
+						class data
+						{
+							singleType="STRING";
+							value="[[[[""FirstAidKit"",""Medikit""],[20,2]],[[],[]],[[""Binocular"",""MineDetector"",""ToolKit"",""H_PASGT_basic_blue_F"",""H_PASGT_basic_white_F"",""H_Cap_Black_IDAP_F"",""H_Cap_Orange_IDAP_F"",""H_Cap_White_IDAP_F"",""H_HeadBandage_clean_F"",""G_Respirator_white_F"",""G_EyeProtectors_F"",""V_EOD_blue_F"",""V_Plain_medical_F""],[1,1,1,1,1,2,2,2,2,2,2,1,4]],[[""B_Messenger_IDAP_F""],[2]]],false]";
+						};
+					};
+				};
+				nAttributes=1;
+			};
+		};
 	};
 };

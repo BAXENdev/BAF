@@ -1,9 +1,5 @@
 
-class Startup {
+class Root {
     file = "components\startup";
-};
-
-class StartupInit {
-    file = "components\startup";
-    class preinitBeginInit { preInit = 1; };
+    class preinit_beginInit { preInit=1; };
 };

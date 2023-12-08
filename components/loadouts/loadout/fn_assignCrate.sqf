@@ -1,26 +1,29 @@
 
 #include "..\..\..\macros\loadoutMacros.hpp"
 
-params ["_crateObject","_factionID","_crateSuffix"];
-
 if !(isServer) exitWith {
 	_this remoteExec ["BAX_LOADOUTS_fnc_assignCrate",2];
 };
+
+params ["_crateObject","_factionID","_crateSuffix"];
 
 clearBackpackCargoGlobal _crateObject;
 clearItemCargoGlobal _crateObject;
 clearMagazineCargoGlobal _crateObject;
 clearWeaponCargoGlobal _crateObject;
 
+_crateArray = GETVARM(VARS_CRATE(_factionID,_crateSuffix),nil);
+_crateItems = _crateArray select 1;
+
 {
-	_itemName = _x#0;
+	_itemName = _x select 0;
 	if ("Backpack" in ([_itemName] call BIS_fnc_itemType)) then {
 		_crateObject addBackpackCargoGlobal _x;
 	} else {
 		_crateObject addItemCargoGlobal _x;
 	};
 
-} forEach _crateArray;
+} forEach _crateItems;
 
 _load = loadAbs _crateObject;
 _maxLoad = maxLoad _crateObject;

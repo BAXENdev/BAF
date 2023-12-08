@@ -1,18 +1,14 @@
 
 // Do no delete any of the variables
 
-// Comment line below to disable corpse manager
-#define CORPSE_MANAGER_ENABLED
-
+corpseManagerMode = 0; // 0: None | 1: All | 2: Only respawned | 3: All but respawned
 corpseLimit = 30;
 // Time in seconds
 corpseRemovalMinTime = 300;
 corpseRemovalMaxTime = 600;
 
 
-// Comment line below to disable wreck manager
-#define WRECK_MANAGER_ENABLED
-
+wreckManagerMode = 0; // 0: None | 1: All | 2: Only respawned | 3: All but respawned
 wreckLimit = 10;
 // Time in seconds
 wreckRemovalMinTime = 300;

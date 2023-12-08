@@ -1,7 +1,7 @@
 
 #include "components\description\frameworkSettings.hpp"
 
-#include "components\description\corpseAndWreckManager.hpp"
+#include "userConfig\description\corpseAndWreckManager.hpp"
 
 class Params {
     #include "userConfig\description\missionParams.hpp"
@@ -27,7 +27,4 @@ class CfgNotifications {
 
 #include "components\description\ui.hpp"
 
-class Extended_DisplayLoad_EventHandlers {
-    #include "components\description\displayLoad.hpp"
-};
-
+#include "components\description\displayLoad.hpp"
