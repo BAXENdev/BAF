@@ -1,0 +1,3 @@
+[ ] Check all files for include macro file
+[ ] Add debug log and debug error to all functions
+[ ] Register all editable framework settings

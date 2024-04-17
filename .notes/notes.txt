@@ -1,0 +1,55 @@
+Arma Documentation
+https://community.bistudio.com/wiki/Initialisation_Order
+https://community.bistudio.com/wiki/getClientStateNumber
+https://community.bistudio.com/wiki/Event_Scripts
+https://community.bistudio.com/wiki/PreProcessor_Commands
+https://community.bistudio.com/wiki/Description.ext
+https://community.bistudio.com/wiki/Arma_3:_Functions_Library
+https://community.bistudio.com/wiki/missionConfigFile
+
+Other Documentation
+https://forums.bohemia.net/forums/topic/136275-check-if-a-modaddon-is-enabled/
+_acre = isClass(configFile >> "cfgPatches" >> "acre_main"); Test for addon existance
+https://community.bistudio.com/wiki/BIS_fnc_itemType
+https://community.bistudio.com/wiki/Category:Command_Group:_Containers
+https://community.bistudio.com/wiki/Arma_3:_CfgMarkers
+https://community.bistudio.com/wiki/BIS_fnc_showCuratorFeedbackMessage
+https://community.bistudio.com/wiki/BIS_fnc_curatorHint
+https://steamcommunity.com/profiles/76561197980193330/myworkshopfiles/ Ace arsenal categories and movement speed
+https://community.bistudio.com/wiki/Arma_3:_Functions_Library#Meta_Variables function name
+https://community.bistudio.com/wiki/Unit_Loadout_Array
+https://github.com/CBATeam/CBA_A3/blob/master/addons/xeh/CfgEventHandlers.hpp#L103
+
+Military Symbols
+https://www.symbol.army/doc/en/functions/download-milsymbol/
+https://www.rff.com/military-symbols-1.php
+https://spatialillusions.com/unitgenerator/
+https://community.bistudio.com/wiki/BIS_fnc_colorRGBtoHTML
+blufor color : #004d99 [0.0, 0.3, 0.6]
+opfor color  : #800000 [0.5, 0.0, 0.0]
+indfor color : #008000 [0.0, 0.5, 0.0]
+civ color    : #660080 [0.4, 0.0, 0.5]
+
+Tfar:
+https://www.fkgaming.eu/guides/fng-guides/fng-arma-guides/beginners-guide-tfar-r22/#blufor_radios
+https://github.com/michail-nikolaev/task-force-arma-3-radio/wiki/API%3A-Functions
+SR 30-512Mhz
+LR 30-87Mhz
+
+Acre:
+https://acre2.idi-systems.com/wiki/frameworks/creating-new-radio
+
+Artillery Computer:
+https://community.bistudio.com/wiki/enableEngineArtillery
+
+ZEN:
+https://zen-mod.github.io/ZEN/#/
+https://github.com/zen-mod/ZEN/tree/master/extras/blank
+
+How to find subclasses:
+https://community.bistudio.com/wiki/configClasses
+
+CBA:
+https://www.reddit.com/r/armadev/comments/hzcnb3/tutorial_creating_a_simple_mod_following_the_cba/
+https://github.com/CBATeam/CBA_A3
+

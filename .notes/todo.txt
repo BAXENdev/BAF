@@ -1,0 +1,38 @@
+
+COMPLETED:
+[x]: Loadout system
+    [x]: Unit Loadouts
+    [x]: Unit Classes
+    [x]: Supply Crates
+    [x]: Loadout Locker
+    [x]: Loadout Arsenal
+    [x]: Zen Functions
+[x]: Map Markers
+    [x]: Custom Group Markers
+    [x]: Squad Markers
+    [x]: Hide Squad
+[x]: Radios
+    [x]: Radio Preset - Side
+    [x]: Radio Preset - Side+Group
+    [x]: Radio Preset - Faction
+    [x]: Radio Preset - Faction+Class
+    [x]: Radio Preset - Faction+Loadout
+
+TODO:
+[ ]: Loadout system
+    [ ]: Add paradrop option to supply crate dialog
+    [ ]: reorganize Loadout functions into folders
+        [ ]: Macro functions into a macro folder
+        [ ]: Setup functions moved into a InitObject folder
+        [ ]: should I start using XEH_XXXXinit?
+    [ ]: Add map position picker to supply crate dialog
+[ ]: Map Markers
+    [ ]: Zen function to hide/unhide squad
+[ ]: Radios
+    [ ]: Grab radio preset from other?
+[ ]: Check all exitWith {} for cases where DEBUG_RPT_FULL should be inserted
+[ ]: Add caching to all components
+    [ ]: Cache final loadout arsenals
+    [ ]: Move color and icon calculations from map markers event handlers to a group manager (a cache)
+    [ ]: Cache final radio presets
+[ ]: Merge group manager with map markers

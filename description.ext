@@ -1,0 +1,27 @@
+
+#include "userConfig\header.hpp"
+
+disabledAI = 1;
+
+class CfgFunctions {
+    #include "components\_description\cfgFunctions.hpp"
+};
+
+class Extended_DisplayLoad_EventHandlers {
+    #include "components\_description\XEH_displayLoad.hpp"
+};
+
+#include "components\respawn\CfgRespawnTemplates.hpp"
+
+#include "components\_description\ui.hpp"
+
+class CfgBax {
+    #include "userConfig\cfgBax.hpp"
+    #include "userConfig\sideBlufor\respawnSettings.hpp"
+    #include "userConfig\sideOpfor\respawnSettings.hpp"
+    #include "userConfig\sideIndfor\respawnSettings.hpp"
+    #include "userConfig\sideCivilian\respawnSettings.hpp"
+    class Settings {
+        #include "userConfig\settings.hpp"
+    };
+};

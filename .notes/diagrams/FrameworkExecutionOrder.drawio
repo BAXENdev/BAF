@@ -1,0 +1,130 @@
+<mxfile host="65bd71144e">
+    <diagram id="b04O1aOl_lMck9I26ZMJ" name="Page-1">
+        <mxGraphModel dx="984" dy="428" grid="1" gridSize="20" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="900" pageHeight="1600" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="3" value="" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;fillStyle=dots;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="120" width="800" height="1440" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="Framework Execution Order (MP)" style="rounded=0;whiteSpace=wrap;html=1;fontSize=40;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="40" width="800" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="preInit functions called&lt;br&gt;[AJU]" style="rounded=0;whiteSpace=wrap;html=1;fillStyle=auto;fontSize=16;" parent="1" vertex="1">
+                    <mxGeometry x="120" y="280" width="160" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="Zen functions, Loadout scripts, Variable Initialization" style="rounded=0;whiteSpace=wrap;html=1;fillStyle=auto;fontSize=16;" parent="1" vertex="1">
+                    <mxGeometry x="280" y="280" width="520" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="" style="shape=flexArrow;endArrow=classic;html=1;fontSize=16;exitX=0.056;exitY=0.028;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="80.32000000000005" y="240.32000000000005" as="sourcePoint"/>
+                        <mxPoint x="80" y="400" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="8" value="Object Init Event Handlers&lt;br&gt;[AnU]" style="rounded=0;whiteSpace=wrap;html=1;fillStyle=auto;fontSize=16;" parent="1" vertex="1">
+                    <mxGeometry x="120" y="360" width="160" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="" style="rounded=0;whiteSpace=wrap;html=1;fillStyle=auto;fontSize=16;" parent="1" vertex="1">
+                    <mxGeometry x="280" y="360" width="520" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" value="Function Descriptors: [A-All, S-Server, C-Client][J-JIP, n-Not JIP][U-Unscheduled, S-Scheduled]" style="rounded=0;whiteSpace=wrap;html=1;fillStyle=auto;fontSize=16;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="120" width="800" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="Eden Editor Entity Attributes&lt;br&gt;[SnU]" style="rounded=0;whiteSpace=wrap;html=1;fillStyle=auto;fontSize=16;" parent="1" vertex="1">
+                    <mxGeometry x="120" y="440" width="160" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="14" value="" style="rounded=0;whiteSpace=wrap;html=1;fillStyle=auto;fontSize=16;" parent="1" vertex="1">
+                    <mxGeometry x="280" y="440" width="520" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" value="" style="shape=flexArrow;endArrow=classic;html=1;fontSize=16;exitX=0.056;exitY=0.028;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="80.32000000000016" y="400.32000000000005" as="sourcePoint"/>
+                        <mxPoint x="80" y="560" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="16" value="Object Initialization Field&lt;br&gt;[AJU]" style="rounded=0;whiteSpace=wrap;html=1;fillStyle=auto;fontSize=16;" parent="1" vertex="1">
+                    <mxGeometry x="120" y="520" width="160" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="17" value="Setup functions called." style="rounded=0;whiteSpace=wrap;html=1;fillStyle=auto;fontSize=16;" parent="1" vertex="1">
+                    <mxGeometry x="280" y="520" width="520" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="18" value="Eden Editor Scenario Attributes&lt;br&gt;[AJU]" style="rounded=0;whiteSpace=wrap;html=1;fillStyle=auto;fontSize=16;" parent="1" vertex="1">
+                    <mxGeometry x="120" y="600" width="160" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="19" value="" style="rounded=0;whiteSpace=wrap;html=1;fillStyle=auto;fontSize=16;" parent="1" vertex="1">
+                    <mxGeometry x="280" y="600" width="520" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="20" value="" style="shape=flexArrow;endArrow=classic;html=1;fontSize=16;exitX=0.056;exitY=0.028;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="80.32000000000016" y="560.32" as="sourcePoint"/>
+                        <mxPoint x="80" y="720" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="21" value="initServer.sqf called [SnS]" style="rounded=0;whiteSpace=wrap;html=1;fillStyle=auto;fontSize=16;fillColor=#18141D;fontColor=#FFFFFF;" parent="1" vertex="1">
+                    <mxGeometry x="120" y="680" width="160" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="22" value="" style="rounded=0;whiteSpace=wrap;html=1;fillStyle=auto;fontSize=16;fillColor=#18141D;fontColor=#FFFFFF;" parent="1" vertex="1">
+                    <mxGeometry x="280" y="680" width="520" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="23" value="initPlayerLocal.sqf called&lt;br&gt;[CJS]" style="rounded=0;whiteSpace=wrap;html=1;fillStyle=auto;fontSize=16;fillColor=#18141D;fontColor=#FFFFFF;" parent="1" vertex="1">
+                    <mxGeometry x="120" y="760" width="160" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="24" value="" style="rounded=0;whiteSpace=wrap;html=1;fillStyle=auto;fontSize=16;fillColor=#18141D;fontColor=#FFFFFF;" parent="1" vertex="1">
+                    <mxGeometry x="280" y="760" width="520" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="25" value="" style="shape=flexArrow;endArrow=classic;html=1;fontSize=16;exitX=0.056;exitY=0.028;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="80.32000000000016" y="720.3200000000002" as="sourcePoint"/>
+                        <mxPoint x="80" y="880" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="26" value="initPlayerServer.sqf called&lt;br&gt;[CJS]" style="rounded=0;whiteSpace=wrap;html=1;fillStyle=auto;fontSize=16;fillColor=#18141D;fontColor=#FFFFFF;" parent="1" vertex="1">
+                    <mxGeometry x="120" y="840" width="160" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="27" value="" style="rounded=0;whiteSpace=wrap;html=1;fillStyle=auto;fontSize=16;fillColor=#18141D;fontColor=#FFFFFF;" parent="1" vertex="1">
+                    <mxGeometry x="280" y="840" width="520" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="37" value="Arma Init Order" style="rounded=0;whiteSpace=wrap;html=1;fillStyle=auto;fontSize=16;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="120" y="240" width="160" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="38" value="Framework Functions Called at Stage" style="rounded=0;whiteSpace=wrap;html=1;fillStyle=auto;fontSize=16;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="280" y="240" width="520" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="42" value="postInit functions called&lt;br&gt;[AJS]" style="rounded=0;whiteSpace=wrap;html=1;fillStyle=auto;fontSize=16;" parent="1" vertex="1">
+                    <mxGeometry x="120" y="919.6800000000001" width="160" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="43" value="" style="rounded=0;whiteSpace=wrap;html=1;fillStyle=auto;fontSize=16;fillColor=#18141D;" parent="1" vertex="1">
+                    <mxGeometry x="280" y="919.6800000000001" width="520" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="44" value="" style="shape=flexArrow;endArrow=classic;html=1;fontSize=16;exitX=0.056;exitY=0.028;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="80.32000000000016" y="880.0000000000002" as="sourcePoint"/>
+                        <mxPoint x="80" y="1039.68" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="45" value="&quot;BIS_fnc_init&quot; set to true&lt;br&gt;[AJn]" style="rounded=0;whiteSpace=wrap;html=1;fillStyle=auto;fontSize=16;" parent="1" vertex="1">
+                    <mxGeometry x="120" y="999.6800000000001" width="160" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="46" value="" style="rounded=0;whiteSpace=wrap;html=1;fillStyle=auto;fontSize=16;" parent="1" vertex="1">
+                    <mxGeometry x="280" y="999.6800000000001" width="520" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="49" value="" style="shape=flexArrow;endArrow=classic;html=1;fontSize=16;exitX=0.056;exitY=0.028;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="80.32000000000016" y="1040.0000000000002" as="sourcePoint"/>
+                        <mxPoint x="80" y="1199.68" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="50" value="init.sqf called&lt;br&gt;[AJS]" style="rounded=0;whiteSpace=wrap;html=1;fillStyle=auto;fontSize=16;" parent="1" vertex="1">
+                    <mxGeometry x="120" y="1079.68" width="160" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="51" value="Misc Initialization" style="rounded=0;whiteSpace=wrap;html=1;fillStyle=auto;fontSize=16;" parent="1" vertex="1">
+                    <mxGeometry x="280" y="1079.68" width="520" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="52" value="&lt;font color=&quot;#000000&quot;&gt;Execution is not gauranteed&lt;/font&gt;" style="rounded=0;whiteSpace=wrap;html=1;fillStyle=auto;fontSize=16;fillColor=#DEF0AD;" parent="1" vertex="1">
+                    <mxGeometry x="80" y="160" width="240" height="40" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

@@ -1,0 +1,88 @@
+<mxfile host="65bd71144e">
+    <diagram id="kWDDUZu6CcJh5ySnMyuW" name="Page-1">
+        <mxGraphModel dx="833" dy="678" grid="1" gridSize="20" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="800" pageHeight="1600" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="Unit Setup Execution" style="rounded=0;whiteSpace=wrap;html=1;fontSize=40;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="40" width="720" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="120" width="720" height="1440" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="BAX_init_done is set to 1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;fillColor=default;strokeColor=default;" parent="1" vertex="1">
+                    <mxGeometry x="280" y="320" width="440" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="" style="shape=flexArrow;endArrow=classic;html=1;fontSize=16;exitX=0.056;exitY=0.028;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.056;entryY=0.194;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" source="3" target="3" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="380" y="490" as="sourcePoint"/>
+                        <mxPoint x="430" y="440" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="7" value="Framework Init" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;fillColor=default;strokeColor=default;" parent="1" vertex="1">
+                    <mxGeometry x="120" y="320" width="160" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="Object Init Field" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;fillColor=default;strokeColor=default;" parent="1" vertex="1">
+                    <mxGeometry x="120" y="400" width="160" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="Calls BAX_INIT_fnc_setupUnit" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;fillColor=default;strokeColor=default;" parent="1" vertex="1">
+                    <mxGeometry x="280" y="400" width="440" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="beginInit calls initRadios" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;fillColor=default;strokeColor=default;" vertex="1" parent="1">
+                    <mxGeometry x="120" y="160" width="160" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="initRadios generates all Radio Key-Values" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;fillColor=default;strokeColor=default;" vertex="1" parent="1">
+                    <mxGeometry x="280" y="160" width="440" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" value="initLoadoutSystem generates all loadouts" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;fillColor=default;strokeColor=default;" vertex="1" parent="1">
+                    <mxGeometry x="280" y="240" width="440" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="" style="shape=flexArrow;endArrow=classic;html=1;fontSize=16;exitX=0.056;exitY=0.028;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.056;entryY=0.194;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="80.32000000000005" y="400.32000000000005" as="sourcePoint"/>
+                        <mxPoint x="80.32000000000005" y="639.3599999999999" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="14" value="beginInit calls initLoadoutSystem" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;fillColor=default;strokeColor=default;" vertex="1" parent="1">
+                    <mxGeometry x="120" y="240" width="160" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" value="setupUnit calls setupLoadout" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;fillColor=default;strokeColor=default;" vertex="1" parent="1">
+                    <mxGeometry x="120" y="480" width="160" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="16" value="setupLoadout assigns a unit a loadout, possibly including radios" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;fillColor=default;strokeColor=default;" vertex="1" parent="1">
+                    <mxGeometry x="280" y="480" width="440" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="17" value="setupUnit calls setupRadio" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;fillColor=default;strokeColor=default;" vertex="1" parent="1">
+                    <mxGeometry x="120" y="560" width="160" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="18" value="setupRadio assigns group radios.&lt;br&gt;setupRadio retrieves loadout's radio key.&lt;br&gt;setupRadio overwrites unit radio values with loadout radio values." style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;fillColor=default;strokeColor=default;" vertex="1" parent="1">
+                    <mxGeometry x="280" y="560" width="440" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="19" value="" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;fillColor=default;strokeColor=default;" vertex="1" parent="1">
+                    <mxGeometry x="120" y="640" width="160" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="20" value="" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;fillColor=default;strokeColor=default;" vertex="1" parent="1">
+                    <mxGeometry x="280" y="640" width="440" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="21" value="" style="shape=flexArrow;endArrow=classic;html=1;fontSize=16;exitX=0.056;exitY=0.028;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.056;entryY=0.194;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="80.32000000000005" y="640.3200000000002" as="sourcePoint"/>
+                        <mxPoint x="80.32000000000005" y="879.3599999999999" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="22" value="" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;fillColor=default;strokeColor=default;" vertex="1" parent="1">
+                    <mxGeometry x="120" y="720" width="160" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="23" value="" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;fillColor=default;strokeColor=default;" vertex="1" parent="1">
+                    <mxGeometry x="280" y="720" width="440" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="24" value="" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;fillColor=default;strokeColor=default;" vertex="1" parent="1">
+                    <mxGeometry x="120" y="800" width="160" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="25" value="" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;fillColor=default;strokeColor=default;" vertex="1" parent="1">
+                    <mxGeometry x="280" y="800" width="440" height="80" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

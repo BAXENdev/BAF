@@ -1,0 +1,10 @@
+
+TODO: replace normal map with strategic map
+Add map markers
+Add 'add markers' dialog
+Add group markers
+Add briefing display
+Add diary records
+Add custom mission displays
+Add loadout selection menu?
+Add ace map tools

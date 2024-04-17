@@ -1,0 +1,11 @@
+{
+    "workbench.colorTheme": "Default Dark+",
+    "editor.insertSpaces": true,
+    "editor.tabSize": 4,
+    // "editor.wordWrap": "on"
+    "vscode-json-editor.theme": "light",
+    "a3cg.preinitFiles": [
+        "c:\\Users\\BAXEN\\Documents\\Arma 3 - Other Profiles\\BAXENATOR\\mpmissions\\Standard Modpack\\BAX.Malden\\components\\loadouts\\zen\\fn_zenAssignLocker.sqf",
+        "c:\\Users\\BAXEN\\Documents\\Arma 3 - Other Profiles\\BAXENATOR\\mpmissions\\Standard Modpack\\BAX.Malden\\components\\loadouts\\zen\\fn_zenAssignLoadout.sqf"
+    ]
+}

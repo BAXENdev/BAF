@@ -1,0 +1,45 @@
+<mxfile host="Electron" modified="2024-02-14T05:00:58.497Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/22.1.18 Chrome/120.0.6099.199 Electron/28.1.2 Safari/537.36" etag="eNp2PT9shX68qUd10rsX" version="22.1.18" type="device">
+  <diagram name="Page-1" id="2z98MVA6xOp87nbwJ7zz">
+    <mxGraphModel dx="1098" dy="828" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="5-a7S49lPnNFUe7Su0sG-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="5-a7S49lPnNFUe7Su0sG-1" target="5-a7S49lPnNFUe7Su0sG-3">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="440" y="140" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="5-a7S49lPnNFUe7Su0sG-1" value="*** Preinit ***&lt;br&gt;Variables initialized&lt;br&gt;User Scripts Run&lt;br&gt;Config Read and variables filled" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="240" y="40" width="400" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="5-a7S49lPnNFUe7Su0sG-13" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="5-a7S49lPnNFUe7Su0sG-3" target="5-a7S49lPnNFUe7Su0sG-12">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="5-a7S49lPnNFUe7Su0sG-3" value="*** Object Init Event Handlers ***&lt;br&gt;No relevant functions here" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="240" y="120" width="400" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="5-a7S49lPnNFUe7Su0sG-8" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="5-a7S49lPnNFUe7Su0sG-5" target="5-a7S49lPnNFUe7Su0sG-7">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="5-a7S49lPnNFUe7Su0sG-15" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="5-a7S49lPnNFUe7Su0sG-5" target="5-a7S49lPnNFUe7Su0sG-11">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="5-a7S49lPnNFUe7Su0sG-5" value="*** Object Initialization Field ***&lt;br&gt;Manual function calls happen here. Shouldn&#39;t be done this way when zeus and 3den modules exist, but still." style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="240" y="240" width="400" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="5-a7S49lPnNFUe7Su0sG-7" value="All initial clients are initialized from this point based on the mission file.&lt;br&gt;What about JIP clients?&lt;br&gt;Should I sync variables?&lt;br&gt;While units are not garuanteed to exist later into a mission, they can. Zeus resonsibility? Easier to say that garuanteed init should be placed in config? This defeats the purpose of editor modules... &lt;br&gt;Custom loadout editor for the module? Too complicated...&lt;br&gt;If the loadouts are based on player units, the modules are only garuanteed to init at start if a player slotted for that specific unit. Modules may init later once a player joins, but that is still an issue." style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="40" y="350" width="390" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="5-a7S49lPnNFUe7Su0sG-11" value="What about zeus modules for creating and editing framework settings in a live mission?&lt;br&gt;-&amp;gt; They remoteExec / cba global jip call a function that adds or removes data? Has to be a function that updates the data, not a global variable update... right? When do these functions get called on jip. Before or after inits?&lt;br&gt;While global variable inits may get large, would it be more consistent?" style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="450" y="350" width="390" height="150" as="geometry" />
+        </mxCell>
+        <mxCell id="5-a7S49lPnNFUe7Su0sG-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="5-a7S49lPnNFUe7Su0sG-12" target="5-a7S49lPnNFUe7Su0sG-5">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="5-a7S49lPnNFUe7Su0sG-12" value="*** Eden Editor Entity Attributes ***&lt;br&gt;3den modules will run now. Framework data is created here." style="rounded=0;whiteSpace=wrap;html=1;" vertex="1" parent="1">
+          <mxGeometry x="240" y="180" width="400" height="40" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,82 @@
+<mxfile host="65bd71144e">
+    <diagram id="haciVYkGbtX25CC_4WmG" name="Page-1">
+        <mxGraphModel dx="1230" dy="535" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="1600" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="5" value="Radio Setup" style="rounded=0;whiteSpace=wrap;html=1;fontSize=40;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="40" width="1120" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;fillColor=none;" parent="1" vertex="1">
+                    <mxGeometry x="40" y="120" width="1120" height="1440" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="Overwrite given radios" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;fillColor=default;strokeColor=default;" parent="1" vertex="1">
+                    <mxGeometry x="280" y="320" width="440" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" value="" style="shape=flexArrow;endArrow=classic;html=1;fontSize=16;exitX=0.056;exitY=0.028;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.056;entryY=0.194;entryDx=0;entryDy=0;entryPerimeter=0;" parent="1" edge="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="80.32000000000005" y="400.00000000000017" as="sourcePoint"/>
+                        <mxPoint x="80.32000000000005" y="639.0399999999998" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="28" value="Radio instructions" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;fillColor=default;strokeColor=default;" parent="1" vertex="1">
+                    <mxGeometry x="120" y="160" width="600" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="34" value="" style="shape=flexArrow;endArrow=classic;html=1;fontSize=16;exitX=0.056;exitY=0.028;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.056;entryY=0.194;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1">
+                    <mxGeometry width="50" height="50" relative="1" as="geometry">
+                        <mxPoint x="80.00000000000017" y="160.96000000000015" as="sourcePoint"/>
+                        <mxPoint x="80.00000000000017" y="399.9999999999999" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="35" value="FACTION Radio Presets" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;fillColor=default;strokeColor=default;" vertex="1" parent="1">
+                    <mxGeometry x="120" y="200" width="160" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="36" value="Set given radios" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;fillColor=default;strokeColor=default;" vertex="1" parent="1">
+                    <mxGeometry x="280" y="200" width="440" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="39" value="Given Preset" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;fillColor=default;strokeColor=default;" vertex="1" parent="1">
+                    <mxGeometry x="720" y="160" width="200" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="40" value="&lt;div style=&quot;&quot;&gt;blufor = [&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp; [&quot;ACRE_PRC152&quot; : 1],&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp; [&quot;ACRE_PRC117F&quot; : 9]&lt;br&gt;]&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;fillColor=default;strokeColor=default;align=left;verticalAlign=top;" vertex="1" parent="1">
+                    <mxGeometry x="720" y="200" width="200" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="47" value="Overwrite given radios" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;fillColor=default;strokeColor=default;" vertex="1" parent="1">
+                    <mxGeometry x="280" y="440" width="440" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="48" value="GROUP Radio Presets" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;fillColor=default;strokeColor=default;" vertex="1" parent="1">
+                    <mxGeometry x="120" y="440" width="160" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="49" value="LOADOUT Radio Preset" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;fillColor=default;strokeColor=default;" vertex="1" parent="1">
+                    <mxGeometry x="120" y="320" width="160" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="51" value="Result" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;fillColor=default;strokeColor=default;" vertex="1" parent="1">
+                    <mxGeometry x="920" y="160" width="200" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="52" value="&lt;div style=&quot;&quot;&gt;unitPreset = [&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp; [&quot;ACRE_PRC152&quot; : 1],&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp; [&quot;ACRE_PRC117F&quot; : 9]&lt;br&gt;]&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;fillColor=default;strokeColor=default;align=left;verticalAlign=top;" vertex="1" parent="1">
+                    <mxGeometry x="920" y="200" width="200" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="53" value="&lt;div style=&quot;&quot;&gt;blufor_sl = [&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp; [&quot;ACRE_PRC152&quot; : 2&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;]&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;]&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;fillColor=default;strokeColor=default;align=left;verticalAlign=top;" vertex="1" parent="1">
+                    <mxGeometry x="720" y="320" width="200" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="55" value="&lt;div style=&quot;&quot;&gt;unitPreset = [&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp; [&quot;ACRE_PRC152&quot; : 2],&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp; [&quot;ACRE_PRC117F&quot; : 9]&lt;br&gt;]&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;fillColor=default;strokeColor=default;align=left;verticalAlign=top;" vertex="1" parent="1">
+                    <mxGeometry x="920" y="320" width="200" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="56" value="&lt;div style=&quot;&quot;&gt;group1 = [&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp; [&quot;ACRE_PRC343&quot; : 3&lt;/span&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;]&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;]&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;fillColor=default;strokeColor=default;align=left;verticalAlign=top;" vertex="1" parent="1">
+                    <mxGeometry x="720" y="440" width="200" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="57" value="&lt;div style=&quot;&quot;&gt;unitPreset = [&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp; [&quot;ACRE_PRC152&quot; : 2],&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp; [&quot;ACRE_PRC117F&quot; : 9],&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp; [&quot;ACRE_PRC343&quot; : 3]&lt;br&gt;]&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;fillColor=default;strokeColor=default;align=left;verticalAlign=top;" vertex="1" parent="1">
+                    <mxGeometry x="920" y="440" width="200" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="58" value="Final preset" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;fillColor=default;strokeColor=default;" vertex="1" parent="1">
+                    <mxGeometry x="120" y="560" width="160" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="59" value="&lt;div style=&quot;&quot;&gt;unitPreset = [&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp; [&quot;ACRE_PRC152&quot; : 2],&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp; [&quot;ACRE_PRC117F&quot; : 9],&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp; [&quot;ACRE_PRC343&quot; : 3]&lt;br&gt;]&lt;/span&gt;&lt;/div&gt;&lt;div style=&quot;&quot;&gt;&lt;br&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;fillColor=default;strokeColor=default;align=left;verticalAlign=top;" vertex="1" parent="1">
+                    <mxGeometry x="920" y="560" width="200" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="60" value="takes the given preset and applies the channels to whatever radios exist (if acre) or sets the channel frequencies (if tfar). Do not preset active channels or ears as those are user preference" style="rounded=0;whiteSpace=wrap;html=1;fontSize=16;fillColor=default;strokeColor=default;" vertex="1" parent="1">
+                    <mxGeometry x="280" y="560" width="440" height="120" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
