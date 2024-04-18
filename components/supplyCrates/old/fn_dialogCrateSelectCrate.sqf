@@ -32,6 +32,7 @@ if (_posASLorObject isEqualType []) then {
         "Box_Syndicate_WpsLaunch_F"
     ];
     _objectNames = _objectClasses apply { getText (configFile >> "CfgVehicles" >> _x >> "displayName"); };
+    // TODO: update list names to include object images from the config
     _listSelectObject = [
         "LIST",
         "Crates",
@@ -56,7 +57,7 @@ if (_posASLorObject isEqualType []) then {
         if (_posASLorObject isEqualType []) then {
             // Creates a crate and assigns the object to the variable, guaranteeing that the variable is an object
             _posASLorObject = _crateClass createVehicle _posASLorObject;
-            [[_posASLorObject]] call BAX_MISC_fnc_addObjectsToCurators;
+            [[_posASLorObject]] call bax_common_fnc_addObjectsToCurators;
         };
 
         [_posASLorObject,_factionID,_crateSuffix] call BAX_LOADOUTS_fnc_assignCrate;

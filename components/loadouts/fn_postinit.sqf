@@ -7,7 +7,7 @@ if (isMultiplayer) then {
     _side = side group player;
     _loadoutRegistryRoles = keys (bax_loadouts_loadouts get _side);
 
-    _role = [player] call bax_misc_fnc_getUnitRole;
+    _role = [player] call bax_common_fnc_getUnitRole;
 
     if !(_role in _loadoutRegistryRoles) then {
         _role = bax_loadouts_defaultLoadout get _side;

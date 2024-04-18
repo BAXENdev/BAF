@@ -1,5 +1,5 @@
 
-#include "..\_miscMacros.hpp"
+#include "..\_commonMacros.hpp"
 
 [
 	// 0) Category - the drop down name of where the module goes

@@ -1,8 +1,8 @@
 
-#include "_miscMacros.hpp"
+#include "_commonMacros.hpp"
 
 if !(isServer) exitWith {
-	_this remoteExec ["bax_misc_fnc_addObjectsToCurators"];
+	_this remoteExec ["bax_common_fnc_addObjectsToCurators"];
 };
 
 params ["_objects","_addCrew"];

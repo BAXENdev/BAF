@@ -31,10 +31,10 @@ _listSelectLoadout = [
     {
         params ["_dialogValues","_arguments"];
         _dialogValues params ["_loadoutName"];
-        _arguments params ["_unit","_className"];
+        _arguments params ["_unit"];
 
-        [_unit,_loadoutName,_className] call bax_loadouts_fnc_assignLoadout;
+        [_unit,_loadoutName] call bax_loadouts_fnc_assignLoadout;
     },
     {},
-    [_unit,_className]
+    [_unit]
 ] call zen_dialog_fnc_create;

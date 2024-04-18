@@ -14,16 +14,12 @@
 //     };
 // };
 
-class BAX_MISC {
-    #include "..\misc\_categories.hpp"
+class BAX_COMMON {
+    #include "..\common\_categories.hpp"
 };
 
-class BAX_PLAYERSETTINGS {
-    #include "..\playerSettings\_categories.hpp"
-};
-
-class BAX_FRAMEWORKSETTINGS {
-    #include "..\playerSettings\_categories.hpp"
+class BAX_SETTINGS {
+    #include "..\settings\_categories.hpp"
 };
 
 // class BAX_TOOLS {

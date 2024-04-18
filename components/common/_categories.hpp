@@ -1,15 +1,13 @@
 
 class Root {
-    file = "components\misc";
+    file = "components\common";
     class addObjectsToCurators {};
     class getUnitRole {};
 };
 
 class Zen {
-    file = "components\misc\zen";
-    class dialogLockerAddAction {};
+    file = "components\common\zen";
     class dialogTargetHint {};
-    class zenAssignLocker { preInit=1; };
     class zenEndMission { preInit=1; };
     class zenTargetHint { preInit=1; };
 };

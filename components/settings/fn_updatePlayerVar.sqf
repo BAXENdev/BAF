@@ -1,5 +1,5 @@
 
-#include "_playerSettingsMacros.hpp"
+#include "_settingsMacros.hpp"
 
 params ["_setting","_value"];
 

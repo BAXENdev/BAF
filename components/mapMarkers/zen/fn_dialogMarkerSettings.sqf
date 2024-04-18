@@ -55,7 +55,7 @@ _comboBox = [
 		bax_mapMarkers_groupMarkerSize = _groupMarkerSize;
 		bax_mapMarkers_unitMarkerSize = _unitMarkerSize;
 		bax_mapMarkers_groupMarkerTransparency = _iconTransparency;
-		[] call bax_misc_fnc_pushUpdateSettings;
+		[] call bax_common_fnc_pushUpdateSettings;
 	},
 	{},
 	[]

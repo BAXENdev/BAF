@@ -1,5 +1,5 @@
 
-#include "_miscMacros.hpp"
+#include "_commonMacros.hpp"
 
 if !(hasInterface) exitWith {};
 

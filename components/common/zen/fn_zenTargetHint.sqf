@@ -1,5 +1,5 @@
 
-#include "..\_miscMacros.hpp"
+#include "..\_commonMacros.hpp"
 
 [
 	// 0) Category - the drop down name of where the module goes
@@ -13,7 +13,7 @@
 	{
 		params ["_posASL","_object"];
 		
-		[] call bax_misc_fnc_dialogTargetHint;
+		[] call bax_common_fnc_dialogTargetHint;
 	},
 
 	// 3) Icon file - Filepath, optional, default (shown below)

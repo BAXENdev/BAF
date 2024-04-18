@@ -1,5 +1,5 @@
 
-#include "..\_miscMacros.hpp"
+#include "..\_commonMacros.hpp"
 
 _allPlayerSides = [];
 allPlayers apply { _allPlayerSides pushBackUnique (side _x) };
@@ -77,7 +77,7 @@ _editBoxHint = [
 		_dialogValues params ["_targets","_hint"];
 		_targets = flatten _targets;
 
-		[_hint] remoteExec ["hint", _targets];
+		[_hint,_targets] call bax_common_fnc_aceHint;
 	},
 
 	// 3) On Cancel, default: {}, unscheduled

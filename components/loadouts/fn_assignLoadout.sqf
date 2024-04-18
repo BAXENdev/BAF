@@ -8,7 +8,7 @@ _loadoutRegistry = bax_loadouts_loadouts get _side;
 _loadoutArray = _loadoutRegistry get _loadoutName;
 
 // if (isNil "_loadoutArray") exitWith {
-// 	diag_log format ["[BAX] (Loadouts) Failed to assign loadout to unit %1 with [%2,%3]",_unit,_loadoutName,_className];
+// 	diag_log format ["[BAX] (Loadouts) Failed to assign loadout to unit %1 with [%2,%3]",_unit,_loadoutName];
 // };
 
 _loadoutArray params ["_loadoutVariants","_traits","_randomGear"];

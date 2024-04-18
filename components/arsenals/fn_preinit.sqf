@@ -1,18 +1,28 @@
 
 #include "_arsenalMacros.hpp"
 
-bax_arsenals_arsenalBox = objNull;
-
 // Sub-HashMap: Key: Role | Value: [Item List...]
-bax_arsenals_arsenals = createHashMapFromArray [
-    [west,createHashMap],
-    [east,createHashMap],
-    [resistance,createHashMap],
-    [civilian,createHashMap]
+bax_arsenals_arsenalLists = createHashMapFromArray [
+    [west,createHashMapFromArray [
+            ["default", true]
+        ]
+    ],
+    [east,createHashMapFromArray [
+            ["default", true]
+        ]
+    ],
+    [resistance,createHashMapFromArray [
+            ["default", true]
+        ]
+    ],
+    [civilian,createHashMapFromArray [
+            ["default", true]
+        ]
+    ]
 ];
 
 // Sub-HashMap: Key: Side | Value: [Arsenal Objects...]
-bax_arsenals_arsenalProxies = createHashMapFromArray [
+bax_arsenals_arsenalBoxes = createHashMapFromArray [
     [west,[]],
     [east,[]],
     [resistance,[]],
