@@ -3,3 +3,5 @@
 #include "..\..\userConfig\sideOpfor\mapMarkers.sqf"
 #include "..\..\userConfig\sideIndfor\mapMarkers.sqf"
 #include "..\..\userConfig\sideCivilian\mapMarkers.sqf"
+
+

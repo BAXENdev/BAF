@@ -1,4 +1,9 @@
 
-#include "supplyCratesMacros.hpp"
+#include "_supplyCratesMacros.hpp"
 
-BVAR(supplyCrates,crates) = createHashMap;
+bax_supplyCrates_crates = createHashMapFromArray [
+	[west,createHashMap],
+	[east,createHashMap],
+	[resistance,createHashMap],
+	[civilian,createHashMap]
+];

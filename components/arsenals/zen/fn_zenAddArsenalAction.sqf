@@ -16,6 +16,6 @@ _function = {
 
 [
     "[BAX]",
-    "Add Arsenal Action",
+    "Add/Remove Arsenal Action",
     _function
 ] call zen_custom_modules_fnc_register;

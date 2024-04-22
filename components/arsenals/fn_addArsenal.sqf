@@ -19,7 +19,7 @@ _arsenalItems = _arsenalSideList get _role;
 [_object,false] call ace_arsenal_fnc_removeBox;
 [_object,_arsenalItems,false] call ace_arsenal_fnc_initBox;
 
-_actionID = _object getVariable [VARS_ARSENAL_ACTION,nil];
+_actionID = _object getVariable [VARS_ACTION_ID,nil];
 // _trigger = _object getVariable ["bax_arsenals_actionTrigger",nil];
 
 if (isNil "_actionID") then {
@@ -38,5 +38,5 @@ if (isNil "_actionID") then {
         3.5,        // radius
         false
     ];
-    _object setVariable [VARS_ARSENAL_ACTION,_actionID];
+    _object setVariable [VARS_ACTION_ID,_actionID];
 };

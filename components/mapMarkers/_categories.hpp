@@ -3,7 +3,7 @@ class Root {
     file = "components\mapMarkers";
     class postinit { postInit=1; };
     class preinit { preInit=1; };
-    class settings {};
+    class settings { preInit=1; };
 };
 
 class GroupMarkers {

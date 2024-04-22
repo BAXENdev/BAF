@@ -1,10 +1,11 @@
 
 class Root {
     file = "components\loadouts";
-    class addActionSelectLoadout {};
+    class addLoadoutAction {};
     class assignLoadout {};
     class postinit { postInit=1; };
     class preinit { preInit=1; };
+    class removeLoadoutAction {};
     class selectRandomGear {};
     class setupLoadout {};
 };
@@ -25,6 +26,8 @@ class Loadout {
 
 class Zen {
     file = "components\loadouts\zen";
+    class dialogAddLoadoutAction {};
     class dialogSelectLoadout {};
+    class zenAddLoadoutAction { preInit=1; };
     class zenAssignLoadout { preInit=1; };
 };
