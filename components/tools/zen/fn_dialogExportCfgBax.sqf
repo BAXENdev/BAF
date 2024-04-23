@@ -7,7 +7,7 @@ _defaultText = [] call bax_tools_fnc_getCfgBax;
 
 if (isServer) then {
 	copyToClipboard _defaultText;
-	[objNull,"CfgBax copied to clipboard"] call BIS_fnc_showCuratorFeedbackMessage;
+	["CfgBax copied to clipboard"] call bax_common_fnc_dialogHint;
 };
 
 _editBox = [

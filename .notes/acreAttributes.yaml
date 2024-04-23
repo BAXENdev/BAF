@@ -1,0 +1,45 @@
+- ACRE_PRC343:
+  - frequencyTX
+  - frequencyRX
+
+- ACRE_PRC148:
+  - frequencyTX
+  - frequencyRX
+  - channel name: label
+  - output power: power
+    - 0.1W
+    - 0.5W
+    - 1.0W
+    - 3.0W
+    - 5.0W
+
+- ACRE_PRC152:
+  - frequencyTX
+  - frequencyRX
+  - channel name: name
+  - output power: power
+    - N/a?
+
+- ACRE_PRC152:
+  - frequencyTX
+  - frequencyRX
+  - channel name: name
+  - output power: power
+    - N/a?
+
+- ACRE_BF888S:
+  - frequencyTX
+  - frequencyRX
+  - transmit code: CTCSSTx
+    - enabled?
+  - recieve code: CTCSSRx
+    - enabled?
+
+- ACRE_PRC77:
+  - no attributes?
+
+- ACRE_SEM52SL:
+  - no attributes?
+
+- ACRE_SEM70:
+  - no attributes?

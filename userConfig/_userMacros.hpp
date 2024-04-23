@@ -30,13 +30,23 @@
 #define CREATE_CLASS(CLASSNAME,LOADOUTNAME) [SIDE,CLASSNAME,LOADOUTNAME] call bax_loadouts_fnc_createClass
 #define ADD_LOADOUT(CLASSNAME,LOADOUTNAME) [SIDE,CLASSNAME,LOADOUTNAME] call bax_loadouts_fnc_addLoadout
 
-#define SET_ROLE(ROLE,LOADOUT,CLASS) [SIDE,ROLE,LOADOUT,CLASS] call bax_loadouts_fnc_addPreset
 #define SET_DEFAULT(LOADOUT,CLASS) [SIDE,"default",LOADOUT,CLASS] call bax_loadouts_fnc_addPreset
 
-// Create Loadout Advanced - do several loadout-related commands with just one command
-// TODO: Add future traits...
-#define CLA(NAME,LOADOUT,MEDIC,ENGINEER,CLASS,ROLE) [SIDE,NAME,LOADOUT,[MEDIC,ENGINEER],CLASS,ROLE] call bax_loadouts_fnc_cla 
-
+#define CREATE_CRATE(NAME,ITEMS)
+#define ADD_PRIMARY_TO_CRATE(CRATE_NAME,LOADOUT_NAME,AMOUNT) [SIDE,CRATE_NAME,LOADOUT_NAME,0,AMOUNT] call bax_supplyCrates_fnc_addLoadoutWeapon
+#define ADD_SECONDARY_TO_CRATE(CRATE_NAME,LOADOUT_NAME,AMOUNT) [SIDE,CRATE_NAME,LOADOUT_NAME,1,AMOUNT] call bax_supplyCrates_fnc_addLoadoutWeapon
+#define ADD_LAUNCHER_TO_CRATE(CRATE_NAME,LOADOUT_NAME,AMOUNT) [SIDE,CRATE_NAME,LOADOUT_NAME,2,AMOUNT] call bax_supplyCrates_fnc_addLoadoutWeapon
+#define ADD_PRIMARY_MAG_TO_CRATE(CRATE_NAME,LOADOUT_NAME,AMOUNT) [SIDE,CRATE_NAME,LOADOUT_NAME,0,AMOUNT] call bax_supplyCrates_fnc_addLoadoutMag
+#define ADD_SECONDARY_MAG_TO_CRATE(CRATE_NAME,LOADOUT_NAME,AMOUNT) [SIDE,CRATE_NAME,LOADOUT_NAME,1,AMOUNT] call bax_supplyCrates_fnc_addLoadoutMag
+#define ADD_LAUNCHER_MAG_TO_CRATE(CRATE_NAME,LOADOUT_NAME,AMOUNT) [SIDE,CRATE_NAME,LOADOUT_NAME,2,AMOUNT] call bax_supplyCrates_fnc_addLoadoutMag
+#define BANDAGES(AMOUNT) [["ACE_fieldDressing",AMOUNT],["ACE_elasticBandage",AMOUNT],["ACE_packingBandage",AMOUNT],["ACE_quikclot",AMOUNT],["ACE_tourniquet",AMOUNT]]
+#define SPLINTS(AMOUNT) [["ACE_splint",AMOUNT]]
+#define INJECTORS(AMOUNT) [["ACE_adenosine",AMOUNT],["ACE_epinephrine",AMOUNT],["ACE_morphine",AMOUNT]]
+#define SUTURES(AMOUNT) [["ACE_suture",AMOUNT]]
+#define BLOOD(AMOUNT) [["ACE_bloodIV",AMOUNT],["ACE_bloodIV_500",AMOUNT],["ACE_bloodIV_250",AMOUNT]]
+#define PLASMA(AMOUNT) [["ACE_plasmaIV",AMOUNT],["ACE_plasmaIV_500",AMOUNT],["ACE_plasmaIV_250",AMOUNT]]
+#define SALINE(AMOUNT) [["ACE_salineIV",AMOUNT],["ACE_salineIV_500",AMOUNT],["ACE_salineIV_250",AMOUNT]]
+#define MEDICAL (BANDAGES(40) + SPLINTS(10) + SUTURES(20) + SALINE(10))
 
 // RADIOS
 

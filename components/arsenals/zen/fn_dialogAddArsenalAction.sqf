@@ -6,7 +6,7 @@ params ["_object"];
 _actionId = _object getVariable [LOCKER_ID,nil];
 if (isNil "_actionId") exitWith {
     [_object] remoteExec ["bax_arsenals_fnc_addArsenal",true,true];
-    [objNull,"Arsenal added to object"] call BIS_fnc_showCuratorFeedbackMessage;
+    ["Arsenal added to object"] call bax_common_fnc_hintDialog;
 };
 
 _toolBox = [
@@ -25,7 +25,7 @@ _toolBox = [
         if !(_doRemoveAction) exitWith {};
         _arguments params ["_object"];
         [_object] remoteExec ["bax_arsenals_fnc_removeArsenal",true,true];
-        [objNull,"Arsenal removed from object"] call BIS_fnc_showCuratorFeedbackMessage;
+        ["Arsenal removed from object"] call bax_common_fnc_dialogHint;
     },
     {},
     [_object]

@@ -3,30 +3,39 @@
 
 params ["_posASLorObject"];
 
-_sides = bax_supplyCrates_crates apply {
+_sides = [];
+{
+    _side = _x;
+    _registry = _y;
+    if !(_reigstry isEqualTo []) then {
+        _sides pushback _side;
+    }
+} forEach bax_supplyCrates_crates;
 
+if (_sides isEqualTo []) exitWith {
+    ["There no registered crates on any side"] call bax_common_fnc_dialogHint;
 };
 
-_listFactionIDs = [
+_listSides = [
     "LIST",
-    "Factions",
+    "Sides",
     [
-        _factionIDs,
-        _factionNames,
+        _sides,
+        _sides apply { toUpper str _side },
         0,
-        10
+        4
     ]
 ];
 
 [
     "Select Faction",
-    [_listFactionIDs],
+    [_listSides],
     {
         params ["_dialogValues","_arguments"];
-        _dialogValues params ["_factionID"];
+        _dialogValues params ["_side"];
         _arguments params ["_posASLOrObject"];
 
-		[_posASLorObject,_factionID] call BAX_LOADOUTS_fnc_dialogCrateSelectCrate;
+		[_posASLorObject,_side] call bax_supplyCrates_fnc_dialogSelectCrate;
     },
     {},
     [_posASLorObject]

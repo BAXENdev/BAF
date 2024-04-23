@@ -1,6 +1,7 @@
 
 class Root {
     file = "components\common";
+    class aceActions { preInit=1; };
     class addObjectsToCurators {};
     class getUnitRole {};
 };

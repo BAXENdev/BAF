@@ -77,7 +77,7 @@ _editBoxHint = [
 		_dialogValues params ["_targets","_hint"];
 		_targets = flatten _targets;
 
-		[_hint,_targets] call bax_common_fnc_aceHint;
+		[_hint,_targets] call bax_common_fnc_hintAce;
 	},
 
 	// 3) On Cancel, default: {}, unscheduled
