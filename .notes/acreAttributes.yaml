@@ -1,6 +1,13 @@
-- ACRE_PRC343:
+- ACRE_PRC343: 5
   - frequencyTX
   - frequencyRX
+  - freqs: 2400.00 -> 2402.55
+    - default:  2400.00 -> 2402.55 # Default covers all 256?
+    - default2: 2400.00 -> 2400.79
+    - default3: 2400.80 -> 2401.59
+    - default4: 2401.60 -> 2402.39
+    - a radio has 16 channels and 16 blocks, for a total of 256 channels...
+    - but side based defaults only cover 80?
 
 - ACRE_PRC148:
   - frequencyTX
@@ -12,6 +19,18 @@
     - 1.0W
     - 3.0W
     - 5.0W
+  - transmit code: CTCSSTx
+    - enabled?
+    - defaultCode: 250.3
+  - recieve code: CTCSSRx
+    - enabled?
+    - defaultCode: 250.3'
+  - groups: WHAT?
+  - freqs: 400.00 -> 400.63
+    - default:  400.00 -> 400.15
+    - default2: 400.16 -> 400.31
+    - default3: 400.32 -> 400.47
+    - default4: 400.48 -> 400.63
 
 - ACRE_PRC152:
   - frequencyTX
@@ -32,11 +51,18 @@
   - frequencyRX
   - transmit code: CTCSSTx
     - enabled?
+    - defaultCode: 69.3
   - recieve code: CTCSSRx
     - enabled?
+    - defaultCode: 69.3
+  - freqs: 400.00 -> 400.63
+    - default:  400.00 -> 400.15
+    - default2: 400.16 -> 400.31
+    - default3: 400.32 -> 400.47
+    - default4: 400.48 -> 400.63
 
 - ACRE_PRC77:
-  - no attributes?
+  - Has attributes but is wierd
 
 - ACRE_SEM52SL:
   - no attributes?

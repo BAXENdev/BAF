@@ -13,7 +13,8 @@ params ["_side","_crateName","_loadoutName","_weapon","_amount"];
 
 _crateArray = bax_supplyCrates_crates get _side get _crateName;
 _crateArray params ["_objectClass","_itemsArray"];
-_loadoutArray = bax_loadouts_loadouts get _side get _loadoutName;
+_loadoutsArray = bax_loadouts_loadouts get _side get _loadoutName;
+_loadoutArray = _loadoutsArray select 0;
 
 if (isNil "_crateArray") exitWith {
     _msg = format ["Crate %1:%2 does not exist.", west, _crateArray];

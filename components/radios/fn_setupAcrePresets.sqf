@@ -5,10 +5,6 @@
 Gets called by userInit->preInit after all the user functions have rans
 */
 
-_babelSetting = getNumber (missionConfigFile >> "CfgBax" >> "acreBabelSettings") == 1;
-_frequencySetting = getNumber (missionConfigFile >> "CfgBax" >> "acreSideFrequencies") == 1;
-[_babelSetting,_frequencySetting] call acre_api_fnc_setupMission;
-
 {
     _radioType = _x;
     _radioChannels = _y;
