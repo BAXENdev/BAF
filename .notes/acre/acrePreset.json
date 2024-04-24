@@ -1,0 +1,77 @@
+{
+    "acre_prc343": {
+        "channels": [
+            { // channel 1 (index = 0)
+                "frequencyTX": 10,
+                "frequencyRX": 10
+            }
+        ]
+    },
+    "acre_prc148": {
+        "channels": [
+            { // channel 1 (index = 0)
+                "name": "CHAN 01",
+                "frequencyTX": 10,
+                "frequencyRX": 10,
+                "power": 5000,
+                "CTCSSTx": 250.3,
+                "CTCSSRx": 250.3
+            }
+        ],
+        "groups": [
+            ["G01", [0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]],
+            ["G02", [16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31]],
+            ["G03", []],
+            ["G04", []],
+            ["G05", []],
+            ["G06", []],
+            ["G07", []],
+            ["G08", []],
+            ["G09", []],
+            ["G11", []],
+            ["G12", []],
+            ["G13", []],
+            ["G14", []],
+            ["G15", []],
+            ["G16", []] 
+        ]
+    },
+    "acre_prc152": {
+        "channels": [
+            { // channel 1 (index = 0)
+                "name": "FMLOSVOC01",
+                "frequencyTX": 10,
+                "frequencyRX": 10,
+                "power": 5000,
+                "CTCSSTx": 250.3,
+                "CTCSSRx": 250.3,
+                "rxOnly": false
+            }
+        ]
+    },
+    "acre_prc117f": {
+        "channels": [
+            { // channel 1 (index = 0)
+                "name": "NET 01",
+                "frequencyTX": 10,
+                "frequencyRX": 10,
+                "power": 20000,
+                "CTCSSTx": 250.3,
+                "CTCSSRx": 250.3,
+                "rxOnly": false
+            }
+        ]
+    },
+    "acre_bf888s": {
+        "channels": [
+            { // channel 1 (index = 0)
+                "frequencyTX": 10,
+                "frequencyRX": 10,
+                "power": 5000,
+                "CTCSSTx": 69.3,
+                "CTCSSRx": 69.3,
+                "rxOnly": false
+            }
+        ]
+    }
+}

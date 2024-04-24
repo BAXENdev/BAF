@@ -14,18 +14,14 @@
   - frequencyRX
   - channel name: label
   - output power: power
-    - 0.1W
-    - 0.5W
-    - 1.0W
-    - 3.0W
-    - 5.0W
+    - default value: 5000
   - transmit code: CTCSSTx
     - enabled?
     - defaultCode: 250.3
   - recieve code: CTCSSRx
     - enabled?
-    - defaultCode: 250.3'
-  - groups: WHAT?
+    - defaultCode: 250.3
+  - groups: 1-16
   - freqs: 400.00 -> 400.63
     - default:  400.00 -> 400.15
     - default2: 400.16 -> 400.31
@@ -39,7 +35,7 @@
   - output power: power
     - N/a?
 
-- ACRE_PRC152:
+- ACRE_PRC117F:
   - frequencyTX
   - frequencyRX
   - channel name: name

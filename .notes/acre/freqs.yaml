@@ -1,0 +1,77 @@
+
+bands:
+  hf:
+    frequency:    3 - 30 Mhz
+    wavelength: 100 - 10 m
+  vhf:
+    frequency:  30 - 300 Mhz
+    wavelength: 10 -   1 m
+  uhf:
+    frequency:  300 - 3000 Mhz
+    wavelength: 100 - 10   cm
+
+radio freqs:
+  prc343: 2400 - 2483 MHz
+  prc148: 30 - 512 MHz
+  prc152: 30 - 512 MHz
+  prc117: 30 - 512 MHz
+  bf888s: 400 - 470 MHz
+
+acre_prc343:
+  required freqs: 1024
+  freq range: 2400-2483MHz
+  side coverage: 11
+  blufor: 2410-2421
+    base: 2410.4
+    step: 0.04
+  opfor: 2422-2433
+    base: 2422.2
+    step: 0.04
+  indfor: 2472-2483
+    base: 2472.8
+    step: 0.04
+  civ: 2451-2462
+    base: 2451.1
+    step: 0.04
+
+Mil LR:
+  prc148: max 256 freqs, default 32
+  prc152: 100 freqs
+  prc117: 100 freqs
+  freqs:
+    required side freqs: 100
+    freq range: 30-512MHz
+    side coverage: 50
+    blufor: 86-136
+      base: 86.2
+      step: 0.5
+    opfor: 152-202
+      base: 152.1
+      step: 0.5
+    indfor: 247-297
+      base: 247.4
+      step: 0.5
+    civ: 311-361
+      base: 311.7
+      step: 0.5
+Civ LR:
+  bf888s: 16 freqs
+  freqs:
+    required freqs: 16
+    freq range: 400-470MHz
+    side coverage: 8
+    blufor: 411-419
+      base: 411.3
+      step: 0.5
+    opfor: 424-432
+      base: 424.5
+      step: 0.5
+    indfor: 461-469
+      base: 461.8
+      step: 0.5
+    civ: 444-452
+      base: 444.4
+      step: 0.5
+
+
+
