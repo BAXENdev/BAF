@@ -16,7 +16,7 @@ class Extended_DisplayLoad_EventHandlers {
 #include "components\_description\ui.hpp"
 
 class CfgBax {
-    #include "userConfig\cfgBax.hpp"
+    // #include "userConfig\cfgBax.hpp"
     #include "userConfig\sideBlufor\respawnSettings.hpp"
     #include "userConfig\sideOpfor\respawnSettings.hpp"
     #include "userConfig\sideIndfor\respawnSettings.hpp"

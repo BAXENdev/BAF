@@ -2,8 +2,6 @@
 
 #include "..\_mapMarkersMacros.hpp"
 
-// https://zen-mod.github.io/ZEN/#/frameworks/dynamic_dialog?id=creating-a-dialog
-
 params ["_unit",["_isZeus",false]];
 
 _content = [];
@@ -11,7 +9,7 @@ _content = [];
 _side = side group _unit;
 if (_side isEqualTo civilian) then { _side = west };
 
-_iconRegistry = bax_mapMarkers_icons get "transparent" get _side;
+_iconRegistry = bax_mapMarkers_icons get "Transparent" get _side;
 _iconNames = keys _iconRegistry;
 _iconNames sort true;
 _iconPrettyNames = _iconNames apply {
@@ -72,13 +70,6 @@ _listBoxColors = [
 ];
 _content pushBack _listBoxColors;
 
-_checkBoxSolid = [
-	"CHECKBOX",
-	"Use Solid Background",
-	false
-];
-_content pushBack _checkBoxSolid;
-
 if (_isZeus) then {
 	_isHidden = (group _unit) getVariable [MARKER_HIDDEN,false];
 	_checkBoxHide = [
@@ -95,10 +86,13 @@ if (_isZeus) then {
 	_content,
 	{
 		params ["_dialogValues","_args"];
-		_dialogValues params ["_iconName","_color","_solid",["_hidden",false]];
+		_dialogValues params ["_iconName","_color",["_hidden",false]];
 		_args params ["_unit"];
 
-		// TODO: THIS
+		_group = group _unit;
+		_group setVariable [MARKER_TEXTURE, _iconName, true];
+		_group setVariable [MARKER_COLOR, _color, true];
+		_group setVariable [MARKER_HIDDEN, _hidden, true];
 	},
 	{},
 	[_unit]

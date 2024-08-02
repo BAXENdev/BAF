@@ -17,6 +17,5 @@ params ["_side","_crateName","_newItemsArray"];
 	}
 } forEachReversed _newItemsArray;
 
-_crateArray = bax_supplyCrates_crates get _side get _crateName;
-_crateArray params ["_objectClass","_crateItemsArray"];
-_crateItemsArray append _newItemsArray;
+_crateItems = bax_supplyCrates_crates get _side get _crateName;
+_crateItems append _newItemsArray;

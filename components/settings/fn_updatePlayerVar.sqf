@@ -4,4 +4,4 @@
 params ["_setting","_value"];
 
 missionNamespace setVariable [_setting,_value];
-bax_playerSettings_profileSettings set [_setting,_value];
+bax_settings_profileVars set [_setting,_value];

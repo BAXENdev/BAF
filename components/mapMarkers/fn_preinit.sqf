@@ -10,7 +10,7 @@
 // index 1: west | east | resistance
 // index 3: icon name
 bax_mapMarkers_icons = createHashMapFromArray [
-	["transparent", createHashMapFromArray [
+	["Transparent", createHashMapFromArray [
 		[west, createHashMapFromArray [
 			["AIR", 				ICON_AIR(b)],
 			["ANTIAIR", 			ICON_ANTIAIR(b)],
@@ -75,7 +75,7 @@ bax_mapMarkers_icons = createHashMapFromArray [
 			["UNKNOWN", 			ICON_UNKNOWN(n)]
 		]]
 	]],
-	["solid", createHashMapFromArray [
+	["Solid", createHashMapFromArray [
 		[west, createHashMapFromArray [
 			["AIR", 				B_ICON_AIR(b)],
 			["ANTIAIR", 			B_ICON_ANTIAIR(b)],

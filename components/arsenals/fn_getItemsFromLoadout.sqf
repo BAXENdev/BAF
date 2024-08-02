@@ -1,5 +1,5 @@
 
-#include "..\_arsenalMacros.hpp"
+#include "_arsenalsMacros.hpp"
 
 params ["_side","_loadoutName"];
 

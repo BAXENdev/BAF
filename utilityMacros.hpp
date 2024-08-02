@@ -14,7 +14,8 @@
 #define SETVARMG(VAR,VALUE) (missionNamespace setVariable [VAR,VALUE,true])
 
 #define DEBUG_RPT(MSG) diag_log format ['[BAX] (%1,%2) %3',_fnc_scriptName,__LINE__,MSG]
-#define DEBUG_ERR(MSG) [format ['[BAX] (%1,%2) %3',_fnc_scriptName,__LINE__,MSG]] call BIS_fnc_error
+#define DEBUG_ERR(MSG) [format ['[BAX] (%1,%2) %3',_fnc_scriptName,__LINE__,MSG]] call BIS_fnc_error; DEBUG_RPT(MSG)
 
 #define EMPTY_LOADOUT [[],[],[],[],[],[],'','',[],['','','','','','']]
 #define VAR_RESPAWN "bax_respawn_loadout"
+#define VARS_DEFAULT "DEFAULT"

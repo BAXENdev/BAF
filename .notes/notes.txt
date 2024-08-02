@@ -19,6 +19,7 @@ https://steamcommunity.com/profiles/76561197980193330/myworkshopfiles/ Ace arsen
 https://community.bistudio.com/wiki/Arma_3:_Functions_Library#Meta_Variables function name
 https://community.bistudio.com/wiki/Unit_Loadout_Array
 https://github.com/CBATeam/CBA_A3/blob/master/addons/xeh/CfgEventHandlers.hpp#L103
+https://community.bistudio.com/wiki/saveMissionProfileNamespace
 
 Military Symbols
 https://www.symbol.army/doc/en/functions/download-milsymbol/
@@ -54,3 +55,4 @@ CBA:
 https://www.reddit.com/r/armadev/comments/hzcnb3/tutorial_creating_a_simple_mod_following_the_cba/
 https://github.com/CBATeam/CBA_A3
 
+https://community.bistudio.com/wiki/BIS_fnc_EXP_camp_guidedProjectile

@@ -1,20 +1,20 @@
 
-#include "_arsenalMacros.hpp"
+#include "_arsenalsMacros.hpp"
 
 if !(hasInterface) exitWith {};
 
 params ["_object"];
 
-private ["_role"];
 _side = side group player;
-if (isMultiplayer) then {
-    _role = roleDescription player;
-} else {
-    _role = "default";
-};
+_role = player getVariable [VARS_ARSENAL_ROLE, VARS_DEFAULT];
 
 _arsenalSideList = bax_arsenals_arsenalLists get _side;
 _arsenalItems = _arsenalSideList get _role;
+
+if (isNil "_arsenalItems") exitWith {
+    _msg = format ["Role does not exist (%1:%2)", _side, _role];
+    DEBUG_RPT(_msg);
+};
 
 [_object,false] call ace_arsenal_fnc_removeBox;
 [_object,_arsenalItems,false] call ace_arsenal_fnc_initBox;

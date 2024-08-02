@@ -8,4 +8,5 @@
 #define ACE_MEDICAL_ITEMS ["ACE_adenosine","ACE_fieldDressing","ACE_elasticBandage","ACE_packingBandage","ACE_quikclot","ACE_bloodIV","ACE_bloodIV_250","ACE_bloodIV_500","ACE_bodyBag","ACE_bodyBag_blue","ACE_bodyBag_white","ACE_epinephrine","ACE_morphine","ACE_plasmaIV","ACE_plasmaIV_250","ACE_plasmaIV_500","ACE_salineIV","ACE_salineIV_250","ACE_salineIV_500","ACE_splint","ACE_surgicalKit","ACE_suture","ACE_tourniquet"]
 #define ACE_TOOL_ITEMS ["ACE_RangeTable_82mm","ACE_artilleryTable","ACE_ATragMX","ACE_DAGR","ACE_DefusalKit","ACE_EntrenchingTool","ACE_Fortify","ACE_Flashlight_MX991","ACE_HuntIR_monitor","ACE_Kestrel4500","ACE_Flashlight_KSF1","ACE_Clacker","ACE_Flashlight_XL50","ACE_MapTools","ACE_microDAGR","MineDetector","ACE_PlottingBoard","ACE_RangeCard","ACE_SpottingScope","ACE_Tripod","ToolKit","ACE_wirecutter","acex_intelitems_notepad"]
 
-#define VARS_ACTION_ID "bax_arsenal_arsenalActionId"
+#define VARS_ACTION_ID "bax_arsenals_arsenalActionId"
+#define VARS_ARSENAL_ROLE "bax_arsenals_arsenalRole"

@@ -1,5 +1,5 @@
 
-#include "..\_supplyCrateMacros.hpp"
+#include "..\_supplyCratesMacros.hpp"
 
 params ["_posASLorObject"];
 
@@ -7,7 +7,7 @@ _sides = [];
 {
     _side = _x;
     _registry = _y;
-    if !(_reigstry isEqualTo []) then {
+    if (count _registry > 0) then {
         _sides pushback _side;
     }
 } forEach bax_supplyCrates_crates;
@@ -21,7 +21,7 @@ _listSides = [
     "Sides",
     [
         _sides,
-        _sides apply { toUpper str _side },
+        _sides apply { toUpper str _x },
         0,
         4
     ]
@@ -35,7 +35,13 @@ _listSides = [
         _dialogValues params ["_side"];
         _arguments params ["_posASLOrObject"];
 
-		[_posASLorObject,_side] call bax_supplyCrates_fnc_dialogSelectCrate;
+        if (_posASLOrObject isEqualType []) then {
+            // Object
+		    [_posASLorObject,_side] call bax_supplyCrates_fnc_dialogSelectCrateObject;
+        } else {
+            // PosASL
+		    [_posASLorObject,_side] call bax_supplyCrates_fnc_dialogSelectCrate;
+        };
     },
     {},
     [_posASLorObject]

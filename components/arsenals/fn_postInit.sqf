@@ -1,9 +1,13 @@
 
-#include "_arsenalMacros.hpp"
+#include "_arsenalsMacros.hpp"
 
 if !(hasInterface) exitWith {};
 
-_arsenalObjects = bax_arsenals_arsenalObjects get _side;
-{
-	[_x,_role] call bax_arsenals_fnc_addArsenal;	
-} forEach _arsenalObjects;
+private ["_role"];
+if (isMultiplayer) then {
+    _role = roleDescription player;
+} else {
+    _role = VARS_DEFAULT;
+};
+
+[_role] call bax_arsenals_fnc_initArsenals;

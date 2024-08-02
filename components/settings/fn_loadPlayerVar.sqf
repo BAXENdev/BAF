@@ -3,7 +3,7 @@
 
 params ["_variableName","_defaultValue"];
 
-_value = bax_settings_profileData get [_variableName,nil];
+_value = bax_settings_profileVars get _variableName;
 if (isNil "_value") then {
 	_value = _defaultValue;
 	bax_settings_profileVars set [_variableName,_value];

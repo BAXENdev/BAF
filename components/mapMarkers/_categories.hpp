@@ -1,6 +1,7 @@
 
 class Root {
     file = "components\mapMarkers";
+    class aceActions { postInit=1; };
     class postinit { postInit=1; };
     class preinit { preInit=1; };
     class settings { preInit=1; };

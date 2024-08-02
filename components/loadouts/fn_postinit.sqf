@@ -10,22 +10,17 @@ if (isMultiplayer) then {
     _role = [player] call bax_common_fnc_getUnitRole;
 
     if !(_role in _loadoutRegistryRoles) then {
-        _role = bax_loadouts_defaultLoadout get _side;
+        _role = VARS_DEFAULT;
     };
 
-    if !(_role in _loadoutRegistryRoles) exitWith {};
-
-    [player,_role] call bax_loadouts_fnc_assignLoadout;
-    _loadout = getUnitLoadout player;
+    _loadout = [player,_role] call bax_loadouts_fnc_assignLoadout;
     player setVariable [VAR_RESPAWN,_loadout,true];
 } else {
     _side = side group player;
 
-    _role = bax_loadouts_defaultLoadout get _side;
+    _loadoutRegistryRoles = keys (bax_loadouts_loadouts get _side);
 
-    if !(_role in _loadoutRegistryRoles) exitWith {};
-
-    [player,_role] call bax_loadouts_fnc_assignLoadout;
+    [player,VARS_DEFAULT] call bax_loadouts_fnc_assignLoadout;
     _loadout = getUnitLoadout player;
     player setVariable [VAR_RESPAWN,_loadout,true];
 };

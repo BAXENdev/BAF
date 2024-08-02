@@ -1,5 +1,5 @@
 
-#include "_supplyCrateMacros.hpp"
+#include "_supplyCratesMacros.hpp"
 
 if !(isServer) exitWith {};
 
@@ -13,7 +13,7 @@ _hasInventory = _tb > 0 || _tm > 0 || _tw > 0;
 
 if !(_hasInventory) exitWith {
 	_msg = format ["Object (%1) has no inventory space.",_object];
-	DEBUG_LOG(_msg);
+	DEBUG_RPT(_msg);
 };
 
 [_object,_side,_crateName] call bax_supplyCrates_fnc_assignCrate;

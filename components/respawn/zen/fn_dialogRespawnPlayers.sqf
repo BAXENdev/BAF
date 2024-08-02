@@ -1,44 +1,25 @@
 
-_sides = [];
-_groups = [];
-_players = allPlayers select { !alive _x };
-_players apply {
-	_sides pushBackUnique side _x;
-	_groups pushBackUnique group _x;
+_deadPlayers = allPlayers select { !alive _x };
+
+if (_deadPlayers isEqualTo []) exitWith {
+	["No players are dead"] call bax_common_fnc_hintDialog;
 };
 
-_owners = [
-	// 0) Content Type
-	"OWNERS",
-
-	// 1) Display Name and Tooltip
-	"Select Players:", // or  ["Title", "Tooltip"],
-
-	// 2) Control Specific Arguments
+_content = _deadPlayers apply {
 	[
-		// 0) Selected Sides
-		_sides,
-
-		// 1) Selected Groups
-		_groups, // or [group1, group2, group3]
-
-		// 2) Selected Players
-		_players, // or [player1, player2, player3]
-
-		// 3) Default tab, 0: Side, 1: Group, 2: Players
-		2
-	],
-
-	// 3) Force Default, default: false
-	true
-];
+		"CHECKBOX",
+		name _x,
+		false,
+		true
+	]
+};
 
 [
 	// 0) Title
 	"Respawn Players",
 	
 	// 1) Content Array of Zen Dialogs
-	[_owners],
+	_content,
 
 	// 2) On Confirm, unscheduled
 	// Passed Arguments:
@@ -46,24 +27,21 @@ _owners = [
 	// 1) Arguments, the same ones passed in arg4 for zen_dialog_fnc_create
 	{
 		params ["_dialogValues","_args"];
-		_dialogValues params ["_sides","_groups","_players"];
-		_deadPlayers = allPlayers apply {
-			(!alive _x) && 
-			{
-				((side group _x) in _sides) ||
-				{ (group _x) in _groups } ||
-				{ _x in _players };
+		_args params ["_deadPlayers"];
+
+		{
+			_deadPlayer = _x;
+			_doRespawn = _dialogValues select _forEachIndex;
+			if (_doRespawn) then {
+				[true] remoteExec ["bax_respawn_fnc_respawnPlayer",_deadPlayer];
 			};
-		};
-		_deadPlayers apply {
-			[0] remoteExec ["setPlayerRespawnTime",_x];
-		};
+		} forEach _deadPlayers;
 	},
 
 	// 3) On Cancel, default: {}, unscheduled
 	{}, 
 
 	// 4) Arguments, default: []
-	[]
+	[_deadPlayers]
 
 ] call zen_dialog_fnc_create;

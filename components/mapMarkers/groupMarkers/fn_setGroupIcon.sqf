@@ -9,4 +9,4 @@ if (_groupIndex == -1) exitWith {
 	// TODO: Debug log
 };
 _group = _sideGroups select _groupIndex;
-_group setVariable [MARKER_TEXTURE,_color];
+_group setVariable [MARKER_TEXTURE,_texture];

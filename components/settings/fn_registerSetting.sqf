@@ -9,11 +9,12 @@ _type:
 _componentKey:
 	String value for sub-grouping settings together
 
-_uiCode:
-	Returns: ZenDialog UI array element
+_dialogCode:
+	ZenDialog UI array element
 
 _onExecuteCode:
-	Params: dialogValue
+	Code executed when dialog is confirmed
+	Passed Params: dialogValue
 */
 
 params ["_type","_componentKey","_dialogArray","_onExecuteCode"];
@@ -25,6 +26,7 @@ if !(_type in ["framework","player"]) exitWith {
 
 _typeSettings = bax_settings_settings get _type;
 _componentSettings = _typeSettings get _componentKey;
+
 if (isNil "_componentSettings") then {
 	_componentSettings = [];
 	_typeSettings set [_componentKey,_componentSettings];

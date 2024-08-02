@@ -33,7 +33,10 @@ _listSelectLoadout = [
         _dialogValues params ["_loadoutName"];
         _arguments params ["_unit"];
 
-        [_unit,_loadoutName] call bax_loadouts_fnc_assignLoadout;
+        _loadout = [_unit,_loadoutName] call bax_loadouts_fnc_assignLoadout;
+        _unit setVariable [VAR_RESPAWN,_loadout,true];
+
+        [_loadoutName] remoteExec ["bax_arsenals_fnc_initArsenals", _unit];
     },
     {},
     [_unit]

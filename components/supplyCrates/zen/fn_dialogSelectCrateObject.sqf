@@ -1,67 +1,57 @@
 
 #include "..\_supplyCratesMacros.hpp"
 
-params ["_posASLorObject","_factionID"];
+params ["_posASL","_side"];
 
-_dialogElements = [];
-
-_crateRegistry = GETVARM(VARS_CRATE_REGISTRY(_factionID),nil);
-_crateSuffixes = _crateRegistry apply { _x select 0; };
-_crateDisplayNames = _crateRegistry apply { _x select 1; };
-
-_listSelectCrate = [
+_crateSideRegistry = bax_supplyCrates_crates get _side;
+_crates = (keys _crateSideRegistry);
+_crateNames = _crates apply { toUpper _x };
+_listCrates = [
     "LIST",
     "Crates",
     [
-        _crateSuffixes,
-        _crateDisplayNames,
+        _crates,
+        _crateNames,
         0,
-        10
+        7
     ]
 ];
-_dialogElements pushBack _listSelectCrate;
 
-if (_posASLorObject isEqualType []) then {
-    _objectClasses = [
-        "B_supplyCrate_F",
-        "C_IDAP_supplyCrate_F",
-        "Box_NATO_Wps_F",
-        "Box_NATO_WpsSpecial_F",
-        "Box_Syndicate_Wps_F",
-        "Box_Syndicate_Ammo_F",
-        "Box_Syndicate_WpsLaunch_F"
-    ];
-    _objectNames = _objectClasses apply { getText (configFile >> "CfgVehicles" >> _x >> "displayName"); };
-    // TODO: update list names to include object images from the config
-    _listSelectObject = [
-        "LIST",
-        "Crates",
-        [
-            _objectClasses,
-            _objectNames,
-            0,
-            10
-        ]
-    ];
-    _dialogElements pushBack _listSelectObject;
-};
+_objectClasses = [
+    "B_supplyCrate_F",
+    "C_IDAP_supplyCrate_F",
+    "Box_NATO_Wps_F",
+    "Box_NATO_WpsSpecial_F",
+    "Box_Syndicate_Wps_F",
+    "Box_Syndicate_Ammo_F",
+    "Box_Syndicate_WpsLaunch_F"
+];
+_objectNames = _objectClasses apply { getText (configFile >> "CfgVehicles" >> _x >> "displayName"); };
+// TODO: update list names to include object images from the config
+_listSelectObject = [
+    "LIST",
+    "Crates",
+    [
+        _objectClasses,
+        _objectNames,
+        0,
+        7
+    ]
+];
 
 [
     "Select Crate",
-    _dialogElements,
+    [_listCrates, _listSelectObject],
     {
         params ["_dialogValues","_arguments"];
-        _dialogValues params ["_crateSuffix",["_crateClass",""]];
-        _arguments params ["_posASLorObject","_factionID"];
+        _dialogValues params ["_crateName", "_crateObjectClass"];
+        _arguments params ["_posASL","_side"];
 
-        if (_posASLorObject isEqualType []) then {
-            // Creates a crate and assigns the object to the variable, guaranteeing that the variable is an object
-            _posASLorObject = _crateClass createVehicle _posASLorObject;
-            [[_posASLorObject]] call bax_common_fnc_addObjectsToCurators;
-        };
-
-        [_posASLorObject,_factionID,_crateSuffix] call BAX_LOADOUTS_fnc_assignCrate;
+        _posATL = ASLToATL _posASL;
+        _object = createVehicle [_crateObjectClass, _posATL];
+        [[_object], false] call bax_common_fnc_addObjectsToCurators;
+		[_object,_side,_crateName] call bax_supplyCrates_fnc_assignCrate;
     },
     {},
-    [_posASLorObject,_factionID]
+    [_posASL,_side]
 ] call zen_dialog_fnc_create;

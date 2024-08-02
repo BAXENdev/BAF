@@ -3,9 +3,7 @@
 
 params ["_newUnit", "_oldUnit", "_respawn", "_respawnDelay"];
 
-_loadout = player getVariable [VAR_RESPAWN,EMPTY_LOADOUT];
-player setUnitLoadout _loadout;
+_respawnLoadout = player getVariable [VAR_RESPAWN, EMPTY_LOADOUT];
+player setUnitLoadout _respawnLoadout;
 
-// TODO: Use respawn tickets here or in on respawn function?
-
-// TODO: Move player to selected respawn
+[player, bax_respawn_respawnPosition select 0] call BIS_fnc_moveToRespawnPosition;

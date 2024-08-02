@@ -1,5 +1,5 @@
 
-#include "_arsenalMacros.hpp"
+#include "_arsenalsMacros.hpp"
 
 params ["_side","_role","_items"];
 
@@ -13,7 +13,8 @@ if !(_role isEqualType "") exitWith {
 };
 if !(_items isEqualTypeAny [[], true]) exitWith {
 	_msg = format ["Invalid argument passed to items: %1 | Valid values are arrays and booleans", _items];
+	DEBUG_ERR(_msg);0
 };
 
-_arsenalPresets = bax_arsenals_arsenals get _side;
-_arsenalPresets set [_role,_items];
+_arsenalLists = bax_arsenals_arsenalLists get _side;
+_arsenalLists set [_role,_items];

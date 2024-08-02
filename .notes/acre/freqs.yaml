@@ -34,6 +34,23 @@ acre_prc343:
     base: 2451.1
     step: 0.04
 
+bf888s:
+  required freqs: 32
+  freq range: 470-510
+  side coverage: 10
+  blufor: 500-510
+    base: 500.2
+    step: 0.25
+  opfor: 470-480
+    base: 470.6
+    step: 0.25
+  indfor: 490-500
+    base: 490.8
+    step: 0.25
+  civ: 480-490
+    base: 481.1
+    step: 0.25
+
 Mil LR:
   prc148: max 256 freqs, default 32
   prc152: 100 freqs

@@ -46,6 +46,10 @@ class BAX_ARSENALS {
 //     #include "..\radios\_categories.hpp"
 // };
 
+class BAX_SUPPLYCRATES {
+    #include "..\supplyCrates\_categories.hpp"
+};
+
 class BAX_RESPAWN {
     #include "..\respawn\_categories.hpp"
 };

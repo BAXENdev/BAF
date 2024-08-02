@@ -21,10 +21,31 @@ PRC148
 PRC152
 PRC117
 
-ChannelNames = [
-  "Command",
-  "Squad 1",
-  "Squad 2"
-];
+// SET_SR_NAMES(
+//   [
+//     [1,"Alpha"],
+//     [2,"Bravo"],
+//     [3,"Charlie"]
+//     "Delta" // 4
+//   ]
+// );
+SET_LR_NAMES(
+  [
+    "Platoon", // 1
+    "Alpha" // 2
+    "Alpha" // 3
+    [13,"Covert Comms"],
+  ]
+);
+
+SET_GROUP("ACRE_PRC152","Alpha",2);
+SET_ROLE("JTAC",4);
+
+// SET_SIDE_CHANNEL(
+//   [ACRE_117,2]
+// );
+// SET_GROUP_CHANNEL(
+
+// );
 
 

@@ -1,7 +1,9 @@
 
+// TODO: add radios
+
 #include "..\..\userConfig\sideBlufor\loadouts.sqf"
 #include "..\..\userConfig\sideBlufor\arsenals.sqf"
-#include "..\..\userConfig\sideBlufor\radios.sqf"
+// #include "..\..\userConfig\sideBlufor\radios.sqf"
 
 #include "..\..\userConfig\sideOpfor\loadouts.sqf"
 #include "..\..\userConfig\sideOpfor\arsenals.sqf"

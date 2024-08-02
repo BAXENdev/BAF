@@ -1,5 +1,5 @@
 
-#include "..\_supplyCrateMacros.hpp"
+#include "..\_supplyCratesMacros.hpp"
 
 /*
     _weapon:
@@ -11,26 +11,23 @@
 
 params ["_side","_crateName","_loadoutName","_weapon","_amount"];
 
-_crateArray = bax_supplyCrates_crates get _side get _crateName;
-_crateArray params ["_objectClass","_itemsArray"];
-_loadoutsArray = bax_loadouts_loadouts get _side get _loadoutName;
-_loadoutArray = _loadoutsArray select 0;
-
-if (isNil "_crateArray") exitWith {
-    _msg = format ["Crate %1:%2 does not exist.", west, _crateArray];
-    DEBUG_ARR(_msg);
-};
-if (isNil "_loadoutArray") exitWith {
-    _msg = format ["Loadout %1:%2 does not exist.", west, _loudoutArray];
-    DEBUG_ARR(_msg);
-};
-if (_weapon > 2 or _weapon < 0) then {
-    _weapon = 0;
-    _msg = format ["Invalid weapon type (%1) passed to _weapon. Defaulting to primary (0).", _weapon];
+if !(_crateName in (bax_supplyCrates_crates get _side)) exitWith {
+    _msg = format ["Crate %1:%2 does not exist.", west, _crateName];
     DEBUG_ERR(_msg);
 };
 
-_weaponArray = _loadoutArray select _weapon;
+if !(_loadoutName in (bax_loadouts_loadouts get _side)) exitWith {
+    _msg = format ["Loadout %1:%2 does not exist.", west, _loadoutName];
+    DEBUG_ERR(_msg);
+};
+
+if (_weapon < 0 or _weapon > 2) then {
+    _weapon = 0;
+};
+
+_crateItems = bax_supplyCrates_crates get _side get _crateName;
+_loadout = bax_loadouts_loadouts get _side get _loadoutName select 0 select 0; // Get loadoutArray's loadout's first loadout
+_weaponArray = _loadout select _weapon;
 if (_weaponArray isEqualTo []) exitWith {
     _weaponName = switch (_weapon) do {
         case 0: { "primary" };
@@ -42,4 +39,4 @@ if (_weaponArray isEqualTo []) exitWith {
 };
 
 _weaponClassname = _weaponArray select 0;
-_itemsArray pushback [_weaponClassname,_amount];
+_crateItems pushback [_weaponClassname,_amount];

@@ -16,19 +16,18 @@ _actionUpdateGroupMarker = [
 	// More stuff https://ace3.acemod.org/wiki/framework/interactionmenu-framework#31-fnc_createaction
 ] call ace_interact_menu_fnc_createAction;
 [
-	"CAManBase",
+	player,
 	1,
-	["ACE_SelfActions","framework_settings"],
-	_actionUpdateGroupMarker,
-	true
-] call ace_interact_menu_fnc_addActionToClass;
+	["ACE_SelfActions","framework_menus"],
+	_actionUpdateGroupMarker
+] call ace_interact_menu_fnc_addActionToObject;
 
 _actionUpdateMapMarkersSettings = [
 	"baxUpdateMapMarkersSettings", // Variable name
 	"Map Marker Settings", // Display name
 	"", //  Icon path
 	{
-		[player] call bax_mapMarkers_fnc_dialogMarkerSettings;
+		[] call bax_mapMarkers_fnc_dialogMarkerSettings;
 	}, // Action code. params ["_target","_player","_params"]
 	{ true }, // Condition code
 	{}, // Insert children code, Optional
@@ -36,9 +35,8 @@ _actionUpdateMapMarkersSettings = [
 	// More stuff https://ace3.acemod.org/wiki/framework/interactionmenu-framework#31-fnc_createaction
 ] call ace_interact_menu_fnc_createAction;
 [
-	"CAManBase",
+	player,
 	1,
-	["ACE_SelfActions","framework_settings"],
-	_actionUpdateMapMarkersSettings,
-	true
-] call ace_interact_menu_fnc_addActionToClass;
+	["ACE_SelfActions","framework_menus"],
+	_actionUpdateMapMarkersSettings
+] call ace_interact_menu_fnc_addActionToObject;

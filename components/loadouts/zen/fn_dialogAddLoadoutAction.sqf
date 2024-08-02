@@ -5,7 +5,7 @@ params ["_object"];
 
 _actionId = _object getVariable [LOCKER_ID,nil];
 if (isNil "_actionId") exitWith {
-    [_object] remoteExec ["bax_loadouts_fnc_addLoadoutAction",true,true];
+    [_object] remoteExec ["bax_loadouts_fnc_addLoadoutAction",0,true];
     ["Loadout action added to object"] call bax_common_fnc_dialogHint;
 };
 
@@ -24,7 +24,7 @@ _toolBox = [
         _dialogValues params ["_doRemoveAction"];
         if !(_doRemoveAction) exitWith {};
         _arguments params ["_object"];
-        [_object] remoteExec ["bax_loadouts_fnc_removeLoadoutAction",true,true];
+        [_object] remoteExec ["bax_loadouts_fnc_removeLoadoutAction",0,true];
         ["Loadout action removed from object"] call bax_common_fnc_dialogHint;
     },
     {},

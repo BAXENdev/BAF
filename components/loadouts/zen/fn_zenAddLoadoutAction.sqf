@@ -11,7 +11,7 @@ _function = {
         [objNull, "Do not place on unit!"] call BIS_fnc_showCuratorFeedbackMessage;
     };
 
-    [_object] call bax_loadouts_fnc_dialogLockerAddAction;
+    [_object] call bax_loadouts_fnc_dialogAddLoadoutAction;
 };
 
 [

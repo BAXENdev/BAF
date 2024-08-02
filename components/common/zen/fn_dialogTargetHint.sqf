@@ -75,9 +75,21 @@ _editBoxHint = [
 	{
 		params ["_dialogValues","_args"];
 		_dialogValues params ["_targets","_hint"];
-		_targets = flatten _targets;
+		_targets params ["_targetSides", "_targetGroups", "_targetPlayers"];
+		
+		allPlayers apply {
+			if (side group _x in _targetSides) then {
+				_targetPlayers pushBackUnique _x;
+				continue;
+			};
 
-		[_hint,_targets] call bax_common_fnc_hintAce;
+			if (group _x in _targetGroups) then {
+				_targetPlayers pushBackUnique _x;
+				continue;
+			};
+		};
+
+		[_hint, _targetPlayers] call bax_common_fnc_hintAce;
 	},
 
 	// 3) On Cancel, default: {}, unscheduled

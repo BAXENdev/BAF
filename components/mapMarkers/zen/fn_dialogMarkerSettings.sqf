@@ -25,8 +25,8 @@ _sliderUnitMarkerSize = [
 	true
 ];
 
-_defaultIndex = bax_mapMarkers_groupMarkerTransparency find ["Transparent","Solid"];
-_comboBox = [
+_defaultIndex = ["Transparent","Solid"] find bax_mapMarkers_groupMarkerTransparency;
+_comboBoxMarkerTransparency = [
 	"COMBO",
 	"Group Marker Background",
 	[
@@ -39,10 +39,10 @@ _comboBox = [
 
 [
 	// 0) Title
-	"Title",
+	"Update Group Marker",
 	
 	// 1) Content Array of Zen Dialogs
-	[_checkBox],
+	[_sliderGroupMarkerSize, _sliderUnitMarkerSize, _comboBoxMarkerTransparency],
 
 	// 2) On Confirm, unscheduled
 	// Passed Arguments:
@@ -52,12 +52,11 @@ _comboBox = [
 		params ["_dialogValues","_args"];
 		_dialogValues params ["_groupMarkerSize","_unitMarkerSize","_iconTransparency"];
 
-		bax_mapMarkers_groupMarkerSize = _groupMarkerSize;
-		bax_mapMarkers_unitMarkerSize = _unitMarkerSize;
-		bax_mapMarkers_groupMarkerTransparency = _iconTransparency;
-		[] call bax_common_fnc_pushUpdateSettings;
+		["bax_mapMarkers_groupMarkerSize", _groupMarkerSize] call bax_settings_fnc_updatePlayerVar;
+		["bax_mapMarkers_unitMarkerSize", _unitMarkerSize] call bax_settings_fnc_updatePlayerVar;
+		["bax_mapMarkers_groupMarkerTransparency", _iconTransparency] call bax_settings_fnc_updatePlayerVar;
+		// [] call bax_settings_fnc_pushPlayerSettings;
 	},
 	{},
 	[]
-
 ] call zen_dialog_fnc_create;

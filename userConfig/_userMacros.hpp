@@ -27,12 +27,11 @@
 #define ADD_RANDOM_FACEWEAR(NAME,GEAR) [SIDE,NAME,4,GEAR] call bax_loadouts_fnc_addRandomGear
 #define REMOVE_RANDOM_GEAR(NAME) [SIDE,NAME] call bax_loadouts_fnc_removeRandomGear
 
-#define CREATE_CLASS(CLASSNAME,LOADOUTNAME) [SIDE,CLASSNAME,LOADOUTNAME] call bax_loadouts_fnc_createClass
-#define ADD_LOADOUT(CLASSNAME,LOADOUTNAME) [SIDE,CLASSNAME,LOADOUTNAME] call bax_loadouts_fnc_addLoadout
+#define SET_DEFAULT_LOADOUT(LOADOUT) [SIDE,VARS_DEFAULT,LOADOUT] call bax_loadouts_fnc_createLoadout
 
-#define SET_DEFAULT(LOADOUT,CLASS) [SIDE,"default",LOADOUT,CLASS] call bax_loadouts_fnc_addPreset
-
-#define CREATE_CRATE(NAME,ITEMS)
+#define CREATE_CRATE(NAME,ITEMS) [SIDE,NAME,ITEMS] call bax_supplyCrates_fnc_registerCrate
+#define ADD_CRATE_ITEMS(NAME,ITEMS) [SIDE,NAME,ITEMS] call bax_supplyCrates_fnc_addItemsToCrate
+#define ADD_BACKPACK_TO_CRATE(CRATE_NAME,LOADOUT_NAME,AMOUNT) [SIDE,CRATE_NAME,LOADOUT_NAME,AMOUNT] call bax_supplyCrates_fnc_addBackpack
 #define ADD_PRIMARY_TO_CRATE(CRATE_NAME,LOADOUT_NAME,AMOUNT) [SIDE,CRATE_NAME,LOADOUT_NAME,0,AMOUNT] call bax_supplyCrates_fnc_addLoadoutWeapon
 #define ADD_SECONDARY_TO_CRATE(CRATE_NAME,LOADOUT_NAME,AMOUNT) [SIDE,CRATE_NAME,LOADOUT_NAME,1,AMOUNT] call bax_supplyCrates_fnc_addLoadoutWeapon
 #define ADD_LAUNCHER_TO_CRATE(CRATE_NAME,LOADOUT_NAME,AMOUNT) [SIDE,CRATE_NAME,LOADOUT_NAME,2,AMOUNT] call bax_supplyCrates_fnc_addLoadoutWeapon
@@ -46,16 +45,16 @@
 #define BLOOD(AMOUNT) [["ACE_bloodIV",AMOUNT],["ACE_bloodIV_500",AMOUNT],["ACE_bloodIV_250",AMOUNT]]
 #define PLASMA(AMOUNT) [["ACE_plasmaIV",AMOUNT],["ACE_plasmaIV_500",AMOUNT],["ACE_plasmaIV_250",AMOUNT]]
 #define SALINE(AMOUNT) [["ACE_salineIV",AMOUNT],["ACE_salineIV_500",AMOUNT],["ACE_salineIV_250",AMOUNT]]
-#define MEDICAL (BANDAGES(40) + SPLINTS(10) + SUTURES(20) + SALINE(10))
+#define MEDICAL(FACTOR) (BANDAGES(round (40 * FACTOR)) + SPLINTS(round (10 * FACTOR)) + SUTURES(round (20 * FACTOR)) + SALINE(round (10 * FACTOR)))
 
 // RADIOS
 
 
 // MAP MARKERS
 
-#define SET_GROUP_ICON(GROUP,ICON) [SIDE,GROUP,ICON] call bax_mapMarkers_fnc_registerGroupIcon
-#define SET_GROUP_COLOR(GROUP,COLOR) [SIDE,GROUP,COLOR] call bax_mapMarkers_fnc_registerGroupColor
-#define HIDE_GROUP(GROUP) [SIDE,GROUP,true] call bax_mapMarkers_fnc_registerGroupHidden
+#define SET_GROUP_ICON(GROUP,ICON) [SIDE,GROUP,ICON] call bax_mapMarkers_fnc_setGroupIcon
+#define SET_GROUP_COLOR(GROUP,COLOR) [SIDE,GROUP,COLOR] call bax_mapMarkers_fnc_setGroupColor
+#define HIDE_GROUP(GROUP) [SIDE,GROUP,true] call bax_mapMarkers_fnc_setGroupHidden
 
 #define COLOR_WHITE [1,1,1,1]
 #define COLOR_BLACK [0,0,0,1]
@@ -73,26 +72,26 @@
 #define COLOR_INDFOR [0.0,0.5,0.0,1]
 #define COLOR_CIV [0.4,0.0,0.5,1]
 
-// SIDE: b o n c
-#define B_ICON_AIR(SIDE) (getMissionPath SVAR(CONCAT3(assets\markers\,SIDE,_air.paa)))
-#define B_ICON_ANTIAIR(SIDE) (getMissionPath SVAR(CONCAT3(assets\markers\,SIDE,_antiair.paa)))
-#define B_ICON_ARMOR(SIDE) (getMissionPath SVAR(CONCAT3(assets\markers\,SIDE,_armor.paa)))
-#define B_ICON_ART(SIDE) (getMissionPath SVAR(CONCAT3(assets\markers\,SIDE,_art.paa)))
-#define B_ICON_HQ(SIDE) (getMissionPath SVAR(CONCAT3(assets\markers\,SIDE,_hq.paa)))
-#define B_ICON_INF(SIDE) (getMissionPath SVAR(CONCAT3(assets\markers\,SIDE,_inf.paa)))
-#define B_ICON_INSTALLATION(SIDE) (getMissionPath SVAR(CONCAT3(assets\markers\,SIDE,_installation.paa)))
-#define B_ICON_MAINT(SIDE) (getMissionPath SVAR(CONCAT3(assets\markers\,SIDE,_maint.paa)))
-#define B_ICON_MECHINF(SIDE) (getMissionPath SVAR(CONCAT3(assets\markers\,SIDE,_mech_inf.paa)))
-#define B_ICON_MED(SIDE) (getMissionPath SVAR(CONCAT3(assets\markers\,SIDE,_med.paa)))
-#define B_ICON_MORTAR(SIDE) (getMissionPath SVAR(CONCAT3(assets\markers\,SIDE,_mortar.paa)))
-#define B_ICON_MOTORINF(SIDE) (getMissionPath SVAR(CONCAT3(assets\markers\,SIDE,_motor_inf.paa)))
-#define B_ICON_NAVAL(SIDE) (getMissionPath SVAR(CONCAT3(assets\markers\,SIDE,_naval.paa)))
-#define B_ICON_PLANE(SIDE) (getMissionPath SVAR(CONCAT3(assets\markers\,SIDE,_plane.paa)))
-#define B_ICON_RECON(SIDE) (getMissionPath SVAR(CONCAT3(assets\markers\,SIDE,_recon.paa)))
-#define B_ICON_SERVICE(SIDE) (getMissionPath SVAR(CONCAT3(assets\markers\,SIDE,_service.paa)))
-#define B_ICON_SUPPORT(SIDE) (getMissionPath SVAR(CONCAT3(assets\markers\,SIDE,_support.paa)))
-#define B_ICON_UAV(SIDE) (getMissionPath SVAR(CONCAT3(assets\markers\,SIDE,_uav.paa)))
-#define B_ICON_UNKNOWN(SIDE) (getMissionPath SVAR(CONCAT3(assets\markers\,SIDE,_unknown.paa)))
+// SIDE: b o n
+#define BAX_ICON_AIR(SIDE) (getMissionPath SVAR(CONCAT3(assets\markers\,SIDE,_air.paa)))
+#define BAX_ICON_ANTIAIR(SIDE) (getMissionPath SVAR(CONCAT3(assets\markers\,SIDE,_antiair.paa)))
+#define BAX_ICON_ARMOR(SIDE) (getMissionPath SVAR(CONCAT3(assets\markers\,SIDE,_armor.paa)))
+#define BAX_ICON_ART(SIDE) (getMissionPath SVAR(CONCAT3(assets\markers\,SIDE,_art.paa)))
+#define BAX_ICON_HQ(SIDE) (getMissionPath SVAR(CONCAT3(assets\markers\,SIDE,_hq.paa)))
+#define BAX_ICON_INF(SIDE) (getMissionPath SVAR(CONCAT3(assets\markers\,SIDE,_inf.paa)))
+#define BAX_ICON_INSTALLATION(SIDE) (getMissionPath SVAR(CONCAT3(assets\markers\,SIDE,_installation.paa)))
+#define BAX_ICON_MAINT(SIDE) (getMissionPath SVAR(CONCAT3(assets\markers\,SIDE,_maint.paa)))
+#define BAX_ICON_MECHINF(SIDE) (getMissionPath SVAR(CONCAT3(assets\markers\,SIDE,_mech_inf.paa)))
+#define BAX_ICON_MED(SIDE) (getMissionPath SVAR(CONCAT3(assets\markers\,SIDE,_med.paa)))
+#define BAX_ICON_MORTAR(SIDE) (getMissionPath SVAR(CONCAT3(assets\markers\,SIDE,_mortar.paa)))
+#define BAX_ICON_MOTORINF(SIDE) (getMissionPath SVAR(CONCAT3(assets\markers\,SIDE,_motor_inf.paa)))
+#define BAX_ICON_NAVAL(SIDE) (getMissionPath SVAR(CONCAT3(assets\markers\,SIDE,_naval.paa)))
+#define BAX_ICON_PLANE(SIDE) (getMissionPath SVAR(CONCAT3(assets\markers\,SIDE,_plane.paa)))
+#define BAX_ICON_RECON(SIDE) (getMissionPath SVAR(CONCAT3(assets\markers\,SIDE,_recon.paa)))
+#define BAX_ICON_SERVICE(SIDE) (getMissionPath SVAR(CONCAT3(assets\markers\,SIDE,_service.paa)))
+#define BAX_ICON_SUPPORT(SIDE) (getMissionPath SVAR(CONCAT3(assets\markers\,SIDE,_support.paa)))
+#define BAX_ICON_UAV(SIDE) (getMissionPath SVAR(CONCAT3(assets\markers\,SIDE,_uav.paa)))
+#define BAX_ICON_UNKNOWN(SIDE) (getMissionPath SVAR(CONCAT3(assets\markers\,SIDE,_unknown.paa)))
 
 #define ICON_AIR(SIDE) SVAR(CONCAT3(\A3\ui_f\data\map\markers\nato\,SIDE,_air.paa))
 #define ICON_ANTIAIR(SIDE) SVAR(CONCAT3(\A3\ui_f\data\map\markers\nato\,SIDE,_antiair.paa))
@@ -143,10 +142,9 @@
 // Arsenal
 
 // #define REGISTER_ARSENAL(SIDE,OBJECT) [SIDE,OBJECT] call bax_arsenals_fnc_registerArsenal
-#define CREATE_ARSENAL(ROLE,ITEMS) [SIDE,ROLE,ITEMS] call bax_arsenals_fnc_registerArsenalPreset
-#define DEFAULT_ARSENAL(ITEMS) [SIDE,"default",ITEMS] call bax_arsenals_fnc_registerArsenalPreset
+#define CREATE_ARSENAL(ROLE,ITEMS) [SIDE,ROLE,ITEMS] call bax_arsenals_fnc_registerArsenalItems
+#define DEFAULT_ARSENAL(ITEMS) [SIDE,VARS_DEFAULT,ITEMS] call bax_arsenals_fnc_registerArsenalItems
 #define GET_LOADOUT_ITEMS(LOADOUTNAME) [SIDE,LOADOUTNAME] call bax_arsenals_fnc_getItemsFromLoadout
-#define GET_CLASS_ITEMS(CLASSNAME) [SIDE,CLASSNAME] call bax_arsenals_fnc_getItemsFromClass
 
 
 

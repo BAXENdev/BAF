@@ -10,6 +10,10 @@ if !(_type in (keys bax_settings_settings)) exitWith {
 
 _componentKeys = keys (bax_settings_settings get _type);
 
+if (_componentKeys isEqualTo []) exitWith {
+    ["No registered component settings"] call bax_common_fnc_hintDialog;
+};
+
 _listBoxComponents = [
     "LIST",
     "Select Settings",
@@ -28,10 +32,11 @@ _listBoxComponents = [
     {
         params ["_dialogValues","_args"];
         _dialogValues params ["_componentKey"];
+        _args params ["_type"];
 
-        [_componentKey] call bax_frameworkSettings_fnc_dialogSelectSettings;
+        [_type,_componentKey] call bax_settings_fnc_dialogUpdateSettings;
     },
     {},
-    []
+    [_type]
 
 ] call zen_dialog_fnc_create;

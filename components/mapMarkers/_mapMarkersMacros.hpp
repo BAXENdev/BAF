@@ -40,7 +40,7 @@
 #define COLOR_INDFOR [0.0,0.5,0.0,1]
 #define COLOR_CIV [0.4,0.0,0.5,1]
 
-// SIDE: b o n c
+// SIDE: b o n
 #define B_ICON_AIR(SIDE) (getMissionPath SVAR(CONCAT3(assets\markers\,SIDE,_air.paa)))
 #define B_ICON_ANTIAIR(SIDE) (getMissionPath SVAR(CONCAT3(assets\markers\,SIDE,_antiair.paa)))
 #define B_ICON_ARMOR(SIDE) (getMissionPath SVAR(CONCAT3(assets\markers\,SIDE,_armor.paa)))

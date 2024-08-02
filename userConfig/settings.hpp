@@ -10,9 +10,7 @@ acreOpforLanguage = "Chinese";
 // Name of language for indfor
 acreIndforLanguage = "Greek";
 // Name of language for blufor
-acreCivilianLanguage = "Civilian";
+acreCivilianLanguage = "Greek";
 // Whether players on different sides share the same frequency for radio channels
-// 0: Every side uses the set of frequencies | 1: Each side uses their own frequencies
+// 0: Every side uses the same set of frequencies | 1: Each side uses their own frequencies
 acreSideFrequencies = 0;
-
-

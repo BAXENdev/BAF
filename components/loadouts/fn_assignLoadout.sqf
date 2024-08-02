@@ -7,9 +7,10 @@ _side = side group _unit;
 _loadoutRegistry = bax_loadouts_loadouts get _side;
 _loadoutArray = _loadoutRegistry get _loadoutName;
 
-// if (isNil "_loadoutArray") exitWith {
-// 	diag_log format ["[BAX] (Loadouts) Failed to assign loadout to unit %1 with [%2,%3]",_unit,_loadoutName];
-// };
+if (isNil "_loadoutArray") exitWith {
+	_msg = format ["Failed to assign loadout to unit %1 with [%2,%3]",_unit,_loadoutName];
+	DEBUG_ERR(_msg);
+};
 
 _loadoutArray params ["_loadoutVariants","_traits","_randomGear"];
 
@@ -64,3 +65,6 @@ _unit setVariable [LOADOUT_ID,_loadoutName,true];
 // TODO: Make sure this can be placed outside of a assignLoadout?
 // Issue: will setting a units loadout happen asynchronosly, causing getUnitLoadout to get the old one when setting respawn var?
 // _unit setVariable [VAR_RESPAWN,_loadout,true];
+
+// return
+_loadout;

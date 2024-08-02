@@ -1,22 +1,22 @@
 
-#include "_arsenalMacros.hpp"
+#include "_arsenalsMacros.hpp"
 
 // Sub-HashMap: Key: Role | Value: [Item List...]
 bax_arsenals_arsenalLists = createHashMapFromArray [
     [west,createHashMapFromArray [
-            ["default", true]
+            [VARS_DEFAULT, true]
         ]
     ],
     [east,createHashMapFromArray [
-            ["default", true]
+            [VARS_DEFAULT, true]
         ]
     ],
     [resistance,createHashMapFromArray [
-            ["default", true]
+            [VARS_DEFAULT, true]
         ]
     ],
     [civilian,createHashMapFromArray [
-            ["default", true]
+            [VARS_DEFAULT, true]
         ]
     ]
 ];
@@ -28,3 +28,8 @@ bax_arsenals_arsenalBoxes = createHashMapFromArray [
     [resistance,[]],
     [civilian,[]]
 ];
+
+["ace_arsenal_displayClosed",{
+    _loadout = getUnitLoadout player;
+    player setVariable [VAR_RESPAWN,_loadout,true];
+}] call CBA_fnc_addEventHandler;

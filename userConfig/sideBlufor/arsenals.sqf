@@ -52,8 +52,12 @@ _loadout = [[["arifle_MX_F","","acc_pointer_IR","optic_Aco",["30Rnd_65x39_casele
 _loadoutItems = (flatten _loadout) select { _x isEqualType "" };
 CREATE_ARSENAL("RIFLEMAN",_loadoutItems);
 
+DEFAULT_ARSENAL(_loadoutItems);
+
 // Retrieve items from registered loadout in loadouts file. The retrieved items also include variants and random gear
 _loadoutItems = GET_LOADOUT_ITEMS("COMBAT MEDIC");
 // Here is an example of also adding medical items
 _loadoutItems append ACE_MEDICAL_ITEMS; // ACE_MEDICAL_ITEMS is turned into ["ACE_Morphine","Ace_Epinephrine","ACE_BasicBandage",...]
 CREATE_ARSENAL("COMBAT MEDIC",_loadoutItems);
+
+
