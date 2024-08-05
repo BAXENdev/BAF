@@ -34,8 +34,9 @@ _listSelectLoadout = [
         _arguments params ["_unit"];
 
         _loadout = [_unit,_loadoutName] call bax_loadouts_fnc_assignLoadout;
+        
         _unit setVariable [VAR_RESPAWN,_loadout,true];
-
+        _loadout = [_loadout] call acre_api_fnc_filterUnitLoadout;
         [_loadoutName] remoteExec ["bax_arsenals_fnc_initArsenals", _unit];
     },
     {},

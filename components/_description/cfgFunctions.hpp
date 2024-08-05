@@ -42,16 +42,16 @@ class BAX_ARSENALS {
     #include "..\arsenals\_categories.hpp"
 };
 
-// class BAX_RADIOS {
-//     #include "..\radios\_categories.hpp"
-// };
-
 class BAX_SUPPLYCRATES {
     #include "..\supplyCrates\_categories.hpp"
 };
 
 class BAX_RESPAWN {
     #include "..\respawn\_categories.hpp"
+};
+
+class BAX_RADIOS {
+    #include "..\radios\_categories.hpp"
 };
 
 class BAX_USERINIT {

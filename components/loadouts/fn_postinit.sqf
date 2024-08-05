@@ -20,7 +20,6 @@ if (isMultiplayer) then {
 
     _loadoutRegistryRoles = keys (bax_loadouts_loadouts get _side);
 
-    [player,VARS_DEFAULT] call bax_loadouts_fnc_assignLoadout;
-    _loadout = getUnitLoadout player;
+    _loadout = [player,VARS_DEFAULT] call bax_loadouts_fnc_assignLoadout;
     player setVariable [VAR_RESPAWN,_loadout,true];
 };

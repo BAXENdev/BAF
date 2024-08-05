@@ -4,7 +4,8 @@
 bax_respawn_respawnPosition params ["_respawnObject", "_respawnObjectName"];
 
 if (isNull _respawnObject) exitWith {
-	bax_respawn_respawnStatusError = "Respawn Does Not Exist";
+	bax_respawn_respawnPosition = [objNull, "Select Respawn"];
+	bax_respawn_respawnStatusError = "Select A Respawn Position";
 	
 	// return
 	false;

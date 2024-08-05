@@ -19,6 +19,7 @@ if !(hasInterface) exitWith {};
 _respawnLoadout = player getVariable [VAR_RESPAWN,nil];
 if (isNil "_respawnLoadout") then {
 	_loadout = getUnitLoadout player;
+	_loadout = [_loadout] call acre_api_fnc_filterUnitLoadout;
 	player setVariable [VAR_RESPAWN,_loadout,true];
 };
 
@@ -40,7 +41,10 @@ bax_respawn_personalTickets = switch (_side) do {
 	case civilian: { CIVILIAN_PTICKETS };
 };
 
-// [player] remoteExec ["bax_respawn_fnc_respawnRequestSync", 2];
+// TODO: I dont think I need this because variables are globally set.
+// But does the global variable sets run before or after postinit?
+// TODO: I think JIPs wont have the updated values, so sync is needed for now I think? Safe to do it anyways
+[player] remoteExec ["bax_respawn_fnc_respawnRequestSync", 2];
 
 ["ace_spectator_displayLoaded",{
 	params ["_display"];

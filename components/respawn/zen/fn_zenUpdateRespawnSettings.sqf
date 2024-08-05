@@ -8,7 +8,31 @@
 
 	// 2) Function - code or function name
 	// Passed Params: 0) Module Position ASL, 1) Attached object, objNull if not attached
-	bax_respawn_fnc_dialogUpdateRespawnSettings,
+	{
+		_listboxSide = [
+			"LISTBOX",
+			"Select Side",
+			[
+				[west, east, independent, civilian],
+				["BLUFOR", "OPFOR", "INDFOR", "CIVILIAN"],
+				0,
+				4
+			],
+			true
+		];
+
+		[
+			"Update Settings: Select Side",
+			[_listboxSide],
+			{
+				params ["_dialogValues", "_args"];
+
+				_dialogValues params ["_side"];
+
+				[_side] call bax_respawn_fnc_dialogUpdateRespawnSettings;
+			}
+		]
+	},
 
 	// 3) Icon file - Filepath, optional, default (shown below)
 	"\a3\modules_f\data\portraitmodule_ca.paa"

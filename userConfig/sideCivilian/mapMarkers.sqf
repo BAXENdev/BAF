@@ -1,6 +1,4 @@
 
-#include "..\_userMacros.hpp"
-
 #define SIDE civilian
 /*
 Commands:

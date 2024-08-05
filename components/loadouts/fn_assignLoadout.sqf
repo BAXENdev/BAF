@@ -10,6 +10,9 @@ _loadoutArray = _loadoutRegistry get _loadoutName;
 if (isNil "_loadoutArray") exitWith {
 	_msg = format ["Failed to assign loadout to unit %1 with [%2,%3]",_unit,_loadoutName];
 	DEBUG_ERR(_msg);
+
+	// Return
+	EMPTY_LOADOUT;
 };
 
 _loadoutArray params ["_loadoutVariants","_traits","_randomGear"];
@@ -51,6 +54,7 @@ _newBackpackArray = [_loadoutBackpackArray,_randomBackpacks] call bax_loadouts_f
 _loadout set [5,_newBackpackArray];
 
 if (alive _unit) then { // If not alive and loadout reassigned, do not update the units actual loadout
+	_loadout = [_loadout] call acre_api_fnc_filterUnitLoadout;
 	_unit setUnitLoadout _loadout;
 };
 
@@ -62,9 +66,8 @@ _unit setVariable [LOADOUT_ID,_loadoutName,true];
 // 	_unit setVariable ["ENH_SavedLoadout",_loadout,true];
 // };
 
-// TODO: Make sure this can be placed outside of a assignLoadout?
-// Issue: will setting a units loadout happen asynchronosly, causing getUnitLoadout to get the old one when setting respawn var?
-// _unit setVariable [VAR_RESPAWN,_loadout,true];
+// This isnt used anywhere. I just save it for reference in case I ever do.
+_unit setVariable [VARS_LOADOUT_KEY, [_side, _loadoutName], true];
 
 // return
 _loadout;

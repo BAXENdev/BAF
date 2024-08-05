@@ -31,5 +31,6 @@ bax_arsenals_arsenalBoxes = createHashMapFromArray [
 
 ["ace_arsenal_displayClosed",{
     _loadout = getUnitLoadout player;
+    _loadout = [_loadout] call acre_api_fnc_filterUnitLoadout;
     player setVariable [VAR_RESPAWN,_loadout,true];
 }] call CBA_fnc_addEventHandler;

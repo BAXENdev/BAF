@@ -11,19 +11,18 @@ class CfgRespawnTemplates {
     class BAX_Respawn {
         onPlayerKilled = "bax_respawn_fnc_onPlayerKilled";
         onPlayerRespawn = "bax_respawn_fnc_onPlayerRespawn";
-        // isCall = 1;
+        isCall = 1;
     };
 
     class BAX_Loadouts {
         onPlayerRespawn = "bax_loadouts_fnc_onPlayerRespawn";
-        // isCall = 1;
+        isCall = 1;
     };
 
-    // class BAX_Radios {
-    //     // TODO: Add radios
-    //     // onPlayerRespawn = "bax_radios_fnc_onPlayerRespawn";
-    //     isCall = 1;
-    // };
+    class BAX_Radios {
+        onPlayerRespawn = "bax_radios_fnc_onPlayerRespawn";
+        isCall = 1;
+    };
 };
 
-respawnTemplatesWest[] = {"BAX_Respawn", "BAX_Loadouts", "ace_spectator"};
+respawnTemplatesWest[] = {"BAX_Respawn", "BAX_Loadouts", "BAX_Radios", "ace_spectator"};

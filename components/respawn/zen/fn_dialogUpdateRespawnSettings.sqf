@@ -1,112 +1,89 @@
 
 #include "..\_respawnMacros.hpp"
 
-_content = [];
-_args = [];
+params ["_side"];
 
-{
-	_x params ["_side", "_settings"];
-	_settings params ["_respawnTickets", "_respawnTicketsPersonal", "_respawnDelay", "_squadRespawn", "_groupsRespawn"];
+_sideSettings = switch (_side) do {
+	case west: { bax_respawn_bluforSettings };
+	case east: { bax_respawn_opforSettings };
+	case independent: { bax_respawn_indforSettings };
+	case civilian: { bax_respawn_civilianSettings };
+};
+_sideSettings params ["_respawnTickets", "_respawnTicketsPersonal", "_respawnDelay", "_doSquadRespawn", "_doGroupRespawn"];
 
-	_titleBox = [
-		"TOOLBOX",
-		str _side,
-		[
-			0,
-			0,
-			0,
-			[],
-			2
-		],
-		true
-	];
+_sideTickets = switch (_side) do {
+	case west: { bax_respawn_bluforTickets };
+	case east: { bax_respawn_opforTickets };
+	case independent: { bax_respawn_indforTickets };
+	case civilian: { bax_respawn_civilianTickets };
+};
+_sliderTickets = [
+	"SLIDER",
+	["Respawn Tickets (Current)", "-1 is infinite"],
+	[
+		-1,
+		100,
+		_sideTickets,
+		0
+	],
+	true
+];
 
-	_sliderTickets = [
-		"SLIDER",
-		["Respawn Tickets", "-1 is infinite"],
-		[
-			-1,
-			100,
-			_respawnTickets,
-			0
-		],
-		true
-	];
-
-	_sliderTicketsPersonal = [
-		"SLIDER",
-		["Personal Respawn Tickets", "-1 is infinite"],
-		[
-			-1,
-			100,
-			_respawnTicketsPersonal,
-			0
-		],
-		true
-	];
-
-	_sliderRespawnDelay = [
-		"SLIDER",
-		["Respawn Delay", "Respawn Delay in Seconds"],
-		[
-			0,
-			3599,
-			_respawnDelay,
-			{ [_this, "M:SS"] call CBA_fnc_formatElapsedTime }
-		],
-		true
-	];
-
-	_checkboxSquadSpawns = [
-		"CHECKBOX",
-		"Allow Spawning On Squad Members",
-		_squadRespawn,
-		true
-	];
-
-	_checkboxGroupSpawns = [
-		"CHECKBOX",
-		"Allow Spawning On Other Squads",
-		_groupsRespawn,
-		true
-	];
-
-	_content append [
-		_titleBox,
-		_sliderTickets,
-		_sliderTicketsPersonal,
-		_sliderRespawnDelay,
-		_checkboxSquadSpawns,
-		_checkboxGroupSpawns
-	];
-
-	_args pushBack [
-		_respawnTickets,
+_sliderTicketsPersonal = [
+	"SLIDER",
+	["Personal Respawn Tickets", "-1 is infinite"],
+	[
+		-1,
+		100,
 		_respawnTicketsPersonal,
+		0
+	],
+	true
+];
+
+_checkboxResetTickets = [
+	"CHECKBOX",
+	"Reset Personal Tickets?",
+	false,
+	true
+];
+
+_sliderRespawnDelay = [
+	"SLIDER",
+	["Respawn Delay", "Respawn Delay in Seconds"],
+	[
+		0,
+		3599,
 		_respawnDelay,
-		_squadRespawn,
-		_groupsRespawn
-	];
+		{ [_this, "M:SS"] call CBA_fnc_formatElapsedTime }
+	],
+	true
+];
 
-} forEach [
-	[west, bax_respawn_bluforSettings],
-	[east, bax_respawn_opforSettings],
-	[independent, bax_respawn_indforSettings],
-	[civilian, bax_respawn_civilianSettings],
-]
+_checkboxSquadSpawns = [
+	"CHECKBOX",
+	"Allow Spawning On Squad Members",
+	_doSquadRespawn,
+	true
+];
 
+_checkboxGroupSpawns = [
+	"CHECKBOX",
+	"Allow Spawning On Other Squads",
+	_doGroupRespawn,
+	true
+];
+
+// TODO: how to update settings with respect to JIPs?
 [
 	"Update Respawn Settings",
 	_content,
 	{
 		params ["_dialogValues","_args"];
-
-		{
-			_side = _x;
-			_newSettings
-
-		} forEach [west, east, independent, civilian];
+		_dialogValues params ["_newTickets", "_newTicketsPersonal", "_newRespawnDelay", "_newSquadSpawns", "_newGroupSpawns"];
+		_args params ["_side"];
+		
 	},
 	{},
-	_args
+	[_side]
 ] call zen_dialog_fnc_create;

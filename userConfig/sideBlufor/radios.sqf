@@ -1,6 +1,4 @@
 
-#include "..\_userMacros.hpp"
-
 #define SIDE west
 
 /*
@@ -8,44 +6,9 @@
   The load order goes from left to right: SIDE -> GROUP -> ROLE.
   So if a GROUP preset has PRC343 preset to channel 2, but the ROLE preset has PRC343 preset to channel 1,
   the final preset for PRC343 will be channel 1.
-  A unit needs to have the radio in their inventory in order for it to be preset. TODO: Will I give radios?
-  If a unit has two of the same radio in their inventory, only one of them will be preset. This is an acre limitation.
+  A unit needs to have the radio in their inventory in order for it to be preset.
+  Multiple of the same radio can be registered for a side/group/role.
 */
 
-// 343's and BF888S's dont share frequencies with the LRs and don't have channel names
-
-PRC343
-BF888S
-
-PRC148
-PRC152
-PRC117
-
-// SET_SR_NAMES(
-//   [
-//     [1,"Alpha"],
-//     [2,"Bravo"],
-//     [3,"Charlie"]
-//     "Delta" // 4
-//   ]
-// );
-SET_LR_NAMES(
-  [
-    "Platoon", // 1
-    "Alpha" // 2
-    "Alpha" // 3
-    [13,"Covert Comms"],
-  ]
-);
-
-SET_GROUP("ACRE_PRC152","Alpha",2);
-SET_ROLE("JTAC",4);
-
-// SET_SIDE_CHANNEL(
-//   [ACRE_117,2]
-// );
-// SET_GROUP_CHANNEL(
-
-// );
-
-
+ADD_RADIO_SIDE("ACRE_PRC152", 2, "Platoon Net");
+ADD_RADIO_GROUPS("ACRE_PRC343", 2, "Alpha 1-1", ["Alpha 1-1"]);
