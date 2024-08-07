@@ -1,7 +1,7 @@
 
 #include "_loadoutsMacros.hpp"
 
-params ["_unit","_loadoutName"];
+params ["_unit", "_loadoutName"];
 
 _side = side group _unit;
 _loadoutRegistry = bax_loadouts_loadouts get _side;
@@ -11,8 +11,8 @@ if (isNil "_loadoutArray") exitWith {
 	_msg = format ["Failed to assign loadout to unit %1 with [%2,%3]",_unit,_loadoutName];
 	DEBUG_ERR(_msg);
 
-	// Return
-	EMPTY_LOADOUT;
+	// Return nothing
+	nil;
 };
 
 _loadoutArray params ["_loadoutVariants","_traits","_randomGear"];
@@ -59,15 +59,6 @@ if (alive _unit) then { // If not alive and loadout reassigned, do not update th
 };
 
 _unit setVariable [LOADOUT_ID,_loadoutName,true];
-
-// TODO: 3den enhanced support for respawn loadout?
-// _respawnLoadout = player getVariable ["ENH_SavedLoadout",nil];
-// if !(isNil "_respawnLoadout") exitWith {
-// 	_unit setVariable ["ENH_SavedLoadout",_loadout,true];
-// };
-
-// This isnt used anywhere. I just save it for reference in case I ever do.
-_unit setVariable [VARS_LOADOUT_KEY, [_side, _loadoutName], true];
 
 // return
 _loadout;

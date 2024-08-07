@@ -27,7 +27,6 @@ _objectClasses = [
     "Box_Syndicate_WpsLaunch_F"
 ];
 _objectNames = _objectClasses apply { getText (configFile >> "CfgVehicles" >> _x >> "displayName"); };
-// TODO: update list names to include object images from the config
 _listSelectObject = [
     "LIST",
     "Crates",
@@ -38,6 +37,8 @@ _listSelectObject = [
         7
     ]
 ];
+
+// TODO: Add paradrop option with map location picker
 
 [
     "Select Crate",

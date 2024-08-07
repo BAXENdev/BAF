@@ -1,5 +1,4 @@
 
-#define SIDE independent
 /*
 Commands:
     SET_GROUP_COLOR(Group Name [string],Color [RGBA array]);

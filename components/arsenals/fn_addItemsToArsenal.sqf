@@ -1,7 +1,7 @@
 
 #include "_arsenalsMacros.hpp"
 
-params ["_side","_role","_items"];
+params ["_side", "_role", "_items"];
 
 _arsenalItems = bax_arsenals_arsenalLists get _side get _role;
 if (isNil "_arsenalItems") exitWith {

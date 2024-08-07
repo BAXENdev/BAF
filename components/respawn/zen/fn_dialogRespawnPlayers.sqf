@@ -14,6 +14,13 @@ _content = _deadPlayers apply {
 	]
 };
 
+_content pushBack [
+	"CHECKBOX",
+	"Do Not Use Tickets:",
+	false,
+	true
+];
+
 [
 	// 0) Title
 	"Respawn Players",
@@ -29,11 +36,13 @@ _content = _deadPlayers apply {
 		params ["_dialogValues","_args"];
 		_args params ["_deadPlayers"];
 
+		_doNotUseTickets = _dialogValues select (count _dialogValues - 1);
+
 		{
 			_deadPlayer = _x;
 			_doRespawn = _dialogValues select _forEachIndex;
 			if (_doRespawn) then {
-				[true] remoteExec ["bax_respawn_fnc_respawnPlayer",_deadPlayer];
+				[_doNotUseTickets] remoteExec ["bax_respawn_fnc_quickRespawnPlayer", _deadPlayer];
 			};
 		} forEach _deadPlayers;
 	},

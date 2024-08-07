@@ -1,6 +1,4 @@
 
-#define SIDE independent
-
 /*
   Presets are load order specific, where a following loaded preset will overwrite conflicting prior presets.
   The load order goes from left to right: SIDE -> GROUP -> ROLE.

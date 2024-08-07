@@ -1,27 +1,29 @@
 
 #include "..\_mapMarkersMacros.hpp"
 
-// TODO: Cache icon
-// Use https://github.com/CBATeam/CBA_A3/blob/master/addons/xeh/CfgEventHandlers.hpp#L103
-// Or have it calculate on start and on arsenal close?
-
 params ["_unit"];
 
-if !(alive _unit) exitWith {
-	// return
-	B_ICON_MAN_DEAD;
-};
+// if !(alive _unit) exitWith {
+// 	// return
+// 	B_ICON_MAN_DEAD;
+// };
 
-if (_unit getVariable ["ACE_isUnconscious", false]) exitWith {
-	// return
-	B_ICON_MAN_REVIVE;
-};
+// if (_unit getVariable ["ACE_isUnconscious", false]) exitWith {
+// 	// return
+// 	B_ICON_MAN_REVIVE;
+// };
 
 _icon = _unit getVariable [MARKER_TEXTURE,nil];
 if !(isNil "_icon") exitWith {
 	// return
 	_icon;
 };
+
+// TODO: Units are assigned to modules until after briefing screen.
+// if (getAssignedCuratorLogic _unit in allCurators) exitWith {
+// 	// return
+// 	B_ICON_MAN_ZEUS;
+// };
 
 if ((leader _unit) isEqualTo _unit) exitWith {
 	// return

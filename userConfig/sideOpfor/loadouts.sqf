@@ -1,6 +1,4 @@
 
-#define SIDE east
-
 /*
 COMMANDS:
 	CREATE_LOADOUT("Loadout Name",LOADOUT_ARRAY);

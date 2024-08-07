@@ -12,7 +12,7 @@ _addSquadSpawns = switch (_side) do {
 	case independent: { INDFOR_ONSQUAD };
 	case civilian: { CIVILIAN_ONSQUAD };
 };
-if (_addSquadSpawns == 1) then {
+if (_addSquadSpawns) then {
 	_respawnPositions append _groupUnitSpawns;
 };
 
@@ -22,7 +22,7 @@ _addGroupSpawns = switch (_side) do {
 	case independent: { INDFOR_OTHERSQUAD };
 	case civilian: { CIVILIAN_OTHERSQUAD };
 };
-if (_addGroupSpawns == 1) then {
+if (_addGroupSpawns) then {
 	_respawnPositions append _otherGroupSpawns;
 };
 

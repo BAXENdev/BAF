@@ -1,6 +1,4 @@
 
-#define SIDE west
-
 /*
 Functions:
 	CREATE_ARSENAL("Role Name",ARRAY_OF_ITEMS);
@@ -27,17 +25,22 @@ FYI: Duplicate items are handled without any error or side-effects by the arsena
 Get list of items from loadout:
 	_loadout = Exported_Loadout_From_Editor; // export the loadout from the editor/zeus and paste over this
 	_loadoutList = (flatten _loadout) select { _x isEqualType "" }; // gets all string items
+	OR
+	_loadoutList = GET_LOADOUT_ITEMS("Loadout Name");
 
 Join two lists together:
 	_loadoutList append ["Binocular","ItemGPS","B_AssaultPack_mcamo"];
 	_loadoutList = _loadoutList + ["Binocular","ItemGPS","B_AssaultPack_mcamo"];
-	_loadoutList pushBack "Binocular"; // Notice that this doesnt have [] around the string
+	_loadoutList pushBack "Binocular"; 
+Notice that this doesnt have [] around the string. 'pushBack' appends the single item to the end of the list.
+'append' will append all the items in the second list to the first list.
 
 PREDEFINED ITEM LISTS:
-	ACRE_ITEMS: All 8 original acre radios + radio extenders
-	ACE_MISC_ITEMS: All misc items in the misc category besides the Ace Sandbag, and also includes a Canteen and Water Bottle (for those MGs)
-	ACE_MEDICAL_ITEMS: All medical items except First Aid Kit, Medikit, and Personal Aid Kit
-	ACE_TOOL_ITEMS: All ace tools except Cellphone, Chemlight Shield, Dead Man Switch, and M152 Firing Device (because the other one is better)
+	ACRE_ITEMS; // All 8 original acre radios + radio extenders
+	ACE_MISC_ITEMS; // All misc items in the misc category besides the Ace Sandbag, and also includes a Canteen and Water Bottle (for those MGs)
+	ACE_TOOL_ITEMS; // All ace tools except Cellphone, Chemlight Shield, Dead Man Switch, and M152 Firing Device (because the other one is better)
+	ACE_MEDICAL_ITEMS; // All medical items except First Aid Kit, Medikit, and Personal Aid Kit
+	BASE_ITEMS; Standard items for infantry.
 
 Examples:
 	_arrayItems append ACRE_ITEMS;
@@ -46,16 +49,31 @@ Examples:
 
 // Simple example: Paste the exported loadout, flatten it, and create an arsenal with the items
 // Same rifleman loadout from loadouts file
-_loadout = [[["arifle_MX_F","","acc_pointer_IR","optic_Aco",["30Rnd_65x39_caseless_mag",30],[],""],[],["hgun_P07_F","","","",["16Rnd_9x21_Mag",17],[],""],["U_B_CombatUniform_mcam",[["FirstAidKit",1],["ACRE_PRC343",1],["30Rnd_65x39_caseless_mag",2,30]]],["V_PlateCarrier1_rgr",[["30Rnd_65x39_caseless_mag",7,30],["16Rnd_9x21_Mag",2,17],["SmokeShell",1,1],["SmokeShellGreen",1,1],["Chemlight_green",2,1],["HandGrenade",2,1]]],[],"H_HelmetB","G_Combat",[],["ItemMap","","","ItemCompass","ItemWatch","NVGoggles"]],[]];
-_loadoutItems = (flatten _loadout) select { _x isEqualType "" };
-CREATE_ARSENAL("RIFLEMAN",_loadoutItems);
+// _loadout = [[["arifle_MX_F","","acc_pointer_IR","optic_Aco",["30Rnd_65x39_caseless_mag",30],[],""],[],["hgun_P07_F","","","",["16Rnd_9x21_Mag",17],[],""],["U_B_CombatUniform_mcam",[["FirstAidKit",1],["ACRE_PRC343",1],["30Rnd_65x39_caseless_mag",2,30]]],["V_PlateCarrier1_rgr",[["30Rnd_65x39_caseless_mag",7,30],["16Rnd_9x21_Mag",2,17],["SmokeShell",1,1],["SmokeShellGreen",1,1],["Chemlight_green",2,1],["HandGrenade",2,1]]],[],"H_HelmetB","G_Combat",[],["ItemMap","","","ItemCompass","ItemWatch","NVGoggles"]],[]];
+// _loadoutItems = (flatten _loadout) select { _x isEqualType "" };
+// CREATE_ARSENAL("Rifleman",_loadoutItems);
+
+_loadoutItems = GET_LOADOUT_ITEMS("Rifleman") + BASE_ITEMS;
+CREATE_ARSENAL("Rifleman", _loadoutItems);
 
 DEFAULT_ARSENAL(_loadoutItems);
 
-// Retrieve items from registered loadout in loadouts file. The retrieved items also include variants and random gear
-_loadoutItems = GET_LOADOUT_ITEMS("COMBAT MEDIC");
-// Here is an example of also adding medical items
-_loadoutItems append ACE_MEDICAL_ITEMS; // ACE_MEDICAL_ITEMS is turned into ["ACE_Morphine","Ace_Epinephrine","ACE_BasicBandage",...]
-CREATE_ARSENAL("COMBAT MEDIC",_loadoutItems);
+_loadoutItems = GET_LOADOUT_ITEMS("Squad Leader") + BASE_ITEMS + ACRE_ITEMS;
+CREATE_ARSENAL("Squad Leader", _loadoutItems);
 
+CREATE_ARSENAL("Fireteam Leader", _loadoutItems);
 
+_loadoutItems = GET_LOADOUT_ITEMS("Marksman") + BASE_ITEMS;
+CREATE_ARSENAL("Marksman", _loadoutItems);
+
+_loadoutItems = GET_LOADOUT_ITEMS("Grenedier") + BASE_ITEMS;
+CREATE_ARSENAL("Grenedier", _loadoutItems);
+
+_loadoutItems = GET_LOADOUT_ITEMS("Autorifleman") + BASE_ITEMS;
+CREATE_ARSENAL("Autorifleman", _loadoutItems);
+
+_loadoutItems = GET_LOADOUT_ITEMS("Antitank") + BASE_ITEMS;
+CREATE_ARSENAL("Antitank", _loadoutItems);
+
+_loadoutItems = GET_LOADOUT_ITEMS("Medic") + BASE_ITEMS + ACE_MEDICAL_ITEMS;
+CREATE_ARSENAL("Medic", _loadoutItems);

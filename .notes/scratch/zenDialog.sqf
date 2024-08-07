@@ -99,7 +99,7 @@ _editBox = [
 ];
 
 // Returns: 
-_listBox = [
+_list = [
 	// 0) Content Type
 	"LIST",
 

@@ -10,7 +10,7 @@
 	// Passed Params: 0) Module Position ASL, 1) Attached object, objNull if not attached
 	{
 		_listboxSide = [
-			"LISTBOX",
+			"LIST",
 			"Select Side",
 			[
 				[west, east, independent, civilian],
@@ -31,7 +31,7 @@
 
 				[_side] call bax_respawn_fnc_dialogUpdateRespawnSettings;
 			}
-		]
+		] call zen_dialog_fnc_create;
 	},
 
 	// 3) Icon file - Filepath, optional, default (shown below)

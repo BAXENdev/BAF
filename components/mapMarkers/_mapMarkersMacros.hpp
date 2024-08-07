@@ -23,6 +23,7 @@
 
 #define B_ICON_MAN_REVIVE (getMissionPath 'assets\icons\iconManRevive.paa')
 #define B_ICON_MAN_DEAD (getMissionPath 'assets\icons\iconManDead.paa')
+#define B_ICON_MAN_ZEUS (getMissionPath 'assets\icons\iconManZeus.paa')
 
 #define COLOR_WHITE [1,1,1,1]
 #define COLOR_BLACK [0,0,0,1]

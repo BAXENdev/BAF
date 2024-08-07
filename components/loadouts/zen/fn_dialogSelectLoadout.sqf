@@ -25,19 +25,36 @@ _listSelectLoadout = [
     true
 ];
 
+_checkboxReloadRadios = [
+    "CHECKBOX",
+    "Reload Radios",
+    true,
+    false
+];
+
 [
     "Select Loadout",
-    [_listSelectLoadout],
+    [_listSelectLoadout, _checkboxReloadRadios],
     {
         params ["_dialogValues","_arguments"];
-        _dialogValues params ["_loadoutName"];
+        _dialogValues params ["_loadoutName", "_reloadRadios"];
         _arguments params ["_unit"];
 
         _loadout = [_unit,_loadoutName] call bax_loadouts_fnc_assignLoadout;
         
-        _unit setVariable [VAR_RESPAWN,_loadout,true];
         _loadout = [_loadout] call acre_api_fnc_filterUnitLoadout;
+        _unit setVariable [VAR_RESPAWN,_loadout,true];
+
+        _unit setVariable [VARS_ROLE, _loadoutName, true];
         [_loadoutName] remoteExec ["bax_arsenals_fnc_initArsenals", _unit];
+
+        _iconTexture = [_unit] call bax_mapMarkers_fnc_getUnitIcon;
+        _unit setVariable [MARKER_TEXTURE, _iconTexture, true];
+
+        if (_reloadRadios) then {
+            [] call bax_radios_fnc_buildRadioPreset;
+            [] call bax_radios_fnc_loadRadioPreset;
+        };
     },
     {},
     [_unit]

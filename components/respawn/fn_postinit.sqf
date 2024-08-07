@@ -16,6 +16,9 @@
 
 if !(hasInterface) exitWith {};
 
+_side = side group player;
+
+// Set respawn loadout if it hasnt already been set
 _respawnLoadout = player getVariable [VAR_RESPAWN,nil];
 if (isNil "_respawnLoadout") then {
 	_loadout = getUnitLoadout player;
@@ -28,23 +31,14 @@ bax_respawn_respawnEnabled = true;
 bax_respawn_respawnPosition = [objNull, "Select Respawn"];
 bax_respawn_respawnAutospawn = false;
 bax_respawn_respawnStatusError = "Respawn Disabled";
+bax_respawn_skipTicketUse = false;
 
-bax_respawn_bluforTickets = BLUFOR_TICKETS;
-bax_respawn_opforTickets = OPFOR_TICKETS;
-bax_respawn_indforTickets = INDFOR_TICKETS;
-bax_respawn_civilianTickets = CIVILIAN_TICKETS;
-_side = side group player;
 bax_respawn_personalTickets = switch (_side) do {
 	case west: { BLUFOR_PTICKETS };
 	case east: { OPFOR_PTICKETS };
 	case independent: { INDFOR_PTICKETS };
 	case civilian: { CIVILIAN_PTICKETS };
 };
-
-// TODO: I dont think I need this because variables are globally set.
-// But does the global variable sets run before or after postinit?
-// TODO: I think JIPs wont have the updated values, so sync is needed for now I think? Safe to do it anyways
-[player] remoteExec ["bax_respawn_fnc_respawnRequestSync", 2];
 
 ["ace_spectator_displayLoaded",{
 	params ["_display"];

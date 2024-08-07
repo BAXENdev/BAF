@@ -1,6 +1,7 @@
 
 class Root {
     file = "components\radios";
+    class aceActions { postInit=1; };
     class buildRadioPreset {};
     class loadRadioPreset {};
     class onPlayerRespawn {};

@@ -1,6 +1,4 @@
 
-#define SIDE civilian
-
 /*
 Functions:
 	CREATE_ARSENAL("Role Name",ARRAY_OF_ITEMS);

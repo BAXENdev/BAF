@@ -11,44 +11,47 @@
 };
 
 bax_respawn_bluforSettings = [
-	getNumber (missionConfigFile >> "CfgBax" >> "blufor_respawnTickets"),
-	getNumber (missionConfigFile >> "CfgBax" >> "blufor_respawnTicketsPersonal"),
-	getNumber (missionConfigFile >> "CfgBax" >> "blufor_respawnDelay"),
-	getNumber (missionConfigFile >> "CfgBax" >> "blufor_respawnOnSquad"),
-	getNumber (missionConfigFile >> "CfgBax" >> "blufor_respawnOnGroups"),
-	getNumber (missionConfigFile >> "CfgBax" >> "blufor_doWaveRespawn"),
-	getNumber (missionConfigFile >> "CfgBax" >> "blufor_waveRespawnDuration"),
-	getNumber (missionConfigFile >> "CfgBax" >> "blufor_allowWaveCall")
+	CFGBAX_NUM("blufor_respawnTickets"),
+	CFGBAX_NUM("blufor_respawnTicketsPersonal"),
+	CFGBAX_NUM("blufor_respawnDelay"),
+	CFGBAX_BOOL("blufor_respawnOnSquad"),
+	CFGBAX_BOOL("blufor_respawnOnGroups")
+	// CFGBAX_NUM("blufor_doWaveRespawn"),
+	// CFGBAX_NUM("blufor_waveRespawnDuration"),
+	// CFGBAX_NUM("blufor_allowWaveCall")
 ];
 bax_respawn_opforSettings = [
-	getNumber (missionConfigFile >> "CfgBax" >> "opfor_respawnTickets"),
-	getNumber (missionConfigFile >> "CfgBax" >> "opfor_respawnTicketsPersonal"),
-	getNumber (missionConfigFile >> "CfgBax" >> "opfor_respawnDelay"),
-	getNumber (missionConfigFile >> "CfgBax" >> "opfor_respawnOnSquad"),
-	getNumber (missionConfigFile >> "CfgBax" >> "opfor_respawnOnGroups"),
-	getNumber (missionConfigFile >> "CfgBax" >> "opfor_doWaveRespawn"),
-	getNumber (missionConfigFile >> "CfgBax" >> "opfor_waveRespawnDuration"),
-	getNumber (missionConfigFile >> "CfgBax" >> "opfor_allowWaveCall")
+	CFGBAX_NUM("opfor_respawnTickets"),
+	CFGBAX_NUM("opfor_respawnTicketsPersonal"),
+	CFGBAX_NUM("opfor_respawnDelay"),
+	CFGBAX_NUM("opfor_respawnOnSquad"),
+	CFGBAX_BOOL("opfor_respawnOnGroups")
+	// CFGBAX_BOOL("opfor_doWaveRespawn"),
+	// CFGBAX_NUM("opfor_waveRespawnDuration"),
+	// CFGBAX_NUM("opfor_allowWaveCall")
 ];
 bax_respawn_indforSettings = [
-	getNumber (missionConfigFile >> "CfgBax" >> "indfor_respawnTickets"),
-	getNumber (missionConfigFile >> "CfgBax" >> "indfor_respawnTicketsPersonal"),
-	getNumber (missionConfigFile >> "CfgBax" >> "indfor_respawnDelay"),
-	getNumber (missionConfigFile >> "CfgBax" >> "indfor_respawnOnSquad"),
-	getNumber (missionConfigFile >> "CfgBax" >> "indfor_respawnOnGroups"),
-	getNumber (missionConfigFile >> "CfgBax" >> "indfor_doWaveRespawn"),
-	getNumber (missionConfigFile >> "CfgBax" >> "indfor_waveRespawnDuration"),
-	getNumber (missionConfigFile >> "CfgBax" >> "indfor_allowWaveCall")
+	CFGBAX_NUM("indfor_respawnTickets"),
+	CFGBAX_NUM("indfor_respawnTicketsPersonal"),
+	CFGBAX_NUM("indfor_respawnDelay"),
+	CFGBAX_BOOL("indfor_respawnOnSquad"),
+	CFGBAX_BOOL("indfor_respawnOnGroups")
+	// CFGBAX_NUM("indfor_doWaveRespawn"),
+	// CFGBAX_NUM("indfor_waveRespawnDuration"),
+	// CFGBAX_NUM("indfor_allowWaveCall")
 ];
 bax_respawn_civilianSettings = [
-	getNumber (missionConfigFile >> "CfgBax" >> "civilian_respawnTickets"),
-	getNumber (missionConfigFile >> "CfgBax" >> "civilian_respawnTicketsPersonal"),
-	getNumber (missionConfigFile >> "CfgBax" >> "civilian_respawnDelay"),
-	getNumber (missionConfigFile >> "CfgBax" >> "civilian_respawnOnSquad"),
-	getNumber (missionConfigFile >> "CfgBax" >> "civilian_respawnOnGroups"),
-	getNumber (missionConfigFile >> "CfgBax" >> "civilian_doWaveRespawn"),
-	getNumber (missionConfigFile >> "CfgBax" >> "civilian_waveRespawnDuration"),
-	getNumber (missionConfigFile >> "CfgBax" >> "civilian_allowWaveCall")
+	CFGBAX_NUM("civilian_respawnTickets"),
+	CFGBAX_NUM("civilian_respawnTicketsPersonal"),
+	CFGBAX_NUM("civilian_respawnDelay"),
+	CFGBAX_BOOL("civilian_respawnOnSquad"),
+	CFGBAX_BOOL("civilian_respawnOnGroups")
+	// CFGBAX_NUM("civilian_doWaveRespawn"),
+	// CFGBAX_NUM("civilian_waveRespawnDuration"),
+	// CFGBAX_NUM("civilian_allowWaveCall")
 ];
 
-// TODO: Override ace spectator keybinds to add new ones
+bax_respawn_bluforTickets = BLUFOR_TICKETS;
+bax_respawn_opforTickets = OPFOR_TICKETS;
+bax_respawn_indforTickets = INDFOR_TICKETS;
+bax_respawn_civilianTickets = CIVILIAN_TICKETS;

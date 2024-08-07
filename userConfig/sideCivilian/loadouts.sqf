@@ -1,6 +1,4 @@
 
-#define SIDE civilian
-
 /*
 COMMANDS:
 	CREATE_LOADOUT("Loadout Name",LOADOUT_ARRAY);

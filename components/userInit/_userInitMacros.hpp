@@ -29,35 +29,41 @@
 
 #define SET_DEFAULT_LOADOUT(LOADOUT) [SIDE,VARS_DEFAULT,LOADOUT] call bax_loadouts_fnc_createLoadout
 
-#define CREATE_CRATE(NAME,ITEMS) [SIDE,NAME,ITEMS] call bax_supplyCrates_fnc_registerCrate
-#define ADD_CRATE_ITEMS(NAME,ITEMS) [SIDE,NAME,ITEMS] call bax_supplyCrates_fnc_addItemsToCrate
-#define ADD_BACKPACK_TO_CRATE(CRATE_NAME,LOADOUT_NAME,AMOUNT) [SIDE,CRATE_NAME,LOADOUT_NAME,AMOUNT] call bax_supplyCrates_fnc_addBackpack
-#define ADD_PRIMARY_TO_CRATE(CRATE_NAME,LOADOUT_NAME,AMOUNT) [SIDE,CRATE_NAME,LOADOUT_NAME,0,AMOUNT] call bax_supplyCrates_fnc_addLoadoutWeapon
-#define ADD_SECONDARY_TO_CRATE(CRATE_NAME,LOADOUT_NAME,AMOUNT) [SIDE,CRATE_NAME,LOADOUT_NAME,1,AMOUNT] call bax_supplyCrates_fnc_addLoadoutWeapon
-#define ADD_LAUNCHER_TO_CRATE(CRATE_NAME,LOADOUT_NAME,AMOUNT) [SIDE,CRATE_NAME,LOADOUT_NAME,2,AMOUNT] call bax_supplyCrates_fnc_addLoadoutWeapon
-#define ADD_PRIMARY_MAG_TO_CRATE(CRATE_NAME,LOADOUT_NAME,AMOUNT) [SIDE,CRATE_NAME,LOADOUT_NAME,0,AMOUNT] call bax_supplyCrates_fnc_addLoadoutMag
-#define ADD_SECONDARY_MAG_TO_CRATE(CRATE_NAME,LOADOUT_NAME,AMOUNT) [SIDE,CRATE_NAME,LOADOUT_NAME,1,AMOUNT] call bax_supplyCrates_fnc_addLoadoutMag
-#define ADD_LAUNCHER_MAG_TO_CRATE(CRATE_NAME,LOADOUT_NAME,AMOUNT) [SIDE,CRATE_NAME,LOADOUT_NAME,2,AMOUNT] call bax_supplyCrates_fnc_addLoadoutMag
-#define BANDAGES(AMOUNT) [["ACE_fieldDressing",AMOUNT],["ACE_elasticBandage",AMOUNT],["ACE_packingBandage",AMOUNT],["ACE_quikclot",AMOUNT],["ACE_tourniquet",AMOUNT]]
-#define SPLINTS(AMOUNT) [["ACE_splint",AMOUNT]]
-#define INJECTORS(AMOUNT) [["ACE_adenosine",AMOUNT],["ACE_epinephrine",AMOUNT],["ACE_morphine",AMOUNT]]
-#define SUTURES(AMOUNT) [["ACE_suture",AMOUNT]]
-#define BLOOD(AMOUNT) [["ACE_bloodIV",AMOUNT],["ACE_bloodIV_500",AMOUNT],["ACE_bloodIV_250",AMOUNT]]
-#define PLASMA(AMOUNT) [["ACE_plasmaIV",AMOUNT],["ACE_plasmaIV_500",AMOUNT],["ACE_plasmaIV_250",AMOUNT]]
-#define SALINE(AMOUNT) [["ACE_salineIV",AMOUNT],["ACE_salineIV_500",AMOUNT],["ACE_salineIV_250",AMOUNT]]
-#define MEDICAL(FACTOR) (BANDAGES(round (40 * FACTOR)) + SPLINTS(round (10 * FACTOR)) + SUTURES(round (20 * FACTOR)) + SALINE(round (10 * FACTOR)))
+#define CREATE_CRATE(NAME) [SIDE,NAME,[]] call bax_supplyCrates_fnc_registerCrate
+#define ADD_CRATE_ITEMS(NAME,ITEM,AMOUNT) [SIDE,NAME,[[ITEM,AMOUNT]]] call bax_supplyCrates_fnc_addItemsToCrate
+#define ADD_CRATE_BACKPACK(CRATE_NAME,LOADOUT_NAME,AMOUNT) [SIDE,CRATE_NAME,LOADOUT_NAME,AMOUNT] call bax_supplyCrates_fnc_addBackpack
+#define ADD_CRATE_PRIMARY(CRATE_NAME,LOADOUT_NAME,AMOUNT) [SIDE,CRATE_NAME,LOADOUT_NAME,0,AMOUNT] call bax_supplyCrates_fnc_addLoadoutWeapon
+#define ADD_CRATE_SECONDARY(CRATE_NAME,LOADOUT_NAME,AMOUNT) [SIDE,CRATE_NAME,LOADOUT_NAME,1,AMOUNT] call bax_supplyCrates_fnc_addLoadoutWeapon
+#define ADD_CRATE_LAUNCHER(CRATE_NAME,LOADOUT_NAME,AMOUNT) [SIDE,CRATE_NAME,LOADOUT_NAME,2,AMOUNT] call bax_supplyCrates_fnc_addLoadoutWeapon
+#define ADD_CRATE_PRIMARY_MAG(CRATE_NAME,LOADOUT_NAME,AMOUNT) [SIDE,CRATE_NAME,LOADOUT_NAME,0,AMOUNT] call bax_supplyCrates_fnc_addLoadoutMag
+#define ADD_CRATE_SECONDARY_MAG(CRATE_NAME,LOADOUT_NAME,AMOUNT) [SIDE,CRATE_NAME,LOADOUT_NAME,2,AMOUNT] call bax_supplyCrates_fnc_addLoadoutMag
+#define ADD_CRATE_LAUNCHER_MAG(CRATE_NAME,LOADOUT_NAME,AMOUNT) [SIDE,CRATE_NAME,LOADOUT_NAME,1,AMOUNT] call bax_supplyCrates_fnc_addLoadoutMag
+
+#define ADD_CRATE_BANDAGES(NAME, AMOUNT) [SIDE, NAME, [["ACE_fieldDressing",AMOUNT],["ACE_elasticBandage",AMOUNT],["ACE_packingBandage",AMOUNT],["ACE_quikclot",AMOUNT],["ACE_tourniquet",AMOUNT]]] call bax_supplyCrates_fnc_addItemsToCrate
+#define ADD_CRATE_SPLINTS(NAME, AMOUNT) [SIDE, NAME, [["ACE_splint",AMOUNT]]] call bax_supplyCrates_fnc_addItemsToCrate
+#define ADD_CRATE_INJECTORS(NAME, AMOUNT) [SIDE, NAME, [["ACE_adenosine",AMOUNT],["ACE_epinephrine",AMOUNT],["ACE_morphine",AMOUNT]]] call bax_supplyCrates_fnc_addItemsToCrate
+#define ADD_CRATE_SUTURES(NAME, AMOUNT) [SIDE, NAME, [["ACE_suture",AMOUNT]]] call bax_supplyCrates_fnc_addItemsToCrate
+#define ADD_CRATE_BLOOD(NAME, AMOUNT) [SIDE, NAME, [["ACE_bloodIV",AMOUNT],["ACE_bloodIV_500",AMOUNT],["ACE_bloodIV_250",AMOUNT]]] call bax_supplyCrates_fnc_addItemsToCrate
+#define ADD_CRATE_PLASMA(NAME, AMOUNT) [SIDE, NAME, [["ACE_plasmaIV",AMOUNT],["ACE_plasmaIV_500",AMOUNT],["ACE_plasmaIV_250",AMOUNT]]] call bax_supplyCrates_fnc_addItemsToCrate
+#define ADD_CRATE_SALINE(NAME, AMOUNT) [SIDE, NAME, [["ACE_salineIV",AMOUNT],["ACE_salineIV_500",AMOUNT],["ACE_salineIV_250",AMOUNT]]] call bax_supplyCrates_fnc_addItemsToCrate
+#define ADD_CRATE_MEDICAL(NAME, FACTOR) [SIDE, NAME, [["ACE_fieldDressing",40*FACTOR],["ACE_elasticBandage",40*FACTOR],["ACE_packingBandage",40*FACTOR],["ACE_quikclot",40*FACTOR],["ACE_tourniquet",40*FACTOR],["ACE_splint",20*FACTOR],["ACE_adenosine",20*FACTOR],["ACE_epinephrine",20*FACTOR],["ACE_morphine",20*FACTOR],["ACE_suture",50*FACTOR],["ACE_salineIV",15*FACTOR],["ACE_salineIV_500",15*FACTOR],["ACE_salineIV_250",15*FACTOR]]] call bax_supplyCrates_fnc_addItemsToCrate
 
 // RADIOS
 
-#define PRC117 "ACRE_PRC117F"
-#define PRC152 "ACRE_PRC152"
-#define PRC148 "ACRE_PRC148"
-#define PRC343 "ACRE_PRC343"
-#define BF888S "ACRE_BF888S"
-#define ADD_RADIO(RADIO, CHANNEL, CHANNEL_NAME, ADD_SIDE, GROUPS, ROLES)    [SIDE, RADIO, CHANNEL, CHANNEL_NAME, ADD_SIDE, GROUPS, ROLES] call bax_radios_fnc_registerRadioChannel
-#define ADD_RADIO_SIDE(RADIO, CHANNEL, CHANNEL_NAME)                        [SIDE, RADIO, CHANNEL, CHANNEL_NAME, true, [], []] call bax_radios_fnc_registerRadioChannel
-#define ADD_RADIO_GROUPS(RADIO, CHANNEL, CHANNEL_NAME, GROUPS)              [SIDE, RADIO, CHANNEL, CHANNEL_NAME, false, GROUPS, []] call bax_radios_fnc_registerRadioChannel
-#define ADD_RADIO_ROLES(RADIO, CHANNEL, CHANNEL_NAME, ROLES)                [SIDE, RADIO, CHANNEL, CHANNEL_NAME, false, [], ROLES] call bax_radios_fnc_registerRadioChannel
+#define PRC117                                                          "ACRE_PRC117F"
+#define PRC152                                                          "ACRE_PRC152"
+#define PRC148                                                          "ACRE_PRC148"
+#define PRC343                                                          "ACRE_PRC343"
+#define BF888S                                                          "ACRE_BF888S"
+
+#define SET_LR_NAME(NAME)                                               bax_radios_netNames get SIDE set ["LR", NAME]
+#define SET_SR_NAME(NAME)                                               bax_radios_netNames get SIDE set ["SR", NAME]
+#define SET_BF_NAME(NAME)                                               bax_radios_netNames get SIDE set ["BF", NAME]
+
+#define ADD_RADIO(RADIO, CHANNEL, CHANNEL_NAME, ADD_SIDE, GROUP, ROLE)  [SIDE, RADIO, CHANNEL, CHANNEL_NAME, ADD_SIDE, [GROUP], [ROLE]] call bax_radios_fnc_registerRadioChannel
+#define ADD_RADIO_SIDE(RADIO, CHANNEL, CHANNEL_NAME)                    [SIDE, RADIO, CHANNEL, CHANNEL_NAME, true, [], []] call bax_radios_fnc_registerRadioChannel
+#define ADD_RADIO_GROUP(RADIO, CHANNEL, CHANNEL_NAME, GROUP)           [SIDE, RADIO, CHANNEL, CHANNEL_NAME, false, [GROUP], []] call bax_radios_fnc_registerRadioChannel
+#define ADD_RADIO_ROLE(RADIO, CHANNEL, CHANNEL_NAME, ROLE)             [SIDE, RADIO, CHANNEL, CHANNEL_NAME, false, [], [ROLE]] call bax_radios_fnc_registerRadioChannel
 
 // MAP MARKERS
 
@@ -150,10 +156,15 @@
 
 // Arsenal
 
-// #define REGISTER_ARSENAL(SIDE,OBJECT) [SIDE,OBJECT] call bax_arsenals_fnc_registerArsenal
+#define ACRE_ITEMS ["ACRE_PRC117F","ACRE_PRC148","ACRE_PRC152","ACRE_PRC343","ACRE_PRC77","ACRE_BF888S","ACRE_SEM52SL","ACRE_SEM70","ACRE_VHF30108SPIKE","ACRE_VHF30108","ACRE_VHF30108MAST"]
+#define ACE_MISC_ITEMS ["ACE_WaterBottle","ACE_Canteen","ACE_CableTie","ACE_EarPlugs","ACE_IR_Strobe_Item","ace_marker_flags_black","ace_marker_flags_blue","ace_marker_flags_green","ace_marker_flags_orange","ace_marker_flags_purple","ace_marker_flags_red","ace_marker_flags_white","ace_marker_flags_yellow","ACE_rope12","ACE_rope15","ACE_rope18","ACE_rope27","ACE_rope3","ACE_rope36","ACE_rope6","ACE_SpraypaintBlack","ACE_SpraypaintBlue","ACE_SpraypaintGreen","ACE_SpraypaintRed","ACE_SpraypaintWhite","ACE_SpraypaintYellow","ACE_UAVBattery","ACE_SpareBarrel"]
+#define ACE_MEDICAL_ITEMS ["ACE_adenosine","ACE_fieldDressing","ACE_elasticBandage","ACE_packingBandage","ACE_quikclot","ACE_painkillers","ACE_bloodIV","ACE_bloodIV_250","ACE_bloodIV_500","ACE_bodyBag","ACE_bodyBag_blue","ACE_bodyBag_white","ACE_epinephrine","ACE_morphine","ACE_plasmaIV","ACE_plasmaIV_250","ACE_plasmaIV_500","ACE_salineIV","ACE_salineIV_250","ACE_salineIV_500","ACE_splint","ACE_surgicalKit","ACE_suture","ACE_tourniquet"]
+#define ACE_TOOL_ITEMS ["ACE_RangeTable_82mm","ACE_artilleryTable","ACE_ATragMX","ACE_DAGR","ACE_DefusalKit","ACE_EntrenchingTool","ACE_Fortify","ACE_Flashlight_MX991","ACE_HuntIR_monitor","ACE_Kestrel4500","ACE_Flashlight_KSF1","ACE_Clacker","ACE_Flashlight_XL50","ACE_MapTools","ACE_microDAGR","MineDetector","ACE_PlottingBoard","ACE_RangeCard","ACE_SpottingScope","ACE_Tripod","ToolKit","ACE_wirecutter","acex_intelitems_notepad"]
+#define BASE_ITEMS ["ACRE_PRC343","ACE_Canteen","ACE_CableTie","ACE_EarPlugs","ACE_IR_Strobe_Item","ACE_fieldDressing","ACE_elasticBandage","ACE_packingBandage","ACE_quikclot","ACE_painkillers","ACE_salineIV_500","ACE_splint","ACE_suture","ACE_tourniquet","ACE_EntrenchingTool","ACE_Flashlight_XL50","ACE_MapTools"]
+
 #define CREATE_ARSENAL(ROLE,ITEMS) [SIDE,ROLE,ITEMS] call bax_arsenals_fnc_registerArsenalItems
 #define DEFAULT_ARSENAL(ITEMS) [SIDE,VARS_DEFAULT,ITEMS] call bax_arsenals_fnc_registerArsenalItems
-#define GET_LOADOUT_ITEMS(LOADOUTNAME) [SIDE,LOADOUTNAME] call bax_arsenals_fnc_getItemsFromLoadout
+#define GET_LOADOUT_ITEMS(LOADOUTNAME) ([SIDE,LOADOUTNAME] call bax_arsenals_fnc_getItemsFromLoadout)
 
 
 

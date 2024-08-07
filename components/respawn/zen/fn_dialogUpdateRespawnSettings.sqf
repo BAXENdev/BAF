@@ -74,15 +74,54 @@ _checkboxGroupSpawns = [
 	true
 ];
 
-// TODO: how to update settings with respect to JIPs?
 [
 	"Update Respawn Settings",
-	_content,
+	[
+		_sliderTickets,
+		_sliderTicketsPersonal,
+		_checkboxResetTickets,
+		_sliderRespawnDelay,
+		_checkboxSquadSpawns,
+		_checkboxGroupSpawns
+	],
 	{
 		params ["_dialogValues","_args"];
-		_dialogValues params ["_newTickets", "_newTicketsPersonal", "_newRespawnDelay", "_newSquadSpawns", "_newGroupSpawns"];
+		_dialogValues params ["_newTickets", "_newTicketsPersonal", "_resetPersonalTickets", "_newRespawnDelay", "_newSquadSpawns", "_newGroupSpawns"];
 		_args params ["_side"];
 		
+		_newSettings = [
+			_newTickets,
+			_newTicketsPersonal,
+			_newRespawnDelay,
+			_newSquadSpawns,
+			_newGroupSpawns
+		];
+
+		// Set the new settings for JIPs
+		_settingsVar = switch (_side) do {
+			case west: { "bax_respawn_bluforSettings"; };
+			case east: { "bax_respawn_opforSettings"; };
+			case independent: { "bax_respawn_indforSettings"; };
+			case civilian: { "bax_respawn_civilianSettings"; };
+		};
+		missionNamespace setVariable [_settingsVar, _newSettings, true];
+
+		// Update tickets
+		_ticketsVar = switch (_side) do {
+			case west: { "bax_respawn_bluforTickets"; };
+			case east: { "bax_respawn_opforTickets"; };
+			case independent: { "bax_respawn_indforTickets"; };
+			case civilian: { "bax_respawn_civilianTickets"; };
+		};
+		missionNamespace setVariable [_ticketsVar, _newTickets, true];
+
+		// Update Personal Tickets
+		_sidePlayers = allPlayers select { side group _x isEqualTo _side };
+		{
+			_player = _x;
+			
+			[[_newTicketsPersonal], { params ["_newTicketsPersonal"]; bax_respawn_personalTickets = _newTicketsPersonal; }] remoteExec ["spawn", _player];
+		} forEach _sidePlayers;
 	},
 	{},
 	[_side]

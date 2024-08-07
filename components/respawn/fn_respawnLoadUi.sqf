@@ -41,10 +41,10 @@ _UI_SIZE = 0.05;
 _ctrlMenuBackground = _display ctrlCreate ["RscText", -1];
 _ctrlMenuBackground ctrlSetBackgroundColor [0,0,0,0.8];
 
-	_width = _SEG*17;
-	_height = _SEG*19;
-	_posX = safeZoneW*1 + safeZoneX - _width;
-	_posY = safeZoneH*0 + safeZoneY;
+_width = _SEG*17;
+_height = _SEG*19;
+_posX = safeZoneW*1 + safeZoneX - _width;
+_posY = safeZoneH*0 + safeZoneY;
 _ctrlMenuBackground ctrlSetPosition [
 	_posX,
 	_posY,

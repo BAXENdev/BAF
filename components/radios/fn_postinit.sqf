@@ -1,7 +1,6 @@
 
 #include "_radiosMacros.hpp"
 
-
 if !(hasInterface) exitWith {};
 
 // TODO: Channel names need updated if player switches side...
@@ -9,15 +8,10 @@ if !(hasInterface) exitWith {};
 
 _side = side group player;
 _radioDiaryText = "";
-_channelsKeys = switch (_side) do {
-	case west: { [["LR", bax_radios_lrNameBlufor], ["SR", bax_radios_srNameBlufor], ["POLICE", bax_radios_policeNameBlufor]] };
-	case east: { [["LR", bax_radios_lrNameOpfor], ["SR", bax_radios_srNameOpfor], ["POLICE", bax_radios_policeNameOpfor]] };
-	case independent: { [["LR", bax_radios_lrNameIndfor], ["SR", bax_radios_srNameIndfor], ["POLICE", bax_radios_policeNameIndfor]] };
-	case civilian: { [["LR", bax_radios_lrNameCivilian], ["SR", bax_radios_srNameCivilian], ["POLICE", bax_radios_policeNameCivilian]] };
-};
 
 {
-	_x params ["_channelsKey", "_keyName"];
+	_channelsKey = _x;
+	_keyName = bax_radios_netNames get _side get _channelsKey;
 
 	_channelsNames = bax_radios_channelNames get _side get _channelsKey;
 
@@ -39,11 +33,16 @@ _channelsKeys = switch (_side) do {
 	} forEach _channels;
 
 	_radioDiaryText = _radioDiaryText + "<br/>";
-} forEach _channelsKeys;
+} forEach ["LR", "SR", "BF"];
 
 // TODO: Rewrite diary record if player swaps sides...
 // https://cbateam.github.io/CBA_A3/docs/files/events/fnc_addPlayerEventHandler-sqf.html
-player createDiaryRecord ["Diary", ["Radio Nets", _radioDiaryText]];
+
+if !(_radioDiaryText isEqualTo "") then {
+	player createDiaryRecord ["Diary", ["Radio Nets", _radioDiaryText]];
+} else {
+	player createDiaryRecord ["Diary", ["Radio Nets", "No registered nets"]];
+};
 
 {
 	_forEachSide = _x;

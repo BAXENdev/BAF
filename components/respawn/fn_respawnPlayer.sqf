@@ -1,9 +1,10 @@
 
 #include "_respawnMacros.hpp"
 
-params [["_skipTickets", false]];
+// params [];
 
-if (_skipTickets) exitWith {
+if (bax_respawn_skipTicketUse) exitWith {
+	bax_respawn_skipTicketUse = false;
 	[] spawn {
 		setPlayerRespawnTime 0;
 		sleep 1;
@@ -12,7 +13,9 @@ if (_skipTickets) exitWith {
 };
 
 if (bax_respawn_personalTickets > 0 or bax_respawn_personalTickets == -1) exitWith {
-	bax_respawn_personalTickets = bax_respawn_personalTickets - 1;
+	if (bax_respawn_personalTickets > 0) then {
+		bax_respawn_personalTickets = bax_respawn_personalTickets - 1;
+	};
 	[] spawn {
 		setPlayerRespawnTime 0;
 		sleep 1;
@@ -43,4 +46,4 @@ if (_sideTickets > 0 or _sideTickets == -1) exitWith {
 	};
 };
 
-["TaskFailed",["","Unable To Spawn"]] call BIS_fnc_showNotification;
+["TaskFailed", ["","Unable To Spawn. Notify Zeus."]] call BIS_fnc_showNotification;

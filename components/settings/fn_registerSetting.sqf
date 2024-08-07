@@ -17,10 +17,10 @@ _onExecuteCode:
 	Passed Params: dialogValue
 */
 
-params ["_type","_componentKey","_dialogArray","_onExecuteCode"];
+params ["_type","_componentKey","_dialogArrayCode","_onExecuteCode"];
 
 if !(_type in ["framework","player"]) exitWith {
-	_msg = format ["Setting type %1 does not exist.",_type];
+	_msg = format ["Setting type (%1) does not exist.",_type];
 	DEBUG_ERR(_msg);
 };
 
@@ -29,11 +29,8 @@ _componentSettings = _typeSettings get _componentKey;
 
 if (isNil "_componentSettings") then {
 	_componentSettings = [];
-	_typeSettings set [_componentKey,_componentSettings];
+	_typeSettings set [_componentKey, _componentSettings];
 };
 
-_componentSettings pushBack [
-	_dialogArray,
-	_onExecuteCode
-];
+_componentSettings pushBack [_dialogArrayCode, _onExecuteCode];
 

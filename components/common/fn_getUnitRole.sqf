@@ -3,13 +3,18 @@
 
 params ["_unit"];
 
-if !(isMultiplayer) exitWith {
+_role = _unit getVariable [VARS_ROLE, ""];
+
+if !(_role isEqualTo "") exitWith {
 	// return
-	"";
+	_role;
 };
 
-_role = roleDescription _unit;
-_role = (_role splitString "@") select 0;
+if !(isMultiplayer) exitWith {
+	// return
+	VARS_DEFAULT;
+};
 
+_role = ((roleDescription _unit) splitString "@") select 0;
 // return
 _role;

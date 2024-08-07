@@ -28,6 +28,7 @@ _sideGroups = _sideGroups - [group player];
 			break;
 		}
 	} forEach _units;
+	// Still need to check if alive in case a living unit wasnt found
 	if (alive _aliveUnit) then {
 		_sideGroupSpawns pushBack [_aliveUnit, groupId _group];
 	};
@@ -38,7 +39,7 @@ _playerGroupUnits = units group player;
 {
 	_unit = _x;
 	if (alive _unit) then {
-		_playerGroupsSpawns pushBack [_unit, name _unit];
+		_playerGroupSpawns pushBack [_unit, name _unit];
 	};
 } forEach _playerGroupUnits;
 

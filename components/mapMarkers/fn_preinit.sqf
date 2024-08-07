@@ -1,6 +1,11 @@
 
 #include "_mapMarkersMacros.hpp"
 
+bax_mapMarkers_enabledBlufor = CFGBAX_BOOL("bluforMapMarkers");
+bax_mapMarkers_enabledOpfor = CFGBAX_BOOL("opforMapMarkers");
+bax_mapMarkers_enabledIndfor = CFGBAX_BOOL("indforMapMarkers");
+bax_mapMarkers_enabledCivilian = CFGBAX_BOOL("civilianMapMarkers");
+
 // transparent: [
 // 	west: [
 // 		name: marker

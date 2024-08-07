@@ -21,7 +21,6 @@ class CfgBax {
     #include "userConfig\sideOpfor\respawnSettings.hpp"
     #include "userConfig\sideIndfor\respawnSettings.hpp"
     #include "userConfig\sideCivilian\respawnSettings.hpp"
-    class Settings {
-        #include "userConfig\settings.hpp"
-    };
+    
+    #include "userConfig\settings.hpp"
 };

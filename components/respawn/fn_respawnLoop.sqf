@@ -14,7 +14,7 @@ _remainingTime = bax_respawn_respawnTime - serverTime;
 if (_remainingTime > 0) then {
 	_timeText = [_remainingTime, "M:SS"] call CBA_fnc_formatElapsedTime;
 } else {
-	_timeText = "00:00"
+	_timeText = "00:00";
 };
 
 _sideTickets = switch (_side) do {
@@ -44,19 +44,6 @@ if (_canRespawn and bax_respawn_respawnAutospawn) then {
 	[] call bax_respawn_fnc_respawnPlayer;
 };
 uiNamespace getVariable [VARS_UI_RESPAWN_STATUS, displayNull] ctrlSetText bax_respawn_respawnStatusError;
-
-// systemChat format ["Test: %1", time];
-// systemChat format ["1: %1", _respawnPositionText];
-// systemChat format ["2: %1", _timeText];
-// systemChat format ["3: %1", _ticketText];
-// systemChat format ["4: %1", _autospawnText];
-// systemChat format ["5: %1", bax_respawn_respawnStatusError];
-// diag_log format ["Test: %1", time];
-// diag_log format ["1: %1", _respawnPositionText];
-// diag_log format ["2: %1", _timeText];
-// diag_log format ["3: %1", _ticketText];
-// diag_log format ["4: %1", _autospawnText];
-// diag_log format ["5: %1", bax_respawn_respawnStatusError];
 
 // CBA next frame (not)recursive call
 [bax_respawn_fnc_respawnLoop] call CBA_fnc_execNextFrame;

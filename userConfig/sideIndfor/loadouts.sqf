@@ -1,6 +1,4 @@
 
-#define SIDE independent
-
 /*
 COMMANDS:
 	CREATE_LOADOUT("Loadout Name",LOADOUT_ARRAY);

@@ -17,7 +17,7 @@ _channelCategory = switch (_radio) do {
 	case "ACRE_PRC152";
 	case "ACRE_PRC148": { "LR" };
 	case "ACRE_PRC343": { "SR" };
-	case "ACRE_BF888S": { "POLICE" };
+	case "ACRE_BF888S": { "BF" };
 };
 _sideChannelNames get _channelCategory set [_channel, _channelName];
 
@@ -60,7 +60,7 @@ if (_addToSide) then {
 
 	private ["_preset"];
 	
-	_key = "ROLE:" + _groupName;
+	_key = "ROLE:" + _role;
 	if !(_key in _sideRadioPresets) then {
 		_sideRadioPresets set [_key, EMPTY_RADIO_PRESET];
 	};

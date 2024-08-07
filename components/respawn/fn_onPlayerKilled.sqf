@@ -12,7 +12,8 @@ bax_respawn_respawnTime = serverTime + _delay;
 bax_respawn_respawnAutospawn = false;
 bax_respawn_respawnStatusError = "";
 
-[[_side], []] call ace_spectator_fnc_updateSides;
+_notSides = [west, east, independent, civilian] - [_side];
+[[_side], _notSides] call ace_spectator_fnc_updateSides;
 
 // TODO: Load wave spawn delay if needed
 

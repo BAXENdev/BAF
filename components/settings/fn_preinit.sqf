@@ -1,7 +1,7 @@
 
 #include "_settingsMacros.hpp"
 
-// Sub-hashmap: Key: String - setting's name | value: Array***?
+// Sub-hashmap: Key: String - setting's name | value: [[DIALOG CODE, EXECUTE CODE],...]
 bax_settings_settings = createHashMapFromArray [
 	["framework",createHashMap],
 	["player",createHashMap]

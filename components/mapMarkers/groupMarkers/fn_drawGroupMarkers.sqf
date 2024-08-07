@@ -4,6 +4,15 @@
 params ["_map"];
 
 _side = side group player;
+_showMarkers = switch (_side) do {
+	case west: { bax_mapMarkers_enabledBlufor; };
+	case east: { bax_mapMarkers_enabledOpfor; };
+	case independent: { bax_mapMarkers_enabledIndfor; };
+	case civilian: { bax_mapMarkers_enabledCivilian; };
+};
+if !(_showMarkers) exitWith {};
+
+_side = side group player;
 _sideGroups = allGroups select { side _x isEqualTo _side };
 _fullGroups = _sideGroups select { count units _x > 0 };
 // _groups = _fullGroups - [group player]; 

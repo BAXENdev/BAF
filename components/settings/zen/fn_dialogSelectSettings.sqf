@@ -34,7 +34,7 @@ _listBoxComponents = [
         _dialogValues params ["_componentKey"];
         _args params ["_type"];
 
-        [_type,_componentKey] call bax_settings_fnc_dialogUpdateSettings;
+        [_type, _componentKey] call bax_settings_fnc_dialogUpdateSettings;
     },
     {},
     [_type]

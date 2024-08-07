@@ -11,6 +11,6 @@ if (isNil "_loadoutArray") exitWith {
 };
 _loadoutArray params ["_loadouts","_traits","_randomGear"];
 _firstLoadout = _loadouts select 0;
-_loadoutArray set [0,_firstLoadout]; // use only the first loadout
+_loadoutArray set [0,[_firstLoadout]]; // use only the first loadout
 _loadoutArray set [1,[0,0]]; // set traits to none
 _loadoutArray set [2,[[],[],[],[],[]]]; // remove all random gear

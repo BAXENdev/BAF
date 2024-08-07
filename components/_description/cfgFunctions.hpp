@@ -30,10 +30,6 @@ class BAX_SETTINGS {
 
 // TODO: StrategicMap
 
-class BAX_MAPMARKERS {
-    #include "..\mapMarkers\_categories.hpp"
-};
-
 class BAX_LOADOUTS {
     #include "..\loadouts\_categories.hpp"
 };
@@ -48,6 +44,10 @@ class BAX_SUPPLYCRATES {
 
 class BAX_RESPAWN {
     #include "..\respawn\_categories.hpp"
+};
+
+class BAX_MAPMARKERS {
+    #include "..\mapMarkers\_categories.hpp"
 };
 
 class BAX_RADIOS {

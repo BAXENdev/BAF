@@ -13,9 +13,14 @@
 #define SETVARG(OBJECT,VAR,VALUE) (OBJECT setVariable [VAR,VALUE,true])
 #define SETVARMG(VAR,VALUE) (missionNamespace setVariable [VAR,VALUE,true])
 
+#define CFGBAX_NUM(VARS) (getNumber (missionConfigFile >> "CfgBax" >> VARS))
+#define CFGBAX_BOOL(VARS) ((getNumber (missionConfigFile >> "CfgBax" >> VARS)) == 1)
+#define CFGBAX_TEXT(VARS) (getText (missionConfigFile >> "CfgBax" >> VARS))
+
 #define DEBUG_RPT(MSG) diag_log format ['[BAX] (%1,%2) %3',_fnc_scriptName,__LINE__,MSG]
 #define DEBUG_ERR(MSG) [format ['[BAX] (%1,%2) %3',_fnc_scriptName,__LINE__,MSG]] call BIS_fnc_error; DEBUG_RPT(MSG)
 
 #define EMPTY_LOADOUT [[],[],[],[],[],[],'','',[],['','','','','','']]
 #define VAR_RESPAWN "bax_respawn_loadout"
 #define VARS_DEFAULT "DEFAULT"
+#define VARS_ROLE "bax_role"
