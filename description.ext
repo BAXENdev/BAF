@@ -1,6 +1,8 @@
 
 #include "userConfig\header.hpp"
 
+cba_settings_hasSettingsFile = 1;
+
 disabledAI = 1;
 
 class CfgFunctions {
@@ -11,7 +13,8 @@ class Extended_DisplayLoad_EventHandlers {
     #include "components\_description\XEH_displayLoad.hpp"
 };
 
-#include "components\respawn\CfgRespawnTemplates.hpp"
+#include "components\respawnVanilla\CfgRespawnTemplates.hpp"
+// #include "components\respawnCustom\CfgRespawnTemplates.hpp"
 
 #include "components\_description\ui.hpp"
 

@@ -21,7 +21,7 @@ CUSTOM ICONS:
 
 SET_GROUP_COLOR("Alpha 1-1", COLOR_PURPLE);
 SET_GROUP_ICON("Alpha 1-1", INF); // This passes a keyword for the standard groupMarkerSystem
-// SET_GROUP_ICON("Alpha 1-1",ICON_INF(o)); // This passes a texture path, in this case an opfor icon for a blufor group
+SET_GROUP_ICON("Alpha 1-1",ICON_INF(o)); // This passes a texture path, in this case an opfor icon for a blufor group
 // SET_GROUP_ICON("Alpha 1-1","assets\markers\n_inf.paa"); // You can also specify your own icons, your icons should be placed in 'userConfig\assets\'
 // HIDE_GROUP("Alpha 1-1"); // Used for hiding a groups markers.
 

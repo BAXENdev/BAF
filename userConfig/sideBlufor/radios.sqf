@@ -23,8 +23,6 @@
     ADD_RADIO_ROLE(RADIO_MACRO, Channel_Number, "Channel Name", "Role Name 1");
 */
 
-SET_LR_NAME("Command Nets");
-
 ADD_RADIO_ROLE(PRC_152, 1, "", "Zeus");
 ADD_RADIO_SIDE(PRC152, 1, "Alpha 1 Command");
 ADD_RADIO_GROUP(PRC343, 1, "Alpha 1-1 SR", "Alpha 1-1");

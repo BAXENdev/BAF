@@ -1,4 +1,0 @@
-
-#include "_respawnMacros.hpp"
-
-

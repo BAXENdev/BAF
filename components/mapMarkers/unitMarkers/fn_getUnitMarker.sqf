@@ -18,12 +18,12 @@ _color = switch (assignedTeam _unit) do {
 _position = getPos _unit;
 
 _direction = if (!(alive _unit) or _unit getVariable ["ACE_isUnconscious", false]) then {
-	0;
 	if (alive _unit) then {
 		_texture = B_ICON_MAN_REVIVE;
 	} else {
 		_texture = B_ICON_MAN_DEAD;
 	};
+	0;
 } else {
 	getDir _unit;
 };

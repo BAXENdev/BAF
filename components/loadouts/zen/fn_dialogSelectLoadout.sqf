@@ -1,5 +1,6 @@
 
 #include "..\_loadoutsMacros.hpp"
+// #include "..\..\radios\_radiosMacros.hpp"
 
 params ["_unit"];
 
@@ -48,13 +49,15 @@ _checkboxReloadRadios = [
         _unit setVariable [VARS_ROLE, _loadoutName, true];
         [_loadoutName] remoteExec ["bax_arsenals_fnc_initArsenals", _unit];
 
-        _iconTexture = [_unit] call bax_mapMarkers_fnc_getUnitIcon;
-        _unit setVariable [MARKER_TEXTURE, _iconTexture, true];
+        // TODO: Radios need called on clients!
 
-        if (_reloadRadios) then {
-            [] call bax_radios_fnc_buildRadioPreset;
-            [] call bax_radios_fnc_loadRadioPreset;
-        };
+        // _iconTexture = [_unit] call bax_mapMarkers_fnc_getUnitIcon;
+        // _unit setVariable [MARKER_TEXTURE, _iconTexture, true];
+
+        // if (_reloadRadios) then {
+        //     [] call bax_radios_fnc_buildRadioPreset;
+        //     [] call bax_radios_fnc_loadRadioPreset;
+        // };
     },
     {},
     [_unit]

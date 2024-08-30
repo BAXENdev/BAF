@@ -11,7 +11,7 @@ _radioPreset = player getVariable [VARS_SAVED_PRESET, EMPTY_SAVED_PRESET];
 
 	{
 		// There are no more player radios left, stop.
-		if (_forEachIndex + 1 >= count _playerRadios) then {
+		if (_forEachIndex + 1 > count _playerRadios) then {
 			break;
 		};
 

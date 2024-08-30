@@ -8,10 +8,3 @@ bax_loadouts_loadouts = createHashMapFromArray [
 	[resistance,createHashMap],
 	[civilian,createHashMap]
 ];
-
-// TODO: Create diary record menu for selecting loadouts in briefing
-// - Create records for each loadout on preinit or something
-// - Each record lists the loadout's items and traits
-// - Delete records on mission load
-// - Test in BAX_INIT what initializes before and after briefing (player units init before...)
-// - need a init after to delete entire subject

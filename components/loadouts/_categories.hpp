@@ -3,7 +3,6 @@ class Root {
     file = "components\loadouts";
     class addLoadoutAction {};
     class assignLoadout {};
-    class onPlayerRespawn {};
     class postinit { postInit=1; };
     class preinit { preInit=1; };
     class removeLoadoutAction {};

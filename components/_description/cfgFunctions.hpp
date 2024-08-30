@@ -14,6 +14,13 @@
 //     };
 // };
 
+// BIS OVERRIDES
+// class bis {
+//     class respawn {
+//         class getRespawnPositions { file = "components\respawnVanilla\overrides\getRespawnPositions.sqf"; };
+//     };
+// };
+
 class BAX_COMMON {
     #include "..\common\_categories.hpp"
 };
@@ -21,10 +28,6 @@ class BAX_COMMON {
 class BAX_SETTINGS {
     #include "..\settings\_categories.hpp"
 };
-
-// class BAX_TOOLS {
-//     #include "..\tools\_categories.hpp"
-// };
 
 // TODO: Gravestones
 
@@ -42,8 +45,8 @@ class BAX_SUPPLYCRATES {
     #include "..\supplyCrates\_categories.hpp"
 };
 
-class BAX_RESPAWN {
-    #include "..\respawn\_categories.hpp"
+class BAX_RESPAWNVANILLA {
+    #include "..\respawnVanilla\_categories.hpp"
 };
 
 class BAX_MAPMARKERS {

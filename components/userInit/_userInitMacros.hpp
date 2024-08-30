@@ -33,11 +33,11 @@
 #define ADD_CRATE_ITEMS(NAME,ITEM,AMOUNT) [SIDE,NAME,[[ITEM,AMOUNT]]] call bax_supplyCrates_fnc_addItemsToCrate
 #define ADD_CRATE_BACKPACK(CRATE_NAME,LOADOUT_NAME,AMOUNT) [SIDE,CRATE_NAME,LOADOUT_NAME,AMOUNT] call bax_supplyCrates_fnc_addBackpack
 #define ADD_CRATE_PRIMARY(CRATE_NAME,LOADOUT_NAME,AMOUNT) [SIDE,CRATE_NAME,LOADOUT_NAME,0,AMOUNT] call bax_supplyCrates_fnc_addLoadoutWeapon
-#define ADD_CRATE_SECONDARY(CRATE_NAME,LOADOUT_NAME,AMOUNT) [SIDE,CRATE_NAME,LOADOUT_NAME,1,AMOUNT] call bax_supplyCrates_fnc_addLoadoutWeapon
-#define ADD_CRATE_LAUNCHER(CRATE_NAME,LOADOUT_NAME,AMOUNT) [SIDE,CRATE_NAME,LOADOUT_NAME,2,AMOUNT] call bax_supplyCrates_fnc_addLoadoutWeapon
+#define ADD_CRATE_LAUNCHER(CRATE_NAME,LOADOUT_NAME,AMOUNT) [SIDE,CRATE_NAME,LOADOUT_NAME,1,AMOUNT] call bax_supplyCrates_fnc_addLoadoutWeapon
+#define ADD_CRATE_SECONDARY(CRATE_NAME,LOADOUT_NAME,AMOUNT) [SIDE,CRATE_NAME,LOADOUT_NAME,2,AMOUNT] call bax_supplyCrates_fnc_addLoadoutWeapon
 #define ADD_CRATE_PRIMARY_MAG(CRATE_NAME,LOADOUT_NAME,AMOUNT) [SIDE,CRATE_NAME,LOADOUT_NAME,0,AMOUNT] call bax_supplyCrates_fnc_addLoadoutMag
-#define ADD_CRATE_SECONDARY_MAG(CRATE_NAME,LOADOUT_NAME,AMOUNT) [SIDE,CRATE_NAME,LOADOUT_NAME,2,AMOUNT] call bax_supplyCrates_fnc_addLoadoutMag
 #define ADD_CRATE_LAUNCHER_MAG(CRATE_NAME,LOADOUT_NAME,AMOUNT) [SIDE,CRATE_NAME,LOADOUT_NAME,1,AMOUNT] call bax_supplyCrates_fnc_addLoadoutMag
+#define ADD_CRATE_SECONDARY_MAG(CRATE_NAME,LOADOUT_NAME,AMOUNT) [SIDE,CRATE_NAME,LOADOUT_NAME,2,AMOUNT] call bax_supplyCrates_fnc_addLoadoutMag
 
 #define ADD_CRATE_BANDAGES(NAME, AMOUNT) [SIDE, NAME, [["ACE_fieldDressing",AMOUNT],["ACE_elasticBandage",AMOUNT],["ACE_packingBandage",AMOUNT],["ACE_quikclot",AMOUNT],["ACE_tourniquet",AMOUNT]]] call bax_supplyCrates_fnc_addItemsToCrate
 #define ADD_CRATE_SPLINTS(NAME, AMOUNT) [SIDE, NAME, [["ACE_splint",AMOUNT]]] call bax_supplyCrates_fnc_addItemsToCrate
