@@ -14,7 +14,7 @@
 #define SETVARMG(VAR,VALUE) (missionNamespace setVariable [VAR,VALUE,true])
 
 #define CFGBAX_NUM(VARS) (getNumber (missionConfigFile >> "CfgBax" >> VARS))
-#define CFGBAX_BOOL(VARS) ((getNumber (missionConfigFile >> "CfgBax" >> VARS)) == 1)
+#define CFGBAX_BOOL(VARS) ((getNumber (missionConfigFile >> "CfgBax" >> VARS)) > 0)
 #define CFGBAX_TEXT(VARS) (getText (missionConfigFile >> "CfgBax" >> VARS))
 
 #define DEBUG_RPT(MSG) diag_log format ['[BAX] (%1,%2) %3',_fnc_scriptName,__LINE__,MSG]
