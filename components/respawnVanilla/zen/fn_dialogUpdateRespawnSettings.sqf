@@ -48,7 +48,7 @@ _sliderRespawnDelay = [
 ];
 
 [
-	("Update Respawn Settings" + format ["(%1)", _side]),
+	("Update Respawn Settings " + format ["(%1)", _side]),
 	[
 		_sliderTickets,
 		_sliderRespawnDelay
@@ -58,7 +58,8 @@ _sliderRespawnDelay = [
 		_dialogValues params ["_newTickets", "_newRespawnDelay"];
 		_args params ["_side"];
 		
-		[_side, _newTickets] call BIS_fnc_respawnTickets;
+		_currentTickets = [_side] call BIS_fnc_respawnTickets;
+		[_side, _newTickets - _currentTickets] call BIS_fnc_respawnTickets;
 		(allPlayers select { side group _x isEqualTo _side }) apply {
 			_player = _x;
 

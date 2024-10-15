@@ -13,3 +13,6 @@ bluforMapMarkers = 1;
 opforMapMarkers = 1;
 indforMapMarkers = 1;
 civilianMapMarkers = 1;
+
+// Filter loadouts for invalid items when saving respawn loadout
+enableLoadoutFilter = 1;

@@ -1,9 +1,0 @@
-
-TODO: replace normal map with strategic map
-Lock map with
-(findDisplay 12 displayCtrl 51) ctrlEnable false
-
-Move map with
-mapAnimAdd [5, 0.05, [2000, 12000]];
-mapAnimCommit;
-

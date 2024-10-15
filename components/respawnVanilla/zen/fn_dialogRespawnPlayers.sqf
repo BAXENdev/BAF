@@ -22,16 +22,10 @@ _content pushBack [
 ];
 
 [
-	// 0) Title
 	"Respawn Players",
-	
-	// 1) Content Array of Zen Dialogs
+
 	_content,
 
-	// 2) On Confirm, unscheduled
-	// Passed Arguments:
-	// 0) Dialog Values in order of Content
-	// 1) Arguments, the same ones passed in arg4 for zen_dialog_fnc_create
 	{
 		params ["_dialogValues","_args"];
 		_args params ["_deadPlayers"];
@@ -48,7 +42,7 @@ _content pushBack [
 	},
 
 	// 3) On Cancel, default: {}, unscheduled
-	{}, 
+	{},
 
 	// 4) Arguments, default: []
 	[_deadPlayers]

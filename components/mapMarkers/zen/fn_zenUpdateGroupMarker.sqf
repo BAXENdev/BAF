@@ -31,4 +31,3 @@
 	// 3) Icon file - Filepath, optional, default (shown below)
 	"\a3\modules_f\data\portraitmodule_ca.paa"
 ] call zen_custom_modules_fnc_register;
-

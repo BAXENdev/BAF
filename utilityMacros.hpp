@@ -24,3 +24,6 @@
 #define VAR_RESPAWN "bax_respawn_loadout"
 #define VARS_DEFAULT "DEFAULT"
 #define VARS_ROLE "bax_role"
+
+// EVENT NAMES
+#define EVENT_LOADOUT_UPDATED "bax_loadout_updated"

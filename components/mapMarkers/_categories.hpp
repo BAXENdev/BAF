@@ -29,5 +29,7 @@ class Zen {
     file = "components\mapMarkers\zen";
     class dialogMarkerSettings {};
     class dialogUpdateGroupMarker {};
+    class dialogUpdateMarkerSettings {};
     class zenUpdateGroupMarker { preInit=1; };
+    class zenUpdateMarkerSettings { preInit=1; };
 };

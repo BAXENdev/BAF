@@ -14,13 +14,6 @@
 //     };
 // };
 
-// BIS OVERRIDES
-// class bis {
-//     class respawn {
-//         class getRespawnPositions { file = "components\respawnVanilla\overrides\getRespawnPositions.sqf"; };
-//     };
-// };
-
 class BAX_COMMON {
     #include "..\common\_categories.hpp"
 };
@@ -28,10 +21,6 @@ class BAX_COMMON {
 class BAX_SETTINGS {
     #include "..\settings\_categories.hpp"
 };
-
-// TODO: Gravestones
-
-// TODO: StrategicMap
 
 class BAX_LOADOUTS {
     #include "..\loadouts\_categories.hpp"

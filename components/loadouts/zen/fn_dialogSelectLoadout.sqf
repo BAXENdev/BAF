@@ -26,19 +26,19 @@ _listSelectLoadout = [
     true
 ];
 
-_checkboxReloadRadios = [
-    "CHECKBOX",
-    "Reload Radios",
-    true,
-    false
-];
+// _checkboxReloadRadios = [
+//     "CHECKBOX",
+//     "Reload Radios",
+//     true,
+//     false
+// ];
 
 [
     "Select Loadout",
-    [_listSelectLoadout, _checkboxReloadRadios],
+    [_listSelectLoadout],
     {
         params ["_dialogValues","_arguments"];
-        _dialogValues params ["_loadoutName", "_reloadRadios"];
+        _dialogValues params ["_loadoutName"];
         _arguments params ["_unit"];
 
         _loadout = [_unit,_loadoutName] call bax_loadouts_fnc_assignLoadout;
@@ -47,17 +47,8 @@ _checkboxReloadRadios = [
         _unit setVariable [VAR_RESPAWN,_loadout,true];
 
         _unit setVariable [VARS_ROLE, _loadoutName, true];
-        [_loadoutName] remoteExec ["bax_arsenals_fnc_initArsenals", _unit];
 
-        // TODO: Radios need called on clients!
-
-        // _iconTexture = [_unit] call bax_mapMarkers_fnc_getUnitIcon;
-        // _unit setVariable [MARKER_TEXTURE, _iconTexture, true];
-
-        // if (_reloadRadios) then {
-        //     [] call bax_radios_fnc_buildRadioPreset;
-        //     [] call bax_radios_fnc_loadRadioPreset;
-        // };
+        [EVENT_LOADOUT_UPDATED, [_loadoutName], _unit] call CBA_fnc_targetEvent;
     },
     {},
     [_unit]

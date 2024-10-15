@@ -3,17 +3,18 @@
 
 params ["_group"];
 
-_texture = _group getVariable [MARKER_TEXTURE,""];
+_texture = _group getVariable [MARKER_TEXTURE, ""];
 
 if (fileExists _texture) exitWith {
     _firstChar = _texture select [0,1];
     _texture = if (_firstChar isEqualTo "\") then {
         _texture
     } else {
-        getMissionPath _texture
+        getMissionPath _texture;
     };
+
     // return
-    _texture
+    _texture;
 };
 
 _side = side _group;

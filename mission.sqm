@@ -6,6 +6,11 @@ class EditorData
 	scaleGridStep=1;
 	autoGroupingDist=10;
 	toggles=37;
+	mods[]=
+	{
+		"WBK_Zombies_AdvancedEditorSettings",
+		"3denEnhanced"
+	};
 	class ItemIDProvider
 	{
 		nextID=2236;
@@ -20,10 +25,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={7900.1172,36.689049,9725.874};
-		dir[]={0.35049406,-0.42591506,0.83411759};
-		up[]={0.16499434,0.9047631,0.39265931};
-		aside[]={0.92191893,5.2154064e-008,-0.3873879};
+		pos[]={7885.0947,34.993809,9689.9834};
+		dir[]={-0.43119133,-0.53144169,-0.72914571};
+		up[]={-0.27051497,0.84709263,-0.45744261};
+		aside[]={-0.86075997,-1.0909571e-07,0.50902098};
 	};
 };
 binarizationWanted=0;
@@ -44,6 +49,7 @@ addons[]=
 	"A3_Weapons_F",
 	"ace_smallarms",
 	"A3_Weapons_F_Pistols_P07",
+	"DSA_Spooks",
 	"ace_optics",
 	"ace_nightvision",
 	"ace_medical_treatment",
@@ -66,7 +72,7 @@ class AddonsMetaData
 {
 	class List
 	{
-		items=26;
+		items=27;
 		class Item0
 		{
 			className="A3_Modules_F_Curator";
@@ -139,110 +145,116 @@ class AddonsMetaData
 		};
 		class Item10
 		{
+			className="DSA_Spooks";
+			name="Drongos Spooks and Anomalies";
+			author="Drongo";
+		};
+		class Item11
+		{
 			className="ace_optics";
 			name="ACE3 - Optics";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item11
+		class Item12
 		{
 			className="ace_nightvision";
 			name="ACE3 - Night Vision";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item12
+		class Item13
 		{
 			className="ace_medical_treatment";
 			name="ACE3 - Medical Treatment";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item13
+		class Item14
 		{
 			className="ace_flashlights";
 			name="ACE3 - Flashlights";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item14
+		class Item15
 		{
 			className="ace_maptools";
 			name="ACE3 - Map Tools";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item15
+		class Item16
 		{
 			className="ace_captives";
 			name="ACE3 - Captives";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item16
+		class Item17
 		{
 			className="ace_hearing";
 			name="ACE3 - Hearing";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item17
+		class Item18
 		{
 			className="ace_field_rations";
 			name="ACE3 - Field Rations";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item18
+		class Item19
 		{
 			className="ace_attach";
 			name="ACE3 - Attach";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item19
+		class Item20
 		{
 			className="acre_sys_prc343";
 			name="ACRE2 - AN/PRC-343";
 			author="ACRE2Team";
 			url="https://github.com/IDI-Systems/acre2";
 		};
-		class Item20
+		class Item21
 		{
 			className="acre_sys_prc152";
 			name="ACRE2 - AN/PRC-152";
 			author="ACRE2Team";
 			url="https://github.com/IDI-Systems/acre2";
 		};
-		class Item21
+		class Item22
 		{
 			className="ace_huntir";
 			name="ACE3 - HuntIR";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item22
+		class Item23
 		{
 			className="A3_Weapons_F_Mark";
 			name="Arma 3 Marksmen - Weapons and Accessories";
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
-		class Item23
+		class Item24
 		{
 			className="ace_overheating";
 			name="ACE3 - Overheating";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item24
+		class Item25
 		{
 			className="ace_ai";
 			name="ACE3 - AI";
 			author="ACE-Team";
 			url="https://ace3.acemod.org/";
 		};
-		class Item25
+		class Item26
 		{
 			className="ace_javelin";
 			name="ACE3 - Javelin";
@@ -262,7 +274,7 @@ class ScenarioData
 };
 class CustomAttributes
 {
-	class Category0
+	class Category1
 	{
 		name="Scenario";
 		class Attribute0
@@ -418,7 +430,7 @@ class Mission
 			};
 			id=2207;
 			type="ModuleRespawnPosition_F";
-			atlOffset=-1.9073486e-006;
+			atlOffset=-1.9073486e-06;
 			class CustomAttributes
 			{
 				class Attribute0

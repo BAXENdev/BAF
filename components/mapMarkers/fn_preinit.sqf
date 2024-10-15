@@ -6,6 +6,18 @@ bax_mapMarkers_enabledOpfor = CFGBAX_BOOL("opforMapMarkers");
 bax_mapMarkers_enabledIndfor = CFGBAX_BOOL("indforMapMarkers");
 bax_mapMarkers_enabledCivilian = CFGBAX_BOOL("civilianMapMarkers");
 
+[EVENT_LOADOUT_UPDATED, {
+	params ["_role"];
+
+	_iconTexture = [player] call bax_mapMarkers_fnc_getUnitIcon;
+	player setVariable [MARKER_TEXTURE, _iconTexture, true];
+}] call CBA_fnc_addEventHandler;
+
+["ace_arsenal_displayClosed", {
+	_iconTexture = [player] call bax_mapMarkers_fnc_getUnitIcon;
+	player setVariable [MARKER_TEXTURE, _iconTexture, true];
+}] call CBA_fnc_addEventHandler;
+
 // transparent: [
 // 	west: [
 // 		name: marker
@@ -13,7 +25,7 @@ bax_mapMarkers_enabledCivilian = CFGBAX_BOOL("civilianMapMarkers");
 // ]
 // index 0: "transparent" | "solid"
 // index 1: west | east | resistance
-// index 3: icon name
+// index 2: icon name
 bax_mapMarkers_icons = createHashMapFromArray [
 	["Transparent", createHashMapFromArray [
 		[west, createHashMapFromArray [

@@ -25,22 +25,6 @@ bax_radios_radioPresets = createHashMapFromArray [
 	[civilian, createHashMap]
 ];
 
-// bax_radios_lrNameBlufor = "Long Range Nets";
-// bax_radios_srNameBlufor = "Short Range Nets";
-// bax_radios_policeNameBlufor = "Police Nets";
-
-// bax_radios_lrNameOpfor = "Long Range Nets";
-// bax_radios_srNameOpfor = "Short Range Nets";
-// bax_radios_policeNameOpfor = "Police Nets";
-
-// bax_radios_lrNameIndfor = "Long Range Nets";
-// bax_radios_srNameIndfor = "Short Range Nets";
-// bax_radios_policeNameIndfor = "Police Nets";
-
-// bax_radios_lrNameCivilian = "Long Range Nets";
-// bax_radios_srNameCivilian = "Short Range Nets";
-// bax_radios_policeNameCivilian = "Police Nets";
-
 bax_radios_netNames = createHashMapFromArray [
 	[west, createHashMapFromArray [
 		["LR", "Platoon Nets"],
@@ -91,32 +75,14 @@ _babelSetting = CFGBAX_BOOL("acreBabelSettings");
 _frequencySetting = CFGBAX_BOOL("acreSideFrequencies");
 [_babelSetting, _frequencySetting] call acre_api_fnc_setupMission;
 
-// bax_radios_presets = [
-// 	[west, [
-// 		[west, [
-// 			["ACRE_PRC117", [1,2]],
-// 			["ACRE_PRC152", [3]]
-// 		]]
-// 		["GROUP:Alpha 1-1", [
-// 			["ACRE_PRC343", [1]]
-// 		]],
-// 		["GROUP:Alpha 1-2", [
-// 			["ACRE_PRC343", [2]]
-// 		]]
-// 		// TODO: Am I ever going to add SEMs?
-// 		// I think i KISS and just do PRCS & BF
-// 		// ["GROUP:Wierd radios", [
-// 		// 	["ACRE_PRC77", [[47, 89]]],
-// 		// 	["ACRE_SEM SR?", [-1]],
-// 		// 	["ACRE_SEM52?", [-1]]
-// 		// ]]
-// 	]]
-// ];
+[EVENT_LOADOUT_UPDATED, {
+	params ["_role"];
 
-// bax_radios_channelNames = [
-// 	[west, [
-// 		["PRC148/152/117", [[1, "Ground Command"], [2, "JTAC"], [3, "Alpha 1"]]],
-// 		["PRC343", [[1, "Alpha 1-1"], [2, "Alpha 1-2"]]],
-// 		["BF888S", []]
-// 	]]
-// ];
+	[_role] call bax_radios_fnc_buildRadioPreset;
+
+	[] spawn {
+		waitUntil { [] call acre_api_fnc_isInitialized };
+
+		[] call bax_radios_fnc_loadRadioPreset;
+	};
+}] call CBA_fnc_addEventHandler;

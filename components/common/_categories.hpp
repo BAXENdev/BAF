@@ -6,6 +6,7 @@ class Root {
     class getUnitRole {};
     class hintAce {};
     class hintDialog {};
+    class paradrop {};
 };
 
 class Zen {

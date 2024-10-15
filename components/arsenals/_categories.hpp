@@ -3,6 +3,7 @@ class Root {
     file = "components\arsenals";
     class addArsenal {};
     class addItemsToArsenal {};
+    class filterLoadout {};
     class getItemsFromLoadout {};
     class initArsenals {};
     class postinit { postInit=1; };
