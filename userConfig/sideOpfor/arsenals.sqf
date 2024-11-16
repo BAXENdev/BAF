@@ -25,17 +25,22 @@ FYI: Duplicate items are handled without any error or side-effects by the arsena
 Get list of items from loadout:
 	_loadout = Exported_Loadout_From_Editor; // export the loadout from the editor/zeus and paste over this
 	_loadoutList = (flatten _loadout) select { _x isEqualType "" }; // gets all string items
+	OR
+	_loadoutList = GET_LOADOUT_ITEMS("Loadout Name");
 
 Join two lists together:
 	_loadoutList append ["Binocular","ItemGPS","B_AssaultPack_mcamo"];
 	_loadoutList = _loadoutList + ["Binocular","ItemGPS","B_AssaultPack_mcamo"];
-	_loadoutList pushBack "Binocular"; // Notice that this doesnt have [] around the string
+	_loadoutList pushBack "Binocular"; 
+Notice that this doesnt have [] around the string. 'pushBack' appends the single item to the end of the list.
+'append' will append all the items in the second list to the first list.
 
 PREDEFINED ITEM LISTS:
-	ACRE_ITEMS: All 8 original acre radios + radio extenders
-	ACE_MISC_ITEMS: All misc items in the misc category besides the Ace Sandbag, and also includes a Canteen and Water Bottle (for those MGs)
-	ACE_MEDICAL_ITEMS: All medical items except First Aid Kit, Medikit, and Personal Aid Kit
-	ACE_TOOL_ITEMS: All ace tools except Cellphone, Chemlight Shield, Dead Man Switch, and M152 Firing Device (because the other one is better)
+	ACRE_ITEMS; // All 8 original acre radios + radio extenders
+	ACE_MISC_ITEMS; // All misc items in the misc category besides the Ace Sandbag, and also includes a Canteen and Water Bottle (for those MGs)
+	ACE_TOOL_ITEMS; // All ace tools except Cellphone, Chemlight Shield, Dead Man Switch, and M152 Firing Device (because the other one is better)
+	ACE_MEDICAL_ITEMS; // All medical items except First Aid Kit, Medikit, and Personal Aid Kit
+	BASE_ITEMS; Standard items for infantry.
 
 Examples:
 	_arrayItems append ACRE_ITEMS;

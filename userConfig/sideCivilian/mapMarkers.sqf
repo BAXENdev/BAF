@@ -31,7 +31,7 @@ SOLID ICONS:
     * Example: B_ICON_AIR(b)
     * This uses a solid background variant of the AIR squad icon.
 
-CIVILIAN ICONS                  | ICON_AIR_C            | ICON_CAR_C            
+CIVILIAN ICONS                      | ICON_AIR_C            | ICON_CAR_C            
     *       | ICON_PLANE_C          | ICON_SHIP_C           | ICON_UNKNOWN_C
     * Civilian icons do not require an identifier.
     
