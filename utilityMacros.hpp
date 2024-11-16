@@ -17,6 +17,7 @@
 #define CFGBAX_BOOL(VARS) ((getNumber (missionConfigFile >> "CfgBax" >> VARS)) > 0)
 #define CFGBAX_TEXT(VARS) (getText (missionConfigFile >> "CfgBax" >> VARS))
 
+// #define DO_DEBUG
 #define DEBUG_RPT(MSG) diag_log format ['[BAX] (%1,%2) %3',_fnc_scriptName,__LINE__,MSG]
 #define DEBUG_ERR(MSG) [format ['[BAX] (%1,%2) %3',_fnc_scriptName,__LINE__,MSG]] call BIS_fnc_error; DEBUG_RPT(MSG)
 

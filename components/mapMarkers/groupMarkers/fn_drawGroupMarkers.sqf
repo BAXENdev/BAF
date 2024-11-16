@@ -12,7 +12,6 @@ _showMarkers = switch (_side) do {
 };
 if !(_showMarkers) exitWith {};
 
-_side = side group player;
 _sideGroups = allGroups select { side _x isEqualTo _side };
 _fullGroups = _sideGroups select { count units _x > 0 };
 // _groups = _fullGroups - [group player]; 

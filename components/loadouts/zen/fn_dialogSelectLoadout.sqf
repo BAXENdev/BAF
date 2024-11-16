@@ -44,7 +44,10 @@ _listSelectLoadout = [
         _loadout = [_unit,_loadoutName] call bax_loadouts_fnc_assignLoadout;
         
         _loadout = [_loadout] call acre_api_fnc_filterUnitLoadout;
-        _unit setVariable [VAR_RESPAWN,_loadout,true];
+        #ifdef DO_DEBUG
+        _msg = format ["Respawn player (%1) loadout: %2", name player, _loadout];
+        #endif
+        _unit setVariable [VAR_RESPAWN, _loadout, true];
 
         _unit setVariable [VARS_ROLE, _loadoutName, true];
 

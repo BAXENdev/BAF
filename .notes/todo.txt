@@ -1,12 +1,6 @@
 
 TODO:
-[ ]: Loadout system
-    [ ]: Add paradrop option to supply crate dialog
-    [ ]: Add map position picker to supply crate dialog
-[ ]: Radios
-    [ ]: ...
-    [ ]: Do loadout saves need to filter for assigned acre radios and replace with generic classes?
-[ ]: Check all exitWith {} for cases where DEBUG_RPT_FULL should be inserted
-[ ]: Group Manager
-[ ]: Move all variables to cached retrievables
-[ ]: Update `side group player` to `playerSide`
+[ ]: Add Unit Patch support to loadouts
+[ ]: Add Mission Key Loadout Save
+[ ]: Add show all units to map marker script and add setting
+[ ]: Is loadout filter screwing up loadouts?

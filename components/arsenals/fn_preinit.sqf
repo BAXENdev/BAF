@@ -37,6 +37,8 @@ bax_arsenals_enableLoadoutFilter = CFGBAX_BOOL("enableLoadoutFilter");
         _loadout = getUnitLoadout player;
         _loadout = [_loadout] call acre_api_fnc_filterUnitLoadout;
         
+        // TODO: Incident where a black combat backpack would not be respawned with even though it was set in respawn loadout?
+        // Instead a MTP back with nothing in it had replaced it? How? Why? Was it something client side?
         if (bax_arsenals_enableLoadoutFilter) then {
             _side = side group player;
             _role = [player] call bax_common_fnc_getUnitRole;
@@ -63,6 +65,9 @@ bax_arsenals_enableLoadoutFilter = CFGBAX_BOOL("enableLoadoutFilter");
             };
         };
 
+        #ifdef DO_DEBUG
+        _msg = format ["Set player (%1) respawn loadout: %2", name player, _loadout];
+        #endif
         player setVariable [VAR_RESPAWN, _loadout, true];
     };
 }] call CBA_fnc_addEventHandler;

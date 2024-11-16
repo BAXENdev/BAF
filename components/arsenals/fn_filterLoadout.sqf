@@ -178,12 +178,12 @@ if !(_backpackArray isEqualTo []) then {
 };
 
 _helmetClass = _loadout select 6;
-if (!(_helmetClass isEqualTo "") and { _helmetClass in _validItems }) then {
+if (!(_helmetClass isEqualTo "") and { !(_helmetClass in _validItems) }) then {
 	_loadout set [6, ""];
 };
 
 _maskClass = _loadout select 7;
-if (!(_maskClass isEqualTo "") and { _maskClass in _validItems }) then {
+if (!(_maskClass isEqualTo "") and { !(_maskClass in _validItems) }) then {
 	_loadout set [7, ""];
 };
 
@@ -195,7 +195,7 @@ if !((_binoArray select 0) in _validItems) then {
 _utilityArray = _loadout select 9;
 {
 	_item = _x;
-	if (!(_item isEqualTo "") and { _item in _validItems }) then {
+	if (!(_item isEqualTo "") and { !(_item in _validItems) }) then {
 		_utilityArray set [_forEachIndex, ""];
 	};
 } forEach _utilityArray;

@@ -17,5 +17,12 @@ _respawnLoadout = player getVariable [VAR_RESPAWN,nil];
 if (isNil "_respawnLoadout") then {
 	_loadout = getUnitLoadout player;
 	_loadout = [_loadout] call acre_api_fnc_filterUnitLoadout;
-	player setVariable [VAR_RESPAWN,_loadout,true];
+	player setVariable [VAR_RESPAWN, _loadout, true];
+};
+
+switch (_side) do {
+	case west: { [player, CFGBAX_NUM("blufor_respawnTicketsPersonal")] call BIS_fnc_respawnTickets; };
+	case east: { [player, CFGBAX_NUM("opfor_respawnTicketsPersonal")] call BIS_fnc_respawnTickets; };
+	case independent: { [player, CFGBAX_NUM("indfor_respawnTicketsPersonal")] call BIS_fnc_respawnTickets; };
+	case civilian: { [player, CFGBAX_NUM("civilian_respawnTicketsPersonal")] call BIS_fnc_respawnTickets; };
 };

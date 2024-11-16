@@ -12,6 +12,11 @@ ICONS:  AIR | ANTIAIR | ARMOR | ART | HQ | INF | INSTALLATION
         MAINT | MECHINF | MED | MORTAR | MOTORINF | NAVAL
         PLANE | RECON | SERVICE | SUPPORT | UAV | UNKNOWN
 
+COLORS: COLOR_WHITE | COLOR_BLACK | COLOR_RED | COLOR_BLUE
+        COLOR_GREEN | COLOR_YELLOW | COLOR_ORANGE | COLOR_PURPLE
+        COLOR_PINK | COLOR_TAN | COLOR_LGRAY | COLOR_BLUFOR
+        COLOR_OPFOR | COLOR_INDFOR | COLOR_CIV
+
 CUSTOM ICONS:
     * All custom user icons should be placed in "userConfig\assets\".
     * Example of mission file icon: "userConfig\assets\iconSuperMortar.paa"

@@ -15,4 +15,4 @@ indforMapMarkers = 1;
 civilianMapMarkers = 1;
 
 // Filter loadouts for invalid items when saving respawn loadout
-enableLoadoutFilter = 1;
+enableLoadoutFilter = 0; // Leave off for now. It seems to work, but may be causing issues in obscure edge cases
