@@ -11,7 +11,7 @@ To get started, download a release and drop the exported folder in your MPMissio
 The sample's include written descriptions on what to set up and what systems do. All changable settings for the framework are inside the userConfig folder.
 
 Each side has a folder that contains setting and script files that can be used to create loadouts, arsenals, radio presets, and map marker info; along with adjusting the respawn setting for that side.
-A notable feature regarding respawn is that the respawn delay can be modified mid mission.
+A notable feature regarding respawn is that the respawn delay, respawn enabled, and respawn tickets can be modified mid mission.
 
 The settings.hpp file adjust global settings for the framework (there are not that many).
 
